@@ -21,7 +21,9 @@
 
     </ul>
 
-    <es:showMessjava.lang.Object value = (java.lang.Object) pageContext.getAttribute("value");l ui-toolbar">
+    
+    <es:showMessage/>
+    <div class="row-fluid tool ui-toolbar">
         <div class="span4">
             <div class="btn-group">
                 <shiro:hasPermission name="sys:group:create">

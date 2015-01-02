@@ -65,7 +65,7 @@
     <bean id="entityManagerFactory"
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSourceProxy"/>
-        <property name="packagesToScan" value="com.sishuok.es.**.entity"/>
+        <property name="packagesToScan" value="com.sishuok.es.**.entity,com.hiring.**.entity"/>
 
         <property name="persistenceUnitName" value="${jpa.persistenceUnitName}"/>
         <property name="persistenceProvider">
