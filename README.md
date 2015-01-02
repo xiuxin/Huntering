@@ -1,6 +1,6 @@
 ###IMPORTANT
 
-googlecode的repo被ZF屏蔽了，如果在跑create-db.bat的时候遇到依赖包无法下载之类的问题问我和周鑫要jar包放到本地maven仓库即可。
+googlecode的repo被ZF屏蔽了，如果在跑create-db.bat的时候遇到依赖包无法下载之类的问题问Vincent或者周鑫要jar包放到本地maven仓库即可。
 
 本地参考运行环境 （Vincent）： 
 * java 1.6.0_30
