@@ -1,7 +1,6 @@
 ###IMPORTANT
 
-因为目录结构正在更新还没完全改完，部分UT跑不过.
-89f9adeb8065b9690d592b249b5a48ade7483050 这个提交是UT都可以跑过的版本
+因为目录结构正在更新中，主要是去掉项目原先的各种独有包路径，hiring-common已完成路径重构，hiring-web正在进行。
 
 googlecode的repo被ZF屏蔽了，如果在跑create-db.bat的时候遇到依赖包无法下载之类的问题问Vincent或者周鑫要jar包放到本地maven仓库即可。
 
@@ -9,10 +8,11 @@ googlecode的repo被ZF屏蔽了，如果在跑create-db.bat的时候遇到依赖
 * java 1.6.0_30
 * Maven 3.0.5
 * MySQL 5.6 
-MySQL-Front可以作为MySQL的可视化编程工具，安装MySQL的时候端口用默认的3306
+* MySQL-Front可以作为MySQL的可视化编程工具，安装MySQL的时候端口用默认的3306
 
-POM里的依赖关系和项目名称/路径的前缀已经改成了hiring, 部署好之后访问 localhost:9080/hiring-web/ 初始化项目
+POM里的依赖关系和项目名称/路径的前缀已经改成了hiring, 部署好之后访问 localhost:9080/hiring-web/ 初始化项目。
 
+hiring-web模块的UT需要创建完数据库和导入数据之后才能跑，所有编译操作要跳过UT来跑
 
 ##如何运行
 
