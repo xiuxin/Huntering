@@ -83,7 +83,7 @@
             var imageSrc = img.attr("src");
             if(imageSrc.indexOf("?") > 0) {
                 imageSrc = imageSrc.substr(0, imageSrc.indexOf("?"));
-       s     }
+            }
             imageSrc = imageSrc + "?" + new Date().getTime();
             img.attr("src", imageSrc);
         });
