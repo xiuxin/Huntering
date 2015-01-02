@@ -3,14 +3,11 @@
 <es:contentHeader title="用户登录 Easy-Scaffold脚手架" index="true"/>
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
-        <a class="brand" href="#">&nbsp;&nbsp;es脚手架</a>
+        <a class="brand" href="#">&nbsp;&nbsp;Hiring Sys.</a>
         <ul class="nav">
-            <li><a href="http://sishuok.com" target="_blank">私塾在线</a></li>
             <li class="active"><a href="#">登录</a></li>
-            <li><a href="http://jinnianshilongnian.iteye.com" target="_blank">我的博客</a></li>
-            <li><a href="https://github.com/zhangkaitao/es" target="_blank">github</a></li>
+            <li><a href="https://github.com/xiuxin/huntering" target="_blank">github</a></li>
         </ul>
-        <a class="brand" style="float: right" href="mailto:zhangkaitao0503@gmail.com" target="_blank">&nbsp;&nbsp;问题反馈</a>
     </div>
 </div>
 
@@ -67,14 +64,13 @@
 
 <footer class="footer">
     <div class="container">
-        <p><a href="http://sishuok.com" target="_blank">私塾在线学习网</a></p>
+        <p><a href="#" target="_blank">Footer</a></p>
         <p>Code licensed <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
         <ul class="footer-links">
-            <li><a href="http://jinnianshilongnian.iteye.com">博客</a></li>
             <li class="muted">·</li>
-            <li><a href="https://github.com/zhangkaitao/es/issues?state=open" target="_blank">问题反馈</a></li>
+            <li><a href="https://github.com/xiuxin/huntering/issues?state=open" target="_blank">问题反馈</a></li>
             <li class="muted">·</li>
-            <li><a href="https://github.com/zhangkaitao/es" target="_blank">项目主页</a></li>
+            <li><a href="https://github.com/xiuxin/huntering" target="_blank">项目主页</a></li>
         </ul>
     </div>
 </footer>
@@ -87,7 +83,7 @@
             var imageSrc = img.attr("src");
             if(imageSrc.indexOf("?") > 0) {
                 imageSrc = imageSrc.substr(0, imageSrc.indexOf("?"));
-            }
+       s     }
             imageSrc = imageSrc + "?" + new Date().getTime();
             img.attr("src", imageSrc);
         });
