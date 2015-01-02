@@ -17,7 +17,7 @@
                 显示的数据列表
             </a>
         </li>
-     java.lang.Object value = (java.lang.Object) pageContext.getAttribute("value");q 'hide' ? 'class="active"' : ''}>
+        <li ${param['search.status_eq'] eq 'hide' ? 'class="active"' : ''}>
             <a href="${ctx}/showcase/status/show?search.status_eq=hide">
                 <i class="icon-table"></i>
                 隐藏的数据列表

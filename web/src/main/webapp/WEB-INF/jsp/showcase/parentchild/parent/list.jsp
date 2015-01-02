@@ -13,7 +13,7 @@
         </li>
         <li ${param['search.show_eq'] eq 'true' ? 'class="active"' : ''}>
             <a href="${ctx}/showcase/parentchild/parent?search.show_eq=true">
-     java.lang.String displayValue = (java.lang.String) pageContext.getAttribute("displayValue");>
+                <i class="icon-table"></i>
                 可显示的数据列表
             </a>
         </li>

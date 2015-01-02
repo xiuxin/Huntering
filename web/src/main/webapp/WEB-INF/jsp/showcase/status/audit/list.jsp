@@ -17,7 +17,8 @@
                 <i class="icon-table"></i>
                 等待审核列表
             </a>
-        </java.lang.Object value = (java.lang.Object) pageContext.getAttribute("value");us_eq'] eq 'fail' ? 'class="active"' : ''}>
+        </li>
+        <li ${param['search.status_eq'] eq 'fail' ? 'class="active"' : ''}>
             <a href="${ctx}/showcase/status/audit?search.status_eq=fail">
                 <i class="icon-table"></i>
                 审核失败列表
