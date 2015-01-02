@@ -5,9 +5,10 @@
  */
 package com.sishuok.es.personal.message.repository;
 
-import com.sishuok.es.common.repository.BaseRepository;
+import com.hiring.common.repository.BaseRepository;
 import com.sishuok.es.personal.message.entity.Message;
 import com.sishuok.es.personal.message.entity.MessageState;
+
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 

@@ -5,7 +5,8 @@
  */
 package com.sishuok.es.personal.message.entity;
 
-import com.sishuok.es.common.entity.BaseEntity;
+import com.hiring.common.entity.BaseEntity;
+
 import org.hibernate.annotations.Proxy;
 import org.hibernate.validator.constraints.Length;
 

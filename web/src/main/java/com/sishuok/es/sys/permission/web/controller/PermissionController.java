@@ -5,11 +5,12 @@
  */
 package com.sishuok.es.sys.permission.web.controller;
 
-import com.sishuok.es.common.Constants;
-import com.sishuok.es.common.entity.enums.AvailableEnum;
-import com.sishuok.es.common.web.controller.BaseCRUDController;
+import com.hiring.common.Constants;
+import com.hiring.common.entity.enums.AvailableEnum;
+import com.hiring.common.web.controller.BaseCRUDController;
 import com.sishuok.es.sys.permission.entity.Permission;
 import com.sishuok.es.sys.permission.service.PermissionService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

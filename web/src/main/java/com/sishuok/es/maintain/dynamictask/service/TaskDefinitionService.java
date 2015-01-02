@@ -5,8 +5,9 @@
  */
 package com.sishuok.es.maintain.dynamictask.service;
 
-import com.sishuok.es.common.service.BaseService;
+import com.hiring.common.service.BaseService;
 import com.sishuok.es.maintain.dynamictask.entity.TaskDefinition;
+
 import org.springframework.stereotype.Service;
 
 import java.util.Map;

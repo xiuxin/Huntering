@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.sys.auth.repository;
 
-import com.sishuok.es.common.repository.BaseRepository;
+import com.hiring.common.repository.BaseRepository;
 import com.sishuok.es.sys.auth.entity.Auth;
 
 import java.util.Set;

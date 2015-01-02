@@ -16,7 +16,7 @@
 
 package com.sishuok.es.sys.user.web.bind.annotation;
 
-import com.sishuok.es.common.Constants;
+import com.hiring.common.Constants;
 
 import java.lang.annotation.*;
 

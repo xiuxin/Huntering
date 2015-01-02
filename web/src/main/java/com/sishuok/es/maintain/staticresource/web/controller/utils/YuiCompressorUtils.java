@@ -5,9 +5,10 @@
  */
 package com.sishuok.es.maintain.staticresource.web.controller.utils;
 
-import com.sishuok.es.common.Constants;
+import com.hiring.common.Constants;
 import com.yahoo.platform.yui.compressor.CssCompressor;
 import com.yahoo.platform.yui.compressor.JavaScriptCompressor;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.mozilla.javascript.ErrorReporter;

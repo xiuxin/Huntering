@@ -5,15 +5,16 @@
  */
 package com.sishuok.es.maintain.notification.web.controller;
 
-import com.sishuok.es.common.entity.search.Searchable;
-import com.sishuok.es.common.service.BaseService;
-import com.sishuok.es.common.web.bind.annotation.PageableDefaults;
-import com.sishuok.es.common.web.bind.annotation.SearchableDefaults;
-import com.sishuok.es.common.web.controller.BaseCRUDController;
-import com.sishuok.es.common.web.validate.ValidateResponse;
+import com.hiring.common.entity.search.Searchable;
+import com.hiring.common.service.BaseService;
+import com.hiring.common.web.bind.annotation.PageableDefaults;
+import com.hiring.common.web.bind.annotation.SearchableDefaults;
+import com.hiring.common.web.controller.BaseCRUDController;
+import com.hiring.common.web.validate.ValidateResponse;
 import com.sishuok.es.maintain.notification.entity.NotificationSystem;
 import com.sishuok.es.maintain.notification.entity.NotificationTemplate;
 import com.sishuok.es.maintain.notification.service.NotificationTemplateService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

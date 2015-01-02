@@ -5,9 +5,10 @@
  */
 package com.sishuok.es.sys.user.web.controller;
 
-import com.sishuok.es.common.web.controller.BaseCRUDController;
+import com.hiring.common.web.controller.BaseCRUDController;
 import com.sishuok.es.sys.user.entity.UserLastOnline;
 import com.sishuok.es.sys.user.service.UserLastOnlineService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

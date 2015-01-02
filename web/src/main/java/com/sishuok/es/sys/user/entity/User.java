@@ -7,9 +7,10 @@ package com.sishuok.es.sys.user.entity;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.sishuok.es.common.entity.BaseEntity;
-import com.sishuok.es.common.plugin.entity.LogicDeleteable;
-import com.sishuok.es.common.repository.support.annotation.EnableQueryCache;
+import com.hiring.common.entity.BaseEntity;
+import com.hiring.common.plugin.entity.LogicDeleteable;
+import com.hiring.common.repository.support.annotation.EnableQueryCache;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.Cascade;
@@ -22,6 +23,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Map;

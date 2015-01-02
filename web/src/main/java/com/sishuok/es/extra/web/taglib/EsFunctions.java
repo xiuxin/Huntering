@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.extra.web.taglib;
 
-import com.sishuok.es.common.utils.SpringUtils;
+import com.hiring.common.utils.SpringUtils;
 import com.sishuok.es.sys.organization.entity.Job;
 import com.sishuok.es.sys.organization.entity.Organization;
 import com.sishuok.es.sys.organization.service.JobService;

@@ -6,13 +6,15 @@
 package com.sishuok.es.sys.permission.entity;
 
 import com.google.common.collect.Lists;
-import com.sishuok.es.common.entity.BaseEntity;
-import com.sishuok.es.common.repository.support.annotation.EnableQueryCache;
+import com.hiring.common.entity.BaseEntity;
+import com.hiring.common.repository.support.annotation.EnableQueryCache;
+
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
+
 import java.util.List;
 
 /**

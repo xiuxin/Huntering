@@ -5,8 +5,9 @@
  */
 package com.sishuok.es.sys.user.repository;
 
-import com.sishuok.es.common.repository.BaseRepository;
+import com.hiring.common.repository.BaseRepository;
 import com.sishuok.es.sys.user.entity.UserOnline;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Modifying;

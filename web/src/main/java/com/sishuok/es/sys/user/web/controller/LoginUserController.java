@@ -5,15 +5,16 @@
  */
 package com.sishuok.es.sys.user.web.controller;
 
-import com.sishuok.es.common.Constants;
-import com.sishuok.es.common.entity.enums.BooleanEnum;
-import com.sishuok.es.common.web.controller.BaseController;
+import com.hiring.common.Constants;
+import com.hiring.common.entity.enums.BooleanEnum;
+import com.hiring.common.web.controller.BaseController;
 import com.sishuok.es.sys.user.entity.User;
 import com.sishuok.es.sys.user.entity.UserStatus;
 import com.sishuok.es.sys.user.service.PasswordService;
 import com.sishuok.es.sys.user.service.UserLastOnlineService;
 import com.sishuok.es.sys.user.service.UserService;
 import com.sishuok.es.sys.user.web.bind.annotation.CurrentUser;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

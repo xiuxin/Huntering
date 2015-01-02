@@ -5,9 +5,10 @@
  */
 package com.sishuok.es.showcase.editor.web.controller;
 
-import com.sishuok.es.common.web.controller.BaseCRUDController;
+import com.hiring.common.web.controller.BaseCRUDController;
 import com.sishuok.es.showcase.editor.entity.Editor;
 import com.sishuok.es.showcase.editor.service.EditorService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;

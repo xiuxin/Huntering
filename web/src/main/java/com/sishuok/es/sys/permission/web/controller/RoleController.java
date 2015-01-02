@@ -6,14 +6,15 @@
 package com.sishuok.es.sys.permission.web.controller;
 
 import com.google.common.collect.Sets;
-import com.sishuok.es.common.Constants;
-import com.sishuok.es.common.entity.enums.AvailableEnum;
-import com.sishuok.es.common.entity.search.Searchable;
-import com.sishuok.es.common.web.controller.BaseCRUDController;
+import com.hiring.common.Constants;
+import com.hiring.common.entity.enums.AvailableEnum;
+import com.hiring.common.entity.search.Searchable;
+import com.hiring.common.web.controller.BaseCRUDController;
 import com.sishuok.es.sys.permission.entity.Role;
 import com.sishuok.es.sys.permission.entity.RoleResourcePermission;
 import com.sishuok.es.sys.permission.service.PermissionService;
 import com.sishuok.es.sys.permission.service.RoleService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +24,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+
 import java.util.Set;
 
 /**

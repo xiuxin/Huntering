@@ -5,12 +5,13 @@
  */
 package com.sishuok.es.showcase.sample.web.controller;
 
-import com.sishuok.es.common.entity.enums.BooleanEnum;
-import com.sishuok.es.common.web.controller.BaseCRUDController;
-import com.sishuok.es.common.web.validate.ValidateResponse;
+import com.hiring.common.entity.enums.BooleanEnum;
+import com.hiring.common.web.controller.BaseCRUDController;
+import com.hiring.common.web.validate.ValidateResponse;
 import com.sishuok.es.showcase.sample.entity.Sample;
 import com.sishuok.es.showcase.sample.entity.Sex;
 import com.sishuok.es.showcase.sample.service.SampleService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

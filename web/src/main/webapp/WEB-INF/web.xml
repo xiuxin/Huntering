@@ -33,7 +33,7 @@
   </filter-mapping>
   <filter>
     <filter-name>AccessLogFilter</filter-name>
-    <filter-class>com.sishuok.es.common.web.filter.AccessLogFilter</filter-class>
+    <filter-class>com.hiring.common.web.filter.AccessLogFilter</filter-class>
     <async-supported>true</async-supported>
     <init-param>
       <param-name>blackListURL</param-name>
@@ -65,7 +65,7 @@
   </filter-mapping>
   <filter>
     <filter-name>JCaptchaFilter</filter-name>
-    <filter-class>com.sishuok.es.common.web.jcaptcha.JCaptchaFilter</filter-class>
+    <filter-class>com.hiring.common.web.jcaptcha.JCaptchaFilter</filter-class>
     <async-supported>true</async-supported>
   </filter>
   <filter-mapping>

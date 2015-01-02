@@ -1,6 +1,7 @@
 package com.sishuok.es.test;
 
-import com.sishuok.es.common.entity.AbstractEntity;
+import com.hiring.common.entity.AbstractEntity;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
@@ -8,6 +9,7 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
 import java.util.List;
 
 /**

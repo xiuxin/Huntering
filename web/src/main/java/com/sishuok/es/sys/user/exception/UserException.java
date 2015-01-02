@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.sys.user.exception;
 
-import com.sishuok.es.common.exception.BaseException;
+import com.hiring.common.exception.BaseException;
 
 /**
  * <p>User: Zhang Kaitao

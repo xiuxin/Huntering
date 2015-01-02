@@ -5,8 +5,9 @@
  */
 package com.sishuok.es.monitor.web.controller;
 
-import com.sishuok.es.common.repository.hibernate.HibernateUtils;
-import com.sishuok.es.common.web.controller.BaseController;
+import com.hiring.common.repository.hibernate.HibernateUtils;
+import com.hiring.common.web.controller.BaseController;
+
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.hibernate.Cache;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
 import java.io.Serializable;
 import java.lang.management.ManagementFactory;
 import java.lang.management.MemoryUsage;

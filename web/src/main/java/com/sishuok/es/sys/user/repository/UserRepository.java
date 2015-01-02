@@ -5,10 +5,11 @@
  */
 package com.sishuok.es.sys.user.repository;
 
-import com.sishuok.es.common.repository.BaseRepository;
-import com.sishuok.es.common.repository.support.annotation.SearchableQuery;
+import com.hiring.common.repository.BaseRepository;
+import com.hiring.common.repository.support.annotation.SearchableQuery;
 import com.sishuok.es.sys.user.entity.User;
 import com.sishuok.es.sys.user.entity.UserOrganizationJob;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Modifying;

@@ -5,8 +5,8 @@
  */
 package com.sishuok.es.sys.auth.task;
 
-import com.sishuok.es.common.Constants;
-import com.sishuok.es.common.repository.hibernate.HibernateUtils;
+import com.hiring.common.Constants;
+import com.hiring.common.repository.hibernate.HibernateUtils;
 import com.sishuok.es.sys.auth.service.UserAuthService;
 import com.sishuok.es.sys.group.service.GroupService;
 import com.sishuok.es.sys.organization.service.JobService;
@@ -14,6 +14,7 @@ import com.sishuok.es.sys.organization.service.OrganizationService;
 import com.sishuok.es.sys.user.entity.User;
 import com.sishuok.es.sys.user.service.UserService;
 import com.sishuok.es.test.BaseIT;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

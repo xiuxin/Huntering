@@ -5,11 +5,12 @@
  */
 package com.sishuok.es.showcase.excel.service;
 
-import com.sishuok.es.common.entity.search.Searchable;
-import com.sishuok.es.common.spring.utils.AopProxyUtils;
+import com.hiring.common.entity.search.Searchable;
+import com.hiring.common.spring.utils.AopProxyUtils;
 import com.sishuok.es.maintain.notification.service.NotificationApi;
 import com.sishuok.es.sys.user.entity.User;
 import com.sishuok.es.test.BaseIT;
+
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;

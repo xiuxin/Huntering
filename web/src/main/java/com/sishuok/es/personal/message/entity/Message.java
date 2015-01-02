@@ -5,13 +5,15 @@
  */
 package com.sishuok.es.personal.message.entity;
 
-import com.sishuok.es.common.entity.BaseEntity;
+import com.hiring.common.entity.BaseEntity;
+
 import org.hibernate.annotations.Proxy;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.Valid;
+
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;

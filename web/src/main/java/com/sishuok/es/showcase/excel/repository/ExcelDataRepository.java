@@ -5,8 +5,9 @@
  */
 package com.sishuok.es.showcase.excel.repository;
 
-import com.sishuok.es.common.repository.BaseRepository;
+import com.hiring.common.repository.BaseRepository;
 import com.sishuok.es.showcase.excel.entity.ExcelData;
+
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 

@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.maintain.icon.repository;
 
-import com.sishuok.es.common.repository.BaseRepository;
+import com.hiring.common.repository.BaseRepository;
 import com.sishuok.es.maintain.icon.entity.Icon;
 
 /**

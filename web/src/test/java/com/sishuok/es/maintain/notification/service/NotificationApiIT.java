@@ -6,15 +6,16 @@
 package com.sishuok.es.maintain.notification.service;
 
 import com.google.common.collect.Maps;
-import com.sishuok.es.common.entity.search.SearchOperator;
-import com.sishuok.es.common.entity.search.Searchable;
-import com.sishuok.es.common.spring.utils.AopProxyUtils;
+import com.hiring.common.entity.search.SearchOperator;
+import com.hiring.common.entity.search.Searchable;
+import com.hiring.common.spring.utils.AopProxyUtils;
 import com.sishuok.es.maintain.notification.entity.NotificationData;
 import com.sishuok.es.maintain.notification.entity.NotificationSystem;
 import com.sishuok.es.maintain.notification.entity.NotificationTemplate;
 import com.sishuok.es.maintain.notification.exception.TemplateNotFoundException;
 import com.sishuok.es.sys.user.entity.User;
 import com.sishuok.es.sys.user.service.BaseUserIT;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

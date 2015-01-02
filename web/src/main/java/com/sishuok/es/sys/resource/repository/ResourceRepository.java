@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.sys.resource.repository;
 
-import com.sishuok.es.common.repository.BaseRepository;
+import com.hiring.common.repository.BaseRepository;
 import com.sishuok.es.sys.resource.entity.Resource;
 
 /**

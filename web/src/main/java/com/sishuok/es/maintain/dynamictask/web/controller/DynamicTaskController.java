@@ -6,10 +6,11 @@
 package com.sishuok.es.maintain.dynamictask.web.controller;
 
 import com.google.common.collect.Lists;
-import com.sishuok.es.common.Constants;
-import com.sishuok.es.common.web.controller.BaseCRUDController;
+import com.hiring.common.Constants;
+import com.hiring.common.web.controller.BaseCRUDController;
 import com.sishuok.es.maintain.dynamictask.entity.TaskDefinition;
 import com.sishuok.es.maintain.dynamictask.service.DynamicTaskApi;
+
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.PostConstruct;
 import javax.validation.Valid;
+
 import java.util.List;
 
 /**

@@ -5,7 +5,8 @@
  */
 package com.sishuok.es.maintain.keyvalue.entity;
 
-import com.sishuok.es.common.entity.BaseEntity;
+import com.hiring.common.entity.BaseEntity;
+
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Column;

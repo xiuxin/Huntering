@@ -5,11 +5,12 @@
  */
 package com.sishuok.es.showcase.move.web.controller;
 
-import com.sishuok.es.common.entity.enums.BooleanEnum;
-import com.sishuok.es.common.entity.validate.group.Create;
-import com.sishuok.es.common.plugin.web.controller.BaseMovableController;
+import com.hiring.common.entity.enums.BooleanEnum;
+import com.hiring.common.entity.validate.group.Create;
+import com.hiring.common.plugin.web.controller.BaseMovableController;
 import com.sishuok.es.showcase.move.entity.Move;
 import com.sishuok.es.showcase.move.service.MoveService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

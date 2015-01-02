@@ -6,15 +6,16 @@
 package com.sishuok.es.maintain.icon.web.controller;
 
 import com.google.common.collect.Lists;
-import com.sishuok.es.common.Constants;
-import com.sishuok.es.common.entity.search.Searchable;
-import com.sishuok.es.common.utils.LogUtils;
-import com.sishuok.es.common.web.controller.BaseCRUDController;
-import com.sishuok.es.common.web.upload.FileUploadUtils;
-import com.sishuok.es.common.web.validate.ValidateResponse;
+import com.hiring.common.Constants;
+import com.hiring.common.entity.search.Searchable;
+import com.hiring.common.utils.LogUtils;
+import com.hiring.common.web.controller.BaseCRUDController;
+import com.hiring.common.web.upload.FileUploadUtils;
+import com.hiring.common.web.validate.ValidateResponse;
 import com.sishuok.es.maintain.icon.entity.Icon;
 import com.sishuok.es.maintain.icon.entity.IconType;
 import com.sishuok.es.maintain.icon.service.IconService;
+
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,6 +30,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+
 import java.util.List;
 
 /**

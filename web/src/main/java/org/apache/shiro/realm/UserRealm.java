@@ -5,11 +5,12 @@
  */
 package org.apache.shiro.realm;
 
-import com.sishuok.es.common.repository.support.SimpleBaseRepositoryFactoryBean;
+import com.hiring.common.repository.support.SimpleBaseRepositoryFactoryBean;
 import com.sishuok.es.sys.auth.service.UserAuthService;
 import com.sishuok.es.sys.user.entity.User;
 import com.sishuok.es.sys.user.exception.*;
 import com.sishuok.es.sys.user.service.UserService;
+
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;

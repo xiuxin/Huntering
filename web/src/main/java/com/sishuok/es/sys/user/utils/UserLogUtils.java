@@ -5,8 +5,9 @@
  */
 package com.sishuok.es.sys.user.utils;
 
-import com.sishuok.es.common.utils.IpUtils;
-import com.sishuok.es.common.utils.LogUtils;
+import com.hiring.common.utils.IpUtils;
+import com.hiring.common.utils.LogUtils;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.context.request.RequestAttributes;

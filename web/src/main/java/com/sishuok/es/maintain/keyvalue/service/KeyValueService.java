@@ -5,9 +5,10 @@
  */
 package com.sishuok.es.maintain.keyvalue.service;
 
-import com.sishuok.es.common.service.BaseService;
+import com.hiring.common.service.BaseService;
 import com.sishuok.es.maintain.keyvalue.entity.KeyValue;
 import com.sishuok.es.maintain.keyvalue.repository.KeyValueRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

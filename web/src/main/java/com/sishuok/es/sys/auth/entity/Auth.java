@@ -6,15 +6,17 @@
 package com.sishuok.es.sys.auth.entity;
 
 import com.google.common.collect.Sets;
-import com.sishuok.es.common.entity.BaseEntity;
-import com.sishuok.es.common.repository.hibernate.type.CollectionToStringUserType;
-import com.sishuok.es.common.repository.support.annotation.EnableQueryCache;
+import com.hiring.common.entity.BaseEntity;
+import com.hiring.common.repository.hibernate.type.CollectionToStringUserType;
+import com.hiring.common.repository.support.annotation.EnableQueryCache;
+
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.Parameter;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 
 import javax.persistence.*;
+
 import java.util.Set;
 
 /**

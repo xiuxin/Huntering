@@ -5,14 +5,16 @@
  */
 package com.sishuok.es.showcase.deleted.entity;
 
-import com.sishuok.es.common.entity.BaseEntity;
-import com.sishuok.es.common.plugin.entity.LogicDeleteable;
+import com.hiring.common.entity.BaseEntity;
+import com.hiring.common.plugin.entity.LogicDeleteable;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+
 import java.util.Date;
 
 /**

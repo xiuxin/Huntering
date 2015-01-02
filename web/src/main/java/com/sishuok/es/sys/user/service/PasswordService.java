@@ -5,14 +5,16 @@
  */
 package com.sishuok.es.sys.user.service;
 
-import com.sishuok.es.common.utils.security.Md5Utils;
+import com.hiring.common.utils.security.Md5Utils;
 import com.sishuok.es.sys.user.entity.User;
 import com.sishuok.es.sys.user.exception.UserPasswordNotMatchException;
 import com.sishuok.es.sys.user.exception.UserPasswordRetryLimitExceedException;
 import com.sishuok.es.sys.user.utils.UserLogUtils;
+
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.Element;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

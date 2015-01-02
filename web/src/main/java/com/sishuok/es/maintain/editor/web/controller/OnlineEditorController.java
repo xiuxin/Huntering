@@ -6,16 +6,17 @@
 package com.sishuok.es.maintain.editor.web.controller;
 
 import com.google.common.collect.Lists;
-import com.sishuok.es.common.Constants;
-import com.sishuok.es.common.utils.LogUtils;
-import com.sishuok.es.common.utils.MessageUtils;
-import com.sishuok.es.common.web.controller.BaseController;
-import com.sishuok.es.common.web.entity.AjaxUploadResponse;
-import com.sishuok.es.common.web.upload.FileUploadUtils;
-import com.sishuok.es.common.web.upload.exception.FileNameLengthLimitExceededException;
-import com.sishuok.es.common.web.upload.exception.InvalidExtensionException;
-import com.sishuok.es.common.web.utils.DownloadUtils;
+import com.hiring.common.Constants;
+import com.hiring.common.utils.LogUtils;
+import com.hiring.common.utils.MessageUtils;
+import com.hiring.common.web.controller.BaseController;
+import com.hiring.common.web.entity.AjaxUploadResponse;
+import com.hiring.common.web.upload.FileUploadUtils;
+import com.hiring.common.web.upload.exception.FileNameLengthLimitExceededException;
+import com.hiring.common.web.upload.exception.InvalidExtensionException;
+import com.hiring.common.web.utils.DownloadUtils;
 import com.sishuok.es.maintain.editor.web.controller.utils.CompressUtils;
+
 import org.apache.commons.fileupload.FileUploadBase;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
@@ -37,6 +38,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;

@@ -5,8 +5,9 @@
  */
 package com.sishuok.es.extra.aop;
 
-import com.sishuok.es.common.cache.BaseCacheAspect;
+import com.hiring.common.cache.BaseCacheAspect;
 import com.sishuok.es.sys.user.entity.User;
+
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;

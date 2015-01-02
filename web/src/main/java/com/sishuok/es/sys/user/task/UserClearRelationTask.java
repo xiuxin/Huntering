@@ -5,13 +5,14 @@
  */
 package com.sishuok.es.sys.user.task;
 
-import com.sishuok.es.common.repository.RepositoryHelper;
-import com.sishuok.es.common.utils.LogUtils;
+import com.hiring.common.repository.RepositoryHelper;
+import com.hiring.common.utils.LogUtils;
 import com.sishuok.es.sys.organization.service.JobService;
 import com.sishuok.es.sys.organization.service.OrganizationService;
 import com.sishuok.es.sys.user.entity.User;
 import com.sishuok.es.sys.user.entity.UserOrganizationJob;
 import com.sishuok.es.sys.user.service.UserService;
+
 import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

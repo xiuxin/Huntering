@@ -5,9 +5,10 @@
  */
 package com.sishuok.es.sys.organization.service;
 
-import com.sishuok.es.common.plugin.serivce.BaseTreeableService;
+import com.hiring.common.plugin.serivce.BaseTreeableService;
 import com.sishuok.es.sys.organization.entity.Organization;
 import com.sishuok.es.sys.organization.repository.OrganizationRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

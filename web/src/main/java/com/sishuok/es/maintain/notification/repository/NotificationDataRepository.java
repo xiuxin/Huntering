@@ -5,8 +5,9 @@
  */
 package com.sishuok.es.maintain.notification.repository;
 
-import com.sishuok.es.common.repository.BaseRepository;
+import com.hiring.common.repository.BaseRepository;
 import com.sishuok.es.maintain.notification.entity.NotificationData;
+
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 

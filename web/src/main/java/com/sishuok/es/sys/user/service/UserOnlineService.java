@@ -5,9 +5,10 @@
  */
 package com.sishuok.es.sys.user.service;
 
-import com.sishuok.es.common.service.BaseService;
+import com.hiring.common.service.BaseService;
 import com.sishuok.es.sys.user.entity.UserOnline;
 import com.sishuok.es.sys.user.repository.UserOnlineRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

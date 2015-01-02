@@ -5,13 +5,13 @@
  */
 package com.sishuok.es.sys.user.web.controller;
 
-import com.sishuok.es.common.Constants;
-import com.sishuok.es.common.entity.enums.BooleanEnum;
-import com.sishuok.es.common.entity.search.Searchable;
-import com.sishuok.es.common.web.bind.annotation.PageableDefaults;
-import com.sishuok.es.common.web.bind.annotation.SearchableDefaults;
-import com.sishuok.es.common.web.controller.BaseCRUDController;
-import com.sishuok.es.common.web.validate.ValidateResponse;
+import com.hiring.common.Constants;
+import com.hiring.common.entity.enums.BooleanEnum;
+import com.hiring.common.entity.search.Searchable;
+import com.hiring.common.web.bind.annotation.PageableDefaults;
+import com.hiring.common.web.bind.annotation.SearchableDefaults;
+import com.hiring.common.web.controller.BaseCRUDController;
+import com.hiring.common.web.validate.ValidateResponse;
 import com.sishuok.es.sys.organization.entity.Job;
 import com.sishuok.es.sys.organization.entity.Organization;
 import com.sishuok.es.sys.user.entity.User;
@@ -19,6 +19,7 @@ import com.sishuok.es.sys.user.entity.UserOrganizationJob;
 import com.sishuok.es.sys.user.entity.UserStatus;
 import com.sishuok.es.sys.user.service.UserService;
 import com.sishuok.es.sys.user.web.bind.annotation.CurrentUser;
+
 import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,6 +30,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+
 import java.util.Map;
 import java.util.Set;
 

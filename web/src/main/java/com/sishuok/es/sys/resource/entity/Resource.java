@@ -5,9 +5,10 @@
  */
 package com.sishuok.es.sys.resource.entity;
 
-import com.sishuok.es.common.entity.BaseEntity;
-import com.sishuok.es.common.plugin.entity.Treeable;
-import com.sishuok.es.common.repository.support.annotation.EnableQueryCache;
+import com.hiring.common.entity.BaseEntity;
+import com.hiring.common.plugin.entity.Treeable;
+import com.hiring.common.repository.support.annotation.EnableQueryCache;
+
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.Formula;

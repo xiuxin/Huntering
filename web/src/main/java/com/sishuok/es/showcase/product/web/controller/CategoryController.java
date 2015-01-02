@@ -5,12 +5,13 @@
  */
 package com.sishuok.es.showcase.product.web.controller;
 
-import com.sishuok.es.common.entity.enums.BooleanEnum;
-import com.sishuok.es.common.entity.search.Searchable;
-import com.sishuok.es.common.plugin.web.controller.BaseMovableController;
-import com.sishuok.es.common.web.bind.annotation.PageableDefaults;
+import com.hiring.common.entity.enums.BooleanEnum;
+import com.hiring.common.entity.search.Searchable;
+import com.hiring.common.plugin.web.controller.BaseMovableController;
+import com.hiring.common.web.bind.annotation.PageableDefaults;
 import com.sishuok.es.showcase.product.entity.Category;
 import com.sishuok.es.showcase.product.service.CategoryService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

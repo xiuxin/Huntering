@@ -9,11 +9,12 @@ import com.google.common.base.Function;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
-import com.sishuok.es.common.entity.search.SearchOperator;
-import com.sishuok.es.common.entity.search.Searchable;
-import com.sishuok.es.common.service.BaseService;
+import com.hiring.common.entity.search.SearchOperator;
+import com.hiring.common.entity.search.Searchable;
+import com.hiring.common.service.BaseService;
 import com.sishuok.es.sys.group.entity.Group;
 import com.sishuok.es.sys.group.repository.GroupRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

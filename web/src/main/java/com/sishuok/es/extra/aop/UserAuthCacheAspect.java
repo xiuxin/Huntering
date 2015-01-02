@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.extra.aop;
 
-import com.sishuok.es.common.cache.BaseCacheAspect;
+import com.hiring.common.cache.BaseCacheAspect;
 import com.sishuok.es.sys.auth.entity.Auth;
 import com.sishuok.es.sys.auth.service.AuthService;
 import com.sishuok.es.sys.group.entity.Group;
@@ -24,6 +24,7 @@ import com.sishuok.es.sys.resource.entity.Resource;
 import com.sishuok.es.sys.resource.service.ResourceService;
 import com.sishuok.es.sys.user.entity.User;
 import com.sishuok.es.sys.user.service.UserService;
+
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

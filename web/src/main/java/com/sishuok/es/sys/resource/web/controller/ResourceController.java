@@ -5,9 +5,10 @@
  */
 package com.sishuok.es.sys.resource.web.controller;
 
-import com.sishuok.es.common.Constants;
-import com.sishuok.es.common.plugin.web.controller.BaseTreeableController;
+import com.hiring.common.Constants;
+import com.hiring.common.plugin.web.controller.BaseTreeableController;
 import com.sishuok.es.sys.resource.entity.Resource;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

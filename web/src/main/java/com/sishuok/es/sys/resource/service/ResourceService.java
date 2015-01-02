@@ -5,14 +5,15 @@
  */
 package com.sishuok.es.sys.resource.service;
 
-import com.sishuok.es.common.entity.search.SearchOperator;
-import com.sishuok.es.common.entity.search.Searchable;
-import com.sishuok.es.common.plugin.serivce.BaseTreeableService;
+import com.hiring.common.entity.search.SearchOperator;
+import com.hiring.common.entity.search.Searchable;
+import com.hiring.common.plugin.serivce.BaseTreeableService;
 import com.sishuok.es.sys.auth.service.UserAuthService;
 import com.sishuok.es.sys.resource.entity.Resource;
 import com.sishuok.es.sys.resource.entity.tmp.Menu;
 import com.sishuok.es.sys.resource.repository.ResourceRepository;
 import com.sishuok.es.sys.user.entity.User;
+
 import org.apache.shiro.authz.permission.WildcardPermission;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;

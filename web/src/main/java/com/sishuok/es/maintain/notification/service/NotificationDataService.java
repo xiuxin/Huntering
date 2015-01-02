@@ -5,9 +5,10 @@
  */
 package com.sishuok.es.maintain.notification.service;
 
-import com.sishuok.es.common.service.BaseService;
+import com.hiring.common.service.BaseService;
 import com.sishuok.es.maintain.notification.entity.NotificationData;
 import com.sishuok.es.maintain.notification.repository.NotificationDataRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

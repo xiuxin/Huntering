@@ -5,9 +5,10 @@
  */
 package com.sishuok.es.showcase.move.service;
 
-import com.sishuok.es.common.plugin.serivce.BaseMovableService;
+import com.hiring.common.plugin.serivce.BaseMovableService;
 import com.sishuok.es.showcase.move.entity.Move;
 import com.sishuok.es.showcase.move.repository.MoveRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

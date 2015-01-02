@@ -5,9 +5,10 @@
  */
 package com.sishuok.es.front.web.controller;
 
-import com.sishuok.es.common.Constants;
+import com.hiring.common.Constants;
 import com.sishuok.es.sys.user.entity.User;
 import com.sishuok.es.sys.user.service.UserStatusHistoryService;
+
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;

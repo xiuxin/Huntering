@@ -5,8 +5,8 @@
  */
 package com.sishuok.es.showcase.product.entity;
 
-import com.sishuok.es.common.entity.BaseEntity;
-import com.sishuok.es.common.plugin.entity.Movable;
+import com.hiring.common.entity.BaseEntity;
+import com.hiring.common.plugin.entity.Movable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

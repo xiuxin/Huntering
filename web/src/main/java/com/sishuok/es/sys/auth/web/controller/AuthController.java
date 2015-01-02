@@ -5,14 +5,15 @@
  */
 package com.sishuok.es.sys.auth.web.controller;
 
-import com.sishuok.es.common.Constants;
-import com.sishuok.es.common.entity.search.Searchable;
-import com.sishuok.es.common.web.bind.annotation.SearchableDefaults;
-import com.sishuok.es.common.web.controller.BaseCRUDController;
+import com.hiring.common.Constants;
+import com.hiring.common.entity.search.Searchable;
+import com.hiring.common.web.bind.annotation.SearchableDefaults;
+import com.hiring.common.web.controller.BaseCRUDController;
 import com.sishuok.es.sys.auth.entity.Auth;
 import com.sishuok.es.sys.auth.entity.AuthType;
 import com.sishuok.es.sys.auth.service.AuthService;
 import com.sishuok.es.sys.permission.service.RoleService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -5,10 +5,11 @@
  */
 package com.sishuok.es.showcase.upload.web.controller;
 
-import com.sishuok.es.common.web.controller.BaseCRUDController;
-import com.sishuok.es.common.web.upload.FileUploadUtils;
+import com.hiring.common.web.controller.BaseCRUDController;
+import com.hiring.common.web.upload.FileUploadUtils;
 import com.sishuok.es.showcase.upload.entity.Upload;
 import com.sishuok.es.showcase.upload.service.UploadService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

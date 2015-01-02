@@ -1,4 +1,4 @@
-<%@ tag import="com.sishuok.es.common.utils.SpringUtils" %>
+<%@ tag import="com.hiring.common.utils.SpringUtils" %>
 <%@ tag import="com.sishuok.es.sys.user.entity.User" %>
 <%@ tag import="com.sishuok.es.sys.user.service.UserService" %>
 <%@ tag pageEncoding="UTF-8"%>

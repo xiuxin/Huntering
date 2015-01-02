@@ -5,10 +5,11 @@
  */
 package com.sishuok.es.sys.organization.web.controller;
 
-import com.sishuok.es.common.Constants;
-import com.sishuok.es.common.plugin.web.controller.BaseTreeableController;
+import com.hiring.common.Constants;
+import com.hiring.common.plugin.web.controller.BaseTreeableController;
 import com.sishuok.es.sys.organization.entity.Job;
 import com.sishuok.es.sys.organization.service.JobService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;

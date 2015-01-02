@@ -1,5 +1,5 @@
 <%@ tag import="com.google.common.collect.Lists" %>
-<%@ tag import="com.sishuok.es.common.utils.SpringUtils" %>
+<%@ tag import="com.hiring.common.utils.SpringUtils" %>
 <%@ tag import="com.sishuok.es.sys.organization.entity.Job" %>
 <%@ tag import="com.sishuok.es.sys.organization.service.JobService" %>
 <%@ tag import="java.util.List" %>

@@ -5,8 +5,8 @@
  */
 package com.sishuok.es.sys.group.task;
 
-import com.sishuok.es.common.entity.search.SearchOperator;
-import com.sishuok.es.common.entity.search.Searchable;
+import com.hiring.common.entity.search.SearchOperator;
+import com.hiring.common.entity.search.Searchable;
 import com.sishuok.es.sys.group.entity.Group;
 import com.sishuok.es.sys.group.entity.GroupRelation;
 import com.sishuok.es.sys.group.entity.GroupType;
@@ -15,6 +15,7 @@ import com.sishuok.es.sys.group.service.GroupService;
 import com.sishuok.es.sys.organization.entity.Organization;
 import com.sishuok.es.sys.organization.service.OrganizationService;
 import com.sishuok.es.test.BaseIT;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -5,11 +5,12 @@
  */
 package com.sishuok.es.sys.user.web.controller;
 
-import com.sishuok.es.common.entity.search.Searchable;
-import com.sishuok.es.common.utils.MessageUtils;
-import com.sishuok.es.common.web.controller.BaseCRUDController;
+import com.hiring.common.entity.search.Searchable;
+import com.hiring.common.utils.MessageUtils;
+import com.hiring.common.web.controller.BaseCRUDController;
 import com.sishuok.es.sys.user.entity.UserOnline;
 import com.sishuok.es.sys.user.service.UserOnlineService;
+
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.apache.shiro.session.mgt.OnlineSession;

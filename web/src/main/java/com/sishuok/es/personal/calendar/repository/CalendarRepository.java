@@ -5,8 +5,9 @@
  */
 package com.sishuok.es.personal.calendar.repository;
 
-import com.sishuok.es.common.repository.BaseRepository;
+import com.hiring.common.repository.BaseRepository;
 import com.sishuok.es.personal.calendar.entity.Calendar;
+
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.Date;

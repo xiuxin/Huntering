@@ -5,13 +5,15 @@
  */
 package org.apache.shiro.web.filter.jcaptcha;
 
-import com.sishuok.es.common.web.jcaptcha.JCaptcha;
+import com.hiring.common.web.jcaptcha.JCaptcha;
+
 import org.apache.shiro.web.filter.AccessControlFilter;
 import org.apache.shiro.web.util.WebUtils;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
+
 import java.io.IOException;
 
 /**

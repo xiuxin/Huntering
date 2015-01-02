@@ -5,9 +5,10 @@
  */
 package com.sishuok.es.showcase.tree.service;
 
-import com.sishuok.es.common.plugin.serivce.BaseTreeableService;
+import com.hiring.common.plugin.serivce.BaseTreeableService;
 import com.sishuok.es.showcase.tree.entity.Tree;
 import com.sishuok.es.showcase.tree.repository.TreeRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

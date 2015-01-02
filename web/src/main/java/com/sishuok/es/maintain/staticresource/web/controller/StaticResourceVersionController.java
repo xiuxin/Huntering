@@ -7,8 +7,9 @@ package com.sishuok.es.maintain.staticresource.web.controller;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.sishuok.es.common.web.controller.BaseController;
+import com.hiring.common.web.controller.BaseController;
 import com.sishuok.es.maintain.staticresource.web.controller.utils.YuiCompressorUtils;
+
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringEscapeUtils;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.ServletContext;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Collection;

@@ -5,9 +5,10 @@
  */
 package com.sishuok.es.sys.permission.repository;
 
-import com.sishuok.es.common.repository.BaseRepository;
+import com.hiring.common.repository.BaseRepository;
 import com.sishuok.es.sys.permission.entity.Role;
 import com.sishuok.es.sys.permission.entity.RoleResourcePermission;
+
 import org.springframework.data.jpa.repository.Query;
 
 /**

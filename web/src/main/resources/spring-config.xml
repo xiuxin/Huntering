@@ -120,7 +120,7 @@
     <jpa:repositories
             base-package="com.sishuok.es.**.repository"
             repository-impl-postfix="Impl"
-            factory-class="com.sishuok.es.common.repository.support.SimpleBaseRepositoryFactoryBean"
+            factory-class="com.hiring.common.repository.support.SimpleBaseRepositoryFactoryBean"
             entity-manager-factory-ref="entityManagerFactory"
             transaction-manager-ref="transactionManager">
 
@@ -187,14 +187,14 @@
     <!--设置查询字符串转换器的conversion service-->
     <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
         <property name="staticMethod"
-                  value="com.sishuok.es.common.entity.search.utils.SearchableConvertUtils.setConversionService"/>
+                  value="com.hiring.common.entity.search.utils.SearchableConvertUtils.setConversionService"/>
         <property name="arguments" ref="conversionService"/>
     </bean>
 
     <!--设置BaseRepositoryImplHelper辅助类所需的entityManagerFactory-->
     <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
         <property name="staticMethod"
-                  value="com.sishuok.es.common.repository.RepositoryHelper.setEntityManagerFactory"/>
+                  value="com.hiring.common.repository.RepositoryHelper.setEntityManagerFactory"/>
         <property name="arguments" ref="entityManagerFactory"/>
     </bean>
 

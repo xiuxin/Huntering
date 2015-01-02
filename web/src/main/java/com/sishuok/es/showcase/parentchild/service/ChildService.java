@@ -5,10 +5,11 @@
  */
 package com.sishuok.es.showcase.parentchild.service;
 
-import com.sishuok.es.common.service.BaseService;
+import com.hiring.common.service.BaseService;
 import com.sishuok.es.showcase.parentchild.entity.Child;
 import com.sishuok.es.showcase.parentchild.entity.Parent;
 import com.sishuok.es.showcase.parentchild.repository.ChildRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

@@ -5,10 +5,11 @@
  */
 package com.sishuok.es.maintain.keyvalue.web.controller;
 
-import com.sishuok.es.common.web.controller.BaseCRUDController;
-import com.sishuok.es.common.web.validate.ValidateResponse;
+import com.hiring.common.web.controller.BaseCRUDController;
+import com.hiring.common.web.validate.ValidateResponse;
 import com.sishuok.es.maintain.keyvalue.entity.KeyValue;
 import com.sishuok.es.maintain.keyvalue.service.KeyValueService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

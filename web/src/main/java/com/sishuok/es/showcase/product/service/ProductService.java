@@ -5,9 +5,10 @@
  */
 package com.sishuok.es.showcase.product.service;
 
-import com.sishuok.es.common.service.BaseService;
+import com.hiring.common.service.BaseService;
 import com.sishuok.es.showcase.product.entity.Product;
 import com.sishuok.es.showcase.product.repository.ProductRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

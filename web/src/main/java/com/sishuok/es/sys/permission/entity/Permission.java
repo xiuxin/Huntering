@@ -5,8 +5,9 @@
  */
 package com.sishuok.es.sys.permission.entity;
 
-import com.sishuok.es.common.entity.BaseEntity;
-import com.sishuok.es.common.repository.support.annotation.EnableQueryCache;
+import com.hiring.common.entity.BaseEntity;
+import com.hiring.common.repository.support.annotation.EnableQueryCache;
+
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.Column;

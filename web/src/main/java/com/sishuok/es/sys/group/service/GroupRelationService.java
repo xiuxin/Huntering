@@ -6,9 +6,10 @@
 package com.sishuok.es.sys.group.service;
 
 import com.google.common.collect.Sets;
-import com.sishuok.es.common.service.BaseService;
+import com.hiring.common.service.BaseService;
 import com.sishuok.es.sys.group.entity.GroupRelation;
 import com.sishuok.es.sys.group.repository.GroupRelationRepository;
+
 import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

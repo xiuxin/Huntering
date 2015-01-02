@@ -5,11 +5,12 @@
  */
 package com.sishuok.es.showcase.status.audit.web.controller;
 
-import com.sishuok.es.common.Constants;
-import com.sishuok.es.common.plugin.entity.Stateable;
-import com.sishuok.es.common.web.controller.BaseCRUDController;
+import com.hiring.common.Constants;
+import com.hiring.common.plugin.entity.Stateable;
+import com.hiring.common.web.controller.BaseCRUDController;
 import com.sishuok.es.showcase.status.audit.entity.Audit;
 import com.sishuok.es.showcase.status.audit.service.AuditService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+
 import java.util.ArrayList;
 import java.util.List;
 

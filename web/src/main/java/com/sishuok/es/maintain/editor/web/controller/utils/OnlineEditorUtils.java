@@ -6,7 +6,8 @@
 package com.sishuok.es.maintain.editor.web.controller.utils;
 
 import com.google.common.collect.Maps;
-import com.sishuok.es.common.Constants;
+import com.hiring.common.Constants;
+
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.springframework.data.domain.Sort;
 

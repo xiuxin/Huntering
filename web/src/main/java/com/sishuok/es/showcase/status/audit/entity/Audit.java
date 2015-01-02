@@ -5,8 +5,8 @@
  */
 package com.sishuok.es.showcase.status.audit.entity;
 
-import com.sishuok.es.common.entity.BaseEntity;
-import com.sishuok.es.common.plugin.entity.Stateable;
+import com.hiring.common.entity.BaseEntity;
+import com.hiring.common.plugin.entity.Stateable;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;

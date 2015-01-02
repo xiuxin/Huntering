@@ -5,12 +5,13 @@
  */
 package com.sishuok.es.sys.user.service;
 
-import com.sishuok.es.common.entity.search.Searchable;
-import com.sishuok.es.common.service.BaseService;
+import com.hiring.common.entity.search.Searchable;
+import com.hiring.common.service.BaseService;
 import com.sishuok.es.sys.user.entity.User;
 import com.sishuok.es.sys.user.entity.UserStatus;
 import com.sishuok.es.sys.user.entity.UserStatusHistory;
 import com.sishuok.es.sys.user.repository.UserStatusHistoryRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;

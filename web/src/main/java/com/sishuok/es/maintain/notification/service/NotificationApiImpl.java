@@ -7,13 +7,14 @@ package com.sishuok.es.maintain.notification.service;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.sishuok.es.common.entity.search.SearchOperator;
-import com.sishuok.es.common.entity.search.Searchable;
-import com.sishuok.es.common.utils.PrettyTimeUtils;
+import com.hiring.common.entity.search.SearchOperator;
+import com.hiring.common.entity.search.Searchable;
+import com.hiring.common.utils.PrettyTimeUtils;
 import com.sishuok.es.maintain.notification.entity.NotificationData;
 import com.sishuok.es.maintain.notification.entity.NotificationTemplate;
 import com.sishuok.es.maintain.notification.exception.TemplateNotFoundException;
 import com.sishuok.es.maintain.push.service.PushApi;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;

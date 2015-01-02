@@ -5,8 +5,9 @@
  */
 package com.sishuok.es.showcase.upload.web.controller;
 
-import com.sishuok.es.common.Constants;
-import com.sishuok.es.common.web.upload.FileUploadUtils;
+import com.hiring.common.Constants;
+import com.hiring.common.web.upload.FileUploadUtils;
+
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

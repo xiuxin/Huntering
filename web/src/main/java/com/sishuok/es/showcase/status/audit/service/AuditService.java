@@ -5,9 +5,10 @@
  */
 package com.sishuok.es.showcase.status.audit.service;
 
-import com.sishuok.es.common.service.BaseService;
+import com.hiring.common.service.BaseService;
 import com.sishuok.es.showcase.status.audit.entity.Audit;
 import com.sishuok.es.showcase.status.audit.repository.AuditRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

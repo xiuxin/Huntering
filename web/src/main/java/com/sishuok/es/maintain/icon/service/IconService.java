@@ -5,9 +5,10 @@
  */
 package com.sishuok.es.maintain.icon.service;
 
-import com.sishuok.es.common.service.BaseService;
+import com.hiring.common.service.BaseService;
 import com.sishuok.es.maintain.icon.entity.Icon;
 import com.sishuok.es.maintain.icon.repository.IconRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

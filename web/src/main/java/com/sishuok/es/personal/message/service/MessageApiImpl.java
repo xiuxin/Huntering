@@ -6,12 +6,12 @@
 package com.sishuok.es.personal.message.service;
 
 import com.google.common.collect.Lists;
-import com.sishuok.es.common.entity.search.SearchOperator;
-import com.sishuok.es.common.entity.search.Searchable;
-import com.sishuok.es.common.entity.search.filter.SearchFilter;
-import com.sishuok.es.common.entity.search.filter.SearchFilterHelper;
-import com.sishuok.es.common.repository.RepositoryHelper;
-import com.sishuok.es.common.utils.LogUtils;
+import com.hiring.common.entity.search.SearchOperator;
+import com.hiring.common.entity.search.Searchable;
+import com.hiring.common.entity.search.filter.SearchFilter;
+import com.hiring.common.entity.search.filter.SearchFilterHelper;
+import com.hiring.common.repository.RepositoryHelper;
+import com.hiring.common.utils.LogUtils;
 import com.sishuok.es.maintain.push.service.PushApi;
 import com.sishuok.es.personal.message.entity.Message;
 import com.sishuok.es.personal.message.entity.MessageContent;
@@ -20,6 +20,7 @@ import com.sishuok.es.personal.message.entity.MessageType;
 import com.sishuok.es.sys.user.entity.User;
 import com.sishuok.es.sys.user.entity.UserStatus;
 import com.sishuok.es.sys.user.service.UserService;
+
 import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

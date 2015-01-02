@@ -5,9 +5,9 @@
  */
 package com.sishuok.es.personal.message.web.controller;
 
-import com.sishuok.es.common.Constants;
-import com.sishuok.es.common.web.bind.annotation.PageableDefaults;
-import com.sishuok.es.common.web.controller.BaseController;
+import com.hiring.common.Constants;
+import com.hiring.common.web.bind.annotation.PageableDefaults;
+import com.hiring.common.web.controller.BaseController;
 import com.sishuok.es.personal.message.entity.Message;
 import com.sishuok.es.personal.message.entity.MessageContent;
 import com.sishuok.es.personal.message.entity.MessageState;
@@ -16,6 +16,7 @@ import com.sishuok.es.personal.message.service.MessageService;
 import com.sishuok.es.sys.user.entity.User;
 import com.sishuok.es.sys.user.service.UserService;
 import com.sishuok.es.sys.user.web.bind.annotation.CurrentUser;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+
 import java.util.List;
 
 /**

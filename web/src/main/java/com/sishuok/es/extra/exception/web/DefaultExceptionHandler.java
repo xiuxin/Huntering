@@ -5,8 +5,9 @@
  */
 package com.sishuok.es.extra.exception.web;
 
-import com.sishuok.es.common.utils.LogUtils;
+import com.hiring.common.utils.LogUtils;
 import com.sishuok.es.extra.exception.web.entity.ExceptionResponse;
+
 import org.apache.shiro.authz.UnauthorizedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;

@@ -7,11 +7,13 @@ package com.sishuok.es.monitor.web.controller;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.sishuok.es.common.utils.PrettyMemoryUtils;
-import com.sishuok.es.common.web.controller.BaseController;
+import com.hiring.common.utils.PrettyMemoryUtils;
+import com.hiring.common.web.controller.BaseController;
+
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.Element;
+
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
