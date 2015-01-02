@@ -1,5 +1,8 @@
 ###IMPORTANT
 
+因为目录结构正在更新还没完全改完，部分UT跑不过.
+89f9adeb8065b9690d592b249b5a48ade7483050 这个提交是UT都可以跑过的版本
+
 googlecode的repo被ZF屏蔽了，如果在跑create-db.bat的时候遇到依赖包无法下载之类的问题问Vincent或者周鑫要jar包放到本地maven仓库即可。
 
 本地参考运行环境 （Vincent）： 

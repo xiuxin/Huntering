@@ -12,7 +12,9 @@
             <a href="${ctx}/admin/sys/user/${organizationId}/${jobId}">
                 <i class="icon-table"></i>
                 所有用户列表
-          java.lang.String displayValue = (java.lang.String) pageContext.getAttribute("displayValue");aram['search.deleted_eq'] eq 'true' ? 'class="active"' : ''}>
+            </a>
+        </li>
+        <li ${param['search.deleted_eq'] eq 'true' ? 'class="active"' : ''}>
             <a href="${ctx}/admin/sys/user/${organizationId}/${jobId}?search.deleted_eq=true">
                 <i class="icon-table"></i>
                 已删除用户列表
