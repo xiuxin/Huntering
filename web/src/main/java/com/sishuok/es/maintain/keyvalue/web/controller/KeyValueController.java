@@ -5,8 +5,8 @@
  */
 package com.sishuok.es.maintain.keyvalue.web.controller;
 
-import com.hiring.common.web.controller.BaseCRUDController;
-import com.hiring.common.web.validate.ValidateResponse;
+import com.huntering.common.web.controller.BaseCRUDController;
+import com.huntering.common.web.validate.ValidateResponse;
 import com.sishuok.es.maintain.keyvalue.entity.KeyValue;
 import com.sishuok.es.maintain.keyvalue.service.KeyValueService;
 

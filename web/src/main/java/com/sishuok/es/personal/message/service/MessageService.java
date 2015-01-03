@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.personal.message.service;
 
-import com.hiring.common.service.BaseService;
+import com.huntering.common.service.BaseService;
 import com.sishuok.es.personal.message.entity.Message;
 import com.sishuok.es.personal.message.entity.MessageState;
 import com.sishuok.es.personal.message.repository.MessageRepository;

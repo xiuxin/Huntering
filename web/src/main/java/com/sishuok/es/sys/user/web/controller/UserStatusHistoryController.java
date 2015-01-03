@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.sys.user.web.controller;
 
-import com.hiring.common.web.controller.BaseCRUDController;
+import com.huntering.common.web.controller.BaseCRUDController;
 import com.sishuok.es.sys.user.entity.UserStatus;
 import com.sishuok.es.sys.user.entity.UserStatusHistory;
 import com.sishuok.es.sys.user.service.UserStatusHistoryService;

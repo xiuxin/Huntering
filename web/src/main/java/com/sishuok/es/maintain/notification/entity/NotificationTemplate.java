@@ -5,8 +5,8 @@
  */
 package com.sishuok.es.maintain.notification.entity;
 
-import com.hiring.common.entity.BaseEntity;
-import com.hiring.common.plugin.entity.LogicDeleteable;
+import com.huntering.common.entity.BaseEntity;
+import com.huntering.common.plugin.entity.LogicDeleteable;
 
 import org.hibernate.validator.constraints.Length;
 

@@ -1,5 +1,5 @@
 <%@ tag pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
-<%@ tag import="com.hiring.common.Constants" %>
+<%@ tag import="com.huntering.common.Constants" %>
 <%@ tag import="org.springframework.util.StringUtils" %>
 <%@ attribute name="hiddenInput" type="java.lang.Boolean" required="false" description="是否是隐藏展示" %><%
     if(!StringUtils.isEmpty(request.getParameter(Constants.IGNORE_BACK_URL))) {

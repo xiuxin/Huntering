@@ -5,9 +5,9 @@
  */
 package com.sishuok.es.sys.resource.service;
 
-import com.hiring.common.entity.search.SearchOperator;
-import com.hiring.common.entity.search.Searchable;
-import com.hiring.common.plugin.serivce.BaseTreeableService;
+import com.huntering.common.entity.search.SearchOperator;
+import com.huntering.common.entity.search.Searchable;
+import com.huntering.common.plugin.serivce.BaseTreeableService;
 import com.sishuok.es.sys.auth.service.UserAuthService;
 import com.sishuok.es.sys.resource.entity.Resource;
 import com.sishuok.es.sys.resource.entity.tmp.Menu;

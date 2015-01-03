@@ -6,15 +6,15 @@
 package com.sishuok.es.maintain.editor.web.controller;
 
 import com.google.common.collect.Lists;
-import com.hiring.common.Constants;
-import com.hiring.common.utils.LogUtils;
-import com.hiring.common.utils.MessageUtils;
-import com.hiring.common.web.controller.BaseController;
-import com.hiring.common.web.entity.AjaxUploadResponse;
-import com.hiring.common.web.upload.FileUploadUtils;
-import com.hiring.common.web.upload.exception.FileNameLengthLimitExceededException;
-import com.hiring.common.web.upload.exception.InvalidExtensionException;
-import com.hiring.common.web.utils.DownloadUtils;
+import com.huntering.common.Constants;
+import com.huntering.common.utils.LogUtils;
+import com.huntering.common.utils.MessageUtils;
+import com.huntering.common.web.controller.BaseController;
+import com.huntering.common.web.entity.AjaxUploadResponse;
+import com.huntering.common.web.upload.FileUploadUtils;
+import com.huntering.common.web.upload.exception.FileNameLengthLimitExceededException;
+import com.huntering.common.web.upload.exception.InvalidExtensionException;
+import com.huntering.common.web.utils.DownloadUtils;
 import com.sishuok.es.maintain.editor.web.controller.utils.CompressUtils;
 
 import org.apache.commons.fileupload.FileUploadBase;

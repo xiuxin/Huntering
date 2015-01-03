@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.showcase.upload.service;
 
-import com.hiring.common.service.BaseService;
+import com.huntering.common.service.BaseService;
 import com.sishuok.es.showcase.upload.entity.Upload;
 import com.sishuok.es.showcase.upload.repository.UploadRepository;
 

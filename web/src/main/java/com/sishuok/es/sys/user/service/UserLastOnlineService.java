@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.sys.user.service;
 
-import com.hiring.common.service.BaseService;
+import com.huntering.common.service.BaseService;
 import com.sishuok.es.sys.user.entity.UserLastOnline;
 import com.sishuok.es.sys.user.repository.UserLastOnlineRepository;
 

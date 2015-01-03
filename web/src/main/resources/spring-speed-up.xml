@@ -13,7 +13,7 @@
     </bean>
 
     <!-- 优化spring启动 通过移除bean定义 和 lazy init 实现 -->
-    <bean class="com.hiring.common.spring.SpeedUpSpringProcessor">
+    <bean class="com.huntering.common.spring.SpeedUpSpringProcessor">
         <!-- 需要从bean定义中移除的bean的名字 -->
         <property name="removedBeanNames">
             <list>

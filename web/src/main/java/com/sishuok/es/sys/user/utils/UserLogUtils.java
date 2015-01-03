@@ -5,8 +5,8 @@
  */
 package com.sishuok.es.sys.user.utils;
 
-import com.hiring.common.utils.IpUtils;
-import com.hiring.common.utils.LogUtils;
+import com.huntering.common.utils.IpUtils;
+import com.huntering.common.utils.LogUtils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

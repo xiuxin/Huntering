@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.showcase.parentchild.entity;
 
-import com.hiring.common.entity.BaseEntity;
+import com.huntering.common.entity.BaseEntity;
 
 import org.springframework.format.annotation.DateTimeFormat;
 

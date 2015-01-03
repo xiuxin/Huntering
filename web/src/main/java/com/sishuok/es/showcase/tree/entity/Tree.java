@@ -5,8 +5,8 @@
  */
 package com.sishuok.es.showcase.tree.entity;
 
-import com.hiring.common.entity.BaseEntity;
-import com.hiring.common.plugin.entity.Treeable;
+import com.huntering.common.entity.BaseEntity;
+import com.huntering.common.plugin.entity.Treeable;
 
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.Formula;

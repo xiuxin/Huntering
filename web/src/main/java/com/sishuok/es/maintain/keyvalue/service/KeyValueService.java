@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.maintain.keyvalue.service;
 
-import com.hiring.common.service.BaseService;
+import com.huntering.common.service.BaseService;
 import com.sishuok.es.maintain.keyvalue.entity.KeyValue;
 import com.sishuok.es.maintain.keyvalue.repository.KeyValueRepository;
 

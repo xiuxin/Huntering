@@ -6,8 +6,8 @@
 package com.sishuok.es.maintain.dynamictask.web.controller;
 
 import com.google.common.collect.Lists;
-import com.hiring.common.Constants;
-import com.hiring.common.web.controller.BaseCRUDController;
+import com.huntering.common.Constants;
+import com.huntering.common.web.controller.BaseCRUDController;
 import com.sishuok.es.maintain.dynamictask.entity.TaskDefinition;
 import com.sishuok.es.maintain.dynamictask.service.DynamicTaskApi;
 

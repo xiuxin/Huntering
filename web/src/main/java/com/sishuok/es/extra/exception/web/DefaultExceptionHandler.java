@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.extra.exception.web;
 
-import com.hiring.common.utils.LogUtils;
+import com.huntering.common.utils.LogUtils;
 import com.sishuok.es.extra.exception.web.entity.ExceptionResponse;
 
 import org.apache.shiro.authz.UnauthorizedException;

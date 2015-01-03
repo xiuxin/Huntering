@@ -5,8 +5,8 @@
  */
 package com.sishuok.es.sys.auth.task;
 
-import com.hiring.common.Constants;
-import com.hiring.common.repository.hibernate.HibernateUtils;
+import com.huntering.common.Constants;
+import com.huntering.common.repository.hibernate.HibernateUtils;
 import com.sishuok.es.sys.auth.service.UserAuthService;
 import com.sishuok.es.sys.group.service.GroupService;
 import com.sishuok.es.sys.organization.service.JobService;

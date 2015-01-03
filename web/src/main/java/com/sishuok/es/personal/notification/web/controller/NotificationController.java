@@ -5,10 +5,10 @@
  */
 package com.sishuok.es.personal.notification.web.controller;
 
-import com.hiring.common.entity.search.SearchOperator;
-import com.hiring.common.entity.search.Searchable;
-import com.hiring.common.web.bind.annotation.PageableDefaults;
-import com.hiring.common.web.controller.BaseController;
+import com.huntering.common.entity.search.SearchOperator;
+import com.huntering.common.entity.search.Searchable;
+import com.huntering.common.web.bind.annotation.PageableDefaults;
+import com.huntering.common.web.controller.BaseController;
 import com.sishuok.es.maintain.notification.entity.NotificationData;
 import com.sishuok.es.maintain.notification.service.NotificationDataService;
 import com.sishuok.es.sys.user.entity.User;

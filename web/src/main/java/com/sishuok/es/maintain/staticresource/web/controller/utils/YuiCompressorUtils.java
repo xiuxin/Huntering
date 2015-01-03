@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.maintain.staticresource.web.controller.utils;
 
-import com.hiring.common.Constants;
+import com.huntering.common.Constants;
 import com.yahoo.platform.yui.compressor.CssCompressor;
 import com.yahoo.platform.yui.compressor.JavaScriptCompressor;
 

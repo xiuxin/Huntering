@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.personal.message.repository;
 
-import com.hiring.common.repository.BaseRepository;
+import com.huntering.common.repository.BaseRepository;
 import com.sishuok.es.personal.message.entity.Message;
 import com.sishuok.es.personal.message.entity.MessageState;
 

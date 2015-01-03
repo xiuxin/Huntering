@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.sys.auth.service;
 
-import com.hiring.common.service.BaseService;
+import com.huntering.common.service.BaseService;
 import com.sishuok.es.sys.auth.entity.Auth;
 import com.sishuok.es.sys.auth.repository.AuthRepository;
 import com.sishuok.es.sys.group.entity.Group;

@@ -7,7 +7,7 @@ package com.sishuok.es.maintain.staticresource.web.controller;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.hiring.common.web.controller.BaseController;
+import com.huntering.common.web.controller.BaseController;
 import com.sishuok.es.maintain.staticresource.web.controller.utils.YuiCompressorUtils;
 
 import org.apache.commons.collections4.CollectionUtils;

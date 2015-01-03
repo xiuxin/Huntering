@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.sys.user.service;
 
-import com.hiring.common.utils.security.Md5Utils;
+import com.huntering.common.utils.security.Md5Utils;
 import com.sishuok.es.sys.user.entity.User;
 import com.sishuok.es.sys.user.exception.UserPasswordNotMatchException;
 import com.sishuok.es.sys.user.exception.UserPasswordRetryLimitExceedException;

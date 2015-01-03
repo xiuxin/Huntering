@@ -6,12 +6,12 @@
 package com.sishuok.es.personal.message.service;
 
 import com.google.common.collect.Lists;
-import com.hiring.common.entity.search.SearchOperator;
-import com.hiring.common.entity.search.Searchable;
-import com.hiring.common.entity.search.filter.SearchFilter;
-import com.hiring.common.entity.search.filter.SearchFilterHelper;
-import com.hiring.common.repository.RepositoryHelper;
-import com.hiring.common.utils.LogUtils;
+import com.huntering.common.entity.search.SearchOperator;
+import com.huntering.common.entity.search.Searchable;
+import com.huntering.common.entity.search.filter.SearchFilter;
+import com.huntering.common.entity.search.filter.SearchFilterHelper;
+import com.huntering.common.repository.RepositoryHelper;
+import com.huntering.common.utils.LogUtils;
 import com.sishuok.es.maintain.push.service.PushApi;
 import com.sishuok.es.personal.message.entity.Message;
 import com.sishuok.es.personal.message.entity.MessageContent;

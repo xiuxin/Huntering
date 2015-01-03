@@ -5,12 +5,12 @@
  */
 package com.sishuok.es.sys.group.web.controller;
 
-import com.hiring.common.Constants;
-import com.hiring.common.entity.enums.BooleanEnum;
-import com.hiring.common.entity.search.Searchable;
-import com.hiring.common.web.bind.annotation.PageableDefaults;
-import com.hiring.common.web.controller.BaseCRUDController;
-import com.hiring.common.web.controller.permission.PermissionList;
+import com.huntering.common.Constants;
+import com.huntering.common.entity.enums.BooleanEnum;
+import com.huntering.common.entity.search.Searchable;
+import com.huntering.common.web.bind.annotation.PageableDefaults;
+import com.huntering.common.web.controller.BaseCRUDController;
+import com.huntering.common.web.controller.permission.PermissionList;
 import com.sishuok.es.sys.group.entity.Group;
 import com.sishuok.es.sys.group.entity.GroupType;
 import com.sishuok.es.sys.group.service.GroupRelationService;

@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.maintain.dynamictask.repository;
 
-import com.hiring.common.repository.BaseRepository;
+import com.huntering.common.repository.BaseRepository;
 import com.sishuok.es.maintain.dynamictask.entity.TaskDefinition;
 
 /**

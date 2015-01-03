@@ -1,6 +1,6 @@
 package com.sishuok.es.test;
 
-import com.hiring.common.entity.AbstractEntity;
+import com.huntering.common.entity.AbstractEntity;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.test.context.ContextConfiguration;

@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.sys.group.repository;
 
-import com.hiring.common.repository.BaseRepository;
+import com.huntering.common.repository.BaseRepository;
 import com.sishuok.es.sys.group.entity.Group;
 
 import org.springframework.data.jpa.repository.Query;

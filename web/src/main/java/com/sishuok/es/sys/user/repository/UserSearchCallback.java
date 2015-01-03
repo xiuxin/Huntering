@@ -5,8 +5,8 @@
  */
 package com.sishuok.es.sys.user.repository;
 
-import com.hiring.common.entity.search.Searchable;
-import com.hiring.common.repository.callback.DefaultSearchCallback;
+import com.huntering.common.entity.search.Searchable;
+import com.huntering.common.repository.callback.DefaultSearchCallback;
 import com.sishuok.es.sys.organization.entity.Job;
 import com.sishuok.es.sys.organization.entity.Organization;
 

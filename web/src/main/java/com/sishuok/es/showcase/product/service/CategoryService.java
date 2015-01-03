@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.showcase.product.service;
 
-import com.hiring.common.plugin.serivce.BaseMovableService;
+import com.huntering.common.plugin.serivce.BaseMovableService;
 import com.sishuok.es.showcase.product.entity.Category;
 import com.sishuok.es.showcase.product.repository.CategoryRepository;
 

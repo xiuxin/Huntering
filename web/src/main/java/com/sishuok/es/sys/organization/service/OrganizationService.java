@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.sys.organization.service;
 
-import com.hiring.common.plugin.serivce.BaseTreeableService;
+import com.huntering.common.plugin.serivce.BaseTreeableService;
 import com.sishuok.es.sys.organization.entity.Organization;
 import com.sishuok.es.sys.organization.repository.OrganizationRepository;
 

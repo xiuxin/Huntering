@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.monitor.web.controller;
 
-import com.hiring.common.web.controller.BaseController;
+import com.huntering.common.web.controller.BaseController;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;

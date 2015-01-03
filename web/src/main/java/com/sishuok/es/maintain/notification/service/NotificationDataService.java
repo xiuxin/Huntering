@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.maintain.notification.service;
 
-import com.hiring.common.service.BaseService;
+import com.huntering.common.service.BaseService;
 import com.sishuok.es.maintain.notification.entity.NotificationData;
 import com.sishuok.es.maintain.notification.repository.NotificationDataRepository;
 

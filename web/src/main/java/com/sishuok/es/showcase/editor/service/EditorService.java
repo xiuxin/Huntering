@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.showcase.editor.service;
 
-import com.hiring.common.service.BaseService;
+import com.huntering.common.service.BaseService;
 import com.sishuok.es.showcase.editor.entity.Editor;
 import com.sishuok.es.showcase.editor.repository.EditorRepository;
 

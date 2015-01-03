@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.sys.group.entity;
 
-import com.hiring.common.entity.BaseEntity;
+import com.huntering.common.entity.BaseEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

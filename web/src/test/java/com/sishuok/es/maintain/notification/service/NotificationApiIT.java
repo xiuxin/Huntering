@@ -6,9 +6,9 @@
 package com.sishuok.es.maintain.notification.service;
 
 import com.google.common.collect.Maps;
-import com.hiring.common.entity.search.SearchOperator;
-import com.hiring.common.entity.search.Searchable;
-import com.hiring.common.spring.utils.AopProxyUtils;
+import com.huntering.common.entity.search.SearchOperator;
+import com.huntering.common.entity.search.Searchable;
+import com.huntering.common.spring.utils.AopProxyUtils;
 import com.sishuok.es.maintain.notification.entity.NotificationData;
 import com.sishuok.es.maintain.notification.entity.NotificationSystem;
 import com.sishuok.es.maintain.notification.entity.NotificationTemplate;

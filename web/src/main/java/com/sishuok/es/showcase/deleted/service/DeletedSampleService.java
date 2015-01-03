@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.showcase.deleted.service;
 
-import com.hiring.common.service.BaseService;
+import com.huntering.common.service.BaseService;
 import com.sishuok.es.showcase.deleted.entity.DeletedSample;
 import com.sishuok.es.showcase.deleted.repository.DeletedSampleRepository;
 

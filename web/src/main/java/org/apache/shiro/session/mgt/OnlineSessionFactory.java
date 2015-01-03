@@ -5,7 +5,7 @@
  */
 package org.apache.shiro.session.mgt;
 
-import com.hiring.common.utils.IpUtils;
+import com.huntering.common.utils.IpUtils;
 import com.sishuok.es.sys.user.entity.UserOnline;
 
 import org.apache.shiro.session.Session;

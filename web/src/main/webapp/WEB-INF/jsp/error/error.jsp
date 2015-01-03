@@ -1,4 +1,4 @@
-<%@ page import="com.hiring.common.utils.LogUtils" %>
+<%@ page import="com.huntering.common.utils.LogUtils" %>
 <%@ page import="java.io.PrintWriter" %>
 <%@ page import="java.io.StringWriter" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>

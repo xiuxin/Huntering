@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.sys.user.entity;
 
-import com.hiring.common.entity.AbstractEntity;
+import com.huntering.common.entity.AbstractEntity;
 
 import org.apache.shiro.session.mgt.OnlineSession;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -94,7 +94,7 @@ public class UserOnline extends AbstractEntity<String> {
      * 备份的当前用户会话
      */
     @Column(name = "session")
-    @Type(type = "com.hiring.common.repository.hibernate.type.ObjectSerializeUserType")
+    @Type(type = "com.huntering.common.repository.hibernate.type.ObjectSerializeUserType")
     private OnlineSession session;
 
 

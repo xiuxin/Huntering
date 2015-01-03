@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.maintain.dynamictask.service;
 
-import com.hiring.common.service.BaseService;
+import com.huntering.common.service.BaseService;
 import com.sishuok.es.maintain.dynamictask.entity.TaskDefinition;
 
 import org.springframework.stereotype.Service;

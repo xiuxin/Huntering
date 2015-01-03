@@ -5,8 +5,8 @@
  */
 package com.sishuok.es.sys.user.task;
 
-import com.hiring.common.repository.RepositoryHelper;
-import com.hiring.common.utils.LogUtils;
+import com.huntering.common.repository.RepositoryHelper;
+import com.huntering.common.utils.LogUtils;
 import com.sishuok.es.sys.organization.service.JobService;
 import com.sishuok.es.sys.organization.service.OrganizationService;
 import com.sishuok.es.sys.user.entity.User;

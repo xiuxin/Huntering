@@ -5,10 +5,10 @@
  */
 package com.sishuok.es.sys.auth.web.controller;
 
-import com.hiring.common.Constants;
-import com.hiring.common.entity.search.Searchable;
-import com.hiring.common.web.bind.annotation.SearchableDefaults;
-import com.hiring.common.web.controller.BaseCRUDController;
+import com.huntering.common.Constants;
+import com.huntering.common.entity.search.Searchable;
+import com.huntering.common.web.bind.annotation.SearchableDefaults;
+import com.huntering.common.web.controller.BaseCRUDController;
 import com.sishuok.es.sys.auth.entity.Auth;
 import com.sishuok.es.sys.auth.entity.AuthType;
 import com.sishuok.es.sys.auth.service.AuthService;

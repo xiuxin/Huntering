@@ -5,7 +5,7 @@
  */
 package org.apache.shiro.web.filter.online;
 
-import com.hiring.common.Constants;
+import com.huntering.common.Constants;
 import com.sishuok.es.sys.user.entity.User;
 
 import org.apache.shiro.ShiroConstants;

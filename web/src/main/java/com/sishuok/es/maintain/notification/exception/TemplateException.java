@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.maintain.notification.exception;
 
-import com.hiring.common.exception.BaseException;
+import com.huntering.common.exception.BaseException;
 
 /**
  * <p>User: Zhang Kaitao

@@ -5,8 +5,8 @@
  */
 package com.sishuok.es.sys.user.service;
 
-import com.hiring.common.entity.search.Searchable;
-import com.hiring.common.service.BaseService;
+import com.huntering.common.entity.search.Searchable;
+import com.huntering.common.service.BaseService;
 import com.sishuok.es.sys.user.entity.User;
 import com.sishuok.es.sys.user.entity.UserStatus;
 import com.sishuok.es.sys.user.entity.UserStatusHistory;

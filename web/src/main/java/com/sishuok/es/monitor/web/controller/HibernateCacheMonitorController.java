@@ -5,8 +5,8 @@
  */
 package com.sishuok.es.monitor.web.controller;
 
-import com.hiring.common.repository.hibernate.HibernateUtils;
-import com.hiring.common.web.controller.BaseController;
+import com.huntering.common.repository.hibernate.HibernateUtils;
+import com.huntering.common.web.controller.BaseController;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;

@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.showcase.tree.service;
 
-import com.hiring.common.plugin.serivce.BaseTreeableService;
+import com.huntering.common.plugin.serivce.BaseTreeableService;
 import com.sishuok.es.showcase.tree.entity.Tree;
 import com.sishuok.es.showcase.tree.repository.TreeRepository;
 

@@ -5,8 +5,8 @@
  */
 package com.sishuok.es.showcase.tree.web.controller;
 
-import com.hiring.common.Constants;
-import com.hiring.common.plugin.web.controller.BaseTreeableController;
+import com.huntering.common.Constants;
+import com.huntering.common.plugin.web.controller.BaseTreeableController;
 import com.sishuok.es.showcase.tree.entity.Tree;
 
 import org.springframework.stereotype.Controller;

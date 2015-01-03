@@ -6,12 +6,12 @@
 package com.sishuok.es.maintain.icon.web.controller;
 
 import com.google.common.collect.Lists;
-import com.hiring.common.Constants;
-import com.hiring.common.entity.search.Searchable;
-import com.hiring.common.utils.LogUtils;
-import com.hiring.common.web.controller.BaseCRUDController;
-import com.hiring.common.web.upload.FileUploadUtils;
-import com.hiring.common.web.validate.ValidateResponse;
+import com.huntering.common.Constants;
+import com.huntering.common.entity.search.Searchable;
+import com.huntering.common.utils.LogUtils;
+import com.huntering.common.web.controller.BaseCRUDController;
+import com.huntering.common.web.upload.FileUploadUtils;
+import com.huntering.common.web.validate.ValidateResponse;
 import com.sishuok.es.maintain.icon.entity.Icon;
 import com.sishuok.es.maintain.icon.entity.IconType;
 import com.sishuok.es.maintain.icon.service.IconService;

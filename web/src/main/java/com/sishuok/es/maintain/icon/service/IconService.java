@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.maintain.icon.service;
 
-import com.hiring.common.service.BaseService;
+import com.huntering.common.service.BaseService;
 import com.sishuok.es.maintain.icon.entity.Icon;
 import com.sishuok.es.maintain.icon.repository.IconRepository;
 

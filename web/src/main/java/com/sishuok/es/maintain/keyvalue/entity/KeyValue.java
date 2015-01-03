@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.maintain.keyvalue.entity;
 
-import com.hiring.common.entity.BaseEntity;
+import com.huntering.common.entity.BaseEntity;
 
 import org.hibernate.validator.constraints.Length;
 

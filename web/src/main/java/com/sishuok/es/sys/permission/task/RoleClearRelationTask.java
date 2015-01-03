@@ -5,8 +5,8 @@
  */
 package com.sishuok.es.sys.permission.task;
 
-import com.hiring.common.repository.RepositoryHelper;
-import com.hiring.common.utils.LogUtils;
+import com.huntering.common.repository.RepositoryHelper;
+import com.huntering.common.utils.LogUtils;
 import com.sishuok.es.sys.permission.entity.Role;
 import com.sishuok.es.sys.permission.entity.RoleResourcePermission;
 import com.sishuok.es.sys.permission.service.PermissionService;

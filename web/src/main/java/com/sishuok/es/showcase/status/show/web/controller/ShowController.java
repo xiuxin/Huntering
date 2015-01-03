@@ -5,9 +5,9 @@
  */
 package com.sishuok.es.showcase.status.show.web.controller;
 
-import com.hiring.common.Constants;
-import com.hiring.common.plugin.entity.Stateable;
-import com.hiring.common.web.controller.BaseCRUDController;
+import com.huntering.common.Constants;
+import com.huntering.common.plugin.entity.Stateable;
+import com.huntering.common.web.controller.BaseCRUDController;
 import com.sishuok.es.showcase.status.show.entity.Show;
 import com.sishuok.es.showcase.status.show.service.ShowService;
 

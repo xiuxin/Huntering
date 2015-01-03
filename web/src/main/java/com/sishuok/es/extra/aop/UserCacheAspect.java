@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.extra.aop;
 
-import com.hiring.common.cache.BaseCacheAspect;
+import com.huntering.common.cache.BaseCacheAspect;
 import com.sishuok.es.sys.user.entity.User;
 
 import org.aspectj.lang.ProceedingJoinPoint;

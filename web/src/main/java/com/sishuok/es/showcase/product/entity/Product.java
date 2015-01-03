@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.showcase.product.entity;
 
-import com.hiring.common.entity.BaseEntity;
+import com.huntering.common.entity.BaseEntity;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;

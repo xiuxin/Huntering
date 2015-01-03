@@ -5,9 +5,9 @@
  */
 package com.sishuok.es.showcase.move.entity;
 
-import com.hiring.common.entity.BaseEntity;
-import com.hiring.common.entity.validate.group.Create;
-import com.hiring.common.plugin.entity.Movable;
+import com.huntering.common.entity.BaseEntity;
+import com.huntering.common.entity.validate.group.Create;
+import com.huntering.common.plugin.entity.Movable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

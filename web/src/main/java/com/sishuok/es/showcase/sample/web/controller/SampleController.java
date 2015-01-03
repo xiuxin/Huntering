@@ -5,9 +5,9 @@
  */
 package com.sishuok.es.showcase.sample.web.controller;
 
-import com.hiring.common.entity.enums.BooleanEnum;
-import com.hiring.common.web.controller.BaseCRUDController;
-import com.hiring.common.web.validate.ValidateResponse;
+import com.huntering.common.entity.enums.BooleanEnum;
+import com.huntering.common.web.controller.BaseCRUDController;
+import com.huntering.common.web.validate.ValidateResponse;
 import com.sishuok.es.showcase.sample.entity.Sample;
 import com.sishuok.es.showcase.sample.entity.Sex;
 import com.sishuok.es.showcase.sample.service.SampleService;

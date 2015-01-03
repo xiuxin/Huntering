@@ -7,9 +7,9 @@ package com.sishuok.es.maintain.notification.service;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.hiring.common.entity.search.SearchOperator;
-import com.hiring.common.entity.search.Searchable;
-import com.hiring.common.utils.PrettyTimeUtils;
+import com.huntering.common.entity.search.SearchOperator;
+import com.huntering.common.entity.search.Searchable;
+import com.huntering.common.utils.PrettyTimeUtils;
 import com.sishuok.es.maintain.notification.entity.NotificationData;
 import com.sishuok.es.maintain.notification.entity.NotificationTemplate;
 import com.sishuok.es.maintain.notification.exception.TemplateNotFoundException;

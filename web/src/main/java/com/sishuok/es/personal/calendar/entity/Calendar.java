@@ -1,6 +1,6 @@
 package com.sishuok.es.personal.calendar.entity;
 
-import com.hiring.common.entity.BaseEntity;
+import com.huntering.common.entity.BaseEntity;
 
 import org.apache.commons.lang3.time.DateUtils;
 import org.hibernate.validator.constraints.Length;

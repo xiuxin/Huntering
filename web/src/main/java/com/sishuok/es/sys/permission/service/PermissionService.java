@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.sys.permission.service;
 
-import com.hiring.common.service.BaseService;
+import com.huntering.common.service.BaseService;
 import com.sishuok.es.sys.permission.entity.Permission;
 
 import org.springframework.stereotype.Service;

@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.showcase.status.show.service;
 
-import com.hiring.common.service.BaseService;
+import com.huntering.common.service.BaseService;
 import com.sishuok.es.showcase.status.show.entity.Show;
 import com.sishuok.es.showcase.status.show.repository.ShowRepository;
 

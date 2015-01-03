@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.showcase.upload.web.controller;
 
-import com.hiring.common.Constants;
+import com.huntering.common.Constants;
 import com.sishuok.es.showcase.upload.entity.Upload;
 import com.sishuok.es.showcase.upload.service.UploadService;
 

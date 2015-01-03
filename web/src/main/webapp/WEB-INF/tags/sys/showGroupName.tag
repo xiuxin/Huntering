@@ -1,4 +1,4 @@
-<%@ tag import="com.hiring.common.utils.SpringUtils" %>
+<%@ tag import="com.huntering.common.utils.SpringUtils" %>
 <%@ tag import="com.sishuok.es.sys.group.entity.Group" %>
 <%@ tag import="com.sishuok.es.sys.group.service.GroupService" %>
 <%@ tag pageEncoding="UTF-8"%>

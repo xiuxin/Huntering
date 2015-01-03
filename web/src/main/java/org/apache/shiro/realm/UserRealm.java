@@ -5,7 +5,7 @@
  */
 package org.apache.shiro.realm;
 
-import com.hiring.common.repository.support.SimpleBaseRepositoryFactoryBean;
+import com.huntering.common.repository.support.SimpleBaseRepositoryFactoryBean;
 import com.sishuok.es.sys.auth.service.UserAuthService;
 import com.sishuok.es.sys.user.entity.User;
 import com.sishuok.es.sys.user.exception.*;

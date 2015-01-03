@@ -6,10 +6,10 @@
 package com.sishuok.es.sys.permission.web.controller;
 
 import com.google.common.collect.Sets;
-import com.hiring.common.Constants;
-import com.hiring.common.entity.enums.AvailableEnum;
-import com.hiring.common.entity.search.Searchable;
-import com.hiring.common.web.controller.BaseCRUDController;
+import com.huntering.common.Constants;
+import com.huntering.common.entity.enums.AvailableEnum;
+import com.huntering.common.entity.search.Searchable;
+import com.huntering.common.web.controller.BaseCRUDController;
 import com.sishuok.es.sys.permission.entity.Role;
 import com.sishuok.es.sys.permission.entity.RoleResourcePermission;
 import com.sishuok.es.sys.permission.service.PermissionService;

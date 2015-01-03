@@ -1,6 +1,6 @@
 <%@ tag pageEncoding="UTF-8"%>
 <%@ tag import="com.google.common.collect.Lists" %>
-<%@ tag import="com.hiring.common.utils.SpringUtils" %>
+<%@ tag import="com.huntering.common.utils.SpringUtils" %>
 <%@ tag import="com.sishuok.es.sys.organization.entity.Organization" %>
 <%@ tag import="com.sishuok.es.sys.organization.service.OrganizationService" %>
 <%@ tag import="java.util.List" %>

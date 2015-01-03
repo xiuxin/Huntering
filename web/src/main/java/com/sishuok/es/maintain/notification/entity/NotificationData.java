@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.maintain.notification.entity;
 
-import com.hiring.common.entity.BaseEntity;
+import com.huntering.common.entity.BaseEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

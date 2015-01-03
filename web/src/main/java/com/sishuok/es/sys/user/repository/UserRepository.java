@@ -5,8 +5,8 @@
  */
 package com.sishuok.es.sys.user.repository;
 
-import com.hiring.common.repository.BaseRepository;
-import com.hiring.common.repository.support.annotation.SearchableQuery;
+import com.huntering.common.repository.BaseRepository;
+import com.huntering.common.repository.support.annotation.SearchableQuery;
 import com.sishuok.es.sys.user.entity.User;
 import com.sishuok.es.sys.user.entity.UserOrganizationJob;
 

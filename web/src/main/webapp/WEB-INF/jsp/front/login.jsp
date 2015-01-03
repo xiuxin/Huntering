@@ -3,7 +3,7 @@
 <es:contentHeader title="用户登录 Easy-Scaffold脚手架" index="true"/>
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
-        <a class="brand" href="#">&nbsp;&nbsp;Hiring Sys.</a>
+        <a class="brand" href="#">&nbsp;&nbsp;Huntering Sys.</a>
         <ul class="nav">
             <li class="active"><a href="#">登录</a></li>
             <li><a href="https://github.com/xiuxin/huntering" target="_blank">github</a></li>

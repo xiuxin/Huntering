@@ -6,7 +6,7 @@
 package org.apache.shiro.web.session.mgt;
 
 import com.google.common.collect.Lists;
-import com.hiring.common.Constants;
+import com.huntering.common.Constants;
 import com.sishuok.es.sys.user.entity.UserOnline;
 import com.sishuok.es.sys.user.service.UserOnlineService;
 

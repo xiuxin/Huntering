@@ -5,8 +5,8 @@
  */
 package com.sishuok.es.showcase.deleted.entity;
 
-import com.hiring.common.entity.BaseEntity;
-import com.hiring.common.plugin.entity.LogicDeleteable;
+import com.huntering.common.entity.BaseEntity;
+import com.huntering.common.plugin.entity.LogicDeleteable;
 
 import org.springframework.format.annotation.DateTimeFormat;
 

@@ -7,8 +7,8 @@ package com.sishuok.es.monitor.web.controller;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.hiring.common.utils.PrettyMemoryUtils;
-import com.hiring.common.web.controller.BaseController;
+import com.huntering.common.utils.PrettyMemoryUtils;
+import com.huntering.common.web.controller.BaseController;
 
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;

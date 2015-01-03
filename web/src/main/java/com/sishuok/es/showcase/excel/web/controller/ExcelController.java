@@ -5,9 +5,9 @@
  */
 package com.sishuok.es.showcase.excel.web.controller;
 
-import com.hiring.common.Constants;
-import com.hiring.common.entity.search.Searchable;
-import com.hiring.common.web.controller.BaseCRUDController;
+import com.huntering.common.Constants;
+import com.huntering.common.entity.search.Searchable;
+import com.huntering.common.web.controller.BaseCRUDController;
 import com.sishuok.es.showcase.excel.entity.ExcelData;
 import com.sishuok.es.showcase.excel.service.ExcelDataService;
 import com.sishuok.es.showcase.excel.web.controller.entity.ExcelDataType;

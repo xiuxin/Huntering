@@ -5,8 +5,8 @@
  */
 package com.sishuok.es.sys.group.task;
 
-import com.hiring.common.entity.search.SearchOperator;
-import com.hiring.common.entity.search.Searchable;
+import com.huntering.common.entity.search.SearchOperator;
+import com.huntering.common.entity.search.Searchable;
 import com.sishuok.es.sys.group.entity.Group;
 import com.sishuok.es.sys.group.entity.GroupRelation;
 import com.sishuok.es.sys.group.entity.GroupType;

@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.showcase.deleted.repository;
 
-import com.hiring.common.repository.BaseRepository;
+import com.huntering.common.repository.BaseRepository;
 import com.sishuok.es.showcase.deleted.entity.DeletedSample;
 
 /**

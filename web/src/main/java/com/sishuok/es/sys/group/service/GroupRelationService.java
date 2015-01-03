@@ -6,7 +6,7 @@
 package com.sishuok.es.sys.group.service;
 
 import com.google.common.collect.Sets;
-import com.hiring.common.service.BaseService;
+import com.huntering.common.service.BaseService;
 import com.sishuok.es.sys.group.entity.GroupRelation;
 import com.sishuok.es.sys.group.repository.GroupRelationRepository;
 

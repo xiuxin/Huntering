@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.showcase.editor.web.controller;
 
-import com.hiring.common.web.controller.BaseCRUDController;
+import com.huntering.common.web.controller.BaseCRUDController;
 import com.sishuok.es.showcase.editor.entity.Editor;
 import com.sishuok.es.showcase.editor.service.EditorService;
 

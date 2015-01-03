@@ -5,11 +5,11 @@
  */
 package com.sishuok.es.showcase.product.web.controller;
 
-import com.hiring.common.entity.enums.BooleanEnum;
-import com.hiring.common.entity.search.SearchOperator;
-import com.hiring.common.entity.search.Searchable;
-import com.hiring.common.web.bind.annotation.PageableDefaults;
-import com.hiring.common.web.controller.BaseCRUDController;
+import com.huntering.common.entity.enums.BooleanEnum;
+import com.huntering.common.entity.search.SearchOperator;
+import com.huntering.common.entity.search.Searchable;
+import com.huntering.common.web.bind.annotation.PageableDefaults;
+import com.huntering.common.web.controller.BaseCRUDController;
 import com.sishuok.es.showcase.product.entity.Category;
 import com.sishuok.es.showcase.product.entity.Product;
 import com.sishuok.es.showcase.product.service.ProductService;

@@ -5,9 +5,9 @@
  */
 package com.sishuok.es.personal.message.web.controller;
 
-import com.hiring.common.Constants;
-import com.hiring.common.web.bind.annotation.PageableDefaults;
-import com.hiring.common.web.controller.BaseController;
+import com.huntering.common.Constants;
+import com.huntering.common.web.bind.annotation.PageableDefaults;
+import com.huntering.common.web.controller.BaseController;
 import com.sishuok.es.personal.message.entity.Message;
 import com.sishuok.es.personal.message.entity.MessageContent;
 import com.sishuok.es.personal.message.entity.MessageState;

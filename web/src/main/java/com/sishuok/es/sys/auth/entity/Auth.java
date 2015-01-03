@@ -6,9 +6,9 @@
 package com.sishuok.es.sys.auth.entity;
 
 import com.google.common.collect.Sets;
-import com.hiring.common.entity.BaseEntity;
-import com.hiring.common.repository.hibernate.type.CollectionToStringUserType;
-import com.hiring.common.repository.support.annotation.EnableQueryCache;
+import com.huntering.common.entity.BaseEntity;
+import com.huntering.common.repository.hibernate.type.CollectionToStringUserType;
+import com.huntering.common.repository.support.annotation.EnableQueryCache;
 
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.Parameter;

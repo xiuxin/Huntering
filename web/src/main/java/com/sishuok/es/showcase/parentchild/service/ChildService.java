@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.showcase.parentchild.service;
 
-import com.hiring.common.service.BaseService;
+import com.huntering.common.service.BaseService;
 import com.sishuok.es.showcase.parentchild.entity.Child;
 import com.sishuok.es.showcase.parentchild.entity.Parent;
 import com.sishuok.es.showcase.parentchild.repository.ChildRepository;

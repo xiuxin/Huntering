@@ -5,8 +5,8 @@
  */
 package com.sishuok.es.showcase.upload.web.controller;
 
-import com.hiring.common.web.controller.BaseCRUDController;
-import com.hiring.common.web.upload.FileUploadUtils;
+import com.huntering.common.web.controller.BaseCRUDController;
+import com.huntering.common.web.upload.FileUploadUtils;
 import com.sishuok.es.showcase.upload.entity.Upload;
 import com.sishuok.es.showcase.upload.service.UploadService;
 

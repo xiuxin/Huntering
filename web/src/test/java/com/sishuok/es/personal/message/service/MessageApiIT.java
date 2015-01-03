@@ -5,9 +5,9 @@
  */
 package com.sishuok.es.personal.message.service;
 
-import com.hiring.common.entity.search.SearchOperator;
-import com.hiring.common.entity.search.Searchable;
-import com.hiring.common.spring.utils.AopProxyUtils;
+import com.huntering.common.entity.search.SearchOperator;
+import com.huntering.common.entity.search.Searchable;
+import com.huntering.common.spring.utils.AopProxyUtils;
 import com.sishuok.es.personal.message.BaseMessageIT;
 import com.sishuok.es.personal.message.entity.Message;
 import com.sishuok.es.personal.message.entity.MessageContent;

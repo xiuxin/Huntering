@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.showcase.excel.entity;
 
-import com.hiring.common.entity.BaseEntity;
+import com.huntering.common.entity.BaseEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

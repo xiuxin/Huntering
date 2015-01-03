@@ -5,7 +5,7 @@
  */
 package com.sishuok.es.extra.aop;
 
-import com.hiring.common.cache.BaseCacheAspect;
+import com.huntering.common.cache.BaseCacheAspect;
 import com.sishuok.es.sys.auth.entity.Auth;
 import com.sishuok.es.sys.auth.service.AuthService;
 import com.sishuok.es.sys.group.entity.Group;

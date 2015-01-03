@@ -5,9 +5,9 @@
  */
 package com.sishuok.es.sys.user.web.controller;
 
-import com.hiring.common.Constants;
-import com.hiring.common.entity.enums.BooleanEnum;
-import com.hiring.common.web.controller.BaseController;
+import com.huntering.common.Constants;
+import com.huntering.common.entity.enums.BooleanEnum;
+import com.huntering.common.web.controller.BaseController;
 import com.sishuok.es.sys.user.entity.User;
 import com.sishuok.es.sys.user.entity.UserStatus;
 import com.sishuok.es.sys.user.service.PasswordService;

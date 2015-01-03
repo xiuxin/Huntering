@@ -6,7 +6,7 @@
 package com.sishuok.es.sys.permission.service;
 
 import com.google.common.collect.Sets;
-import com.hiring.common.service.BaseService;
+import com.huntering.common.service.BaseService;
 import com.sishuok.es.sys.permission.entity.Role;
 import com.sishuok.es.sys.permission.entity.RoleResourcePermission;
 import com.sishuok.es.sys.permission.repository.RoleRepository;
