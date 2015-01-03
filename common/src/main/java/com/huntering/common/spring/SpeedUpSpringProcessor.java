@@ -242,7 +242,7 @@ public class SpeedUpSpringProcessor implements BeanFactoryPostProcessor {
     }
 
     public static void main(String[] args) {
-        String c = "com.sishuok.es.sys.user.web.bind.A";
-        System.out.println(c.matches("com\\.sishuok\\.es\\.sys.*\\.web\\.controller.*"));
+        String c = "com.huntering.sys.user.web.bind.A";
+        System.out.println(c.matches("com\\.huntering\\.sys.*\\.web\\.controller.*"));
     }
 }

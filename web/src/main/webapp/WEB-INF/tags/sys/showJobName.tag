@@ -1,7 +1,7 @@
 <%@ tag import="com.google.common.collect.Lists" %>
 <%@ tag import="com.huntering.common.utils.SpringUtils" %>
-<%@ tag import="com.sishuok.es.sys.organization.entity.Job" %>
-<%@ tag import="com.sishuok.es.sys.organization.service.JobService" %>
+<%@ tag import="com.huntering.sys.organization.entity.Job" %>
+<%@ tag import="com.huntering.sys.organization.service.JobService" %>
 <%@ tag import="java.util.List" %>
 <%@ tag pageEncoding="UTF-8"%>
 <%@ attribute name="id" type="java.lang.Long" required="true" description="当前要展示的组织机构的名字" %>

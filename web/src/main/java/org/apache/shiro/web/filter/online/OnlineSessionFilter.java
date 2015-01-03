@@ -6,7 +6,7 @@
 package org.apache.shiro.web.filter.online;
 
 import com.huntering.common.Constants;
-import com.sishuok.es.sys.user.entity.User;
+import com.huntering.sys.user.entity.User;
 
 import org.apache.shiro.ShiroConstants;
 import org.apache.shiro.session.Session;

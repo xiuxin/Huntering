@@ -7,8 +7,8 @@ package org.apache.shiro.web.session.mgt;
 
 import com.google.common.collect.Lists;
 import com.huntering.common.Constants;
-import com.sishuok.es.sys.user.entity.UserOnline;
-import com.sishuok.es.sys.user.service.UserOnlineService;
+import com.huntering.sys.user.entity.UserOnline;
+import com.huntering.sys.user.service.UserOnlineService;
 
 import org.apache.commons.lang3.time.DateUtils;
 import org.apache.shiro.ShiroConstants;

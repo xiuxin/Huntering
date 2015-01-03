@@ -6,9 +6,9 @@
 package org.apache.shiro.web.filter.user;
 
 import com.huntering.common.Constants;
-import com.sishuok.es.sys.user.entity.User;
-import com.sishuok.es.sys.user.entity.UserStatus;
-import com.sishuok.es.sys.user.service.UserService;
+import com.huntering.sys.user.entity.User;
+import com.huntering.sys.user.entity.UserStatus;
+import com.huntering.sys.user.service.UserService;
 
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.AccessControlFilter;

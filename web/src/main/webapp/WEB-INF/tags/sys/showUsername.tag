@@ -1,6 +1,6 @@
 <%@ tag import="com.huntering.common.utils.SpringUtils" %>
-<%@ tag import="com.sishuok.es.sys.user.entity.User" %>
-<%@ tag import="com.sishuok.es.sys.user.service.UserService" %>
+<%@ tag import="com.huntering.sys.user.entity.User" %>
+<%@ tag import="com.huntering.sys.user.service.UserService" %>
 <%@ tag pageEncoding="UTF-8"%>
 <%@ attribute name="id" type="java.lang.Long" required="true" description="当前要展示的用户的id" %>
 <%@ attribute name="needLink" type="java.lang.Boolean" required="false" description="是否需要链接" %>

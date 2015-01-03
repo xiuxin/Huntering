@@ -5,8 +5,9 @@
  */
 package org.apache.shiro.web.filter.authc;
 
-import com.sishuok.es.sys.user.entity.User;
-import com.sishuok.es.sys.user.service.UserService;
+import com.huntering.sys.user.entity.User;
+import com.huntering.sys.user.service.UserService;
+
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.springframework.beans.factory.annotation.Autowired;

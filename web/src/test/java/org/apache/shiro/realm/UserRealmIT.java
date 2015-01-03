@@ -5,9 +5,10 @@
  */
 package org.apache.shiro.realm;
 
-import com.sishuok.es.sys.user.entity.User;
-import com.sishuok.es.sys.user.entity.UserStatus;
-import com.sishuok.es.sys.user.service.BaseUserIT;
+import com.huntering.sys.user.entity.User;
+import com.huntering.sys.user.entity.UserStatus;
+import com.huntering.sys.user.service.BaseUserIT;
+
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.subject.Subject;
