@@ -4,6 +4,13 @@
 delete from `account` where id>=1 and id<=1000;;
 /*默认admin/123456*/
 insert into `account`
-(`id`, `email`, `password`, `salt`, `create_date`, `deleted`)
+(`id`, `password`, `salt`, `create_date`, `deleted`)
   values
-  (1, 'qiuchen_yao@126.com', '59f8688873c1d78d0dd5e7871c211a04', 'yDd1956wn1', sysdate(), 0);;
+  (1, '7ec5c233d59e08bfe045292809ffac35', 'yDd1956wn1', sysdate(), 0);;
+
+  
+delete from `email` where id>=1 and id<=1000;;
+insert into `email`
+(`id`, `email`, `account_id`, `main`)
+  values
+  (1, 'qiuchen_yao@126.com', 1, 1);;

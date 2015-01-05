@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.huntering.beans.account.entity.Account;
+import com.huntering.beans.account.entity.Email;
 import com.huntering.test.BaseIT;
 
 /**
@@ -31,9 +32,6 @@ public abstract class BaseAccountIT extends BaseIT {
         accountService.setPasswordService(passwordService);
         passwordService.setMaxRetryCount(maxtRetryCount);
 
-        accountService.setPasswordService(passwordService);
-        passwordService.setMaxRetryCount(maxtRetryCount);
-
         Account user = accountService.findByEmail(email);
         if (user != null) {
             accountService.delete(user);//因为用户是逻辑删除 此处的目的主要是清 缓存
@@ -50,14 +48,20 @@ public abstract class BaseAccountIT extends BaseIT {
 
     protected Account createUser(String email, String password) {
         Account account = new Account();
-        account.setEmail(email);
         account.setPassword(password);
         accountService.saveAndFlush(account);
         return account;
     }
-
+    
     protected Account createDefaultUser() {
         return createUser(email, password);
+    }
+    
+    protected Account createDefaultUserWithEmail() {
+        Account account = createDefaultUser();
+        account.addEmail(new Email(account, email));
+        accountService.update(account);
+        return account;
     }
 
 }

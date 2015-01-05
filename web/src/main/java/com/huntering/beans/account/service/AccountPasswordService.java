@@ -24,6 +24,8 @@ import com.huntering.sys.user.utils.UserLogUtils;
 @Service
 public class AccountPasswordService {
 
+    private static String prefix = "accountId";
+    
     @Autowired
     private CacheManager ehcacheManager;
 
@@ -42,16 +44,16 @@ public class AccountPasswordService {
     }
 
     public void validate(Account account, String password) {
-        String email = account.getEmail();
+        Long accountId = account.getId();
 
         int retryCount = 0;
 
-        Element cacheElement = loginRecordCache.get(email);
+        Element cacheElement = loginRecordCache.get(prefix + accountId);
         if (cacheElement != null) {
             retryCount = (Integer) cacheElement.getObjectValue();
             if (retryCount >= maxRetryCount) {
                 UserLogUtils.log(
-                		email,
+                        accountId.toString(),
                         "passwordError",
                         "password error, retry limit exceed! password: {},max retry count {}",
                         password, maxRetryCount);
@@ -60,29 +62,25 @@ public class AccountPasswordService {
         }
 
         if (!matches(account, password)) {
-            loginRecordCache.put(new Element(email, ++retryCount));
+            loginRecordCache.put(new Element(prefix + accountId, ++retryCount));
             UserLogUtils.log(
-                    email,
+                    accountId.toString(),
                     "passwordError",
                     "password error! password: {} retry count: {}",
                     password, retryCount);
             throw new AccountPasswordNotMatchException();
         } else {
-            clearLoginRecordCache(email);
+            clearLoginRecordCache(prefix + accountId);
         }
     }
 
     public boolean matches(Account account, String newPassword) {
         return account.getPassword().equals(
-        		encryptPassword(account.getEmail(), newPassword, account.getSalt()));
+        		encryptPassword(newPassword, account.getSalt()));
     }
 
     public void clearLoginRecordCache(String email) {
         loginRecordCache.remove(email);
-    }
-
-    public String encryptPassword(String username, String password, String salt) {
-        return Md5Utils.hash(username + password + salt);
     }
 
     public String encryptPassword(String password, String salt) {
@@ -90,6 +88,6 @@ public class AccountPasswordService {
     }
 
     public static void main(String[] args) {
-        System.out.println(new AccountPasswordService().encryptPassword("qiuchen_yao@126.com", "123456", "iY71e4d123"));
+        System.out.println(new AccountPasswordService().encryptPassword("123456", "iY71e4d123"));
     }
 }

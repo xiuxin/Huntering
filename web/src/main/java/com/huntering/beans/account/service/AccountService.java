@@ -41,7 +41,7 @@ public class AccountService extends BaseService<Account, Long> {
             account.setCreateDate(new Date());
         }
         account.randomSalt();
-        account.setPassword(passwordService.encryptPassword(account.getEmail(), account.getPassword(), account.getSalt()));
+        account.setPassword(passwordService.encryptPassword(account.getPassword(), account.getSalt()));
 
         return super.save(account);
     }
@@ -98,8 +98,8 @@ public class AccountService extends BaseService<Account, Long> {
         return account;
     }
 
-    private boolean maybeEmail(String username) {
-        if (!username.matches(User.EMAIL_PATTERN)) {
+    private boolean maybeEmail(String email) {
+        if (!email.matches(User.EMAIL_PATTERN)) {
             return false;
         }
         return true;
