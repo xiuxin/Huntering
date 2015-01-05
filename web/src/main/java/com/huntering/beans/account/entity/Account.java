@@ -62,7 +62,9 @@ public class Account extends BaseEntity<Long> implements LogicDeleteable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date createDate;
 
-	/**
+    private Boolean active = Boolean.FALSE;
+
+    /**
      * 逻辑删除flag
      */
     private Boolean deleted = Boolean.FALSE;
@@ -74,6 +76,10 @@ public class Account extends BaseEntity<Long> implements LogicDeleteable {
         setId(id);
     }
 
+    public void addEmail(Email email) {
+        email.setAccount(this);
+        this.getEmails().add(email);
+    }
 
     public String getSalt() {
         return salt;
@@ -132,9 +138,13 @@ public class Account extends BaseEntity<Long> implements LogicDeleteable {
     public void setEmails(List<Email> emails) {
         this.emails = emails;
     }
-    
-    public void addEmail(Email email) {
-        email.setAccount(this);
-        this.getEmails().add(email);
+
+    public Boolean getActive() {
+        return active;
     }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+    
 }

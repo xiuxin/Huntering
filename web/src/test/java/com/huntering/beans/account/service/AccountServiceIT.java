@@ -7,6 +7,8 @@ import com.huntering.beans.account.entity.Account;
 import com.huntering.beans.account.exception.AccountNotExistsException;
 import com.huntering.beans.account.exception.AccountPasswordNotMatchException;
 import com.huntering.beans.account.exception.AccountPasswordRetryLimitExceedException;
+import com.huntering.beans.account.exception.DuplicatedEmailRegisterException;
+import com.huntering.beans.account.exception.InvalidRegistrationInfoException;
 
 /**
  * 
@@ -15,6 +17,8 @@ import com.huntering.beans.account.exception.AccountPasswordRetryLimitExceedExce
  */
 public class AccountServiceIT extends BaseAccountIT {
 
+    
+    /**************** LOGIN TEST *****************/
     @Test
     public void testLoginSuccessWithEmail() {
         Account account = createDefaultUserWithEmail();
@@ -52,5 +56,31 @@ public class AccountServiceIT extends BaseAccountIT {
         }
         accountService.login(email, password + "1");
         passwordService.clearLoginRecordCache(email);
+    }
+
+    
+
+    /**************** Registration TEST *****************/
+    @Test
+    public void testRegisterSuccess() {
+        accountService.register(email, password);
+        accountService.login(email, password);
+        passwordService.clearLoginRecordCache(email);
+    }
+    
+    @Test(expected = InvalidRegistrationInfoException.class)
+    public void testRegisterFailWithEmptyEmail() {
+        accountService.register("", password);
+    }
+
+    @Test(expected = InvalidRegistrationInfoException.class)
+    public void testRegisterFailWithEmptyPassword() {
+        accountService.register(email, "");
+    }
+
+    @Test(expected = DuplicatedEmailRegisterException.class)
+    public void testRegisterFailWithDuplicateEmail() {
+        accountService.register(email, password);
+        accountService.register(email, password);
     }
 }

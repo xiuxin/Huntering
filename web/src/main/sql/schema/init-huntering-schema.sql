@@ -9,6 +9,7 @@ create table `account`(
   `salt`       varchar(10),
   `create_date` timestamp default 0,
   `deleted`   bool,
+  `active`   bool,
   constraint `pk_account` primary key(`id`)
 ) charset=utf8 ENGINE=InnoDB;;
 alter table `account` auto_increment=1000;;
