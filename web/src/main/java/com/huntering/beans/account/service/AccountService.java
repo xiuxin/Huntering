@@ -143,7 +143,7 @@ public class AccountService extends BaseService<Account, Long> {
         
         Account account = new Account();
         account.setPassword(password);
-        account.getEmails().add(new Email(account, email));
+        account.getEmails().add(new Email(account, email, true));
         return saveAndFlush(account);
     }
     

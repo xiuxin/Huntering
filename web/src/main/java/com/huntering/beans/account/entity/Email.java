@@ -47,9 +47,10 @@ public class Email extends BaseEntity<Long> {
         setId(id);
     }
 
-    public Email(Account account, String email) {
+    public Email(Account account, String email, boolean isMain) {
         this.account = account;
         this.email = email;
+        this.main = isMain;
     }
     
     public String getEmail() {

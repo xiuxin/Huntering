@@ -21,6 +21,9 @@ public abstract class BaseAccountIT extends BaseIT {
 
     @Autowired
     protected AccountPasswordService passwordService;
+    
+    @Autowired
+    protected EmailService emailService;
 
     protected int maxtRetryCount = 10;
 
@@ -59,7 +62,7 @@ public abstract class BaseAccountIT extends BaseIT {
     
     protected Account createDefaultUserWithEmail() {
         Account account = createDefaultUser();
-        account.addEmail(new Email(account, email));
+        account.addEmail(new Email(account, email, true));
         accountService.update(account);
         return account;
     }
