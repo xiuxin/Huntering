@@ -14,3 +14,8 @@ insert into `email`
 (`id`, `email`, `account_id`, `main`)
   values
   (1, 'qiuchen_yao@126.com', 1, 1);;
+  
+delete from `auth_code` where id>=1 and id<=1000;;
+insert into `auth_code` (`id`, `code`, `used`) values (1, 'authcode1', 0);;
+insert into `auth_code` (`id`, `code`, `used`) values (2, 'authcode2', 0);;
+insert into `auth_code` (`id`, `code`, `used`) values (3, 'authcode3', 0);;

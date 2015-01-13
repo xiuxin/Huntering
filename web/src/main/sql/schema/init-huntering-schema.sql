@@ -26,3 +26,15 @@ create table `email`(
   index `idx_email_main` (`main`)
 ) charset=utf8 ENGINE=InnoDB;;
 alter table `email` auto_increment=1000;;
+
+drop table if exists `auth_code`;;
+##AUTH_CODE
+create table `auth_code`(
+  `id`         bigint not null auto_increment,
+  `code`  varchar(100),
+  `used`   bool,
+  constraint `pk_auth_code` primary key(`id`),
+  constraint `unique_code` unique(`code`),
+  index `idx_auth_code_used` (`used`)
+) charset=utf8 ENGINE=InnoDB;;
+alter table `email` auto_increment=1000;;
