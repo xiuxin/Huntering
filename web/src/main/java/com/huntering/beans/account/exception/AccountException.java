@@ -10,7 +10,7 @@ import com.huntering.common.exception.BaseException;
 public class AccountException extends BaseException {
 
     public AccountException(String code, Object[] args) {
-        super("account", code, args, null);
+        super("authCode", code, args, null);
     }
 
 }

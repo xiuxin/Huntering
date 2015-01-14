@@ -14,7 +14,6 @@ import com.huntering.common.repository.support.annotation.SearchableQuery;
  * @author I310711
  *
  */
-@SearchableQuery(callbackClass = AccountSearchCallback.class)
 public interface EmailRepository extends BaseRepository<Email, Long> {
     
     Email findByEmail(String email);

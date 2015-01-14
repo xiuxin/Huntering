@@ -9,10 +9,12 @@ import org.springframework.util.StringUtils;
 
 import com.huntering.beans.account.entity.Account;
 import com.huntering.beans.account.entity.Email;
+import com.huntering.beans.account.entity.InvitationCode;
 import com.huntering.beans.account.exception.AccountNotExistsException;
 import com.huntering.beans.account.exception.AccountPasswordNotMatchException;
 import com.huntering.beans.account.exception.DuplicatedEmailRegisterException;
 import com.huntering.beans.account.exception.InvalidRegistrationInfoException;
+import com.huntering.beans.account.exception.InvitationCodeException;
 import com.huntering.beans.account.repository.AccountRepository;
 import com.huntering.common.service.BaseService;
 import com.huntering.sys.user.entity.User;
@@ -33,6 +35,9 @@ public class AccountService extends BaseService<Account, Long> {
     
     @Autowired
     private AccountPasswordService passwordService;
+    
+    @Autowired
+    private InvitationCodeService invitationCodeService;
     
     @Autowired
     private EmailService emailService;
@@ -108,9 +113,9 @@ public class AccountService extends BaseService<Account, Long> {
         return account;
     }
 
-    public Account register(String email, String password) {
+    public Account register(String email, String password, String inviCode) {
 
-        if (StringUtils.isEmpty(email) || StringUtils.isEmpty(password)) {
+        if (StringUtils.isEmpty(email) || StringUtils.isEmpty(password) || StringUtils.isEmpty(inviCode)) {
             UserLogUtils.log(
                     email,
                     "loginError",
@@ -127,10 +132,18 @@ public class AccountService extends BaseService<Account, Long> {
             throw new InvalidRegistrationInfoException();
         }
 
-        return createAccount(email, password);
+        if (StringUtils.isEmpty(inviCode)) {
+            UserLogUtils.log(
+            		inviCode,
+                    "registrationError",
+                    "invitation code not given");
+            throw new InvitationCodeException("invicode.empty", null);
+        }
+        
+        return createAccount(email, password, inviCode);
     }
 
-    private Account createAccount(String email, String password) {
+    private Account createAccount(String email, String password, String invCode) {
         
         if (emailService.isEmailUsed(email)) {
             UserLogUtils.log(
@@ -140,6 +153,18 @@ public class AccountService extends BaseService<Account, Long> {
                     email);
             throw new DuplicatedEmailRegisterException();
         }
+        
+        InvitationCode invitationCode = invitationCodeService.findUnusedByCode(invCode);
+        if (invitationCode == null) {
+            UserLogUtils.log(
+            		invCode,
+                    "registrationError",
+                    "invitation code not found");
+            throw new InvitationCodeException("invicode.notexists", new Object[] {invCode});
+        }
+        
+        invitationCode.setUsed(true);
+        invitationCodeService.saveAndFlush(invitationCode);
         
         Account account = new Account();
         account.setPassword(password);

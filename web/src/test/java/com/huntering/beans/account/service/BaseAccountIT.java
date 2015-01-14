@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.huntering.beans.account.entity.Account;
 import com.huntering.beans.account.entity.Email;
+import com.huntering.beans.account.entity.InvitationCode;
 import com.huntering.test.BaseIT;
 
 /**
@@ -21,6 +22,9 @@ public abstract class BaseAccountIT extends BaseIT {
 
     @Autowired
     protected AccountPasswordService passwordService;
+
+    @Autowired
+    protected InvitationCodeService invCodeService;
     
     @Autowired
     protected EmailService emailService;
@@ -29,6 +33,7 @@ public abstract class BaseAccountIT extends BaseIT {
 
     protected String email = "vincent.yao@sap.com";
     protected String password = "12345";
+    protected String inviationCode = "inviCode1";
 
     @Before
     public void setUp() {
@@ -40,6 +45,12 @@ public abstract class BaseAccountIT extends BaseIT {
             accountService.delete(user);//因为用户是逻辑删除 此处的目的主要是清 缓存
             delete(user);              //所以还需要物理删除
         }
+        
+        InvitationCode invCode = invCodeService.findByCode(inviationCode);
+        if (invCode != null) {
+        	invCodeService.delete(invCode);
+        }
+        
         clear();
     }
 
@@ -67,4 +78,12 @@ public abstract class BaseAccountIT extends BaseIT {
         return account;
     }
 
+    protected InvitationCode createDefaultInvitationCode(Boolean used) {
+    	InvitationCode code = new InvitationCode();
+    	code.setUsed(used);
+    	code.setCode(inviationCode);
+    	invCodeService.saveAndFlush(code);
+    	return code;
+    }
+    
 }

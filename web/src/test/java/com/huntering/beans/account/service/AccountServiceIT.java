@@ -9,6 +9,7 @@ import com.huntering.beans.account.exception.AccountPasswordNotMatchException;
 import com.huntering.beans.account.exception.AccountPasswordRetryLimitExceedException;
 import com.huntering.beans.account.exception.DuplicatedEmailRegisterException;
 import com.huntering.beans.account.exception.InvalidRegistrationInfoException;
+import com.huntering.beans.account.exception.InvitationCodeException;
 
 /**
  * 
@@ -63,24 +64,47 @@ public class AccountServiceIT extends BaseAccountIT {
     /**************** Registration TEST *****************/
     @Test
     public void testRegisterSuccess() {
-        accountService.register(email, password);
+    	createDefaultInvitationCode(false);
+    	
+        accountService.register(email, password, inviationCode);
         accountService.login(email, password);
         passwordService.clearLoginRecordCache(email);
     }
     
     @Test(expected = InvalidRegistrationInfoException.class)
     public void testRegisterFailWithEmptyEmail() {
-        accountService.register("", password);
+    	createDefaultInvitationCode(false);
+        accountService.register("", password, inviationCode);
     }
 
     @Test(expected = InvalidRegistrationInfoException.class)
     public void testRegisterFailWithEmptyPassword() {
-        accountService.register(email, "");
+    	createDefaultInvitationCode(false);
+        accountService.register(email, "", inviationCode);
     }
 
     @Test(expected = DuplicatedEmailRegisterException.class)
     public void testRegisterFailWithDuplicateEmail() {
-        accountService.register(email, password);
-        accountService.register(email, password);
+    	createDefaultInvitationCode(false);
+        accountService.register(email, password, inviationCode);
+        accountService.register(email, password, inviationCode);
+    }
+
+    @Test(expected = InvalidRegistrationInfoException.class)
+    public void testRegisterFail_EmptyInvitationCode() {
+    	createDefaultInvitationCode(false);
+        accountService.register(email, password, null);
+    }
+
+    @Test(expected = InvitationCodeException.class)
+    public void testRegisterFail_InvitationCodeNotExists() {
+    	createDefaultInvitationCode(false);
+        accountService.register(email, password, "NotExistsCode");
+    }
+
+    @Test(expected = InvitationCodeException.class)
+    public void testRegisterFail_UsedInvitaionCode() {
+    	createDefaultInvitationCode(true);
+        accountService.register(email, password, inviationCode);
     }
 }
