@@ -34,7 +34,7 @@ create table `invitation_code`(
   `code`  varchar(100),
   `used`   bool,
   constraint `pk_invitation_code` primary key(`id`),
-  constraint `unique_code` unique(`code`),
+  constraint `unique_invitation_code` unique(`code`),
   index `idx_invitation_code_used` (`used`)
 ) charset=utf8 ENGINE=InnoDB;;
 alter table `email` auto_increment=1000;;
