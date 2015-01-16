@@ -30,16 +30,16 @@ public interface UserRepository2 extends BaseRepository<User, Long> {
     /////////以下实现都委托给UserRepository2Impl///////
     ////////////////////////////////////////////////////
 
-    public BaseInfo findBaseInfoByUserId(Long userId);
+    public BaseInfo findBaseInfoById(Long id);
 
-    public List<SchoolInfo> findAllSchoolTypeByUserId(Long userId);
+    public List<SchoolInfo> findAllSchoolTypeById(Long id);
 
-    public Page<User> findAllByDefault(final Searchable searchable);
+    /*public Page<User> findAllByDefault(final Searchable searchable);
 
     public long countAllByDefault(final Searchable searchable);
 
     public long countAllByCustom(final Searchable searchable);
 
-    public Page<User> findAllByCustom(final Searchable searchable);
+    public Page<User> findAllByCustom(final Searchable searchable);*/
 
 }

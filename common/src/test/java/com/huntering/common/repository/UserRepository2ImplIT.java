@@ -57,7 +57,7 @@ public class UserRepository2ImplIT extends BaseUserIT {
 
         clear();
 
-        BaseInfo baseInfo = userRepository2.findBaseInfoByUserId(user.getId());
+        BaseInfo baseInfo = userRepository2.findBaseInfoById(user.getId());
         assertNotNull(baseInfo);
     }
 
@@ -68,7 +68,7 @@ public class UserRepository2ImplIT extends BaseUserIT {
 
         clear();
 
-        List<SchoolInfo> schoolInfoList = userRepository2.findAllSchoolTypeByUserId(user.getId());
+        List<SchoolInfo> schoolInfoList = userRepository2.findAllSchoolTypeById(user.getId());
         assertEquals(user.getSchoolInfoSet().size(), schoolInfoList.size());
     }
 
