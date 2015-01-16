@@ -6,7 +6,7 @@ delete from `account` where id>=1 and id<=1000;;
 insert into `account`
 (`id`, `password`, `salt`, `create_date`, `deleted`, `active`)
   values
-  (1, '7ec5c233d59e08bfe045292809ffac35', 'yDd1956wn1', sysdate(), 0, 1);;
+  (1, '7ec5c233d59e08bfe045292809ffac35', 'iY71e4d123', sysdate(), 0, 1);;
 
   
 delete from `email` where id>=1 and id<=1000;;
