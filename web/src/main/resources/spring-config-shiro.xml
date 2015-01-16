@@ -147,6 +147,7 @@
             <value>
                 /static/** = anon
                 /jcaptcha* = anon
+                /public/** = anon
                 /logout = logout
                 /login = jCaptchaValidate,authc
                 /** = sysUser,onlineSession,user,syncOnlineSession,perms,roles
