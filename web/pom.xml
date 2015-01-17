@@ -27,7 +27,7 @@
                     <!--<scanIntervalSeconds>2</scanIntervalSeconds>-->
                     <stopPort>9999</stopPort>
                     <webAppConfig>
-                        <contextPath>/${project.build.finalName}</contextPath>
+                        <contextPath>/</contextPath>
                     </webAppConfig>
                     <connectors>
                         <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
@@ -143,7 +143,7 @@
             <!--</plugin>-->
 
         </plugins>
-        <resources>
+        <!--<resources>
             <resource>
                 <directory>src/main/resources</directory>
                 <includes>
@@ -151,7 +151,7 @@
                 </includes>
                 <filtering>true</filtering>
             </resource>
-        </resources>
+        </resources>-->
         </pluginManagement>
     </build>
 
@@ -180,6 +180,11 @@
             <!--<artifactId>x-gen</artifactId>-->
             <!--<version>1.0</version>-->
             <!--<scope>provided</scope>-->
+        <dependency>
+            <groupId>com.huntering</groupId>
+            <artifactId>huntering-common</artifactId>
+            <version>${sishuok.common.version}</version>
+        </dependency>
         <!--</dependency>-->
         <!--<dependency>-->
             <!--<groupId>bsh</groupId>-->
