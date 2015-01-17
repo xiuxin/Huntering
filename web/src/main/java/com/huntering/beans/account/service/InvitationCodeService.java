@@ -29,10 +29,22 @@ public class InvitationCodeService extends BaseService<InvitationCode, Long> {
         return getAuthCodeRepository().findByCode(code);
     }
 
+    /**
+     * Check if code exists or not
+     * 
+     * @param code
+     * @return
+     */
     public boolean isAuthCodeExists(String code) {
     	return findByCode(code) == null;
     }
     
+    /**
+     * Find unused code by code string.
+     * 
+     * @param code
+     * @return
+     */
     public InvitationCode findUnusedByCode(String code) {
         if(StringUtils.isEmpty(code)) {
             return null;
@@ -40,6 +52,12 @@ public class InvitationCodeService extends BaseService<InvitationCode, Long> {
         return getAuthCodeRepository().findByCodeAndUsed(code, false);
     }
 
+    /**
+     * create invitation code, will throw exception if code exists 
+     * 
+     * @param code
+     * @return
+     */
     public InvitationCode createAuthCode(String code) {
         
     	if (isAuthCodeExists(code)) {

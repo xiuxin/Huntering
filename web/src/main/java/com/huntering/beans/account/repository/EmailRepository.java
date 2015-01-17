@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import com.huntering.beans.account.entity.Account;
 import com.huntering.beans.account.entity.Email;
 import com.huntering.common.repository.BaseRepository;
-import com.huntering.common.repository.support.annotation.SearchableQuery;
 
 /**
  * 

@@ -4,6 +4,8 @@ import java.util.Date;
 
 import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailSender;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -33,7 +35,12 @@ public class AccountService extends BaseService<Account, Long> {
     private AccountRepository getAccountRepository() {
         return (AccountRepository) baseRepository;
     }
-    
+
+	@Autowired
+	private MailSender mailSender;
+    @Autowired
+	private SimpleMailMessage message;
+	
     @Autowired
     private AccountPasswordService passwordService;
     
@@ -50,7 +57,15 @@ public class AccountService extends BaseService<Account, Long> {
     public void setEmailService(EmailService emailService) {
         this.emailService = emailService;
     }
-    
+
+    public void setMailSender(MailSender mailSender) {
+		this.mailSender = mailSender;
+	}
+
+	public void setMessage(SimpleMailMessage message) {
+		this.message = message;
+	}
+	
     @Override
     public Account save(Account account) {
         if (account.getCreateDate() == null) {
@@ -149,9 +164,36 @@ public class AccountService extends BaseService<Account, Long> {
             throw new InvitationCodeException("invicode.empty", null);
         }
         
-        return createAccount(email, password, inviCode);
+        Account account = createAccount(email, password, inviCode);
+        sendVerificationEmail(email, account.getSalt());
+        return account;
     }
 
+    /**
+     * Check the MD5 code to make the email active.
+     * 
+     * @param emailId
+     * @param code
+     * @return
+     */
+//    public boolean verifyEmail(Long emailId, String code) {
+    	//TODO
+//    }
+    
+    /**
+     * Send verification message to mail box
+     * 
+     * @param email
+     * @param salt
+     */
+    private void sendVerificationEmail(String email, String salt) {
+		SimpleMailMessage msg = new SimpleMailMessage(message);
+		String verificationCode = passwordService.encryptPassword(email, salt);
+		msg.setTo(email);
+		msg.setText("Click below link to enable your email: " + verificationCode);
+		mailSender.send(msg);
+    }
+    
     private Account createAccount(String email, String password, String invCode) {
         
         if (emailService.isEmailUsed(email)) {
@@ -164,7 +206,7 @@ public class AccountService extends BaseService<Account, Long> {
         }
         
         InvitationCode invitationCode = invitationCodeService.findUnusedByCode(invCode);
-        if (invitationCode == null) {
+        if (invitationCode == null || invitationCode.getUsed()) {
             UserLogUtils.log(
             		invCode,
                     "registrationError",
