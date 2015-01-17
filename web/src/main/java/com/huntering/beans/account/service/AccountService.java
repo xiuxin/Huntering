@@ -10,6 +10,7 @@ import org.springframework.util.StringUtils;
 import com.huntering.beans.account.entity.Account;
 import com.huntering.beans.account.entity.Email;
 import com.huntering.beans.account.entity.InvitationCode;
+import com.huntering.beans.account.exception.AccountException;
 import com.huntering.beans.account.exception.AccountNotExistsException;
 import com.huntering.beans.account.exception.AccountPasswordNotMatchException;
 import com.huntering.beans.account.exception.DuplicatedEmailRegisterException;
@@ -102,6 +103,14 @@ public class AccountService extends BaseService<Account, Long> {
                     "user is not exists!");
 
             throw new AccountNotExistsException();
+        }
+        
+        if (!account.getActive()) {
+            UserLogUtils.log(
+                    email,
+                    "loginError",
+                    "Account is not active");
+            throw new AccountException("user.inactive", null);
         }
 
         passwordService.validate(account, password);
