@@ -23,7 +23,7 @@ import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.google.common.collect.Lists;
-import com.huntering.common.entity.BaseEntity;
+import com.huntering.common.entity.BaseTimeEntity;
 import com.huntering.common.plugin.entity.LogicDeleteable;
 import com.huntering.common.repository.support.annotation.EnableQueryCache;
 
@@ -36,7 +36,7 @@ import com.huntering.common.repository.support.annotation.EnableQueryCache;
 @Table(name = "account")
 @EnableQueryCache
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class Account extends BaseEntity<Long> implements LogicDeleteable {
+public class Account extends BaseTimeEntity<Long> implements LogicDeleteable {
     public static final int PASSWORD_MIN_LENGTH = 5;
     public static final int PASSWORD_MAX_LENGTH = 50;
 
@@ -57,13 +57,10 @@ public class Account extends BaseEntity<Long> implements LogicDeleteable {
      */
     private String salt;
     
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @Column(name = "create_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createDate;
-
     private Boolean active = Boolean.FALSE;
 
+	private String mdn;
+    
     /**
      * 逻辑删除flag
      */
@@ -120,14 +117,6 @@ public class Account extends BaseEntity<Long> implements LogicDeleteable {
 		this.password = password;
 	}
     
-    public Date getCreateDate() {
-		return createDate;
-	}
-
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
-	}
-    
     public List<Email> getEmails() {
         if (emails == null) {
             emails = Lists.newArrayList();
@@ -146,5 +135,12 @@ public class Account extends BaseEntity<Long> implements LogicDeleteable {
     public void setActive(Boolean active) {
         this.active = active;
     }
-    
+
+    public String getMdn() {
+		return mdn;
+	}
+
+	public void setMdn(String mdn) {
+		this.mdn = mdn;
+	}
 }

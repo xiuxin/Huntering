@@ -5,7 +5,7 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
-import com.huntering.common.entity.BaseEntity;
+import com.huntering.common.entity.BaseTimeEntity;
 import com.huntering.common.repository.support.annotation.EnableQueryCache;
 
 /**
@@ -17,7 +17,7 @@ import com.huntering.common.repository.support.annotation.EnableQueryCache;
 @Table(name = "invitation_code")
 @EnableQueryCache
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class InvitationCode extends BaseEntity<Long> {
+public class InvitationCode extends BaseTimeEntity<Long> {
 
 	private String code;
 
