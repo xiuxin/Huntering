@@ -38,7 +38,9 @@ public class Email extends BaseTimeEntity<Long> {
     @Fetch(FetchMode.SELECT)
     private Account account;
 
-    private Boolean main = false;
+    private Boolean active = false;
+
+	private Boolean main = false;
 
     public Email() {
     }
@@ -47,10 +49,11 @@ public class Email extends BaseTimeEntity<Long> {
         setId(id);
     }
 
-    public Email(Account account, String email, boolean isMain) {
+    public Email(Account account, String email, boolean isMain, boolean active) {
         this.account = account;
         this.email = email;
         this.main = isMain;
+        this.active = active;
     }
     
     public String getEmail() {
@@ -76,4 +79,12 @@ public class Email extends BaseTimeEntity<Long> {
     public void setMain(Boolean main) {
         this.main = main;
     }
+    
+    public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
 }

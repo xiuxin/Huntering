@@ -67,7 +67,7 @@ public class AccountServiceIT extends BaseAccountIT {
     	createDefaultInvitationCode(false);
     	
         accountService.register(email, password, inviationCode);
-        accountService.login(email, password);
+//        accountService.login(email, password);
         passwordService.clearLoginRecordCache(email);
     }
     

@@ -21,7 +21,7 @@ public class EmailServiceIT extends BaseAccountIT {
     @Test
     public void testAddNewEmail() {
         Account account = createDefaultUserWithEmail();
-        account.addEmail(new Email(account, "fuck@126.com", false));
+        account.addEmail(new Email(account, "fuck@126.com", false, false));
         accountService.saveAndFlush(account);
         
         account = accountService.findByEmail(email);
@@ -31,7 +31,7 @@ public class EmailServiceIT extends BaseAccountIT {
     @Test
     public void testGetPrimaryEmail() {
         Account account = createDefaultUserWithEmail();
-        account.addEmail(new Email(account, "fuck@126.com", false));
+        account.addEmail(new Email(account, "fuck@126.com", false, false));
         accountService.saveAndFlush(account);
         
         Email emailAddr = emailService.findPrimaryEmailByAccount(account);
@@ -41,7 +41,7 @@ public class EmailServiceIT extends BaseAccountIT {
     @Test
     public void testGetEmailByAccount() {
         Account account = createDefaultUserWithEmail();
-        account.addEmail(new Email(account, "fuck@126.com", false));
+        account.addEmail(new Email(account, "fuck@126.com", false, false));
         accountService.saveAndFlush(account);
         
         List<Email> emails = emailService.findEmailsByAccount(account);

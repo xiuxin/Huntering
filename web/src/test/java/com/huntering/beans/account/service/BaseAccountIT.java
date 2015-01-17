@@ -63,6 +63,7 @@ public abstract class BaseAccountIT extends BaseIT {
     protected Account createUser(String email, String password) {
         Account account = new Account();
         account.setPassword(password);
+        account.setActive(true);
         accountService.saveAndFlush(account);
         return account;
     }
@@ -73,7 +74,7 @@ public abstract class BaseAccountIT extends BaseIT {
     
     protected Account createDefaultUserWithEmail() {
         Account account = createDefaultUser();
-        account.addEmail(new Email(account, email, true));
+        account.addEmail(new Email(account, email, true, true));
         accountService.update(account);
         return account;
     }

@@ -11,9 +11,9 @@ insert into `account`
   
 delete from `email` where id>=1 and id<=1000;;
 insert into `email`
-(`id`, `email`, `account_id`, `main`)
+(`id`, `email`, `account_id`, `main`, `active`)
   values
-  (1, 'qiuchen_yao@126.com', 1, 1);;
+  (1, 'qiuchen_yao@126.com', 1, 1, 1);;
   
 delete from `invitation_code` where id>=1 and id<=1000;;
 insert into `invitation_code` (`id`, `code`, `used`) values (1, 'invcode1', 0);;

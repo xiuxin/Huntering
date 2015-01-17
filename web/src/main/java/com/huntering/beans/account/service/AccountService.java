@@ -110,7 +110,7 @@ public class AccountService extends BaseService<Account, Long> {
                     email,
                     "loginError",
                     "Account is not active");
-            throw new AccountException("user.inactive", null);
+            throw new AccountException("account.inactive", null);
         }
 
         passwordService.validate(account, password);
@@ -177,7 +177,7 @@ public class AccountService extends BaseService<Account, Long> {
         
         Account account = new Account();
         account.setPassword(password);
-        account.getEmails().add(new Email(account, email, true));
+        account.getEmails().add(new Email(account, email, true, false));
         return saveAndFlush(account);
     }
     

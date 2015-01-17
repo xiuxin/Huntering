@@ -23,6 +23,7 @@ create table `email`(
   `account_id` bigint,
   `email`  varchar(100),
   `main`   bool,
+  `active`   bool,
   `create_date` timestamp DEFAULT CURRENT_TIMESTAMP,
   `update_date` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   constraint `pk_email` primary key(`id`),
