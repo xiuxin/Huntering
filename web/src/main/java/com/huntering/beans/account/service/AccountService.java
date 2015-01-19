@@ -43,8 +43,8 @@ public class AccountService extends BaseService<Account, Long> {
 	
     @Autowired
     private AccountPasswordService passwordService;
-    
-    @Autowired
+
+	@Autowired
     private InvitationCodeService invitationCodeService;
     
     @Autowired
@@ -165,20 +165,8 @@ public class AccountService extends BaseService<Account, Long> {
         }
         
         Account account = createAccount(email, password, inviCode);
-        sendVerificationEmail(email, account.getSalt());
         return account;
     }
-
-    /**
-     * Check the MD5 code to make the email active.
-     * 
-     * @param emailId
-     * @param code
-     * @return
-     */
-//    public boolean verifyEmail(Long emailId, String code) {
-    	//TODO
-//    }
     
     /**
      * Send verification message to mail box
@@ -186,11 +174,12 @@ public class AccountService extends BaseService<Account, Long> {
      * @param email
      * @param salt
      */
-    private void sendVerificationEmail(String email, String salt) {
+    public void sendVerificationEmail(String email, String salt, String URL) {
 		SimpleMailMessage msg = new SimpleMailMessage(message);
 		String verificationCode = passwordService.encryptPassword(email, salt);
 		msg.setTo(email);
-		msg.setText("Click below link to enable your email: " + verificationCode);
+		String link = URL + "/public/verify?code=" + verificationCode + "&email=" + email;
+		msg.setText("Click below link to enable your email: " + link);
 		mailSender.send(msg);
     }
     

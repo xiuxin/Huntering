@@ -60,20 +60,27 @@ public abstract class BaseAccountIT extends BaseIT {
     }
 
 
-    protected Account createUser(String email, String password) {
+    protected Account createUser(String email, String password, boolean active) {
         Account account = new Account();
         account.setPassword(password);
-        account.setActive(true);
+        account.setActive(active);
         accountService.saveAndFlush(account);
         return account;
     }
     
-    protected Account createDefaultUser() {
-        return createUser(email, password);
+    protected Account createDefaultUser(boolean active) {
+        return createUser(email, password, true);
+    }
+    
+    protected Account createInactiveAccount() {
+        Account account = createDefaultUser(false);
+        account.addEmail(new Email(account, email, true, false));
+        accountService.update(account);
+        return account;
     }
     
     protected Account createDefaultUserWithEmail() {
-        Account account = createDefaultUser();
+        Account account = createDefaultUser(true);
         account.addEmail(new Email(account, email, true, true));
         accountService.update(account);
         return account;

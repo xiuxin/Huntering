@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import com.huntering.beans.account.entity.Account;
 import com.huntering.beans.account.entity.Email;
+import com.huntering.beans.account.exception.AccountException;
 
 /**
  * 
@@ -18,6 +19,39 @@ public class EmailServiceIT extends BaseAccountIT {
 
     
     /**************** Email TEST *****************/
+	@Test(expected = AccountException.class)
+	public void testVerifyEmail_NullEmailId() {
+        Account account = this.createInactiveAccount();
+        Email email = account.getEmails().get(0);
+        String encryptCode = passwordService.encryptPassword(email.getEmail(), account.getSalt());
+        emailService.verifyEmail(null, encryptCode);
+	}
+
+	@Test(expected = AccountException.class)
+	public void testVerifyEmail_EmptyEmailCode() {
+        Account account = this.createInactiveAccount();
+        Email email = account.getEmails().get(0);
+        String encryptCode = passwordService.encryptPassword(email.getEmail(), account.getSalt());
+        emailService.verifyEmail(email.getId(), " ");
+	}
+	
+	@Test(expected = AccountException.class)
+	public void testVerifyEmail_EmptyAlreadyActive() {
+        Account account = createDefaultUserWithEmail();
+        Email email = account.getEmails().get(0);
+        String encryptCode = passwordService.encryptPassword(email.getEmail(), account.getSalt());
+        emailService.verifyEmail(email.getId(), encryptCode);
+	}
+
+	@Test
+	public void testVerifyEmail_EmptyInvalidValidationCode() {
+        Account account = createInactiveAccount();
+        Email email = account.getEmails().get(0);
+        String encryptCode = passwordService.encryptPassword(email.getEmail(), account.getSalt());
+        emailService.verifyEmail(email.getId(), "WTF");
+        assertEquals("sd ", "sdddd");
+	}
+	
     @Test
     public void testAddNewEmail() {
         Account account = createDefaultUserWithEmail();

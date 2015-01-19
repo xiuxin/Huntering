@@ -8,6 +8,7 @@ import org.springframework.util.StringUtils;
 
 import com.huntering.beans.account.entity.Account;
 import com.huntering.beans.account.entity.Email;
+import com.huntering.beans.account.exception.AccountException;
 import com.huntering.beans.account.repository.EmailRepository;
 import com.huntering.common.service.BaseService;
 
@@ -27,10 +28,56 @@ public class EmailService extends BaseService<Email, Long> {
     @Autowired
     private AccountPasswordService passwordService;
 
-    public void setPasswordService(AccountPasswordService passwordService) {
+    @Autowired
+    private AccountService accountService;
+    
+    public void setAccountService(AccountService accountService) {
+		this.accountService = accountService;
+	}
+
+	public void setPasswordService(AccountPasswordService passwordService) {
         this.passwordService = passwordService;
     }
 
+    /**
+     * Check the MD5 code to make the email active.
+     * 
+     * @param emailId
+     * @param code
+     * @return
+     */
+    public Email verifyEmail(Long emailId, String code) {
+    	if (emailId == null || StringUtils.isEmpty(code)) {
+    		throw new AccountException("email.error.activate", null);
+    	}
+
+    	Email email = findOne(emailId);
+    	if (email == null) {
+    		throw new AccountException("email.error.nonexist", null);
+    	} 
+    	
+    	if (email.getActive()) {
+    		throw new AccountException("email.error.alreayactive", null);
+    	}
+    	
+    	Account account = email.getAccount();
+    	String encrypCode = passwordService.encryptPassword(email.getEmail(), account.getSalt());
+    	
+    	if ( !encrypCode.equals(code)) {
+    		throw new AccountException("email.error.activate", null);
+    	}
+    	
+    	email.setActive(true);
+    	if (!account.getActive()) {
+    		account.setActive(true);    	
+    		accountService.update(account);
+    	} else {
+    		update(email);
+    	}
+    	
+    	return email;
+    }
+    
     public Email findByEmail(String email) {
         if(StringUtils.isEmpty(email)) {
             return null;
