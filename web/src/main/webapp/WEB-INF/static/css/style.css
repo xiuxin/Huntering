@@ -1,0 +1,382 @@
+/*whole page start*/
+
+body{
+	font-family: SimSun;
+	-moz-user-select: none; 
+	-khtml-user-select: none; 
+	user-select: none;
+	font-size: 14px;
+	background: #efefef;
+}
+
+ul{
+	list-style-type:none
+}
+
+p{
+	text-indent:2em;
+	margin: 0 0 0px;
+	line-height: 25px;
+}
+
+input.hidefocus { outline: none; }
+input.hidefocus::-moz-focus-inner { border:none; }
+
+.footer{
+	text-align: center;
+	background: #efefef;
+	color: #0073c6;
+	font-size: 12px;
+	min-height: 100px;
+}
+
+.footer_line{
+	position:relative;
+	margin-left: 10px;
+	margin-right: 10px;
+	top: 1px;
+}
+
+.copy_right_second{
+	margin-top: 8px;
+}
+
+.copy_right_first{
+	margin-top: 17px;
+}
+
+.above_footer_line{
+	width: 100%;
+	height: 1px;
+	background: #dddddd;
+	margin-top: 0px;
+}
+
+.outer_login_middle{
+	width: 100%;
+	background: white;
+}
+
+.top_bar{
+	margin-top: 0px;
+	width: 100%;
+	height: 70px;
+	background-image: url(../images/top_back.png);
+	color:white;
+	border-bottom: 1px solid #dddddd;
+}
+
+.com_logo_div{
+	width: 70px;
+	height: 35px;
+	margin-top: 18px;
+	margin-left: 10px;
+	float:left;
+}
+
+.com_name_div{
+	float:left;
+	font-size: 26px;
+	font-family: Arial;
+	color:#efefef;
+	height: 70px;
+	line-height:70px;
+	margin-left:10px;
+}
+
+.email_input_div{
+	float:left;
+	height: 70px;
+	line-height:70px;
+	margin-left: 272px;
+}
+
+.pwd_input_div{
+	float:left;
+	height: 70px;
+	margin-left: 15px;
+}
+
+.email_input{
+	padding-left:10px !important;
+	color: #333333;
+	font-size: 14px !important;
+	width: 168px !important;
+	height: 19px !important;
+	line-height: 19px !important;
+}
+
+.pwd_input{
+	padding-left:10px !important;
+	color: #333333;
+	font-size: 14px !important;
+	width: 168px !important;
+	height: 19px !important;
+	line-height: 19px !important;
+	margin-top: 17px;
+}
+
+.login_btn_div{
+	width: 80px;
+	height: 30px;
+	background-image: url(../images/login_btn.png);
+	float:left;
+	margin-top: 16px;
+	margin-left: 15px;
+	cursor:pointer;
+}
+
+.login_btn_div:hover{
+	width: 80px;
+	height: 30px;
+	background-image: url(../images/login_hover.png);
+	float:left;
+	margin-top: 16px;
+	margin-left: 15px;
+	cursor:pointer;
+}
+
+.get_pwd{
+	position:relative;
+	width: 64px;
+	font-size: 12px;
+	color:#888888;
+	margin-left:117px;
+	margin-top: -10px;
+	cursor:pointer;
+	text-decoration: none;
+}
+
+.get_pwd:hover{
+	position:relative;
+	width: 64px;
+	font-size: 12px;
+	color:#888888;
+	margin-left:117px;
+	margin-top: -10px;
+	cursor:pointer;
+	text-decoration: underline;
+}
+
+.login_middle{
+	height: 600px;
+}
+
+.slogan_black{
+	font-family: "黑体";
+	font-size: 40px;
+	color: #000000;
+	text-align:center;
+	font-weight: bold;
+	margin-top: 43px;
+	height: 40px;
+}
+
+.login_left_div{
+	width: 450px;
+	margin-left: 10px;
+	float:left;
+}
+
+.login_right_div{
+	width: 370px;
+	margin-left: 53px;
+	float:left;
+}
+
+.login_whole_div{
+	width: 100%;
+	margin-top: 42px;
+}
+
+.outer_hunter_img{
+	height: 301px;
+}
+
+.under_hunter_img{
+	text-align: center;
+	font-family: "黑体";
+	font-size: 18px;
+	color:black;
+	margin-top: 23px;
+	font-weight: bold;
+}
+
+.short_text{
+	font-size: 14px;
+	color: #888888 !important;
+	text-align:center;
+	margin-top: 10px;
+}
+
+.join_now{
+	font-size: 24px;
+	font-family: "黑体";
+	color:black;
+	margin-top: 10px;
+	font-weight: bold;
+	margin-left: 17px;
+}
+
+.join_now_result{
+	font-size: 24px;
+	font-family: "黑体";
+	color:black;
+	margin-top: 50px;
+	font-weight: bold;
+	margin-left: 17px;
+}
+
+.regist_info{
+	font-size: 16px;
+	color: black;
+	margin-top: 6px;
+	margin-left: 17px;
+}
+
+.regist_info_result{
+	font-size: 16px;
+	color: black;
+	margin-top: 10px;
+	margin-left: 17px;
+}
+
+.name_input{
+	width: 333px;
+	height: 24px !important;
+	border: 1px solid #c1c1c1 !important;
+	line-height: 24px !important;
+	font-size: 14px !important;
+	color: #666666 !important;
+	margin-left: 8px;
+}
+
+.name_inputt{
+	margin-top: 27px;
+}
+
+.email_inputt{
+	margin-top: 13px;
+}
+
+.must_icon{
+	width: 7px;
+	height: 8px;
+	position: relative;
+	top: -5px;
+}
+
+.agree_info{
+	margin-top: 15px;
+	font-size: 14px;
+	margin-left: 17px;
+	color: #888888;
+}
+
+.font_dark{
+	color:#222222;
+}
+
+.apply_btn{
+	background-image: url(../images/apply_btn.png);
+	width: 349px;
+	height: 44px;
+	margin-left: 17px;
+	margin-top: 12px;
+	cursor:pointer;
+}
+
+.apply_btn:hover{
+	background-image: url(../images/apply_hover.png);
+	width: 349px;
+	height: 44px;
+	margin-left: 17px;
+	margin-top: 12px;
+	cursor:pointer;
+}
+
+.apply_btn:active{
+	background-image: url(../images/apply_active.png);
+	width: 349px;
+	height: 44px;
+	margin-left: 17px;
+	margin-top: 12px;
+	cursor:pointer;
+}
+
+.name_alert{
+	color: #ca0000;
+	margin-left: 27px;
+	margin-top: -8px;
+	font-size: 14px;
+	height: 14px;
+}
+
+.alert_hide{
+	display: none;
+}
+
+.name_icon_hide{
+	display: none;
+}
+
+#nameVal2{
+	border: 1px solid #ca0000 !important;
+	display: none;
+}
+
+.email_icon_hide{
+	display:none;
+}
+
+#emailVal2{
+	display: none;
+	border: 1px solid #ca0000 !important;
+}
+
+.pwd_icon_hide{
+	display: none;
+}
+
+#pwdlVal2{
+	display: none;
+	border: 1px solid #ca0000 !important;
+}
+
+.apply_result{
+	display: none;
+}
+
+.right_get_pwd{
+	display: none;
+}
+
+.outer_emailValGet{
+	margin-left: 10px;
+	margin-top: 25px;
+}
+
+.goon_div{
+	width: 140px;
+	height: 40px;
+	background-image: url(../images/goon.png);
+	margin-top: 10px;
+	margin-left: 19px;
+}
+
+.goon_div:hover{
+	width: 140px;
+	height: 40px;
+	background-image: url(../images/goon_hover.png);
+	margin-top: 10px;
+	margin-left: 19px;
+}
+
+#emailValGet2{
+	display: none;
+	border: 1px solid #ca0000 !important;
+}
+
+.alert_hide_emaill{
+	display: none;
+}
