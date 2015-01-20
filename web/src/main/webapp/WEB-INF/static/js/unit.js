@@ -50,11 +50,8 @@ function applyClick(){
 			$("#emailVal").hide();
 			$("#emailVal2").show();
 		}else{
-			$(".login_right_div").hide();
-			$(".apply_result").show();
 			$("#signupForm").submit();
 		}
-		
 	}
 }
 
@@ -216,6 +213,14 @@ function loginHeader(){
 	if( $("#emailHeader").val() != "" && $("#pwdHeader").val() != "" ){
 		alert("success");
 	}
-	$("#loginForm").submit();
+	
+	if( $("#nameVal").val() != "" && $("#emailVal").val() != "" && $("#pwdlVal").val() != "" ){
+		if( isEmail($("#emailHeader").val()) == false ){
+			alert("请输入您的邮箱!");
+		}else{
+			$("#loginForm").submit();
+		}
+	}
+	
 
 }

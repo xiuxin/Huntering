@@ -60,7 +60,7 @@
                 <div class="regist_info">
                   只需几步，就能轻松注册
                 </div>
-                <form id="signupForm" action="register" method="post" class="form-horizontal">
+                <form id="signupForm" action="register" method="post">
                 <div class="name_inputt">
                     <img src="${ctx}/static/images/must_icon.png" class="must_icon name_icon_show"/>
                     <img src="${ctx}/static/images/must_icon_hide.png" class="must_icon name_icon_hide"/>
