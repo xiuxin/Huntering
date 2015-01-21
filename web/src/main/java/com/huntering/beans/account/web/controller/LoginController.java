@@ -16,7 +16,6 @@ import com.huntering.beans.account.entity.Account;
 import com.huntering.beans.account.entity.Email;
 import com.huntering.beans.account.service.AccountService;
 import com.huntering.beans.account.service.EmailService;
-import com.huntering.sys.user.service.UserStatusHistoryService;
 
 /**
  * 
@@ -37,9 +36,6 @@ public class LoginController {
     
     @Autowired
     private MessageSource messageSource;
-
-    @Autowired
-    private UserStatusHistoryService userStatusHistoryService;
 
     @RequestMapping(value = {"/public/loginPage"}, method = RequestMethod.GET)  
     public String loginForm(HttpServletRequest request, ModelMap model)  {  

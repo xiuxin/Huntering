@@ -5,29 +5,20 @@
  */
 package com.huntering.front.web.controller;
 
-import com.huntering.common.Constants;
-import com.huntering.sys.user.entity.User;
-import com.huntering.sys.user.service.UserStatusHistoryService;
+import javax.servlet.http.HttpServletRequest;
 
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.subject.Subject;
-import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.MessageSource;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * <p>User: Zhang Kaitao
  * <p>Date: 13-3-16 下午1:41
  * <p>Version: 1.0
  */
-@Controller
+//@Controller
 public class LoginFormController {
 
     @Value(value = "${shiro.login.url}")
@@ -36,14 +27,11 @@ public class LoginFormController {
     @Autowired
     private MessageSource messageSource;
 
-    @Autowired
-    private UserStatusHistoryService userStatusHistoryService;
-
-    @RequestMapping(value = {"/{login:login;?.*}"}) //spring3.2.2 bug see  http://jinnianshilongnian.iteye.com/blog/1831408
+    //@RequestMapping(value = {"/{login:login;?.*}"}) //spring3.2.2 bug see  http://jinnianshilongnian.iteye.com/blog/1831408
     public String loginForm(HttpServletRequest request, ModelMap model) {
 
         //表示退出
-        if (!StringUtils.isEmpty(request.getParameter("logout"))) {
+        /*if (!StringUtils.isEmpty(request.getParameter("logout"))) {
             model.addAttribute(Constants.MESSAGE, messageSource.getMessage("user.logout.success", null, null));
         }
 
@@ -93,7 +81,7 @@ public class LoginFormController {
         //如果同时存在错误消息 和 普通消息  只保留错误消息
         if (model.containsAttribute(Constants.ERROR)) {
             model.remove(Constants.MESSAGE);
-        }
+        }*/
 
         return "front/login";
     }

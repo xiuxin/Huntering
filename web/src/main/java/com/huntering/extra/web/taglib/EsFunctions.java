@@ -5,18 +5,6 @@
  */
 package com.huntering.extra.web.taglib;
 
-import com.huntering.common.utils.SpringUtils;
-import com.huntering.sys.organization.entity.Job;
-import com.huntering.sys.organization.entity.Organization;
-import com.huntering.sys.organization.service.JobService;
-import com.huntering.sys.organization.service.OrganizationService;
-import com.huntering.sys.permission.entity.Permission;
-import com.huntering.sys.permission.entity.Role;
-import com.huntering.sys.permission.service.PermissionService;
-import com.huntering.sys.permission.service.RoleService;
-import com.huntering.sys.resource.entity.Resource;
-import com.huntering.sys.resource.service.ResourceService;
-
 import java.util.Iterator;
 
 /**
@@ -50,13 +38,13 @@ public class EsFunctions {
      * @return
      */
     public static boolean existsOrganization(Long id, Boolean onlyDisplayShow) {
-        Organization organization = SpringUtils.getBean(OrganizationService.class).findOne(id);
+        /*Organization organization = SpringUtils.getBean(OrganizationService.class).findOne(id);
         if (organization == null) {
             return false;
         }
         if (Boolean.TRUE.equals(onlyDisplayShow) && Boolean.FALSE.equals(organization.getShow())) {
             return false;
-        }
+        }*/
         return true;
     }
 
@@ -68,13 +56,13 @@ public class EsFunctions {
      * @return
      */
     public static boolean existsJob(Long id, Boolean onlyDisplayShow) {
-        Job job = SpringUtils.getBean(JobService.class).findOne(id);
+        /*Job job = SpringUtils.getBean(JobService.class).findOne(id);
         if (job == null) {
             return false;
         }
         if (Boolean.TRUE.equals(onlyDisplayShow) && Boolean.FALSE.equals(job.getShow())) {
             return false;
-        }
+        }*/
         return true;
     }
 
@@ -86,13 +74,13 @@ public class EsFunctions {
      * @return
      */
     public static boolean existsResource(Long id, Boolean onlyDisplayShow) {
-        Resource resource = SpringUtils.getBean(ResourceService.class).findOne(id);
+        /*Resource resource = SpringUtils.getBean(ResourceService.class).findOne(id);
         if (resource == null) {
             return false;
         }
         if (Boolean.TRUE.equals(onlyDisplayShow) && Boolean.FALSE.equals(resource.getShow())) {
             return false;
-        }
+        }*/
         return true;
     }
 
@@ -104,13 +92,13 @@ public class EsFunctions {
      * @return
      */
     public static boolean existsPermission(Long id, Boolean onlyDisplayShow) {
-        Permission permission = SpringUtils.getBean(PermissionService.class).findOne(id);
+        /*Permission permission = SpringUtils.getBean(PermissionService.class).findOne(id);
         if (permission == null) {
             return false;
         }
         if (Boolean.TRUE.equals(onlyDisplayShow) && Boolean.FALSE.equals(permission.getShow())) {
             return false;
-        }
+        }*/
         return true;
     }
 
@@ -123,13 +111,13 @@ public class EsFunctions {
      * @return
      */
     public static boolean existsRole(Long id, Boolean onlyDisplayShow) {
-        Role role = SpringUtils.getBean(RoleService.class).findOne(id);
+        /*Role role = SpringUtils.getBean(RoleService.class).findOne(id);
         if (role == null) {
             return false;
         }
         if (Boolean.TRUE.equals(onlyDisplayShow) && Boolean.FALSE.equals(role.getShow())) {
             return false;
-        }
+        }*/
         return true;
     }
 

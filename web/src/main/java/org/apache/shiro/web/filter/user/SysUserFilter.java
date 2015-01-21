@@ -5,21 +5,20 @@
  */
 package org.apache.shiro.web.filter.user;
 
-import com.huntering.common.Constants;
-import com.huntering.sys.user.entity.User;
-import com.huntering.sys.user.entity.UserStatus;
-import com.huntering.sys.user.service.UserService;
+import java.io.IOException;
+
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.AccessControlFilter;
 import org.apache.shiro.web.util.WebUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-
-import java.io.IOException;
+import com.huntering.beans.account.entity.Account;
+import com.huntering.beans.account.service.AccountService;
+import com.huntering.common.Constants;
 
 /**
  * 验证用户过滤器
@@ -32,9 +31,9 @@ import java.io.IOException;
 public class SysUserFilter extends AccessControlFilter {
 
     @Autowired
-    private UserService userService;
+    private AccountService accountService;
 
-    /**
+	/**
      * 用户删除了后重定向的地址
      */
     private String userNotfoundUrl;
@@ -46,6 +45,10 @@ public class SysUserFilter extends AccessControlFilter {
      * 未知错误
      */
     private String userUnknownErrorUrl;
+    
+    public void setAccountService(AccountService accountService) {
+		this.accountService = accountService;
+	}
 
     public String getUserNotfoundUrl() {
         return userNotfoundUrl;
@@ -80,7 +83,7 @@ public class SysUserFilter extends AccessControlFilter {
 
         String username = (String) subject.getPrincipal();
         //此处注意缓存 防止大量的查询db
-        User user = userService.findByUsername(username);
+        Account user = accountService.findByEmail(username);
         //把当前用户放到session中
         request.setAttribute(Constants.CURRENT_USER, user);
         //druid监控需要
@@ -92,12 +95,12 @@ public class SysUserFilter extends AccessControlFilter {
 
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) throws Exception {
-        User user = (User) request.getAttribute(Constants.CURRENT_USER);
+        Account user = (Account) request.getAttribute(Constants.CURRENT_USER);
         if (user == null) {
             return true;
         }
 
-        if (Boolean.TRUE.equals(user.getDeleted()) || user.getStatus() == UserStatus.blocked) {
+        if (Boolean.TRUE.equals(user.getDeleted()) || Boolean.TRUE.equals(user.getActive())) {
             getSubject(request, response).logout();
             saveRequestAndRedirectToLogin(request, response);
             return false;
@@ -113,11 +116,11 @@ public class SysUserFilter extends AccessControlFilter {
     }
 
     protected void redirectToLogin(ServletRequest request, ServletResponse response) throws IOException {
-        User user = (User) request.getAttribute(Constants.CURRENT_USER);
+        Account user = (Account) request.getAttribute(Constants.CURRENT_USER);
         String url = null;
         if (Boolean.TRUE.equals(user.getDeleted())) {
             url = getUserNotfoundUrl();
-        } else if (user.getStatus() == UserStatus.blocked) {
+        } else if (Boolean.TRUE.equals(user.getActive())) {
             url = getUserBlockedUrl();
         } else {
             url = getUserUnknownErrorUrl();

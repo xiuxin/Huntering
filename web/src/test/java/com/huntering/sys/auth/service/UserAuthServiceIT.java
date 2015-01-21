@@ -5,19 +5,12 @@
  */
 package com.huntering.sys.auth.service;
 
-import com.huntering.common.Constants;
-import com.huntering.common.repository.hibernate.HibernateUtils;
-import com.huntering.sys.auth.service.UserAuthService;
-import com.huntering.sys.user.entity.User;
-import com.huntering.sys.user.service.UserService;
-import com.huntering.test.BaseIT;
-
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Set;
+import com.huntering.common.Constants;
+import com.huntering.common.repository.hibernate.HibernateUtils;
+import com.huntering.test.BaseIT;
 
 /**
  * <p>User: Zhang Kaitao

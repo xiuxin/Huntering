@@ -21,8 +21,8 @@ import org.springframework.stereotype.Component;
  * <p>Date: 13-5-16 下午3:49
  * <p>Version: 1.0
  */
-@Component
-@Aspect
+//@Component
+//@Aspect
 public class ResourceMenuCacheAspect extends BaseCacheAspect {
 
     public ResourceMenuCacheAspect() {
