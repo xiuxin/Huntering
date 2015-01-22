@@ -32,7 +32,7 @@
             >
         <!--enableMatrixVariables="true">-->
         <!-- 异步支持 默认30秒超时 -->
-        <mvc:async-support default-timeout="30000" task-executor="executor"/>
+        <!--<mvc:async-support default-timeout="30000" task-executor="executor"/>-->
 
         <mvc:message-converters register-defaults="true">
             <!-- StringHttpMessageConverter编码为UTF-8，防止乱码 -->
