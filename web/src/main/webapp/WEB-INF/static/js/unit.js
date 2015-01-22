@@ -214,13 +214,10 @@ function loginHeader(){
 		alert("success");
 	}
 	
-	if( $("#nameVal").val() != "" && $("#emailVal").val() != "" && $("#pwdlVal").val() != "" ){
-		if( isEmail($("#emailHeader").val()) == false ){
-			alert("请输入您的邮箱!");
-		}else{
-			$("#loginForm").submit();
-		}
+	if( isEmail($("#emailHeader").val()) == false ){
+		alert("请输入正确的邮箱!");
+	}else{
+		$("#loginForm").submit();
 	}
-	
 
 }

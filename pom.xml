@@ -66,11 +66,11 @@
             <name>SpringSource Repository</name>
             <url>http://repo.spring.io/snapshot/</url>
         </repository>
-        <repository>
+        <!--<repository>
             <id>cloudhopper</id>
             <name>Repository for Cloudhopper</name>
             <url>http://maven.cloudhopper.com/repos/third-party/</url>
-        </repository>
+        </repository>-->
         <repository>
             <id>jboss-repo-releases</id>
             <name>Jboss Repository</name>
@@ -93,11 +93,11 @@
             <name>Sourceforge Releases</name>
             <url>https://oss.sonatype.org/content/repositories/sourceforge-releases</url>
         </repository>
-        <repository>
+        <!--<repository>
             <id>maven-db-plugin-repo</id>
             <name>maven db plugin repository</name>
             <url>http://maven-db-plugin.googlecode.com/svn/maven/repo</url>
-        </repository>
+        </repository>-->
 
     </repositories>
     <pluginRepositories>
@@ -122,12 +122,12 @@
             <id>Codehaus repository</id>
             <url>http://repository.codehaus.org/</url>
         </pluginRepository>
-        <pluginRepository>
+        <!--<pluginRepository>
             <id>maven-db-plugin-repo</id>
             <name>maven db plugin repository</name>
             <url>https://maven-db-plugin.googlecode.com/svn/maven/repo</url>
             <layout>default</layout>
-        </pluginRepository>
+        </pluginRepository>-->
 
     </pluginRepositories>
 

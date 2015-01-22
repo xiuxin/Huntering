@@ -37,13 +37,13 @@ public class LoginController {
     @Autowired
     private MessageSource messageSource;
 
-    @RequestMapping(value = {"/public/loginPage"}, method = RequestMethod.GET)  
+    @RequestMapping(value = {"/login"}, method = RequestMethod.GET)  
     public String loginForm(HttpServletRequest request, ModelMap model)  {  
         return "front/login2"; 
     }  
     
 
-    @RequestMapping("/public/login")
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(@RequestParam(value = "email") String email, 
     		@RequestParam(value = "password") String password) {
     	
