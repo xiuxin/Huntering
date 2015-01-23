@@ -19,7 +19,7 @@
                <div class="com_name_div">
                    Huntering 
                </div>
-               <form id="loginForm" action="login" method="post">
+               <form id="loginForm" method="post" role="form">
                <div class="email_input_div">
                  <input type="email" class="email_input" name="email" placeholder="邮箱" id="emailHeader" />
                </div>
@@ -60,7 +60,7 @@
                 <div class="regist_info">
                   只需几步，就能轻松注册
                 </div>
-                <form id="signupForm" action="register" method="post">
+                <form id="signupForm" action="register" method="post" role="form">
                 <div class="name_inputt">
                     <img src="${ctx}/static/images/must_icon.png" class="must_icon name_icon_show"/>
                     <img src="${ctx}/static/images/must_icon_hide.png" class="must_icon name_icon_hide"/>
@@ -88,8 +88,8 @@
                 <div class="name_alert">
                     <div class="alert_hide alert_hide_pwd">请输入您的密码!</div>
                 </div>
-                <div class="name_alert alert_hide">
-                    <input type="text" name="invitationCode" placeholder="邀请码"/>
+                <div class="email_inputt">
+                    <input type="text" placeholder="邀请码" class="name_input" name="invitationcode" id="invitationcode" onBlur="pwdBlur()" />
                 </div>
                 <div class="agree_info">
                     <div>
