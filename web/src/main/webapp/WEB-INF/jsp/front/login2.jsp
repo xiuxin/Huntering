@@ -88,7 +88,7 @@
                 <div class="name_alert">
                     <div class="alert_hide alert_hide_pwd">请输入您的密码!</div>
                 </div>
-                <div class="email_inputt">
+                <div class="invitation_input">
                     <input type="text" placeholder="邀请码" class="name_input" name="invitationcode" id="invitationcode" onBlur="pwdBlur()" />
                 </div>
                 <div class="agree_info">

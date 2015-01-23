@@ -260,6 +260,10 @@ input.hidefocus::-moz-focus-inner { border:none; }
 	margin-top: 13px;
 }
 
+.invitation_input{
+	margin: 13px 0 0 12px;
+}
+
 .must_icon{
 	width: 7px;
 	height: 8px;
