@@ -6,12 +6,18 @@
 package com.huntering.filter;
 
 import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.huntering.beans.account.entity.Account;
 import com.huntering.beans.account.service.AccountService;
+import com.huntering.common.Constants;
 
 /**
  * 基于几点修改：
@@ -75,4 +81,30 @@ public class CustomFormAuthenticationFilter extends FormAuthenticationFilter {
         }*/
         return getDefaultSuccessUrl();
     }
+
+	@Override
+	protected boolean onLoginSuccess(AuthenticationToken token,
+			Subject subject, ServletRequest request, ServletResponse response)
+			throws Exception {
+		String username = (String)token.getPrincipal();
+		Account user = accountService.findByEmail(username);
+		((HttpServletRequest) request).getSession().setAttribute(Constants.CURRENT_USER, user);
+		return super.onLoginSuccess(token, subject, request, response);
+	}
+
+	@Override
+	protected boolean onAccessDenied(ServletRequest request,
+			ServletResponse response) throws Exception {
+		((HttpServletRequest) request).getSession().removeAttribute(Constants.CURRENT_USER);
+		return super.onAccessDenied(request, response);
+	}
+
+	@Override
+	protected boolean onLoginFailure(AuthenticationToken token,
+			AuthenticationException e, ServletRequest request,
+			ServletResponse response) {
+		((HttpServletRequest) request).getSession().removeAttribute(Constants.CURRENT_USER);
+		return super.onLoginFailure(token, e, request, response);
+	}
+	
 }

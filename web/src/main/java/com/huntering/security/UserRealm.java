@@ -32,17 +32,14 @@ import com.huntering.sys.user.exception.UserNotExistsException;
 import com.huntering.sys.user.exception.UserPasswordNotMatchException;
 import com.huntering.sys.user.exception.UserPasswordRetryLimitExceedException;
 
-/**
- * <p>User: Zhang Kaitao
- * <p>Date: 13-3-12 下午9:05
- * <p>Version: 1.0
- */
 public class UserRealm extends AuthorizingRealm {
 
     @Autowired
     private AccountService accountService;
 
     private static final Logger log = LoggerFactory.getLogger("es-error");
+    
+    /*public UserRealm() {}*/
 
     @Autowired
     public UserRealm(ApplicationContext ctx) {
@@ -67,13 +64,12 @@ public class UserRealm extends AuthorizingRealm {
         return authorizationInfo;
     }
 
-    public boolean isPermitted(PrincipalCollection principals, String permission) {
+    /*public boolean isPermitted(PrincipalCollection principals, String permission) {
         return super.isPermitted(principals, permission);
-    }
+    }*/
 
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
-
         UsernamePasswordToken upToken = (UsernamePasswordToken) token;
         String username = upToken.getUsername().trim();
         String password = "";
@@ -107,5 +103,5 @@ public class UserRealm extends AuthorizingRealm {
         SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(name, password.toCharArray(), getName());
         return info;
     }
-
+    
 }

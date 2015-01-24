@@ -3,26 +3,27 @@ package com.huntering.beans.account.web.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.huntering.beans.account.entity.Account;
 import com.huntering.beans.account.entity.Email;
 import com.huntering.beans.account.service.AccountService;
 import com.huntering.beans.account.service.EmailService;
-
 /**
  * 
  * @author Vincent Yao
  *
  */
 @Controller
+@RequestMapping("/") 
 public class LoginController {
 
     @Value(value = "${shiro.login.url}")
@@ -37,13 +38,18 @@ public class LoginController {
     @Autowired
     private MessageSource messageSource;
 
-    @RequestMapping(value = {"/login"}, method = RequestMethod.GET)  
-    public String loginForm(HttpServletRequest request, ModelMap model)  {  
+    @RequestMapping("/login")  
+    public String loginForm(HttpServletRequest request, ModelMap model)  { 
+    	Subject subject = SecurityUtils.getSubject();
+        if (subject != null && subject.isAuthenticated()) {
+            subject.logout();
+        }
         return "front/login2"; 
     }  
     
-
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    // do not need to add mapping for /login post handler.
+    // Just do the login authentication action on com.huntering.security.UserRealm.doGetAuthenticationInfo
+    //@RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(@RequestParam(value = "email") String email, 
     		@RequestParam(value = "password") String password) {
     	

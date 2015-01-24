@@ -16,11 +16,7 @@ import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.AccessControlFilter;
 import org.apache.shiro.web.util.WebUtils;
 
-/**
- * <p>User: Zhang Kaitao
- * <p>Date: 13-3-20 下午3:17
- * <p>Version: 1.0
- */
+
 public class OnlineSessionFilter extends AccessControlFilter {
 
     /**

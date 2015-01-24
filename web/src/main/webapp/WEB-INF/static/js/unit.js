@@ -210,9 +210,9 @@ function loginHeader(){
 		alert("请输入您的密码!");
 	}
 
-	if( $("#emailHeader").val() != "" && $("#pwdHeader").val() != "" ){
+	/*if( $("#emailHeader").val() != "" && $("#pwdHeader").val() != "" ){
 		alert("success");
-	}
+	}*/
 	
 	if( isEmail($("#emailHeader").val()) == false ){
 		alert("请输入正确的邮箱!");

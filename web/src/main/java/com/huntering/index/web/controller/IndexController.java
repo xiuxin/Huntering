@@ -12,11 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.huntering.beans.account.entity.Account;
 import com.huntering.security.CurrentAccount;
 
-/**
- * <p>User: Zhang Kaitao
- * <p>Date: 13-1-18 下午10:15
- * <p>Version: 1.0
- */
 @Controller("indexController")
 @RequestMapping("/")
 public class IndexController {

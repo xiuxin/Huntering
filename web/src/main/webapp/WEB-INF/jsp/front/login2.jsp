@@ -21,7 +21,7 @@
                </div>
                <form id="loginForm" method="post" role="form">
                <div class="email_input_div">
-                 <input type="email" class="email_input" name="email" placeholder="邮箱" id="emailHeader" />
+                 <input type="email" class="email_input" name="username" placeholder="邮箱" id="emailHeader" />
                </div>
                <div class="pwd_input_div">
                  <input type="password" class="pwd_input" name="password" placeholder="密码" id="pwdHeader" />

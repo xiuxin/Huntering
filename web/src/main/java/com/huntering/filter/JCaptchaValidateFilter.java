@@ -16,12 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import java.io.IOException;
 
-/**
- * 验证码过滤器
- * <p>User: Zhang Kaitao
- * <p>Date: 13-3-22 下午4:01
- * <p>Version: 1.0
- */
 public class JCaptchaValidateFilter extends AccessControlFilter {
 
     private boolean jcaptchaEbabled = true;

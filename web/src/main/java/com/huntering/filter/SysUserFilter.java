@@ -20,14 +20,6 @@ import com.huntering.beans.account.entity.Account;
 import com.huntering.beans.account.service.AccountService;
 import com.huntering.common.Constants;
 
-/**
- * 验证用户过滤器
- * 1、用户是否删除
- * 2、用户是否锁定
- * <p>User: Zhang Kaitao
- * <p>Date: 13-3-19 下午3:09
- * <p>Version: 1.0
- */
 public class SysUserFilter extends AccessControlFilter {
 
     @Autowired
@@ -81,11 +73,13 @@ public class SysUserFilter extends AccessControlFilter {
             return true;
         }
 
+        Account user = (Account) ((HttpServletRequest) request).getSession().getAttribute(Constants.CURRENT_USER);
+        if (user == null) {
+        	getSubject(request, response).logout();
+            return true;
+        }
+        
         String username = (String) subject.getPrincipal();
-        //此处注意缓存 防止大量的查询db
-        Account user = accountService.findByEmail(username);
-        //把当前用户放到session中
-        request.setAttribute(Constants.CURRENT_USER, user);
         //druid监控需要
         ((HttpServletRequest)request).getSession().setAttribute(Constants.CURRENT_USERNAME, username);
 
@@ -95,12 +89,12 @@ public class SysUserFilter extends AccessControlFilter {
 
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) throws Exception {
-        Account user = (Account) request.getAttribute(Constants.CURRENT_USER);
+    	Account user = (Account) ((HttpServletRequest) request).getSession().getAttribute(Constants.CURRENT_USER);
         if (user == null) {
             return true;
         }
 
-        if (Boolean.TRUE.equals(user.getDeleted()) || Boolean.TRUE.equals(user.getActive())) {
+        if (Boolean.TRUE.equals(user.getDeleted()) || Boolean.FALSE.equals(user.getActive())) {
             getSubject(request, response).logout();
             saveRequestAndRedirectToLogin(request, response);
             return false;
@@ -116,17 +110,17 @@ public class SysUserFilter extends AccessControlFilter {
     }
 
     protected void redirectToLogin(ServletRequest request, ServletResponse response) throws IOException {
-        Account user = (Account) request.getAttribute(Constants.CURRENT_USER);
+        Account user = (Account) ((HttpServletRequest) request).getSession().getAttribute(Constants.CURRENT_USER);
         String url = null;
         if (Boolean.TRUE.equals(user.getDeleted())) {
             url = getUserNotfoundUrl();
-        } else if (Boolean.TRUE.equals(user.getActive())) {
+        } else if (Boolean.FALSE.equals(user.getActive())) {
             url = getUserBlockedUrl();
         } else {
             url = getUserUnknownErrorUrl();
         }
-
         WebUtils.issueRedirect(request, response, url);
     }
 
+    
 }
