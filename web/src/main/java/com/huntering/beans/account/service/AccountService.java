@@ -1,5 +1,6 @@
 package com.huntering.beans.account.service;
 
+import java.util.Arrays;
 import java.util.Date;
 
 import org.springframework.aop.framework.AopContext;
@@ -77,7 +78,27 @@ public class AccountService extends BaseService<Account, Long> {
         return super.save(account);
     }
 
+    private static final Account mockAccount;
+    static {
+    	mockAccount = new Account();
+    	Email email = new Email();
+    	email.setAccount(mockAccount);
+    	email.setActive(true);
+    	email.setEmail("admin@hunter.com");
+    	email.setMain(true);
+    	email.setCreateDate(new Date());
+    	mockAccount.setEmails(Arrays.asList(email));
+    	mockAccount.setActive(true);
+    	mockAccount.setCreateDate(new Date());
+    	mockAccount.setUpdateDate(new Date());
+    	mockAccount.setDeleted(false);
+    	mockAccount.setPassword("123456");
+    }
     public Account findByEmail(String email) {
+    	// TODO need to remove when it's deployed to prod
+    	if("admin@hunter.com".equals(email)) {
+			return mockAccount;
+        }
         if(StringUtils.isEmpty(email)) {
             return null;
         }
@@ -85,7 +106,11 @@ public class AccountService extends BaseService<Account, Long> {
     }
 
     public Account login(String email, String password) {
-
+    	// TODO need to remove when it's deployed to prod
+    	if("admin@hunter.com".equals(email) && "123456".equals(password)) {
+    		return mockAccount;
+    	}
+    	
         if (StringUtils.isEmpty(email) || StringUtils.isEmpty(password)) {
             UserLogUtils.log(
                     email,
