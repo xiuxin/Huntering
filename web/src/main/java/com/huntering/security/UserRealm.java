@@ -39,16 +39,9 @@ public class UserRealm extends AuthorizingRealm {
 
     private static final Logger log = LoggerFactory.getLogger("es-error");
     
-    /*public UserRealm() {}*/
-
     @Autowired
     public UserRealm(ApplicationContext ctx) {
         super();
-        //不能注入 因为获取bean依赖顺序问题造成可能拿不到某些bean报错
-        //why？
-        //因为spring在查找findAutowireCandidates时对FactoryBean做了优化，即只获取Bean，但不会autowire属性，
-        //所以如果我们的bean在依赖它的bean之前初始化，那么就得不到ObjectType（永远是Repository）
-        //所以此处我们先getBean一下 就没有问题了
         ctx.getBeansOfType(SimpleBaseRepositoryFactoryBean.class);
     }
 
