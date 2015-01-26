@@ -2,7 +2,6 @@ package com.huntering.beans.account.service;
 
 import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -196,6 +195,50 @@ public class AccountService extends BaseService<Account, Long> {
 		String link = URL + "/public/verify?code=" + verificationCode + "&email=" + email;
 		msg.setText("Click below link to enable your email: " + link);
 		mailSender.send(msg);
+    }
+    
+    public String recoverPassword(String email) {
+    	String messageKey = null;
+        if (StringUtils.isEmpty(email)) {
+        	messageKey = "email.error.nonexist";
+            UserLogUtils.log(
+                    email,
+                    "recoverPasswordError",
+                    messageKey);
+        } else {
+        	Account account = findValidAccountByEmail(email);
+        	if(account != null) {
+        		passwordService.recoverPassword(account);
+        	} else {
+        		messageKey = "account.invalid";
+        	}
+        }
+        return messageKey;
+
+    }
+    /**
+     * Get the account by email<p>
+     * and check whether the account is active <p>
+     * and check whether the account is deleted <p>
+     * and check whether the email is active
+     * 
+     * @param email
+     * @return
+     */
+    private Account findValidAccountByEmail(String email) {
+    	Account account = findByEmail(email);
+    	if(account != null && Boolean.TRUE.equals(account.getActive()) && Boolean.FALSE.equals(account.getDeleted())) {
+    		for(Email accountEmail : account.getEmails()) {
+    			if(accountEmail.getEmail().equals(email)) {
+    				if(!Boolean.TRUE.equals(accountEmail.getActive())) {
+    					account = null;
+    				}
+    			}
+    		}
+    	} else {
+    		account = null;
+    	}
+    	return account;
     }
     
     private Account createAccount(String email, String password, String fullName, String invCode) {

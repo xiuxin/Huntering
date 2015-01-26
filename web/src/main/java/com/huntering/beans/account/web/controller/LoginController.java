@@ -12,11 +12,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.huntering.beans.account.entity.Account;
 import com.huntering.beans.account.entity.Email;
 import com.huntering.beans.account.service.AccountService;
 import com.huntering.beans.account.service.EmailService;
+import com.huntering.dto.ResponseResult;
 /**
  * 
  * @author Vincent Yao
@@ -109,5 +111,25 @@ public class LoginController {
     	
     	return "front/login2";
     }
+    
+    @RequestMapping("/public/recoverpwd")
+    @ResponseBody
+    public ResponseResult<String> recoverPassword(
+    		HttpServletRequest request,
+    		@RequestParam(value = "email") String email) {
+    	ResponseResult<String> result = new ResponseResult<String>();
+    	String messageKey = accountService.recoverPassword(email);
+    	
+    	if (messageKey == null) {
+    		result.setSuccess(true);
+    	} else {
+    		result.setSuccess(false);
+    		result.setResult(messageSource.getMessage(messageKey, new Object[]{}, null));
+    	}
+    	
+    	return result;
+    }
+    
+    
     
 }

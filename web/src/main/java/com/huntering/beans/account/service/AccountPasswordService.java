@@ -1,5 +1,7 @@
 package com.huntering.beans.account.service;
 
+import java.util.UUID;
+
 import javax.annotation.PostConstruct;
 
 import net.sf.ehcache.Cache;
@@ -73,6 +75,15 @@ public class AccountPasswordService {
             clearLoginRecordCache(prefix + accountId);
         }
     }
+    
+    public String recoverPassword(Account account) {
+    	if(account == null) {
+    		return null;
+    	}
+    	String newPwd = UUID.randomUUID().toString().substring(0, 8); 
+		account.setPassword(encryptPassword(newPwd, account.getSalt()));
+    	return newPwd;
+    }
 
     public boolean matches(Account account, String newPassword) {
         return account.getPassword().equals(
@@ -89,5 +100,8 @@ public class AccountPasswordService {
 
     public static void main(String[] args) {
         System.out.println(new AccountPasswordService().encryptPassword("123456", "iY71e4d123"));
+		String newPwd = UUID.randomUUID().toString().substring(0, 8);
+        System.out.println(newPwd);
+		System.out.println(new AccountPasswordService().encryptPassword(newPwd, "iY71e4d123"));
     }
 }
