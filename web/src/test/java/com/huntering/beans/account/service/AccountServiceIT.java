@@ -66,7 +66,7 @@ public class AccountServiceIT extends BaseAccountIT {
     public void testRegisterSuccess() {
     	createDefaultInvitationCode(false);
     	
-        accountService.register(email, password, inviationCode);
+        accountService.register(email, password, "TName", inviationCode);
 //        accountService.login(email, password);
         passwordService.clearLoginRecordCache(email);
     }
@@ -74,37 +74,37 @@ public class AccountServiceIT extends BaseAccountIT {
     @Test(expected = InvalidRegistrationInfoException.class)
     public void testRegisterFailWithEmptyEmail() {
     	createDefaultInvitationCode(false);
-        accountService.register("", password, inviationCode);
+        accountService.register("", password,"TName", inviationCode);
     }
 
     @Test(expected = InvalidRegistrationInfoException.class)
     public void testRegisterFailWithEmptyPassword() {
     	createDefaultInvitationCode(false);
-        accountService.register(email, "", inviationCode);
+        accountService.register(email, "", "TName", inviationCode);
     }
 
     @Test(expected = DuplicatedEmailRegisterException.class)
     public void testRegisterFailWithDuplicateEmail() {
     	createDefaultInvitationCode(false);
-        accountService.register(email, password, inviationCode);
-        accountService.register(email, password, inviationCode);
+        accountService.register(email, password, "TName", inviationCode);
+        accountService.register(email, password, "TName", inviationCode);
     }
 
     @Test(expected = InvalidRegistrationInfoException.class)
     public void testRegisterFail_EmptyInvitationCode() {
     	createDefaultInvitationCode(false);
-        accountService.register(email, password, null);
+        accountService.register(email, password, "TName", null);
     }
 
     @Test(expected = InvitationCodeException.class)
     public void testRegisterFail_InvitationCodeNotExists() {
     	createDefaultInvitationCode(false);
-        accountService.register(email, password, "NotExistsCode");
+        accountService.register(email, password, "TName", "NotExistsCode");
     }
 
     @Test(expected = InvitationCodeException.class)
     public void testRegisterFail_UsedInvitaionCode() {
     	createDefaultInvitationCode(true);
-        accountService.register(email, password, inviationCode);
+        accountService.register(email, password, "TName", inviationCode);
     }
 }

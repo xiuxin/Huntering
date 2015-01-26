@@ -2,6 +2,7 @@ package com.huntering.beans.account.service;
 
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,8 @@ import com.huntering.beans.account.exception.DuplicatedEmailRegisterException;
 import com.huntering.beans.account.exception.InvalidRegistrationInfoException;
 import com.huntering.beans.account.exception.InvitationCodeException;
 import com.huntering.beans.account.repository.AccountRepository;
+import com.huntering.beans.profile.entity.People;
+import com.huntering.beans.profile.service.PeopleService;
 import com.huntering.common.service.BaseService;
 import com.huntering.sys.user.entity.User;
 import com.huntering.sys.user.utils.UserLogUtils;
@@ -44,28 +47,15 @@ public class AccountService extends BaseService<Account, Long> {
 	
     @Autowired
     private AccountPasswordService passwordService;
+    
+    @Autowired
+    private PeopleService peopleService;
 
 	@Autowired
     private InvitationCodeService invitationCodeService;
     
     @Autowired
     private EmailService emailService;
-
-    public void setPasswordService(AccountPasswordService passwordService) {
-        this.passwordService = passwordService;
-    }
-
-    public void setEmailService(EmailService emailService) {
-        this.emailService = emailService;
-    }
-
-    public void setMailSender(MailSender mailSender) {
-		this.mailSender = mailSender;
-	}
-
-	public void setMessage(SimpleMailMessage message) {
-		this.message = message;
-	}
 	
     @Override
     public Account save(Account account) {
@@ -162,7 +152,7 @@ public class AccountService extends BaseService<Account, Long> {
         return account;
     }
 
-    public Account register(String email, String password, String inviCode) {
+    public Account register(String email, String password, String fullName, String inviCode) {
 
         if (StringUtils.isEmpty(email) || StringUtils.isEmpty(password) || StringUtils.isEmpty(inviCode)) {
             UserLogUtils.log(
@@ -189,7 +179,7 @@ public class AccountService extends BaseService<Account, Long> {
             throw new InvitationCodeException("invicode.empty", null);
         }
         
-        Account account = createAccount(email, password, inviCode);
+        Account account = createAccount(email, password, fullName, inviCode);
         return account;
     }
     
@@ -208,7 +198,7 @@ public class AccountService extends BaseService<Account, Long> {
 		mailSender.send(msg);
     }
     
-    private Account createAccount(String email, String password, String invCode) {
+    private Account createAccount(String email, String password, String fullName, String invCode) {
         
         if (emailService.isEmailUsed(email)) {
             UserLogUtils.log(
@@ -234,6 +224,13 @@ public class AccountService extends BaseService<Account, Long> {
         Account account = new Account();
         account.setPassword(password);
         account.getEmails().add(new Email(account, email, true, false));
+        
+        People people = new People();
+        people.setAccount(account);
+        people.setFullName(fullName);
+        people.setSelf(true);
+        account.getPeople().add(people);
+        
         return saveAndFlush(account);
     }
     
@@ -243,4 +240,26 @@ public class AccountService extends BaseService<Account, Long> {
         }
         return true;
     }
+
+    /******** service setter ******/
+    public void setPasswordService(AccountPasswordService passwordService) {
+        this.passwordService = passwordService;
+    }
+
+    public void setEmailService(EmailService emailService) {
+        this.emailService = emailService;
+    }
+
+    public void setMailSender(MailSender mailSender) {
+		this.mailSender = mailSender;
+	}
+
+	public void setMessage(SimpleMailMessage message) {
+		this.message = message;
+	}
+	
+	public void setPeopleService(PeopleService peopleService) {
+		this.peopleService = peopleService;
+	}
+
 }

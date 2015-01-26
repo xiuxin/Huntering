@@ -45,3 +45,27 @@ create table `invitation_code`(
   index `idx_invitation_code_used` (`used`)
 ) charset=utf8 ENGINE=InnoDB;;
 alter table `email` auto_increment=1000;;
+
+drop table if exists `people`;;
+##people
+create table `people`(
+  `id`         	bigint not null auto_increment,
+  `account_id` 	bigint,
+  `self` 		bool,
+  `nickname`  	varchar(100),
+  `fullname`  	varchar(100),
+  `mdn`  		varchar(100),
+  `country`  	varchar(100),
+  `city`  		varchar(100),
+  `district`  	varchar(100),
+  `desb`  		varchar(100),
+  `birthday` 	date,
+  `age` 		tinyint,
+  `gender` 		tinyint,
+  `summary` 	varchar(255),
+  `deleted`   bool,
+  `create_date` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `update_date` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  constraint `pk_people` primary key(`id`)
+) charset=utf8 ENGINE=InnoDB;;
+alter table `people` auto_increment=1000;;

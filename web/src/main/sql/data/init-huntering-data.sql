@@ -7,7 +7,13 @@ insert into `account`
 (`id`, `password`, `salt`, `deleted`, `active`)
   values
   (1, '7ec5c233d59e08bfe045292809ffac35', 'iY71e4d123', 0, 1);;
-
+  
+delete from `people` where id>=1 and id<=1000;;
+/*默认admin/123456*/
+insert into `people`
+(`id`, `account_id`, `fullName`, `self`,`deleted`)
+  values
+  (1, 1, '苍井空', 1, 0);;
   
 delete from `email` where id>=1 and id<=1000;;
 insert into `email`

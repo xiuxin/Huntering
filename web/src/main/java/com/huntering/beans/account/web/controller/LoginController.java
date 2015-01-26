@@ -74,7 +74,7 @@ public class LoginController {
     		@RequestParam(value = "invitationCode") String invitationCode) {
     	
     	try {
-    		Account account = accountService.register(email, password, invitationCode);
+    		Account account = accountService.register(email, password, "Test Name", invitationCode);
         	
         	if (account != null) {
         		String url = request.getScheme() + "://" + request.getLocalAddr() + ":" +request.getLocalPort();
