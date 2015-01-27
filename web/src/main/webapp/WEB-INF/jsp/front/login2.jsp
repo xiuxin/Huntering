@@ -122,10 +122,12 @@
                 </div>
                 <div class="outer_emailValGet">
                   <input type="email" placeholder="邮箱" class="name_input" name="" id="emailValGet" onBlur="emailBlurGet()" />
-                  <input type="email" placeholder="邮箱" class="name_input" id="emailValGet2" onBlur="emailBlurGet2()" />
                 </div>
                 <div class="name_alert">
                     <div class="alert_hide alert_hide_emaill">请输入正确的邮箱格式!</div>
+                </div>
+                <div class="name_alert">
+                    <div class="alert_hide alert_hide_recoverpwd"></div>
                 </div>
                 <div class="goon_div" onclick="confirmGetPwd()">
                 </div>

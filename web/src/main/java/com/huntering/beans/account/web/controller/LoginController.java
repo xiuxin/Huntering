@@ -11,6 +11,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -112,7 +113,7 @@ public class LoginController {
     	return "front/login2";
     }
     
-    @RequestMapping("/public/recoverpwd")
+    @RequestMapping(value = "/public/recoverpwd", method = RequestMethod.POST)
     @ResponseBody
     public ResponseResult<String> recoverPassword(
     		HttpServletRequest request,
@@ -122,6 +123,7 @@ public class LoginController {
     	
     	if (messageKey == null) {
     		result.setSuccess(true);
+    		result.setResult(messageSource.getMessage("recover.password.success", new Object[]{email}, null));
     	} else {
     		result.setSuccess(false);
     		result.setResult(messageSource.getMessage(messageKey, new Object[]{}, null));

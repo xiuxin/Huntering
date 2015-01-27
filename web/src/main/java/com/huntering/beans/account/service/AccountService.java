@@ -5,6 +5,7 @@ import java.util.Date;
 
 import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
@@ -55,6 +56,9 @@ public class AccountService extends BaseService<Account, Long> {
     
     @Autowired
     private EmailService emailService;
+    
+    @Autowired
+    private MessageSource messageSource;
 	
     @Override
     public Account save(Account account) {
@@ -208,7 +212,12 @@ public class AccountService extends BaseService<Account, Long> {
         } else {
         	Account account = findValidAccountByEmail(email);
         	if(account != null) {
-        		passwordService.recoverPassword(account);
+        		String newPassword = passwordService.recoverPassword(account);
+        		SimpleMailMessage msg = new SimpleMailMessage(message);
+        		msg.setTo(email);
+        		msg.setSubject(messageSource.getMessage("recover.password.subject", new Object[]{}, null));
+        		msg.setText(messageSource.getMessage("recover.password.context", new Object[]{newPassword}, null));
+        		mailSender.send(msg);
         	} else {
         		messageKey = "account.invalid";
         	}

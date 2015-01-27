@@ -385,3 +385,7 @@ input.hidefocus::-moz-focus-inner { border:none; }
 .alert_hide_emaill{
 	display: none;
 }
+
+.red_border{
+	border: 1px solid #ca0000 !important;
+}

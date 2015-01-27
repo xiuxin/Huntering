@@ -162,16 +162,28 @@ function getPwd(){
 function confirmGetPwd(){
 	if( $("#emailValGet").val() == "" || isEmail($("#emailValGet").val()) == false ){
 		$(".alert_hide_emaill").show();
-		
-		if( $("#emailValGet2").val != ""){
-			$("#emailValGet2").val( $("#emailValGet2").val() );
-		}else{
-			$("#emailValGet2").val( $("#emailValGet").val() );
-		}
-		$("#emailValGet2").show();
-		$("#emailValGet").hide();
-	}else {
-		alert("success");
+		$("#emailValGet").addClass("red_border");
+	} else {
+		var email = $("#emailValGet").val();
+		$.ajax({
+			dataType : "json",
+			type: "POST",
+			url : "/public/recoverpwd?time=" + new Date().getTime(),
+			data : {email: $("#emailValGet").val()},
+			success : function(data) {
+				console.log(data);
+				if(data.status) {
+					$("#emailValGet").removeClass("red_border");
+					$(".alert_hide_recoverpwd")[0].innerText=data.result;
+					$(".alert_hide_recoverpwd").show();
+				} else {
+					$("#emailValGet").addClass("red_border");
+					$(".alert_hide_emaill").hide();
+					$(".alert_hide_recoverpwd")[0].innerText=data.result;
+					$(".alert_hide_recoverpwd").show();
+				}
+			}
+		});
 	}
 
 	if( $("#emailValGet2").val() != "" && isEmail($("#emailValGet2").val()) == true ){
@@ -181,8 +193,7 @@ function confirmGetPwd(){
 
 function emailBlurGet(){
 	if( $("#emailValGet").val() != "" ){
-		$("#emailValGet2").hide();
-		$("#emailValGet").show();
+		$("#emailValGet").removeClass("red_border");
 		$(".alert_hide_emaill").hide();
 	}
 }
