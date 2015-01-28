@@ -2,6 +2,14 @@
 #DELIMITER ;;
 
 drop table if exists `account`;;
+drop table if exists `email`;;
+drop table if exists `invitation_code`;;
+
+drop table if exists `company`;;
+drop table if exists `people`;;
+drop table if exists `people_company`;;
+drop table if exists `people_education`;;
+
 ##account
 create table `account`(
   `id`         bigint not null auto_increment,
@@ -16,7 +24,6 @@ create table `account`(
 ) charset=utf8 ENGINE=InnoDB;;
 alter table `account` auto_increment=1000;;
 
-drop table if exists `email`;;
 ##email
 create table `email`(
   `id`         bigint not null auto_increment,
@@ -32,7 +39,6 @@ create table `email`(
 ) charset=utf8 ENGINE=InnoDB;;
 alter table `email` auto_increment=1000;;
 
-drop table if exists `invitation_code`;;
 ##AUTH_CODE
 create table `invitation_code`(
   `id`         bigint not null auto_increment,
@@ -46,7 +52,6 @@ create table `invitation_code`(
 ) charset=utf8 ENGINE=InnoDB;;
 alter table `invitation_code` auto_increment=1000;;
 
-drop table if exists `people`;;
 ##people
 create table `people`(
   `id`         	bigint not null auto_increment,
@@ -58,7 +63,7 @@ create table `people`(
   `country`  	varchar(100),
   `city`  		varchar(100),
   `district`  	varchar(100),
-  `desb`  		varchar(100),
+  `desb`  		varchar(255),
   `birthday` 	date,
   `age` 		tinyint,
   `gender` 		tinyint,
@@ -70,14 +75,13 @@ create table `people`(
 ) charset=utf8 ENGINE=InnoDB;;
 alter table `people` auto_increment=1000;;
     
-drop table if exists `people_education`;;
 ##people_education
 create table `people_education`(
   `id`         	bigint not null auto_increment,
   `people_id` 	bigint,
-  `college` 	varchar(100),
+  `college` 	varchar(255),
   `degree`  	tinyint,
-  `desb`  		varchar(100),
+  `desb`  		varchar(255),
   `startdate` 	date,
   `enddate` 	date,
   `create_date` timestamp DEFAULT CURRENT_TIMESTAMP,
@@ -86,3 +90,38 @@ create table `people_education`(
   constraint `pk_people_education` primary key(`id`)
 ) charset=utf8 ENGINE=InnoDB;;
 alter table `people_education` auto_increment=1000;;
+
+##company
+create table `company`(
+  `id`         	bigint not null auto_increment,
+  `temp` 		bool,
+  `name`  		varchar(255),
+  `website`  	varchar(100),
+  `industry`  	smallint,
+  `typo`  		smallint,
+  `size`  		smallint,
+  `version`  	varchar(100),
+  `location`  	varchar(255),
+  `deleted`   	bool,
+  `create_date` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `update_date` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  constraint `pk_company` primary key(`id`)
+) charset=utf8 ENGINE=InnoDB;;
+alter table `company` auto_increment=1000;;
+
+##peoplecompany
+create table `people_company`(
+  `id`         	bigint not null auto_increment,
+  `people_id` 	bigint not null ,
+  `company_id`  bigint not null ,
+  `detail`  	varchar(100),
+  `title`  		varchar(100),
+  `desb`  		varchar(255),
+  `startdate` 	date,
+  `enddate` 	date,
+  `deleted`   	bool,
+  `create_date` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `update_date` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  constraint `pk_people_company` primary key(`id`)
+) charset=utf8 ENGINE=InnoDB;;
+alter table `company` auto_increment=1000;;
