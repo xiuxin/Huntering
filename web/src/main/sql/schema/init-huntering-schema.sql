@@ -44,7 +44,7 @@ create table `invitation_code`(
   constraint `unique_invitation_code` unique(`code`),
   index `idx_invitation_code_used` (`used`)
 ) charset=utf8 ENGINE=InnoDB;;
-alter table `email` auto_increment=1000;;
+alter table `invitation_code` auto_increment=1000;;
 
 drop table if exists `people`;;
 ##people
@@ -69,3 +69,20 @@ create table `people`(
   constraint `pk_people` primary key(`id`)
 ) charset=utf8 ENGINE=InnoDB;;
 alter table `people` auto_increment=1000;;
+    
+drop table if exists `people_education`;;
+##people_education
+create table `people_education`(
+  `id`         	bigint not null auto_increment,
+  `people_id` 	bigint,
+  `college` 	varchar(100),
+  `degree`  	tinyint,
+  `desb`  		varchar(100),
+  `startdate` 	date,
+  `enddate` 	date,
+  `create_date` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `update_date` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `deleted`   bool,
+  constraint `pk_people_education` primary key(`id`)
+) charset=utf8 ENGINE=InnoDB;;
+alter table `people_education` auto_increment=1000;;

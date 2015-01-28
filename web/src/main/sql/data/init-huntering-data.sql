@@ -15,6 +15,12 @@ insert into `people`
   values
   (1, 1, '苍井空', 1, 0);;
   
+delete from `people_education` where id>=1 and id<=1000;;
+insert into `people_education`
+(`id`, `people_id`, `degree`, `desb`, `deleted`)
+  values
+  (1, 1, 1, '给校长当小三', 0);;
+  
 delete from `email` where id>=1 and id<=1000;;
 insert into `email`
 (`id`, `email`, `account_id`, `main`, `active`)

@@ -1,21 +1,27 @@
 package com.huntering.beans.profile.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.google.common.collect.Lists;
 import com.huntering.beans.account.entity.Account;
 import com.huntering.common.entity.BaseTimeEntity;
 import com.huntering.common.plugin.entity.LogicDeleteable;
@@ -61,7 +67,23 @@ public class People extends BaseTimeEntity<Long> implements LogicDeleteable {
     private Integer gender;
     
     private String summary;
-    
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = PeopleEducation.class, mappedBy = "people", orphanRemoval = true)
+    @Fetch(FetchMode.SELECT)
+    @Basic(optional = true, fetch = FetchType.LAZY)
+    @Cascade(value = org.hibernate.annotations.CascadeType.ALL)
+    @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)//集合缓存
+    @OrderBy()
+    private List<PeopleEducation> peopleEducation;
+
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = People.class, mappedBy = "people", orphanRemoval = true)
+//    @Fetch(FetchMode.SELECT)
+//    @Basic(optional = true, fetch = FetchType.LAZY)
+//    @Cascade(value = org.hibernate.annotations.CascadeType.ALL)
+//    @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)//集合缓存
+//    @OrderBy()
+//    private List<PeopleCompany> peopleCompany;
+
     @Column(nullable = false)
     private boolean self;
     
@@ -168,6 +190,28 @@ public class People extends BaseTimeEntity<Long> implements LogicDeleteable {
 	public void setSelf(boolean self) {
 		this.self = self;
 	}
+
+    public List<PeopleEducation> getPeopleEducation() {
+        if (peopleEducation == null) {
+            peopleEducation = Lists.newArrayList();
+        }
+        return peopleEducation;
+    }
+
+//    public void setPeopleCompany(List<PeopleCompany> peopleCompany) {
+//        this.peopleCompany = peopleCompany;
+//    }
+//    
+//    public List<PeopleCompany> getPeopleCompany() {
+//        if (peopleCompany == null) {
+//            peopleCompany = Lists.newArrayList();
+//        }
+//        return peopleCompany;
+//    }
+
+    public void setPeopleEducation(List<PeopleEducation> peopleEducation) {
+        this.peopleEducation = peopleEducation;
+    }
     
     /**
      * 逻辑删除flag
