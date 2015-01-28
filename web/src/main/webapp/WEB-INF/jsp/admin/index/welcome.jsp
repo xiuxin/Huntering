@@ -31,6 +31,7 @@
 <div  style="margin: 5px;margin-top: 10px;">
 <h1>Welcome. </h1>
 <h2>${user}</h2>
+<a href="${ctx}/upload/ajax/create/${user.id}">简历上传</a>
 </div>
 <es:contentFooter/>
 <script>

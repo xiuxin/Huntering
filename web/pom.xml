@@ -180,11 +180,6 @@
             <!--<artifactId>x-gen</artifactId>-->
             <!--<version>1.0</version>-->
             <!--<scope>provided</scope>-->
-        <dependency>
-            <groupId>com.huntering</groupId>
-            <artifactId>huntering-common</artifactId>
-            <version>${sishuok.common.version}</version>
-        </dependency>
         <!--</dependency>-->
         <!--<dependency>-->
             <!--<groupId>bsh</groupId>-->

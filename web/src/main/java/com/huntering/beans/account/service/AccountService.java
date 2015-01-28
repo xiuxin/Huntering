@@ -85,6 +85,7 @@ public class AccountService extends BaseService<Account, Long> {
     	mockAccount.setCreateDate(new Date());
     	mockAccount.setUpdateDate(new Date());
     	mockAccount.setDeleted(false);
+    	mockAccount.setId(110120119l);
     	mockAccount.setPassword("123456");
     }
     public Account findByEmail(String email) {

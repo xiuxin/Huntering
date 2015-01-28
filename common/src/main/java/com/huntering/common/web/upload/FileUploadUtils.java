@@ -126,6 +126,7 @@ public class FileUploadUtils {
 
     /**
      * 文件上传
+     * @param acctId 
      *
      * @param request          当前请求 从请求中提取 应用上下文根
      * @param baseDir          相对应用的基目录
@@ -151,8 +152,7 @@ public class FileUploadUtils {
         }
 
         assertAllowed(file, allowedExtension, maxSize);
-        String filename = extractFilename(file, baseDir, needDatePathAndRandomName);
-
+        String filename = extractFilename(file, baseDir, needDatePathAndRandomName) +  "_" + (String)request.getSession().getAttribute("acctId") ;
         File desc = getAbsoluteFile(extractUploadDir(request), filename);
 
         file.transferTo(desc);
