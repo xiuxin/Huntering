@@ -9,6 +9,7 @@ drop table if exists `company`;;
 drop table if exists `people`;;
 drop table if exists `people_company`;;
 drop table if exists `people_education`;;
+drop table if exists `apply_invitation_code`;;
 
 ##account
 create table `account`(
@@ -51,6 +52,15 @@ create table `invitation_code`(
   index `idx_invitation_code_used` (`used`)
 ) charset=utf8 ENGINE=InnoDB;;
 alter table `invitation_code` auto_increment=1000;;
+
+##apply_invitation_code
+create table `apply_invitation_code`(
+  `id`         bigint not null auto_increment,
+  `email`  varchar(100),
+  `applyDate` timestamp DEFAULT CURRENT_TIMESTAMP,
+  constraint `pk_apply_invitation_code` primary key(`id`)
+) charset=utf8 ENGINE=InnoDB;;
+alter table `apply_invitation_code` auto_increment=1000;;
 
 ##people
 create table `people`(

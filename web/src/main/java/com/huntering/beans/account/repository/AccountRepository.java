@@ -8,7 +8,7 @@ import com.huntering.common.repository.support.annotation.SearchableQuery;
 
 /**
  * 
- * @author I310711
+ * @author Vincent Yao
  *
  */
 @SearchableQuery(callbackClass = AccountSearchCallback.class)

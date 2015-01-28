@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.huntering.beans.account.entity.Account;
 import com.huntering.beans.account.entity.Email;
 import com.huntering.beans.account.service.AccountService;
+import com.huntering.beans.account.service.ApplyInvitationCodeService;
 import com.huntering.beans.account.service.EmailService;
 import com.huntering.dto.ResponseResult;
 /**
@@ -40,6 +41,9 @@ public class LoginController {
     
     @Autowired
     private MessageSource messageSource;
+    
+    @Autowired
+    private ApplyInvitationCodeService applyInvitationCodeService;
 
     @RequestMapping("/login")  
     public String loginForm(HttpServletRequest request, ModelMap model)  { 
@@ -131,7 +135,25 @@ public class LoginController {
     	
     	return result;
     }
-    
-    
+
+    @RequestMapping(value = "/public/applyInvCode", method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseResult<String> applyInvitationCode(
+    		HttpServletRequest request,
+    		@RequestParam(value = "email") String email) {
+    	
+    	ResponseResult<String> result = new ResponseResult<String>();
+    	String messageKey = applyInvitationCodeService.applyForInvitationCode(email);
+    	
+    	if (messageKey == null) {
+    		result.setSuccess(true);
+    		result.setResult(messageSource.getMessage("apply.invitationcode.success", new Object[]{}, null));
+    	} else {
+    		result.setSuccess(false);
+    		result.setResult(messageSource.getMessage(messageKey, new Object[]{}, null));
+    	}
+    	
+    	return result;
+    }
     
 }

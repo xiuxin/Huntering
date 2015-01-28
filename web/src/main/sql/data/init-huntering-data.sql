@@ -18,7 +18,8 @@ delete from `invitation_code` where id>=1 and id<=1000;;
 insert into `invitation_code` (`id`, `code`, `used`) values (1, 'invcode1', 0);;
 insert into `invitation_code` (`id`, `code`, `used`) values (2, 'invcode2', 0);;
 insert into `invitation_code` (`id`, `code`, `used`) values (3, 'invcode3', 0);;
-
+delete from `apply_invitation_code` where id>=1 and id<=1000;;
+insert into `apply_invitation_code` (`id`, `email`) values (1, 'testtest@126.com');;
 
 delete from `people` where id>=1 and id<=1000;;
 /*默认admin/123456*/

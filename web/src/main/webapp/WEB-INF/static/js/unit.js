@@ -1,3 +1,39 @@
+function applyInvCode() {
+	$(".login_right_div").hide();
+	$(".right_apply_invcode").show();
+}
+function confirmApplyInvcode(){
+	if( $("#emailValGet_invcode").val() == "" || isEmail($("#emailValGet_invcode").val()) == false ){
+		$(".alert_hide_emaill_invcode").show();
+		$("#emailValGet_invcode").addClass("red_border");
+	} else {
+		var email = $("#emailValGet_invcode").val();
+		$.ajax({
+			dataType : "json",
+			type: "POST",
+			url : "/public/applyInvCode?time=" + new Date().getTime(),
+			data : {email: email},
+			success : function(data) {
+				console.log(data);
+				if(data.status) {
+					$("#emailValGet_invcode").removeClass("red_border");
+					$(".alert_hide_apply_invcode")[0].innerText=data.result;
+					$(".alert_hide_apply_invcode").show();
+				} else {
+					$("#emailValGet_invcode").addClass("red_border");
+					$(".alert_hide_emaill_invcode").hide();
+					$(".alert_hide_apply_invcode")[0].innerText=data.result;
+					$(".alert_hide_apply_invcode").show();
+				}
+			}
+		});
+	}
+
+	if( $("#emailValGet2").val() != "" && isEmail($("#emailValGet2").val()) == true ){
+		alert("success");
+	}
+}
+
 function applyClick(){
 	if( $("#nameVal").val() == "" && $("#nameVal2").val() == "" ){
 		$(".alert_hide_name").show();

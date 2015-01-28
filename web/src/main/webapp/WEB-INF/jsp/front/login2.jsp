@@ -90,6 +90,7 @@
                 </div>
                 <div class="invitation_input">
                     <input type="text" placeholder="邀请码" class="name_input" name="invitationCode" id="invitationcode" onBlur="pwdBlur()" />
+                    	</br><div class="apply_invcode" onclick="applyInvCode()">没有邀请码?</div>
                 </div>
                 <div class="agree_info">
                     <div>
@@ -133,6 +134,25 @@
                 </div>
           </div>
           
+          <div class="login_right_div right_apply_invcode">
+                <div class="join_now_result">
+                  申请邀请码！
+                </div>
+                <div class="regist_info_result">
+                  接收邀请码的邮箱
+                </div>
+                <div class="outer_emailValGet">
+                  <input type="email" placeholder="邮箱" class="name_input" name="" id="emailValGet_invcode" onBlur="emailBlurGet()" />
+                </div>
+                <div class="name_alert">
+                    <div class="alert_hide alert_hide_emaill_invcode">请输入正确的邮箱格式!</div>
+                </div>
+                <div class="name_alert">
+                    <div class="alert_hide alert_hide_apply_invcode"></div>
+                </div>
+                <div class="goon_div" onclick="confirmApplyInvcode()">
+                </div>
+          </div>
     </div>       
 </div>
 </div>

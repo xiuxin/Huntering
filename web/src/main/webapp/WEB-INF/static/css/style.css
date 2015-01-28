@@ -159,6 +159,28 @@ input.hidefocus::-moz-focus-inner { border:none; }
 	text-decoration: underline;
 }
 
+.apply_invcode{
+	width:100px;
+	position:relative;
+	font-size: 12px;
+	color:#888888;
+	cursor:pointer;
+	text-decoration: none;
+}
+
+.apply_invcode:hover{
+	width:100px;
+	position:relative;
+	font-size: 12px;
+	color:#888888;
+	cursor:pointer;
+	text-decoration: underline;
+}
+
+.right_apply_invcode {
+	display : none;
+}
+
 .login_middle{
 	height: 600px;
 }
