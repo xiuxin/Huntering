@@ -95,7 +95,7 @@ public class LoginController {
         	if (account != null) {
         		String url = request.getScheme() + "://" + request.getLocalAddr() + ":" +request.getLocalPort();
         		accountService.sendVerificationEmail(email, account.getSalt(), url);
-        		return "front/registerSuccess";
+        		model.addAttribute("registerSuccess", messageSource.getMessage("register.success", new Object[]{}, null));
         	}
         	
     	} catch(BaseException e) {
