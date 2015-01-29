@@ -60,11 +60,11 @@
                 <div class="regist_info">
                   只需几步，就能轻松注册
                 </div>
-                <form id="signupForm" action="register" method="post" role="form">
+                <form id="signupForm" action="${ctx}/public/register" method="post" role="form">
                 <div class="name_inputt">
                     <img src="${ctx}/static/images/must_icon.png" class="must_icon name_icon_show"/>
                     <img src="${ctx}/static/images/must_icon_hide.png" class="must_icon name_icon_hide"/>
-                    <input type="email" placeholder="称呼" class="name_input" name="presentName" id="nameVal" onBlur="nameBlur()" />
+                    <input type="email" placeholder="称呼" class="name_input" name="name" id="nameVal" onBlur="nameBlur()" />
                     <input type="email" placeholder="称呼" class="name_input" id="nameVal2" onBlur="nameBlur2()" />
                 </div>
                 <div class="name_alert">
@@ -89,9 +89,14 @@
                     <div class="alert_hide alert_hide_pwd">请输入您的密码!</div>
                 </div>
                 <div class="invitation_input">
-                    <input type="text" placeholder="邀请码" class="name_input" name="invitationCode" id="invitationcode" onBlur="pwdBlur()" />
-                    	</br><div class="apply_invcode" onclick="applyInvCode()">没有邀请码?</div>
+                	<img src="${ctx}/static/images/must_icon.png" class="must_icon inv_icon_show"/>
+                    <img src="${ctx}/static/images/must_icon_hide.png" class="must_icon inv_icon_hide hide"/>
+                    <input type="text" placeholder="邀请码" class="name_input" name="invitationCode" id="invitationcode" onBlur="invitationBlur()" />
                 </div>
+                <div class="name_alert">
+                    <div class="alert_hide alert_hide_invcode">请输入您的邀请码!</div>
+                </div>
+                <div class="apply_invcode" onclick="applyInvCode()">没有邀请码?</div>
                 <div class="agree_info">
                     <div>
                       点击"申请"即代表您同意Huntering的<span class="font_dark">用户协议、隐私权</span>
@@ -115,12 +120,8 @@
           </div>
 
           <div class="login_right_div right_get_pwd">
-                <div class="join_now_result">
-                  更改密码！
-                </div>
-                <div class="regist_info_result">
-                  想想您之前注册的邮箱
-                </div>
+                <div class="join_now_result">更改密码！</div>
+                <div class="regist_info_result">想想您之前注册的邮箱</div>
                 <div class="outer_emailValGet">
                   <input type="email" placeholder="邮箱" class="name_input" name="" id="emailValGet" onBlur="emailBlurGet()" />
                 </div>
@@ -133,14 +134,15 @@
                 <div class="goon_div" onclick="confirmGetPwd()">
                 </div>
           </div>
+          <div class="login_right_div get_pwd_success alert_hide">
+          		<div class="success_message">
+                    <div class="alert_recoverpwd_su"></div>
+                </div>
+          </div>
           
           <div class="login_right_div right_apply_invcode">
-                <div class="join_now_result">
-                  申请邀请码！
-                </div>
-                <div class="regist_info_result">
-                  接收邀请码的邮箱
-                </div>
+                <div class="join_now_result">申请邀请码！ </div>
+                <div class="regist_info_result">接收邀请码的邮箱</div>
                 <div class="outer_emailValGet">
                   <input type="email" placeholder="邮箱" class="name_input" name="" id="emailValGet_invcode" onBlur="emailBlurGet()" />
                 </div>
@@ -151,6 +153,11 @@
                     <div class="alert_hide alert_hide_apply_invcode"></div>
                 </div>
                 <div class="goon_div" onclick="confirmApplyInvcode()">
+                </div>
+          </div>
+          <div class="login_right_div apply_invcode_success alert_hide">
+          		<div class="success_message">
+                    <div class="alert_apply_invcode_su"></div>
                 </div>
           </div>
     </div>       

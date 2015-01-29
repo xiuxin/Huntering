@@ -77,6 +77,7 @@
     </mvc:annotation-driven>
 
     <!-- <mvc:view-controller path="/" view-name="redirect:/admin/index"/> -->
+    <mvc:view-controller path="/favicon.ico" view-name="redirect:/"/>
     <!-- 当在web.xml 中   DispatcherServlet使用 <url-pattern>/</url-pattern> 映射时，能映射静态资源 -->
     <mvc:default-servlet-handler/>
 
@@ -98,8 +99,10 @@
         </bean>
         <mvc:interceptor>
             <mvc:mapping path="/admin/**" />
-            <mvc:mapping path="/office/**" />
+            <mvc:mapping path="/**" />
             <mvc:exclude-mapping path="/admin/polling"/>
+            <mvc:exclude-mapping path="/public/**"/>
+            <mvc:exclude-mapping path="/login"/>
             <bean class="org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor"/>
         </mvc:interceptor>
         <!--<mvc:interceptor>-->

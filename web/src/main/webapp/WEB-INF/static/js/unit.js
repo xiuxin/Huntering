@@ -1,9 +1,10 @@
 function applyInvCode() {
-	$(".login_right_div").hide();
+	hideAllLoginRight();
 	$(".right_apply_invcode").show();
 }
 function confirmApplyInvcode(){
 	if( $("#emailValGet_invcode").val() == "" || isEmail($("#emailValGet_invcode").val()) == false ){
+		$(".alert_hide_apply_invcode").hide();
 		$(".alert_hide_emaill_invcode").show();
 		$("#emailValGet_invcode").addClass("red_border");
 	} else {
@@ -15,10 +16,10 @@ function confirmApplyInvcode(){
 			data : {email: email},
 			success : function(data) {
 				console.log(data);
-				if(data.status) {
-					$("#emailValGet_invcode").removeClass("red_border");
-					$(".alert_hide_apply_invcode")[0].innerText=data.result;
-					$(".alert_hide_apply_invcode").show();
+				if(data.success) {
+					$(".alert_apply_invcode_su")[0].innerText=data.result;
+					$(".right_apply_invcode").hide();
+					$(".apply_invcode_success").show();
 				} else {
 					$("#emailValGet_invcode").addClass("red_border");
 					$(".alert_hide_emaill_invcode").hide();
@@ -190,13 +191,28 @@ function pwdBlur2(){
 	}
 }
 
+function invitationBlur(){
+	if( $("#invitationcode").val() == ""){
+		$(".inv_icon_show").hide();
+		$(".inv_icon_hide").show();
+		$(".alert_hide_invcode").show();
+		$("#invitationcode").addClass("red_border");
+	}else{
+		$(".alert_hide_invcode").hide();
+		$(".inv_icon_hide").hide();
+		$(".inv_icon_show").show();
+		$("#invitationcode").removeClass("red_border");
+	}
+}
+
 function getPwd(){
-	$(".login_right_div").hide();
+	hideAllLoginRight();
 	$(".right_get_pwd").show();
 }
 
 function confirmGetPwd(){
 	if( $("#emailValGet").val() == "" || isEmail($("#emailValGet").val()) == false ){
+		$(".alert_hide_recoverpwd").hide();
 		$(".alert_hide_emaill").show();
 		$("#emailValGet").addClass("red_border");
 	} else {
@@ -207,11 +223,10 @@ function confirmGetPwd(){
 			url : "/public/recoverpwd?time=" + new Date().getTime(),
 			data : {email: $("#emailValGet").val()},
 			success : function(data) {
-				console.log(data);
-				if(data.status) {
-					$("#emailValGet").removeClass("red_border");
-					$(".alert_hide_recoverpwd")[0].innerText=data.result;
-					$(".alert_hide_recoverpwd").show();
+				if(data.success) {
+					$(".alert_recoverpwd_su")[0].innerText=data.result;
+					$(".right_get_pwd").hide();
+					$(".get_pwd_success").show();
 				} else {
 					$("#emailValGet").addClass("red_border");
 					$(".alert_hide_emaill").hide();
@@ -267,4 +282,8 @@ function loginHeader(){
 		$("#loginForm").submit();
 	}
 
+}
+
+function hideAllLoginRight() {
+	$(".login_right_div").hide();
 }

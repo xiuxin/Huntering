@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,6 +21,7 @@ import com.huntering.beans.account.entity.Email;
 import com.huntering.beans.account.service.AccountService;
 import com.huntering.beans.account.service.ApplyInvitationCodeService;
 import com.huntering.beans.account.service.EmailService;
+import com.huntering.common.exception.BaseException;
 import com.huntering.dto.ResponseResult;
 /**
  * 
@@ -73,15 +75,22 @@ public class LoginController {
     	return "front/login2";
     }
     
-    @RequestMapping("/public/register")
+    @RequestMapping("/register")  
+    public String register(HttpServletRequest request, ModelMap model)  { 
+        return "front/login2"; 
+    }  
+    
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String register(
     		HttpServletRequest request,
+    		@RequestParam(value = "name") String name,
     		@RequestParam(value = "email") String email, 
     		@RequestParam(value = "password") String password,
-    		@RequestParam(value = "invitationCode") String invitationCode) {
+    		@RequestParam(value = "invitationCode") String invitationCode,
+    		Model model) {
     	
     	try {
-    		Account account = accountService.register(email, password, "Test Name", invitationCode);
+    		Account account = accountService.register(email, password, name, invitationCode);
         	
         	if (account != null) {
         		String url = request.getScheme() + "://" + request.getLocalAddr() + ":" +request.getLocalPort();
@@ -89,7 +98,8 @@ public class LoginController {
         		return "front/registerSuccess";
         	}
         	
-    	} catch(Exception e) {
+    	} catch(BaseException e) {
+    		model.addAttribute("error", e.getMessage());
     	}
     	
     	return "front/login2";

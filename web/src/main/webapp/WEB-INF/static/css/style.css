@@ -142,7 +142,7 @@ input.hidefocus::-moz-focus-inner { border:none; }
 	width: 64px;
 	font-size: 12px;
 	color:#888888;
-	margin-left:117px;
+	margin-left:107px;
 	margin-top: -10px;
 	cursor:pointer;
 	text-decoration: none;
@@ -166,6 +166,7 @@ input.hidefocus::-moz-focus-inner { border:none; }
 	color:#888888;
 	cursor:pointer;
 	text-decoration: none;
+	margin: 5px 0 0 20px;
 }
 
 .apply_invcode:hover{
@@ -283,7 +284,7 @@ input.hidefocus::-moz-focus-inner { border:none; }
 }
 
 .invitation_input{
-	margin: 13px 0 0 12px;
+	margin-top: 13px;
 }
 
 .must_icon{
@@ -410,4 +411,17 @@ input.hidefocus::-moz-focus-inner { border:none; }
 
 .red_border{
 	border: 1px solid #ca0000 !important;
+}
+
+.hide{
+	display: none;
+}
+
+.success_message {
+	font-size: 20px;
+	font-family: "黑体";
+	color:black;
+	margin-top: 50px;
+	font-weight: bold;
+	margin-left: 17px;
 }

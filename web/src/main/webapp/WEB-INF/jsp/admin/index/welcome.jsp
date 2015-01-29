@@ -30,7 +30,10 @@
 </style>
 <div  style="margin: 5px;margin-top: 10px;">
 <h1>Welcome. </h1>
-<h2>${user}</h2>
+<h2>Your login emails are: </h2>
+<c:forEach var="email" items="${user.emails}">
+	<li><c:out value="${email.email}"></c:out></li>
+</c:forEach>
 </div>
 <es:contentFooter/>
 <script>
