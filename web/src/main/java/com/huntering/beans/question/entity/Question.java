@@ -19,7 +19,7 @@ import com.huntering.common.repository.support.annotation.EnableQueryCache;
  *
  */
 @Entity
-@Table(name = "people")
+@Table(name = "question")
 @EnableQueryCache
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Question extends BaseTimeEntity<Long> {
