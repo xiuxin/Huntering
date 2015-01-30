@@ -152,10 +152,14 @@ public class FileUploadUtils {
         }
 
         assertAllowed(file, allowedExtension, maxSize);
-        String filename = extractFilename(file, baseDir, needDatePathAndRandomName) +  "_" + (String)request.getSession().getAttribute("acctId") ;
+        String acctId = (String)request.getSession().getAttribute("acctId");
+        String filename = extractFilename(file, baseDir, needDatePathAndRandomName) ;
+        int pos = filename.lastIndexOf(".");
+        filename = filename.substring(0, pos)+"_"+acctId + filename.substring(pos,filename.length());
         File desc = getAbsoluteFile(extractUploadDir(request), filename);
 
         file.transferTo(desc);
+        filename = filename.replace("\\", "/");
         return filename;
     }
 
