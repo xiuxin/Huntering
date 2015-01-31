@@ -7,9 +7,6 @@ package com.huntering.common.plugin.entity;
 
 /**
  * <p>实体实现该接口，表示需要进行状态管理
- * <p>User: Zhang Kaitao
- * <p>Date: 13-1-12 下午4:25
- * <p>Version: 1.0
  */
 public interface Stateable<T extends Enum<? extends Stateable.Status>> {
 
@@ -27,11 +24,11 @@ public interface Stateable<T extends Enum<? extends Stateable.Status>> {
     /**
      * 审核状态
      */
-    public static enum AuditStatus implements Status {
+    public static enum RegisterStatus implements Status {
         waiting("等待审核"), fail("审核失败"), success("审核成功");
         private final String info;
 
-        private AuditStatus(String info) {
+        private RegisterStatus(String info) {
             this.info = info;
         }
 
@@ -54,5 +51,11 @@ public interface Stateable<T extends Enum<? extends Stateable.Status>> {
         public String getInfo() {
             return info;
         }
+    }
+    
+    public static enum AuditStatus implements Status {
+    	ACTIVE,
+		DELETED,
+		DISABLED
     }
 }

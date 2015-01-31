@@ -46,3 +46,15 @@ insert into `people_company`
 (`id`, `people_id`, `company_id`, `startdate`, `enddate`, `title`, `deleted`)
   values
   (1, 1, 1, '2011-12-28', '2014-06-30', '扫地神僧', 0);;
+
+delete from `job` where id>=1 and id<=1000;;
+insert into `job`
+(`id`, `company_id`, `title`, `desb`, `requirement`, `status`)
+  values
+  (1, 1, 'Java开发工程师', '开发Huntering网站', '1. spring 2. mysql 3. tomcat', 'ACTIVE');;
+  
+delete from `activity` where id>=1 and id<=1000;;
+insert into `activity`
+(`id`, `job_id`, `peopel_id`, `feedback`, `desb`, `pass`, `status`)
+  values
+  (1, 1, 1, 'No feedback now', 'AAA面试BB公司', 0, 'ACTIVE');;

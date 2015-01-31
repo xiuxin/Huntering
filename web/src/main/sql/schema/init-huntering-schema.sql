@@ -10,6 +10,8 @@ drop table if exists `people`;;
 drop table if exists `people_company`;;
 drop table if exists `people_education`;;
 drop table if exists `apply_invitation_code`;;
+drop table if exists `job`;;
+drop table if exists `activity`;;
 
 ##account
 create table `account`(
@@ -135,3 +137,32 @@ create table `people_company`(
   constraint `pk_people_company` primary key(`id`)
 ) charset=utf8 ENGINE=InnoDB;;
 alter table `company` auto_increment=1000;;
+
+##job
+create table `job`(
+  `id`         bigint not null auto_increment,
+  `company_id`  bigint,
+  `title`  		varchar(100),
+  `desb`  		varchar(255),
+  `requirement`   varchar(6000),
+  `status`   varchar(10),
+  `create_date` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `update_date` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  constraint `pk_account` primary key(`id`)
+) charset=utf8 ENGINE=InnoDB;;
+alter table `account` auto_increment=1000;;
+
+##activity
+create table `activity`(
+  `id`         bigint not null auto_increment,
+  `job_id`  bigint,
+  `peopel_id`  bigint,
+  `feedback`  		varchar(255),
+  `desb`  		varchar(255),
+  `pass`   	bool,
+  `status`   varchar(10),
+  `create_date` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `update_date` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  constraint `pk_account` primary key(`id`)
+) charset=utf8 ENGINE=InnoDB;;
+alter table `account` auto_increment=1000;;
