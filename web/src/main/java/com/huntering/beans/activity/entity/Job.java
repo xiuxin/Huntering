@@ -37,7 +37,7 @@ public class Job extends BaseTimeEntity<Long> implements Stateable<AuditStatus> 
 	@JoinColumn(name="company_id")
 	private Company company;
 	
-	private String tilte;
+	private String title;
 	
 	@Column(name = "desb")
 	private String destripition;
@@ -58,12 +58,12 @@ public class Job extends BaseTimeEntity<Long> implements Stateable<AuditStatus> 
 		// for hibernate
 	}
 
-	public String getTilte() {
-		return tilte;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setTilte(String tilte) {
-		this.tilte = tilte;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getDestripition() {

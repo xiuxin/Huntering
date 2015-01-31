@@ -6,6 +6,8 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -62,6 +64,8 @@ public class Activity extends BaseTimeEntity<Long> implements Stateable<AuditSta
 	
 	private Boolean pass = Boolean.FALSE;
 	
+	@Enumerated(EnumType.STRING)
+	@Column(name="status")
 	private AuditStatus status = AuditStatus.ACTIVE;
 	
 	@OneToMany(targetEntity=ActivityRound.class, orphanRemoval=true, cascade={CascadeType.ALL}, mappedBy="activity")

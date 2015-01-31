@@ -12,6 +12,11 @@ drop table if exists `people_education`;;
 drop table if exists `apply_invitation_code`;;
 drop table if exists `job`;;
 drop table if exists `activity`;;
+drop table if exists `account_activity_conn`;
+drop table if exists `activity_type`;
+drop table if exists `people_role`;
+drop table if exists `activity_round`;
+drop table if exists `activity_people_conn`;
 
 ##account
 create table `account`(

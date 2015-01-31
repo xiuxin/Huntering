@@ -2,7 +2,6 @@
 <%@include file="/WEB-INF/jsp/common/taglibs.jspf"%>
 <es:contentHeader/>
 <style>
-
     legend {
         cursor: pointer;
     }
@@ -34,7 +33,6 @@
 <c:forEach var="email" items="${user.emails}">
 	<li><c:out value="${email.email}"></c:out></li>
 </c:forEach>
-<h2>${user}</h2>
 <a href="${ctx}/upload/ajax/create/${user.id}">简历上传</a>
 </div>
 <es:contentFooter/>
