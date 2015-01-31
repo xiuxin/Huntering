@@ -1,16 +1,24 @@
 package com.huntering.beans.activity.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import com.huntering.beans.account.entity.Account;
 import com.huntering.beans.profile.entity.People;
 import com.huntering.common.entity.BaseTimeEntity;
 import com.huntering.common.plugin.entity.Stateable;
@@ -31,13 +39,20 @@ public class Activity extends BaseTimeEntity<Long> implements Stateable<AuditSta
 	private static final long serialVersionUID = -7881258799492526522L;
 
 	@ManyToOne(optional = false, fetch = FetchType.EAGER)
-	@Fetch(FetchMode.SELECT)
+	@Fetch(FetchMode.JOIN)
+	@JoinTable(name="account_activity_conn",
+			joinColumns=@JoinColumn(name="activity_id"),
+			inverseJoinColumns=@JoinColumn(name="account_id"))
+	private Account account;
+	
+	@ManyToOne(optional = true, fetch = FetchType.EAGER)
+	@Fetch(FetchMode.JOIN)
 	@JoinColumn(name="job_id")
 	private Job job;
 	
-	@ManyToOne(optional = false, fetch = FetchType.EAGER)
-	@Fetch(FetchMode.SELECT)
-	@JoinColumn(name="peopel_id")
+	@ManyToOne(optional = true, fetch = FetchType.EAGER)
+	@Fetch(FetchMode.JOIN)
+	@JoinColumn(name="people_id")
 	private People people;
 
 	private String feedback;
@@ -48,6 +63,11 @@ public class Activity extends BaseTimeEntity<Long> implements Stateable<AuditSta
 	private Boolean pass = Boolean.FALSE;
 	
 	private AuditStatus status = AuditStatus.ACTIVE;
+	
+	@OneToMany(targetEntity=ActivityRound.class, orphanRemoval=true, cascade={CascadeType.ALL}, mappedBy="activity")
+	@Fetch(FetchMode.SELECT)
+	@OrderBy("round")
+	private List<ActivityRound> activityRounds = new ArrayList<ActivityRound>();
 	
 	public Activity() {}
 
@@ -101,5 +121,13 @@ public class Activity extends BaseTimeEntity<Long> implements Stateable<AuditSta
 	@Override
 	public AuditStatus getStatus() {
 		return status;
+	}
+
+	public List<ActivityRound> getActivityRounds() {
+		return activityRounds;
+	}
+
+	public void setActivityRounds(List<ActivityRound> activityRounds) {
+		this.activityRounds = activityRounds;
 	}
 }

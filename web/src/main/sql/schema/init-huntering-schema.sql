@@ -148,21 +148,75 @@ create table `job`(
   `status`   varchar(10),
   `create_date` timestamp DEFAULT CURRENT_TIMESTAMP,
   `update_date` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  constraint `pk_account` primary key(`id`)
+  constraint `pk_job` primary key(`id`)
 ) charset=utf8 ENGINE=InnoDB;;
-alter table `account` auto_increment=1000;;
+alter table `job` auto_increment=1000;;
 
 ##activity
 create table `activity`(
   `id`         bigint not null auto_increment,
   `job_id`  bigint,
-  `peopel_id`  bigint,
+  `people_id`  bigint,
   `feedback`  		varchar(255),
   `desb`  		varchar(255),
   `pass`   	bool,
   `status`   varchar(10),
   `create_date` timestamp DEFAULT CURRENT_TIMESTAMP,
   `update_date` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  constraint `pk_account` primary key(`id`)
+  constraint `pk_activity` primary key(`id`)
 ) charset=utf8 ENGINE=InnoDB;;
-alter table `account` auto_increment=1000;;
+alter table `activity` auto_increment=1000;;
+
+##account_activity_conn
+create table `account_activity_conn`(
+  `id`         bigint not null auto_increment,
+  `account_id`  bigint,
+  `activity_id`  bigint,
+  constraint `pk_account_activity_conn` primary key(`id`)
+) charset=utf8 ENGINE=InnoDB;;
+alter table `account_activity_conn` auto_increment=1000;;
+
+##activity_type
+create table `activity_type`(
+  `id`         bigint not null auto_increment,
+  `type_name`  varchar(50),
+  `desb`  varchar(255),
+  constraint `pk_activity_type` primary key(`id`)
+) charset=utf8 ENGINE=InnoDB;;
+alter table `activity_type` auto_increment=1000;;
+
+##people_role
+create table `people_role`(
+  `id`         bigint not null auto_increment,
+  `name`  varchar(50),
+  `desb`  varchar(255),
+  constraint `pk_people_role` primary key(`id`)
+) charset=utf8 ENGINE=InnoDB;;
+alter table `people_role` auto_increment=1000;;
+
+##activity_round
+create table `activity_round`(
+  `id`         bigint not null auto_increment,
+  `start_date`  timestamp,
+  `end_date`  timestamp,
+  `address`  		varchar(255),
+  `round`  		smallint,
+  `pass`   	bool,
+  `activity_id`	bigint,
+  `activity_type_id`	bigint,
+  `create_date` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `update_date` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  constraint `pk_activity_round` primary key(`id`)
+) charset=utf8 ENGINE=InnoDB;;
+alter table `activity_round` auto_increment=1000;;
+
+##activity_people_conn
+create table `activity_people_conn`(
+  `id`         bigint not null auto_increment,
+  `activity_round_id`  bigint,
+  `people_id`  bigint,
+  `people_role_id`  bigint,
+  constraint `pk_activity_people_conn` primary key(`id`)
+) charset=utf8 ENGINE=InnoDB;;
+alter table `activity_people_conn` auto_increment=1000;;
+

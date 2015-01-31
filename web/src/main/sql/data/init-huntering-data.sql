@@ -55,6 +55,39 @@ insert into `job`
   
 delete from `activity` where id>=1 and id<=1000;;
 insert into `activity`
-(`id`, `job_id`, `peopel_id`, `feedback`, `desb`, `pass`, `status`)
+(`id`, `job_id`, `people_id`, `feedback`, `desb`, `pass`, `status`)
   values
   (1, 1, 1, 'No feedback now', 'AAA面试BB公司', 0, 'ACTIVE');;
+
+delete from `account_activity_conn` where id>=1 and id<=1000;;
+insert into `account_activity_conn`
+(`id`, `account_id`, `activity_id`)
+  values
+  (1, 1, 1);;
+  
+delete from `activity_type` where id>=1 and id<=1000;;
+insert into `activity_type`(`id`, `type_name`, `desb`) values (1, '电话面试', '电话面试');;
+insert into `activity_type`(`id`, `type_name`, `desb`) values (2, '公司直接面试', 'Face to face面试');;
+insert into `activity_type`(`id`, `type_name`, `desb`) values (3, '做题目', '做题目');;
+
+delete from `people_role` where id>=1 and id<=1000;;
+insert into `people_role`(`id`, `name`, `desb`) values (1, '面试候选人', '面试候选人');;
+insert into `people_role`(`id`, `name`, `desb`) values (2, '面试官', '面试官');;
+insert into `people_role`(`id`, `name`, `desb`) values (3, '面试经理', '面试经理');;
+
+delete from `activity_round` where id>=1 and id<=1000;;
+insert into `activity_round`
+(`id`, `start_date`, `end_date`, `address`, `round`, `pass`, `activity_id`, `activity_type_id`)
+  values
+  (1, '2015-10-01 13:00:00', '2015-10-01 16:00:00', '上海市金科路000号 ABC公司', 0, 0, 1, 1);;
+insert into `activity_round`
+(`id`, `start_date`, `end_date`, `address`, `round`, `pass`, `activity_id`, `activity_type_id`)
+  values
+  (2, '2015-10-05 13:00:00', '2015-10-05 16:00:00', '上海市金科路000号 ABC公司', 1, 0, 1, 1);;
+  
+delete from `activity_people_conn` where id>=1 and id<=1000;;
+insert into `activity_people_conn`
+(`id`, `activity_round_id`, `people_id`, `people_role_id`)
+  values
+  (1, 1, 1, 1);;
+  
