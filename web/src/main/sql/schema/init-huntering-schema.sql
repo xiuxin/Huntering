@@ -151,6 +151,7 @@ create table `job`(
   `desb`  		varchar(255),
   `requirement`   varchar(6000),
   `status`   varchar(10),
+  `onboard_date`	timestamp,
   `create_date` timestamp DEFAULT CURRENT_TIMESTAMP,
   `update_date` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   constraint `pk_job` primary key(`id`)

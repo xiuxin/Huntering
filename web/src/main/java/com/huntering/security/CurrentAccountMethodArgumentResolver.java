@@ -1,5 +1,8 @@
 package com.huntering.security;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
@@ -27,6 +30,14 @@ public class CurrentAccountMethodArgumentResolver implements HandlerMethodArgume
     @Override
     public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
     	CurrentAccount currentAccountAnnotation = parameter.getParameterAnnotation(CurrentAccount.class);
-        return webRequest.getAttribute(currentAccountAnnotation.value(), NativeWebRequest.SCOPE_REQUEST);
+        Object attribute = null;
+        HttpSession session = ((HttpServletRequest)webRequest.getNativeRequest()).getSession();
+        if(session != null) {
+        	attribute = session.getAttribute(currentAccountAnnotation.value());
+        }
+        if(attribute == null) {
+        	attribute = webRequest.getAttribute(currentAccountAnnotation.value(), NativeWebRequest.SCOPE_REQUEST);
+        }
+		return attribute;
     }
 }

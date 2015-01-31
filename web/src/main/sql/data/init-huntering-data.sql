@@ -49,9 +49,9 @@ insert into `people_company`
 
 delete from `job` where id>=1 and id<=1000;;
 insert into `job`
-(`id`, `company_id`, `title`, `desb`, `requirement`, `status`)
+(`id`, `company_id`, `title`, `desb`, `requirement`, `status`, `onboard_date`)
   values
-  (1, 1, 'Java开发工程师', '开发Huntering网站', '1. spring 2. mysql 3. tomcat', 'ACTIVE');;
+  (1, 1, 'Java开发工程师', '开发Huntering网站', '1. spring 2. mysql 3. tomcat', 'ACTIVE', '2015-10-01');;
   
 delete from `activity` where id>=1 and id<=1000;;
 insert into `activity`
