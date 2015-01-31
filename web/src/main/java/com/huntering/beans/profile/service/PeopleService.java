@@ -33,4 +33,8 @@ public class PeopleService extends BaseService<People, Long> {
     public List<People> findSelfPeopleByAccountIdAndSelf(Long accountId) {
     	return getPeopleRepository().findByAccountIdAndSelf(accountId, true);
     }
+    
+    public People createPeople(Long id, People people) {
+    	return null;
+    }
 }
