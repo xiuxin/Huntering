@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.huntering.beans.activity.entity.Activity;
+import com.huntering.beans.activity.entity.ActivityRound;
 import com.huntering.beans.activity.repository.ActivityRepository;
 import com.huntering.common.service.BaseService;
 
@@ -24,6 +25,16 @@ public class ActivityService extends BaseService<Activity, Long> {
 
     public List<Activity> findByAccountId(Long accountId) {
     	return getActivityRepository().findByAccountId(accountId);
+    }
+    
+    public Activity addActivity(Activity activity) {
+    	// TODO add activity
+    	return null;
+    }
+    
+    public ActivityRound addActivityRound(long activityId, ActivityRound activityRound) {
+    	// TODO add activityRound
+    	return null;
     }
 
 }
