@@ -84,6 +84,11 @@ public class Account extends BaseTimeEntity<Long> implements LogicDeleteable {
         this.getEmails().add(email);
     }
 
+    public void addPeople(People people) {
+    	people.setAccount(this);
+    	getPeople().add(people);
+    }
+    
     public String getSalt() {
         return salt;
     }

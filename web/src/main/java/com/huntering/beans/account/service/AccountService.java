@@ -226,6 +226,14 @@ public class AccountService extends BaseService<Account, Long> {
         return messageKey;
 
     }
+    
+    public Account getAccountById(Long accountId) {
+        if(accountId == null) {
+            return null;
+        }
+        return getAccountRepository().findOne(accountId);
+    }
+    
     /**
      * Get the account by email<p>
      * and check whether the account is active <p>

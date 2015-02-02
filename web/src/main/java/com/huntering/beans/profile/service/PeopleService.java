@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.huntering.beans.account.entity.Account;
+import com.huntering.beans.account.service.AccountService;
 import com.huntering.beans.profile.entity.People;
 import com.huntering.beans.profile.repository.PeopleRepository;
 import com.huntering.common.service.BaseService;
@@ -22,6 +24,9 @@ public class PeopleService extends BaseService<People, Long> {
         return (PeopleRepository) baseRepository;
     }
 
+    @Autowired
+    private AccountService accountService;
+    
     public List<People> findByAccountId(Long accountId) {
     	return getPeopleRepository().findByAccountId(accountId);
     }
@@ -35,6 +40,15 @@ public class PeopleService extends BaseService<People, Long> {
     }
     
     public People createPeople(Long id, People people) {
-    	return null;
+    	Account account = accountService.getAccountById(id);
+    	
+    	if (account == null) {
+    		throw new RuntimeException("Account not exists");
+    	}
+    	
+    	account.addPeople(people);
+    	accountService.update(account);
+    	return people;
     }
+    
 }
