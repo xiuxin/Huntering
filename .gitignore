@@ -5,3 +5,5 @@
 target/
 *.iml
 .idea/
+es-*.log
+bin/

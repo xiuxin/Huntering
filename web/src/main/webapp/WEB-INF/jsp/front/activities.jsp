@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="/WEB-INF/jsp/common/taglibs.jspf"%>
+<%@include file="/WEB-INF/jsp/common/import-js.jspf"%>
+<%@include file="/WEB-INF/jsp/common/import-css.jspf"%>
 <es:contentHeader/>
 <style>
     legend {
@@ -45,4 +47,38 @@
 	</div>
 	<div class="margin-banner">---------------------------------------------------------</div>
 </c:forEach>
+
+<select id="cc" name="dept" style="width:200px;"> 
+<option value="aa">aitem1</option> 
+<option>bitem2</option> 
+<option>bitem3</option> 
+<option>ditem4</option> 
+<option>eitem5</option> 
+</select> 
+<input id="cc" name="dept" value="aa"> 
+<script type="text/javascript">
+	data = [{ 
+		"id":1, 
+		"text":"text1" 
+		},{ 
+		"id":2, 
+		"text":"text2" 
+		},{ 
+		"id":3, 
+		"text":"text3", 
+		"selected":true 
+		},{ 
+		"id":4, 
+		"text":"text4" 
+		},{ 
+		"id":5, 
+		"text":"text5" 
+		}];
+	$('#cc').combobox({ 
+		valueField:'id', 
+		textField:'text',
+		data: data
+		}); 
+</script>
+
 </div>

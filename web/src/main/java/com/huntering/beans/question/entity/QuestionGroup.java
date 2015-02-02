@@ -32,7 +32,7 @@ public class QuestionGroup extends BaseEntity<Long> {
 
     private String name;
     
-    private String type;
+    private String typo;
     
     private String scope;
     
@@ -66,12 +66,12 @@ public class QuestionGroup extends BaseEntity<Long> {
         this.name = name;
     }
 
-    public String getType() {
-        return type;
+    public String getTypo() {
+        return typo;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setTypo(String type) {
+        this.typo = type;
     }
 
     public String getScope() {

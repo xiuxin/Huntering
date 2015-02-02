@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -36,9 +37,11 @@ public class ActivityController {
 		return "front/activities";
 	}
 	
-	@RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addActivity(@Valid @RequestBody ActivityForm activityForm) {
+	@RequestMapping(value = "/add/{personId}", method = RequestMethod.POST)
+    public String addActivity(@CurrentAccount Account loginUser, @PathVariable("personId") long personId, @Valid @RequestBody ActivityForm activityForm) {
+		/*activityService.addActivity(loginUser.getId(), activity));*/
 		return "front/activities";
 	}
+	
 
 }
