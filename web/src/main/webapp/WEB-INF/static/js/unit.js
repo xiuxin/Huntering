@@ -15,7 +15,6 @@ function confirmApplyInvcode(){
 			url : "/public/applyInvCode?time=" + new Date().getTime(),
 			data : {email: email},
 			success : function(data) {
-				console.log(data);
 				if(data.success) {
 					$(".alert_apply_invcode_su")[0].innerText=data.result;
 					$(".right_apply_invcode").hide();
@@ -259,7 +258,7 @@ function emailBlurGet2(){
 }
 
 function isEmail(str){ 
-	var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/; 
+	var reg = /^([a-zA-Z])([a-zA-Z0-9_-.])*@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/; 
 	return reg.test(str); 
 } 
 
