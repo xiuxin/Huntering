@@ -17,6 +17,9 @@ drop table if exists `activity_type`;
 drop table if exists `people_role`;
 drop table if exists `activity_round`;
 drop table if exists `activity_people_conn`;
+drop table if exists `question_group`;
+drop table if exists `question`;
+
 
 ##account
 create table `account`(
@@ -226,3 +229,24 @@ create table `activity_people_conn`(
 ) charset=utf8 ENGINE=InnoDB;;
 alter table `activity_people_conn` auto_increment=1000;;
 
+create table `question_group`(
+  `id`         bigint not null auto_increment,
+  `name`  varchar(255),
+  `typo`  varchar(255),
+  `scope`  varchar(255),
+  `desb`  varchar(255),
+  constraint `pk_question_group` primary key(`id`)
+) charset=utf8 ENGINE=InnoDB;;
+
+alter table `question` auto_increment=1000;;
+create table `question`(
+  `id`         bigint not null auto_increment,
+  `summary`  varchar(255),
+  `detail`  varchar(255),
+  `scope`  varchar(255),
+  `questiongroup_id`  bigint,
+  `create_date` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `update_date` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  constraint `pk_question` primary key(`id`)
+) charset=utf8 ENGINE=InnoDB;;
+alter table `question` auto_increment=1000;;

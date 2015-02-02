@@ -24,7 +24,7 @@ import com.huntering.common.repository.support.annotation.EnableQueryCache;
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Question extends BaseTimeEntity<Long> {
 
-    private String summary;
+	private String summary;
     
     private String detail;
     
@@ -34,5 +34,37 @@ public class Question extends BaseTimeEntity<Long> {
     @Basic(optional = false, fetch = FetchType.LAZY)
     @Fetch(FetchMode.SELECT)
     private QuestionGroup questionGroup;
+    
+    public String getSummary() {
+		return summary;
+	}
+
+	public void setSummary(String summary) {
+		this.summary = summary;
+	}
+
+	public String getDetail() {
+		return detail;
+	}
+
+	public void setDetail(String detail) {
+		this.detail = detail;
+	}
+
+	public String getScope() {
+		return scope;
+	}
+
+	public void setScope(String scope) {
+		this.scope = scope;
+	}
+
+	public QuestionGroup getQuestionGroup() {
+		return questionGroup;
+	}
+
+	public void setQuestionGroup(QuestionGroup questionGroup) {
+		this.questionGroup = questionGroup;
+	}
 
 }
