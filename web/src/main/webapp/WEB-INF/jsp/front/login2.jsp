@@ -208,7 +208,7 @@
     </div>
  <!--footer end-->
 
- <script type="text/javascript" src="${ctx}/static/js/jquery.js"></script>
+<script type="text/javascript" src="${ctx}/static/js/jquery.js"></script>
 <script type="text/javascript" src="${ctx}/static/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="${ctx}/static/js/unit.js"></script>
 </body>

@@ -35,4 +35,7 @@
 </c:forEach>
 <a href="${ctx}/upload/ajax/create/${user.id}">简历上传</a>
 </div>
+<div>
+Home page: <a href="${ctx}/home">here</a>
+</div>
 <es:contentFooter/>

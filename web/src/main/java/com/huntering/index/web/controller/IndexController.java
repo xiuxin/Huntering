@@ -44,6 +44,14 @@ public class IndexController {
 
         return "admin/index/welcome";
     }
+    
+    @RequestMapping(value = "/home")
+    public String homeIndex(@CurrentAccount Account loginUser, Model model) {
+
+        model.addAttribute("user", loginUser);
+
+        return "front/home";
+    }
 
 
 }

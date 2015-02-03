@@ -187,7 +187,7 @@ input.hidefocus::-moz-focus-inner { border:none; }
 }
 
 .slogan_black{
-	font-family: "é»‘ä½“";
+	font-family: "ºÚÌå";
 	font-size: 40px;
 	color: #000000;
 	text-align:center;
@@ -219,7 +219,7 @@ input.hidefocus::-moz-focus-inner { border:none; }
 
 .under_hunter_img{
 	text-align: center;
-	font-family: "é»‘ä½“";
+	font-family: "ºÚÌå";
 	font-size: 18px;
 	color:black;
 	margin-top: 23px;
@@ -235,7 +235,7 @@ input.hidefocus::-moz-focus-inner { border:none; }
 
 .join_now{
 	font-size: 24px;
-	font-family: "é»‘ä½“";
+	font-family: "ºÚÌå";
 	color:black;
 	margin-top: 10px;
 	font-weight: bold;
@@ -244,7 +244,7 @@ input.hidefocus::-moz-focus-inner { border:none; }
 
 .join_now_result{
 	font-size: 24px;
-	font-family: "é»‘ä½“";
+	font-family: "ºÚÌå";
 	color:black;
 	margin-top: 50px;
 	font-weight: bold;
@@ -419,7 +419,7 @@ input.hidefocus::-moz-focus-inner { border:none; }
 
 .success_message {
 	font-size: 20px;
-	font-family: "é»‘ä½“";
+	font-family: "ºÚÌå";
 	color:black;
 	margin-top: 50px;
 	font-weight: bold;
@@ -428,7 +428,7 @@ input.hidefocus::-moz-focus-inner { border:none; }
 
 .fail_message {
 	font-size: 20px;
-	font-family: "é»‘ä½“";
+	font-family: "ºÚÌå";
 	color: red !important;
 	margin-top: 50px;
 	margin-left: 17px;
@@ -448,4 +448,498 @@ input.hidefocus::-moz-focus-inner { border:none; }
 	color:#888888 !important;
 	cursor:pointer;
 	text-decoration: underline !important;
+}
+
+.clear{ clear:both}
+
+.search_input_div{
+	float:left;
+	height: 70px;
+	line-height:78px;
+	margin-left: 50px;
+}
+
+.search_input{
+	padding-left:10px !important;
+	color: #777777 !important;
+	font-size: 14px !important;
+	width: 320px !important;
+	height: 20px !important;
+	line-height: 19px !important;
+	border: 1px solid #999999 !important;
+}
+
+.search_btn_div{
+	width: 70px;
+	height: 30px;
+	background-image: url(../images/serach_icon.png);
+	float:left;
+	margin-top: 19px;
+	margin-left: 15px;
+	cursor:pointer;
+}
+
+.user_info_div{
+	width: 70px;
+	height: 70px;
+	float:right;
+	cursor:pointer;
+	
+	text-align:center;
+}
+
+.user_info_div:hover{
+	background-image: url(../images/top_hover_back.png);
+	background-repeat: repeat;
+
+}
+
+.user_icon{
+	width: 42px;
+	height: 42px;
+	position:relative;
+	top: 13px;
+}
+
+.mes_line_one{
+	border-bottom: 1px solid #eeeeee;
+	width: 866px;
+	height: 42px;
+}
+
+.single_resume{
+	padding: 10px 20px 10px 20px;
+	margin-top: 10px;
+	background: white;
+	border: 1px solid #dddddd;
+}
+
+.mes_date{
+	float:right;
+	font-size:14px;
+	position:relative;
+	top:12px;
+}
+
+.mes_line_one_account{
+	position:relative;
+	top: -15px;
+	margin-left: 7px;
+	font-weight: bold;
+	color:#0073c6;
+}
+
+.mes_line_one_serial{
+	position:relative;
+	top: -15px;
+	margin-left: 4px;
+	font-weight: bold;
+	color:#333333;
+}
+
+.mes_line_one_type{
+	position:relative;
+	top: -15px;
+	margin-left: 4px;
+	font-weight: bold;
+	color:#333333;
+}
+
+.user_line{
+	position:relative;
+	top: -13px;
+	margin-left: 4px;
+}
+
+.mes_line_two{
+	width:100%;
+	height: auto;
+	margin: 8px 8px 8px 0px;
+}
+
+.main_middle{
+	height: auto;
+}
+
+.mes_line_two p{
+	text-indent: 0em;
+	color:#333333 !important;
+}
+
+.start_interview{
+	color:#0073c6;
+	cursor:pointer;
+}
+
+.start_remark{
+	color:#0073c6;
+	cursor:pointer;
+}
+
+.remark_span{
+	color:#0073c6;
+	margin-left:13px;
+	cursor:pointer;
+}
+
+.cancel_interview{
+	color:#e38600;
+	margin-left:13px;
+	cursor:pointer;
+}
+
+.account_info{
+	width:400px;
+	height:282px;
+	background-image:url(../images/account_div_back.png);
+	position:fixed;
+	z-index:1000;
+	display:none;
+	margin-left:560px;
+	margin-top:70px;
+}
+
+.account_header{
+	color:white;
+	height: 36px;
+	width:100%;
+	line-height:36px;
+	margin-left:15px;
+}
+
+.account_detail{
+	background: white;
+	width: 390px;
+	height:241px;
+	margin-left:5px;
+}
+
+.account_detail_line{
+	width:100%;
+	height: 36px;
+	line-height:36px;
+	border-bottom: 1px solid #dddddd;
+}
+
+.account_left{
+	color:#333333;
+	font-weight: bold;
+	margin-left:10px;
+	float:left;
+	width: 58px;
+}
+
+.account_right{
+	color:#0073c6;
+	float:right;
+	width: 62px;
+	text-align:left;
+	cursor:pointer;
+}
+
+.account_right_phone{
+	color:#2bb600;
+	float:right;
+	width: 62px;
+	text-align:left;
+	cursor:pointer;
+}
+
+.account_middle{
+	color:#333333;
+	float:left;
+	text-align:left;
+	font-family: Arial !important;
+	margin-left:18px;
+}
+
+.login_info{
+	width:100%;
+	height: 20px;
+	line-height:20px;
+	margin-left:10px;
+	margin-top:24px;
+}
+
+.logn_info_img{
+
+}
+
+.logn_info_text{
+	color: #333333;
+	margin-left: 8px;
+	position: relative;
+	top: -4px;
+}
+
+.blank_area{
+	width:100%;
+	height:10px;
+	background:white;
+}
+
+.icon_div{
+	position:fixed;
+	bottom:37px;
+	margin-left:854px;
+	width:76px;
+	height: 258px;
+	z-index:1000;
+}
+
+.icons_div{
+	position:fixed;
+	bottom:32px;
+	margin-left:854px;
+	width:76px;
+	z-index:1000;
+	display:none;
+	height: 258px;
+}
+
+.icon_all{
+	cursor: pointer;
+}
+
+.above_more_icon{
+	width: 100%;
+	height: 182px;
+}
+
+.icon_one{
+	margin-top:15px;
+	width: 76px;
+	height: 76px;
+	background-image: url(../images/icon_one.png);
+}
+
+.icon_one:hover{
+	margin-top:15px;
+	width: 76px;
+	height: 76px;
+	background-image: url(../images/icon_one_hover.png);
+}
+
+.icon_two{
+	margin-top:10px;
+	width: 76px;
+	height: 76px;
+	background-image: url(../images/icon_two.png);
+}
+
+.icon_two:hover{
+	margin-top:10px;
+	width: 76px;
+	height: 76px;
+	background-image: url(../images/icon_two_hover.png);
+}
+
+.upload_file{
+	position:relative;
+	width: 76px !important;
+	height: 76px !important;
+	top: -84px !important;
+	font-size: 64px !important;
+	opacity:0;
+	cursor:pointer !important;
+}
+
+.start_interview_div{
+	float:left;
+}
+
+.remark_div{
+	float:left;
+	margin-left:20px;
+}
+
+.interview_white_trangle{
+	width: 20px;
+	height: 15px;
+	position:relative;
+	margin-left:18px;
+	
+}
+
+.remark_white_trangle{
+	width: 20px;
+	height: 15px;
+	position:relative;
+	margin-left:4px;
+	
+}
+
+.interview_white_trangle_img{
+	width: 20px;
+	height: 15px;
+	display: none;
+}
+
+.remark_white_trangle_img{
+	width: 20px;
+	height: 15px;
+	display: none;
+}
+
+.mes_line_three{
+	height: 19px;
+}
+
+
+#interviewForm {
+	width: 100%;
+}
+#interviewForm label {
+	width: 85px;
+	float:left;
+	color:#333333;
+	font-weight: bold;
+}
+
+#remarkForm {
+	width: 100%;
+}
+#remarkForm label {
+	width: 65px;
+	float:left;
+	color:#333333;
+	font-weight: bold;
+}
+
+.right_input{
+	float: left;
+	width: 498px !important;
+	position:relative;
+	top: -7px;
+	height: 23px !important;
+	padding-left: 10px !important;
+}
+
+.right_input1{
+	float: left;
+	width: 80px !important;
+	position:relative;
+	top: -7px;
+	height: 23px !important;
+	padding-left: 10px !important;
+}
+
+.right_input2{
+	float: left;
+	width: 130px !important;
+	position:relative;
+	top: -7px;
+	height: 23px !important;
+	padding-left: 10px !important;
+	margin-left: 10px;
+}
+
+.right_input3{
+	float: left;
+	width: 231px !important;
+	position:relative;
+	top: -7px;
+	height: 23px !important;
+	padding-left: 10px !important;
+	margin-left: 10px;
+}
+
+#interviewForm label.error, #interviewForm input.submit {
+	margin-left: 15px;
+	color:red;
+	width: 165px;
+	font-weight: normal !important;
+}
+
+.must_blue{
+	margin-right: 7px;
+	position:relative;
+	top: -1px;
+}
+
+.interview_dialog{
+	padding-top: 22px;
+	border: 1px solid #dddddd;
+	border-top: 0px;
+	padding-left: 40px;
+	display: none;
+}
+
+.remark_dialog{
+	padding-top: 22px;
+	border: 1px solid #dddddd;
+	border-top: 0px;
+	padding-left: 40px;
+	display: none;
+}
+
+.input_line{
+	width: 100%;
+	height: 47px;
+}
+
+.not_must{
+	margin-left: 14px;
+}
+
+.right_selecter{
+	width: 514px;
+	height: 32px !important;
+	position: relative;
+	top: -6px;
+}
+
+.backup_textarea{
+	width: 498px !important;
+	padding-left: 15px !important;
+	height: 60px !important;
+}
+
+.mes_btn{
+	background-image: url(../images/mes_btn.png);
+	width: 90px;
+	height: 36px;
+	margin-left: 200px;
+	float:left;
+}
+
+.mes_btn:hover{
+	background-image: url(../images/mes_btn_hover.png);
+	width: 90px;
+	height: 36px;
+	margin-left: 200px;
+	float:left;
+}
+
+.cancel_btn{
+	background-image: url(../images/cancel.png);
+	width: 90px;
+	height: 36px;
+	margin-left: 20px;
+	float:left;
+}
+
+.cancel_btn:hover{
+	background-image: url(../images/cancel_hover.png);
+	width: 90px;
+	height: 36px;
+	margin-left: 20px;
+	float:left;
+}
+
+.submit_area{
+	margin-top: 42px;
+	width: 100%;
+}
+
+.remark_submit_area{
+	margin-top: 70px;
+	width: 100%;
+}
+
+.mes_btn_submit{
+	opacity: 0 !important;
+	width: 90px !important;
+	height: 36px !important;
+	margin-left: 0px;
 }

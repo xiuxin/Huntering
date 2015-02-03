@@ -270,10 +270,6 @@ function loginHeader(){
 	if( $("#pwdHeader").val() == ""){
 		alert("请输入您的密码!");
 	}
-
-	/*if( $("#emailHeader").val() != "" && $("#pwdHeader").val() != "" ){
-		alert("success");
-	}*/
 	
 	if( isEmail($("#emailHeader").val()) == false ){
 		alert("请输入正确的邮箱!");
@@ -281,6 +277,78 @@ function loginHeader(){
 		$("#loginForm").submit();
 	}
 
+}
+
+//show use info start
+$(".user_info_div").hover( function(event){
+    $('.account_info').show(); 
+}, function(event){
+    $('.account_info').hide();
+} );
+
+$(".account_info").hover( function(event){
+    $('.account_info').show(); 
+}, function(event){
+    $('.account_info').hide();
+} );
+//show use info end
+
+//show more icons start
+$(".icon_div").hover( function(event){
+    $('.icons_div').show();
+    $('.icon_div').hide();
+
+}, function(event){
+	$('.icon_div').show();
+    $('.icons_div').hide();
+} );
+
+$(".icons_div").hover( function(event){
+    $('.icons_div').show();
+    $('.icon_div').hide();
+
+}, function(event){
+	$('.icon_div').show();
+    $('.icons_div').hide();
+} );
+//show more icons end
+
+function statInterview(e){
+	if( $(".interview_dialog").is(":hidden") ){
+		$(".interview_white_trangle_img").show();
+		$(".remark_white_trangle_img").hide();
+		$(e).css("font-weight", "bold");
+		$(e).parent().parent().find(".start_remark").css("font-weight", "normal");
+		$(".interview_dialog").show();
+		$(".remark_dialog").hide();
+	}else{
+		$(".interview_dialog").hide();
+	}
+}
+
+
+function statRemark(e){
+	if( $(".remark_dialog").is(":hidden") ){
+		$(".interview_white_trangle_img").hide();
+		$(".remark_white_trangle_img").show();
+		$(e).css("font-weight", "bold");
+		$(e).parent().parent().find(".start_interview").css("font-weight", "normal");
+		$(".interview_dialog").hide();
+		$(".remark_dialog").show();
+	}else{
+		$(".remark_dialog").hide();
+	}
+	
+}
+
+function cancelInterview(){
+	$("#interviewForm")[0].reset();
+	$(".interview_dialog").hide();
+}
+
+function cancelRemark(){
+	$("#remarkForm")[0].reset();
+	$(".remark_dialog").hide();
 }
 
 function hideAllLoginRight() {
