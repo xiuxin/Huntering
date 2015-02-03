@@ -12,7 +12,7 @@ drop table if exists `people_education`;;
 drop table if exists `apply_invitation_code`;;
 drop table if exists `job`;;
 drop table if exists `activity`;;
-drop table if exists `account_activity_conn`;
+drop table if exists `account_activity_conn`;;
 drop table if exists `activity_type`;;
 drop table if exists `people_role`;;
 drop table if exists `activity_round`;;
@@ -33,6 +33,8 @@ create table `account`(
   constraint `pk_account` primary key(`id`)
 ) charset=utf8 ENGINE=InnoDB;;
 alter table `account` auto_increment=1000;;
+drop table if exists `question_label`;;
+drop table if exists `question_to_label`;;
 
 ##email
 create table `email`(
@@ -249,3 +251,21 @@ create table `question`(
   constraint `pk_question` primary key(`id`)
 ) charset=utf8 ENGINE=InnoDB;;
 alter table `question` auto_increment=1000;;
+
+alter table `question_label` auto_increment=1000;;
+create table `question_label`(
+  `id`         bigint not null auto_increment,
+  `name`  varchar(255),
+  `desb`  varchar(255),
+  constraint `pk_question_label` primary key(`id`)
+) charset=utf8 ENGINE=InnoDB;;
+alter table `question_label` auto_increment=1000;;
+
+alter table `question_to_label` auto_increment=1000;;
+create table `question_to_label`(
+  `id`         bigint not null auto_increment,
+  `question_id`  bigint,
+  `questionlabel_id`  bigint,
+  constraint `pk_question_to_label` primary key(`id`)
+) charset=utf8 ENGINE=InnoDB;;
+alter table `question_to_label` auto_increment=1000;;
