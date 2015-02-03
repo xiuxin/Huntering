@@ -239,7 +239,6 @@ create table `question_group`(
   constraint `pk_question_group` primary key(`id`)
 ) charset=utf8 ENGINE=InnoDB;;
 
-alter table `question` auto_increment=1000;;
 create table `question`(
   `id`         bigint not null auto_increment,
   `summary`  varchar(255),
@@ -252,7 +251,6 @@ create table `question`(
 ) charset=utf8 ENGINE=InnoDB;;
 alter table `question` auto_increment=1000;;
 
-alter table `question_label` auto_increment=1000;;
 create table `question_label`(
   `id`         bigint not null auto_increment,
   `name`  varchar(255),
@@ -261,7 +259,6 @@ create table `question_label`(
 ) charset=utf8 ENGINE=InnoDB;;
 alter table `question_label` auto_increment=1000;;
 
-alter table `question_to_label` auto_increment=1000;;
 create table `question_to_label`(
   `id`         bigint not null auto_increment,
   `question_id`  bigint,
