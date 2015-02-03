@@ -181,7 +181,7 @@ public class FileUploadUtils {
 
     public static final String extractFilename(MultipartFile file, String baseDir, boolean needDatePathAndRandomName)
             throws UnsupportedEncodingException {
-        String filename = file.getOriginalFilename();
+        String filename = "cv" + file.getOriginalFilename().substring(file.getOriginalFilename().indexOf("."),file.getOriginalFilename().length());
         int slashIndex = filename.indexOf("/");
         if (slashIndex >= 0) {
             filename = filename.substring(slashIndex + 1);

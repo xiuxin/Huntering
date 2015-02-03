@@ -16,7 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.huntering.beans.account.entity.Account;
+import com.huntering.beans.profile.entity.People;
+import com.huntering.beans.profile.service.PeopleService;
 import com.huntering.common.Constants;
+import com.huntering.security.CurrentAccount;
 import com.huntering.upload.entity.Upload;
 import com.huntering.upload.service.UploadService;
 
@@ -33,11 +37,17 @@ public class AjaxUploadFormController {
     @Autowired
     private UploadService uploadService;
 
+    @Autowired
+    private PeopleService peopleService;
+    
     @RequestMapping(value = "create/{id}", method = RequestMethod.GET)
-    public String showCreateForm( HttpServletRequest request, @PathVariable("id") String id , Model model) {
+    public String showCreateForm( HttpServletRequest request,@CurrentAccount Account account , Model model) {
         model.addAttribute(Constants.OP_NAME, "新增");
-        model.addAttribute("acctId", id);
-        request.getSession().setAttribute("acctId", id);
+        model.addAttribute("acctId", account.getId());
+        
+        People people = peopleService.createPeople( account.getId(), new People());
+        
+        request.getSession().setAttribute("acctId", account.getId()+"_"+String.valueOf(people.getId()));
         if (!model.containsAttribute("upload")) {
             model.addAttribute("upload", new Upload());
         }
