@@ -6,7 +6,6 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
@@ -17,7 +16,7 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import com.google.common.collect.Lists;
-import com.huntering.common.entity.BaseTimeEntity;
+import com.huntering.common.entity.BaseEntity;
 import com.huntering.common.repository.support.annotation.EnableQueryCache;
 
 /**
@@ -26,23 +25,16 @@ import com.huntering.common.repository.support.annotation.EnableQueryCache;
  *
  */
 @Entity
-@Table(name = "question")
+@Table(name = "question_label")
 @EnableQueryCache
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class Question extends BaseTimeEntity<Long> {
+public class QuestionLabel extends BaseEntity<Long> {
 
-    private String summary;
+    private String name;
     
-    private String detail;
-    
-    private String scope;
+    private String desc;
 
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @Basic(optional = false, fetch = FetchType.LAZY)
-    @Fetch(FetchMode.SELECT)
-    private QuestionGroup questionGroup;
-    
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = QuestionToLabel.class, mappedBy = "question", orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = QuestionToLabel.class, mappedBy = "label", orphanRemoval = true)
     @Fetch(FetchMode.SELECT)
     @Basic(optional = true, fetch = FetchType.LAZY)
     @Cascade(value = org.hibernate.annotations.CascadeType.ALL)
@@ -60,37 +52,21 @@ public class Question extends BaseTimeEntity<Long> {
     public void setQuestionToLabels(List<QuestionToLabel> questionToLabels) {
         this.questionToLabels = questionToLabels;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
     
-    public String getSummary() {
-        return summary;
-    }
-
-    public void setSummary(String summary) {
-        this.summary = summary;
-    }
-
-    public String getDetail() {
-        return detail;
-    }
-
-    public void setDetail(String detail) {
-        this.detail = detail;
-    }
-
-    public String getScope() {
-        return scope;
-    }
-
-    public void setScope(String scope) {
-        this.scope = scope;
-    }
-
-    public QuestionGroup getQuestionGroup() {
-        return questionGroup;
-    }
-
-    public void setQuestionGroup(QuestionGroup questionGroup) {
-        this.questionGroup = questionGroup;
-    }
-
 }

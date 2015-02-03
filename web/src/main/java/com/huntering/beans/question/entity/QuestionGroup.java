@@ -32,7 +32,7 @@ public class QuestionGroup extends BaseEntity<Long> {
 
     private String name;
     
-    private String typo;
+    private String type;
     
     private String scope;
     
