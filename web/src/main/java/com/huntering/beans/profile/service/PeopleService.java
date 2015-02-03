@@ -46,9 +46,11 @@ public class PeopleService extends BaseService<People, Long> {
     		throw new RuntimeException("Account not exists");
     	}
     	
-    	account.addPeople(people);
-    	accountService.update(account);
-    	return people;
+    	people.setAccount(account);
+    	return save(people);
+//    	account.addPeople(people);
+//    	accountService.update(account);
+//    	return people;
     }
     
 }
