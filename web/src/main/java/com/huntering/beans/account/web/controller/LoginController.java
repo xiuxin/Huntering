@@ -88,7 +88,6 @@ public class LoginController {
     		@RequestParam(value = "password") String password,
     		@RequestParam(value = "invitationCode") String invitationCode,
     		Model model) {
-    	
     	try {
     		Account account = accountService.register(email, password, name, invitationCode);
         	
@@ -99,7 +98,7 @@ public class LoginController {
         	}
         	
     	} catch(BaseException e) {
-    		model.addAttribute("error", e.getMessage());
+    		model.addAttribute("registerFail", e.getMessage());
     	}
     	
     	return "front/login2";

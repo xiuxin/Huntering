@@ -258,7 +258,7 @@ function emailBlurGet2(){
 }
 
 function isEmail(str){ 
-	var reg = /^([a-zA-Z])([a-zA-Z0-9_-.])*@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/; 
+	var reg = /^([a-zA-Z])([a-zA-Z0-9._-])*@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/; 
 	return reg.test(str); 
 } 
 
@@ -286,3 +286,20 @@ function loginHeader(){
 function hideAllLoginRight() {
 	$(".login_right_div").hide();
 }
+
+$(document).ready(function(){
+	if(typeof registerSuccess != 'undefined' && registerSuccess) {
+		$(".login_right_div").hide();
+		$(".register_success").show();
+	}
+	
+	if(typeof registerFail != 'undefined' && registerFail) {
+		$(".login_right_div").hide();
+		$(".register_fail").show();
+	}
+	
+	$(".back_signup").on("click", function(){
+		$(".login_right_div").hide();
+		$(".signup_main").show();
+	});
+});

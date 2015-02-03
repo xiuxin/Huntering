@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,7 +20,7 @@
                <div class="com_name_div">
                    Huntering 
                </div>
-               <form id="loginForm" method="post" role="form">
+               <form id="loginForm" action="${ctx}/login" method="post" role="form">
                <div class="email_input_div">
                  <input type="email" class="email_input" name="username" placeholder="邮箱" id="emailHeader" />
                </div>
@@ -53,7 +54,7 @@
                 </div>
           </div>
 
-          <div class="login_right_div">
+          <div class="login_right_div signup_main">
                 <div class="join_now">
                   立即免费加入<span style="font-family: Arial;">Huntering</span>
                 </div>
@@ -160,6 +161,30 @@
                     <div class="alert_apply_invcode_su"></div>
                 </div>
           </div>
+          
+          <c:if test="${not empty registerMessage}">
+          <div class="login_right_div register_success alert_hide">
+          		<div class="success_message">
+          			<div><c:out value="registerSuccess"></c:out></div>
+          		</div>
+          		<script type="text/javascript">
+          			var registerSuccess = true;
+          		</script>
+          </div>
+          </c:if>
+          
+          <c:if test="${not empty registerFail}">
+          <div class="login_right_div register_fail alert_hide">
+          		<div class="fail_message">
+          			<div>注册失败！</div>
+          			<div style="margin-top: 10px"><c:out value="${registerFail}"></c:out></div>
+	          		<div style="margin-top: 20px;color: black">返回<a class="back_signup">注册</a>页面</div>
+          		</div>
+          		<script type="text/javascript">
+          			var registerFail = true;
+          		</script>
+          </div>
+          </c:if>
     </div>       
 </div>
 </div>
