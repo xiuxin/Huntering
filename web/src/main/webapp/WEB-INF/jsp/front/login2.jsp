@@ -162,10 +162,10 @@
                 </div>
           </div>
           
-          <c:if test="${not empty registerMessage}">
+          <c:if test="${not empty registerSuccess}">
           <div class="login_right_div register_success alert_hide">
           		<div class="success_message">
-          			<div><c:out value="registerSuccess"></c:out></div>
+          			<div><c:out value="${registerSuccess}"></c:out></div>
           		</div>
           		<script type="text/javascript">
           			var registerSuccess = true;

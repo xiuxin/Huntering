@@ -258,7 +258,7 @@ function emailBlurGet2(){
 }
 
 function isEmail(str){ 
-	var reg = /^([a-zA-Z])([a-zA-Z0-9._-])*@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/; 
+	var reg = /^([a-zA-Z0-9])([a-zA-Z0-9._-])*@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/; 
 	return reg.test(str); 
 } 
 

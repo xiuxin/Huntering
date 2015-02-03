@@ -36,22 +36,3 @@
 <a href="${ctx}/upload/ajax/create/${user.id}">简历上传</a>
 </div>
 <es:contentFooter/>
-<script>
-    $(function() {
-        $.app.initCommonBtn();
-        $("legend").click(function() {
-            var next = $(this).next();
-            if(next.is(":hidden")) {
-                $(this).find("i").removeClass("icon-double-angle-up");
-                $(this).find("i").addClass("icon-double-angle-down");
-                next.slideDown(300);
-            } else {
-                next.slideUp(300);
-                $(this).find("i").removeClass("icon-double-angle-down");
-                $(this).find("i").addClass("icon-double-angle-up");
-            }
-        });
-        $.app.initCalendar();
-
-    })
-</script>

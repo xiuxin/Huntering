@@ -20,6 +20,7 @@ import com.huntering.beans.account.exception.AccountPasswordNotMatchException;
 import com.huntering.beans.account.exception.DuplicatedEmailRegisterException;
 import com.huntering.beans.account.exception.InvalidRegistrationInfoException;
 import com.huntering.beans.account.exception.InvitationCodeException;
+import com.huntering.beans.account.exception.RegisterException;
 import com.huntering.beans.account.repository.AccountRepository;
 import com.huntering.beans.profile.entity.People;
 import com.huntering.beans.profile.service.PeopleService;
@@ -172,7 +173,7 @@ public class AccountService extends BaseService<Account, Long> {
                     "loginError",
                     "password length error! password is between {} and {}",
                     User.PASSWORD_MIN_LENGTH, User.PASSWORD_MAX_LENGTH);
-            throw new InvalidRegistrationInfoException();
+            throw new RegisterException("register.password.length.not.valid", new Object[]{User.PASSWORD_MIN_LENGTH, User.PASSWORD_MAX_LENGTH});
         }
 
         if (StringUtils.isEmpty(inviCode)) {

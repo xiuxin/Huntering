@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.huntering.beans.account.entity.Account;
 import com.huntering.beans.account.entity.Email;
@@ -87,21 +88,22 @@ public class LoginController {
     		@RequestParam(value = "email") String email, 
     		@RequestParam(value = "password") String password,
     		@RequestParam(value = "invitationCode") String invitationCode,
-    		Model model) {
+    		RedirectAttributes redirectAttributes) {
     	try {
     		Account account = accountService.register(email, password, name, invitationCode);
         	
         	if (account != null) {
         		String url = request.getScheme() + "://" + request.getLocalAddr() + ":" +request.getLocalPort();
         		accountService.sendVerificationEmail(email, account.getSalt(), url);
-        		model.addAttribute("registerSuccess", messageSource.getMessage("register.success", new Object[]{}, null));
+        		redirectAttributes.addFlashAttribute("registerSuccess", messageSource.getMessage("register.success", new Object[]{}, null));
+        		return "redirect:/login";
         	}
         	
     	} catch(BaseException e) {
-    		model.addAttribute("registerFail", e.getMessage());
+    		redirectAttributes.addFlashAttribute("registerFail", e.getMessage());
     	}
     	
-    	return "front/login2";
+    	return "redirect:/register";
     }
 
     @RequestMapping("/public/verify")
