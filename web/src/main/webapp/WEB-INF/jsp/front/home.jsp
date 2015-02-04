@@ -33,20 +33,20 @@
                     <div class="account_detail">
                         <div class="account_detail_line">
                           <span class="account_left">老刘</span>
-                          <span class="account_right">登出</span>
+                          <a href="${ctx}/logout"><span class="account_right">登出</span></a>
                         </div>
                         <div class="account_detail_line">
                           <span class="account_left">上传邮箱</span>
-                          <span class="account_middle">francoliuad.net@163.com</span>
+                          <span class="account_middle">test.upload@hunter.com</span>
                         </div>
                         <div class="account_detail_line">
                           <span class="account_left">登陆邮箱</span>
-                          <span class="account_middle">francoliuad.net@163.com</span>
+                          <span class="account_middle"><c:out value="${username}"/> </span>
                           <span class="account_right">管理</span>
                         </div>
                         <div class="account_detail_line">
                           <span class="account_left">手机</span>
-                          <span class="account_middle">15902187456</span>
+                          <span class="account_middle"><c:out value="${user.mdn}"/></span>
                           <span class="account_right_phone">已验证</span>
                         </div>
                         <div class="account_detail_line">
