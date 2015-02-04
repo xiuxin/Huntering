@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -164,5 +165,17 @@ public class Account extends BaseTimeEntity<Long> implements LogicDeleteable {
 
 	public void setMdn(String mdn) {
 		this.mdn = mdn;
+	}
+	
+	@Transient
+	public String getUserName() {
+		if(people != null && people.size() > 0) {
+			for(People p : people) {
+				if(p.isSelf()) {
+					return p.getNickName() != null ? p.getNickName() : p.getFullName();
+				}
+			}
+		}
+		return null;
 	}
 }

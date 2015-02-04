@@ -32,7 +32,14 @@
                     <div class="account_header">账户设置</div>
                     <div class="account_detail">
                         <div class="account_detail_line">
-                          <span class="account_left">老刘</span>
+                          <span class="account_left">
+                          	<c:choose>
+                          		<c:when test="${not empty user.userName}">
+                          			<c:out value="${user.userName}"/>
+                          		</c:when>
+                          		<c:otherwise><c:out value="${username}"/></c:otherwise>
+                          	</c:choose>
+                          </span>
                           <a href="${ctx}/logout"><span class="account_right">登出</span></a>
                         </div>
                         <div class="account_detail_line">
