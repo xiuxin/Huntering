@@ -58,7 +58,7 @@
                         </div>
                         <div class="account_detail_line">
                           <span class="account_left">所属公司</span>
-                          <span class="account_middle">上海微创</span>
+                          <span class="account_middle"><c:out value="${user.companyName}"/></span>
                           <span class="account_right">变更</span>
                         </div>
                         <div class="login_info">

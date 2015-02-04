@@ -2,7 +2,10 @@ package com.huntering.beans.account.service;
 
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
+import org.apache.commons.collections4.CollectionUtils;
+import org.hibernate.Hibernate;
 import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -97,7 +100,18 @@ public class AccountService extends BaseService<Account, Long> {
         if(StringUtils.isEmpty(email)) {
             return null;
         }
-        return getAccountRepository().findByEmail(email);
+        Account account = getAccountRepository().findByEmail(email);
+        List<People> people = account.getPeople();
+        if(CollectionUtils.isNotEmpty(people)) {
+        	for(People p : people) {
+				if(p.isSelf()) {
+					Hibernate.initialize(p.getPeopleCompany());
+					//account.setCompanyName(p.getPeopleCompany().get(0).getCompany() != null ? p.getPeopleCompany().get(0).getCompany().getName() : null);
+					break;
+				}
+			}
+        }
+        return account;
     }
 
     public Account login(String email, String password) {

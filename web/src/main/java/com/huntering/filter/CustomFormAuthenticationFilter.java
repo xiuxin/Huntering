@@ -89,7 +89,6 @@ public class CustomFormAuthenticationFilter extends FormAuthenticationFilter {
 		String username = (String)token.getPrincipal();
 		Account user = accountService.findByEmail(username);
 		((HttpServletRequest) request).getSession().setAttribute(Constants.CURRENT_USER, user);
-		((HttpServletRequest) request).getSession().setAttribute(Constants.CURRENT_USER, user);
 		return super.onLoginSuccess(token, subject, request, response);
 	}
 

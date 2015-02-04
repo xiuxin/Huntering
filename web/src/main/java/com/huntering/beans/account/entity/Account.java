@@ -11,6 +11,7 @@ import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.Cascade;
@@ -169,10 +170,24 @@ public class Account extends BaseTimeEntity<Long> implements LogicDeleteable {
 	
 	@Transient
 	public String getUserName() {
-		if(people != null && people.size() > 0) {
+		if(CollectionUtils.isNotEmpty(people)) {
 			for(People p : people) {
 				if(p.isSelf()) {
 					return p.getNickName() != null ? p.getNickName() : p.getFullName();
+				}
+			}
+		}
+		return null;
+	}
+	
+	@Transient
+	public String getCompanyName() {
+		if(CollectionUtils.isNotEmpty(people)) {
+			for(People p : people) {
+				if(p.isSelf()) {
+					if(CollectionUtils.isNotEmpty(p.getPeopleCompany())) {
+						return p.getPeopleCompany().get(0).getCompany() != null ? p.getPeopleCompany().get(0).getCompany().getName() : null;
+					}
 				}
 			}
 		}
