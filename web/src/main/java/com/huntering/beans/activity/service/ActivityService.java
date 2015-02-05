@@ -78,7 +78,7 @@ public class ActivityService extends BaseService<Activity, Long> {
 			// new round
 			ActivityRound round = new ActivityRound();
 			round.setAddress(activityForm.getAddress());
-			round.setStartDate(activityForm.getStratTime());
+			round.setStartDate(activityForm.getStartTime());
 			round.setEndDate(activityForm.getEndTime());
 			int maxRound = 0;
 			for(ActivityRound r : activity.getActivityRounds()) {
