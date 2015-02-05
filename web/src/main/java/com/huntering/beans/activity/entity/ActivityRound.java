@@ -60,7 +60,7 @@ public class ActivityRound extends BaseTimeEntity<Long> {
 	@OneToMany(targetEntity=ActivityPeopleConn.class, orphanRemoval=true, cascade={CascadeType.ALL}, mappedBy="activityRound")
 	private List<ActivityPeopleConn> people;
 	
-	@OneToOne(mappedby="activityRound")
+	@OneToOne(mappedBy="activityRound")
 	private FeedBack feedBack;
 	
 	public ActivityRound() {}
