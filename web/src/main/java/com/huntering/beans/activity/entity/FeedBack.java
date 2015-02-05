@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -25,6 +26,7 @@ public class FeedBack extends BaseTimeEntity<Long> {
 
 	private static final long serialVersionUID = 1L;
 
+	@OneToOne
 	@JoinColumn(name="activity_round_id")
 	private ActivityRound activityRound;
 	

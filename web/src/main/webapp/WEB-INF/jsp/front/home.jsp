@@ -96,6 +96,55 @@
           </div>
       </div>
 
+<c:if test="${not empty messages}">
+<c:forEach var="message" items="${messages}">
+	<c:choose>
+		<c:when test="${message.type == 'RESUME'}">
+			<div class="single_resume">
+            <div class="mes_line_one">
+                  <img src="${ctx}/static/images/system_img.png" class="user_img"/>
+                  <span class="mes_line_one_account">系统账号</span>
+                  <img src="${ctx}/static/images/user_line.png" class="user_line"/>
+                  <span class="mes_line_one_type">档案更新</span>
+                  <img src="${ctx}/static/images/user_line.png" class="user_line"/>
+                  <span class="mes_line_one_serial">Test</span>
+                  <span class="mes_date">${message.updateDate }</span>
+            </div>
+			<c:choose>
+				<c:when test="${not empty message.people.fullName}">
+	            <div class="clear"></div>
+	            <div class="mes_line_two">
+	                  <p>您导入了<c:out value="${message.people.fullName}"></c:out>的简历，您可以为他创建面试。</p>
+	            </div>
+	            <div class="mes_line_three">
+	                  <div class="start_interview_div">
+	                      <div class="start_interview" onclick="statInterview(this)">安排面试</div>
+	                      <div class="interview_white_trangle">
+	                          <img src="${ctx}/static/images/white_trangle.png" class="interview_white_trangle_img"/>
+	                     </div>
+	                  </div>
+	                  <div class="remark_div">
+	                      <div class="start_remark" onclick="statRemark(this)">备注</div>
+	                      <div class="remark_white_trangle">
+	                          <img src="${ctx}/static/images/white_trangle.png" class="remark_white_trangle_img"/>
+	                     </div>
+	                  </div>
+	                  
+	            </div>
+				</c:when>
+				<c:otherwise>
+					<div class="clear"></div>
+		            <div class="mes_line_two">
+		                  <p>您已成功导入了一份简历，系统正在自动识别并会在第一时间通知到您。</p>
+		            </div>
+				</c:otherwise>
+			</c:choose>
+      		</div>
+		</c:when>
+		<c:otherwise></c:otherwise>
+	</c:choose>
+</c:forEach>
+</c:if>
       <div class="single_resume">
             <div class="mes_line_one">
                   <img src="${ctx}/static/images/system_img.png" class="user_img"/>
@@ -127,6 +176,7 @@
             </div>
             
       </div>
+      
       <div class="interview_dialog">
                   <form class="cmxform" id="interviewForm" method="get" action="">
                   <fieldset>

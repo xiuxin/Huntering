@@ -292,6 +292,8 @@ create table `feedback`(
   `skill`   	bool,
   `desb`  varchar(255),
   `result`	varchar(30),
+  `create_date` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `update_date` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   constraint `pk_feedback` primary key(`id`)
 ) charset=utf8 ENGINE=InnoDB;;
 alter table `feedback` auto_increment=1000;;

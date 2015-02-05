@@ -26,13 +26,13 @@ delete from `people` where id>=1 and id<=1000;;
 insert into `people`
 (`id`, `account_id`, `fullName`, `self`,`deleted`)
   values
-  (1, 1, '苍井空', 1, 0);;
+  (1, 1, '张三', 1, 0);;
   
 delete from `people_education` where id>=1 and id<=1000;;
 insert into `people_education`
 (`id`, `people_id`, `degree`, `desb`, `deleted`)
   values
-  (1, 1, 1, '给校长当小三', 0);;
+  (1, 1, 1, '硕士', 0);;
   
   
 delete from `company` where id>=1 and id<=1000;;
