@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="${ctx}/static/css/bootstrap.css"/>
 <link rel="stylesheet" type="text/css" href="${ctx}/static/css/common.css"/>
 <link rel="stylesheet" type="text/css" href="${ctx}/static/css/style.css"/>
-
+<link rel="stylesheet" type="text/css" href="${ctx}/static/css/jquery-ui.min.css"/>
 
 <body>
 <!--top bar start-->
@@ -106,8 +106,8 @@
                   <span class="mes_line_one_account">系统账号</span>
                   <img src="${ctx}/static/images/user_line.png" class="user_line"/>
                   <span class="mes_line_one_type">档案更新</span>
-                  <img src="${ctx}/static/images/user_line.png" class="user_line"/>
-                  <span class="mes_line_one_serial">Test</span>
+                  <%-- <img src="${ctx}/static/images/user_line.png" class="user_line"/>
+                  <span class="mes_line_one_serial">Test</span> --%>
                   <span class="mes_date">${message.updateDate }</span>
             </div>
 			<c:choose>
@@ -146,11 +146,11 @@
                   <fieldset>
                     <div class="input_line">
                       <label for="startTime"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />开始时间</label>
-                      <input name="startTime" type="text" class="right_input" placeholder="2015/01/21 22:05">
+                      <input name="startTime" type="text" id="date_time" class="right_input date_time" placeholder="2015/01/21 22:05">
                     </div>
                     <div class="input_line">
                       <label for="endTime"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />结束时间</label>
-                      <input name="endTime" type="text" class="right_input" placeholder="2015/01/21 22:05">
+                      <input name="endTime" type="text" id="date_time" class="right_input date_time" placeholder="2015/01/21 22:05">
                     </div>
                     <div class="input_line">
                       <label for="companyName"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />公司</label>
@@ -203,7 +203,7 @@
                       </textarea>
                     </div>
                     <div class="submit_area">
-                          <div class="mes_btn" onclick="submitInterview()">
+                          <div class="mes_btn" onclick="submitInterview(this)">
                             <input class="submit mes_btn_submit" type="submit">
                           </div>
                           <div class="cancel_btn" onclick="cancelInterview()"></div>
@@ -328,7 +328,7 @@
                       </textarea>
                     </div>
                     <div class="submit_area">
-                          <div class="mes_btn" onclick="submitInterview()">
+                          <div class="mes_btn" onclick="submitInterview(this)">
                             <input class="submit mes_btn_submit" type="submit">
                           </div>
                           <div class="cancel_btn" onclick="cancelInterview()"></div>
@@ -457,36 +457,12 @@
 <script type="text/javascript" src="${ctx}/static/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="${ctx}/static/js/unit.js"></script>
 <script type="text/javascript" src="${ctx}/static/js/jquery.validate.js"></script>
+<script type="text/javascript" src="${ctx}/static/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="${ctx}/static/js/jquery-ui-timepicker-addon.js"></script>
+
 <script type="text/javascript">
   //start validate user's input
-$.validator.setDefaults({
-    submitHandler: function() {
-      alert("submitted!");
-    }
-  });
 
-  function submitInterview(){
-    // validate signup form on keyup and submit
-    $("#interviewForm").validate({
-      rules: {
-        startTime: "required",
-        endTime: "required",
-        companyName: "required",
-        job: "required",
-        candidateEmail: "required",
-        interviewerEmail: "required"
-      },
-      messages: {
-        startTime: "请输入开始时间",
-        endTime: "请输入结束时间",
-        companyName: "请输入公司名称",
-        job: "请输入岗位名称",
-        feedback: "请选择反馈表",
-        candidateEmail: "请完善候选人信息",
-        interviewerEmail: "请完善面试官信息",
-      }
-    });
-}
 
 </script>
 </body>
