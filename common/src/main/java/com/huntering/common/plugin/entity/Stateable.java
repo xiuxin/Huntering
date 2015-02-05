@@ -58,4 +58,9 @@ public interface Stateable<T extends Enum<? extends Stateable.Status>> {
 		DELETED,
 		DISABLED
     }
+
+    public static enum MessageType implements Status {
+    	RESUME,
+		ACTIVITY
+    }
 }

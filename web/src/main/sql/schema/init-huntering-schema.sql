@@ -19,6 +19,20 @@ drop table if exists `activity_round`;;
 drop table if exists `activity_people_conn`;;
 drop table if exists `question_group`;;
 drop table if exists `question`;;
+drop table if exists `message`;;
+
+##message
+create table `message`(
+  `id`         bigint not null auto_increment,
+  `account_id`  bigint,
+  `people_id`  bigint,
+  `activity_id`  bigint,
+  `message_type`   varchar(10),
+  `create_date` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `update_date` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  constraint `pk_message` primary key(`id`)
+) charset=utf8 ENGINE=InnoDB;;
+alter table `message` auto_increment=1000;;
 
 ##account
 create table `account`(
