@@ -63,4 +63,10 @@ public interface Stateable<T extends Enum<? extends Stateable.Status>> {
     	RESUME,
 		ACTIVITY
     }
+    
+    public static enum PeopleRole implements Status {
+    	INTERVIEWER,
+		INTERVIEE,
+		PARTICIPANT
+    }
 }

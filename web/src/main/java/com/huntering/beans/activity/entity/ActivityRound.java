@@ -17,6 +17,7 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.google.common.collect.Lists;
 import com.huntering.common.entity.BaseTimeEntity;
 import com.huntering.common.repository.support.annotation.EnableQueryCache;
 
@@ -59,7 +60,7 @@ public class ActivityRound extends BaseTimeEntity<Long> {
 	
 	@OneToMany(targetEntity=ActivityPeopleConn.class, orphanRemoval=true, cascade={CascadeType.ALL}, mappedBy="activityRound")
 	private List<ActivityPeopleConn> people;
-	
+
 	@OneToOne(mappedBy="activityRound")
 	private FeedBack feedBack;
 	
@@ -128,5 +129,15 @@ public class ActivityRound extends BaseTimeEntity<Long> {
 	public void setFeedBack(FeedBack feedBack) {
 		this.feedBack = feedBack;
 	}
-	
+
+	public List<ActivityPeopleConn> getPeople() {
+        if (people == null) {
+        	people = Lists.newArrayList();
+        }
+        return people;
+	}
+
+	public void setPeople(List<ActivityPeopleConn> people) {
+		this.people = people;
+	}
 }

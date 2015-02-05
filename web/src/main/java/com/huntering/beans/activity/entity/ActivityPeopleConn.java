@@ -1,7 +1,11 @@
 package com.huntering.beans.activity.entity;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import com.huntering.common.plugin.entity.Stateable.PeopleRole;
+import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -33,8 +37,12 @@ public class ActivityPeopleConn extends BaseEntity<Long> {
 	@JoinColumn(name="people_id")
 	private People people;
 	
-	@ManyToOne(cascade={CascadeType.REFRESH})
-	@JoinColumn(name="people_role_id")
+//	@ManyToOne(cascade={CascadeType.REFRESH})
+//	@JoinColumn(name="people_role_id")
+//	private PeopleRole peopleRole;
+
+	@Enumerated(EnumType.STRING)
+	@Column(name="people_role_id")
 	private PeopleRole peopleRole;
 	
 	public ActivityPeopleConn() {}
