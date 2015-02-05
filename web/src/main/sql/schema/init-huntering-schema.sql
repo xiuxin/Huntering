@@ -93,6 +93,7 @@ create table `people`(
   `id`         	bigint not null auto_increment,
   `account_id` 	bigint,
   `self` 		bool,
+  `email`  varchar(100),
   `nickname`  	varchar(100),
   `fullname`  	varchar(100),
   `mdn`  		varchar(100),
