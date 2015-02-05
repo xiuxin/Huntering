@@ -1,8 +1,8 @@
 package com.huntering.beans.activity.service;
 
-import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,10 +11,9 @@ import com.huntering.beans.activity.entity.Activity;
 import com.huntering.beans.activity.entity.ActivityPeopleConn;
 import com.huntering.beans.activity.entity.ActivityRound;
 import com.huntering.beans.activity.entity.FeedBack;
-import com.huntering.beans.activity.entity.Job;
 import com.huntering.beans.activity.repository.ActivityRepository;
+import com.huntering.beans.activity.repository.ActivityRoundRepository;
 import com.huntering.beans.message.service.MessageService;
-import com.huntering.beans.profile.entity.Company;
 import com.huntering.beans.profile.entity.People;
 import com.huntering.beans.profile.service.CompanyService;
 import com.huntering.beans.profile.service.PeopleCompanyService;
@@ -31,6 +30,9 @@ import com.huntering.dto.FeedBackForm;
  */
 @Service
 public class ActivityService extends BaseService<Activity, Long> {
+	
+	@Autowired
+	ActivityRoundRepository activityRoundReposity;
 	
 	@Autowired
 	private PeopleService peopleService;
@@ -113,7 +115,29 @@ public class ActivityService extends BaseService<Activity, Long> {
 
 	public FeedBack updateFeedBack(long activityRoundId,
 			FeedBackForm feedBackForm, Account loginUser) {
-		// TODO Auto-generated method stub
+		ActivityRound activityRound = activityRoundReposity.findOne(activityRoundId);
+		if(activityRound != null) {
+			FeedBack feedBack = activityRound.getFeedBack();
+			if(feedBack == null) {
+				feedBack = new FeedBack();
+				feedBack.setActivityRound(activityRound);
+			}
+			if(StringUtils.isNotEmpty(feedBackForm.getDetail())) {
+				feedBack.setDetail(feedBackForm.getDetail());
+			}
+			feedBack.setBehavihor(feedBackForm.getBehavihor());
+			feedBack.setCommunication(feedBack.getCommunication());
+			feedBack.setExecution(feedBackForm.getExecution());
+			feedBack.setInnovation(feedBackForm.getInnovation());
+			feedBack.setLanguage(feedBackForm.getLanguage());
+			feedBack.setManagement(feedBackForm.getManagement());
+			feedBack.setProfession(feedBackForm.getProfession());
+			feedBack.setTeamwork(feedBackForm.getTeamwork());
+			feedBack.setResult(feedBackForm.getResult());
+			
+			activityRoundReposity.saveAndFlush(activityRound);
+			return feedBack;
+		}
 		return null;
 	}
 	
