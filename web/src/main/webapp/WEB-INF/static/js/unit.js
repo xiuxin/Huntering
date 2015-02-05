@@ -407,36 +407,6 @@ $(document).ready(function(){
 		$(".signup_main").show();
 	});
 	
-	$.validator.setDefaults({
-	    submitHandler: function() {
-	      alert("submitted!");
-	    }
-	  });
-
-	  function submitInterview(e){
-	    // validate signup form on keyup and submit
-		  console.log(e);
-	    $("#interviewForm").validate({
-	      rules: {
-	        startTime: "required",
-	        endTime: "required",
-	        companyName: "required",
-	        job: "required",
-	        candidateEmail: "required",
-	        interviewerEmail: "required"
-	      },
-	      messages: {
-	        startTime: "请输入开始时间",
-	        endTime: "请输入结束时间",
-	        companyName: "请输入公司名称",
-	        job: "请输入岗位名称",
-	        feedback: "请选择反馈表",
-	        candidateEmail: "请完善候选人信息",
-	        interviewerEmail: "请完善面试官信息",
-	      }
-	    });
-	}
-	  
 	$(".date_time").each(function() {
 		$(this).datetimepicker();
 	});

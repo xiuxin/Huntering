@@ -93,10 +93,11 @@ insert into `activity_people_conn`
   
 delete from `feedback` where id>=1 and id<=1000;;
 insert into `feedback`
-(`id`, `activity_round_id`, `detail`, `communicate`, `english`, `base_knowledge`, `skill`, `desb`, `result`)
+(`id`, `activity_round_id`, `detail`, `behavihor`, `profession`, `language`, `innovation`, `communication`, `execution`, `teamwork`, `management`, `desb`, `result`)
   values
-  (1, 1, 'Feed back detail is ok', 1, 1, 1, 1, '可以录用', 'Pass');;
-  
+  (1, 1, 'Feed back detail is ok', 1, 2, 3, 4, 5, 4, 3, 2, '可以录用', 1);;
+
+
 delete from `message` where id>=1 and id<=1000;;
 insert into `message`
 (`id`, `account_id`, `people_id`, `activity_id`, `message_type`)

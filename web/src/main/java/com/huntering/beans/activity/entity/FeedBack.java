@@ -32,28 +32,23 @@ public class FeedBack extends BaseTimeEntity<Long> {
 	
 	private String detail;
 	
-	private boolean english;
+	private int behavihor;
 	
-	@Column(name="base_knowledge")
-	private boolean baseKnowledge;
+	private int profession;
 	
-	private boolean skill;
+	private int language;
 	
-	private boolean communicate;
+	private int innovation;
 	
-	@Column(name = "desb")
-	private String description;
+	private int communication;
 	
-	@Enumerated(EnumType.STRING)
-	@Column(name="result")
-	private ResultStatus result;
+	private int execution;
 	
-	public static enum ResultStatus {
-    	Init,
-		Fail,
-		Pass,
-		Pending
-    }
+	private int teamwork;
+	
+	private int management;
+	
+	private int result;
 	
 	public FeedBack() {}
 	
@@ -73,51 +68,77 @@ public class FeedBack extends BaseTimeEntity<Long> {
 		this.detail = detail;
 	}
 
-	public boolean isEnglish() {
-		return english;
+	
+
+	public int getBehavihor() {
+		return behavihor;
 	}
 
-	public void setEnglish(boolean english) {
-		this.english = english;
+	public void setBehavihor(int behavihor) {
+		this.behavihor = behavihor;
 	}
 
-	public boolean isBaseKnowledge() {
-		return baseKnowledge;
+	public int getProfession() {
+		return profession;
 	}
 
-	public void setBaseKnowledge(boolean baseKnowledge) {
-		this.baseKnowledge = baseKnowledge;
+	public void setProfession(int profession) {
+		this.profession = profession;
 	}
 
-	public boolean isSkill() {
-		return skill;
+	public int getLanguage() {
+		return language;
 	}
 
-	public void setSkill(boolean skill) {
-		this.skill = skill;
+	public void setLanguage(int language) {
+		this.language = language;
 	}
 
-	public boolean isCommunicate() {
-		return communicate;
+	public int getInnovation() {
+		return innovation;
 	}
 
-	public void setCommunicate(boolean communicate) {
-		this.communicate = communicate;
+	public void setInnovation(int innovation) {
+		this.innovation = innovation;
 	}
 
-	public String getDescription() {
-		return description;
+	public int getCommunication() {
+		return communication;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setCommunication(int communication) {
+		this.communication = communication;
 	}
 
-	public ResultStatus getResult() {
+	public int getExecution() {
+		return execution;
+	}
+
+	public void setExecution(int execution) {
+		this.execution = execution;
+	}
+
+	public int getTeamwork() {
+		return teamwork;
+	}
+
+	public void setTeamwork(int teamwork) {
+		this.teamwork = teamwork;
+	}
+
+	public int getManagement() {
+		return management;
+	}
+
+	public void setManagement(int management) {
+		this.management = management;
+	}
+
+	public int getResult() {
 		return result;
 	}
 
-	public void setResult(ResultStatus result) {
+	public void setResult(int result) {
 		this.result = result;
 	}
 	
