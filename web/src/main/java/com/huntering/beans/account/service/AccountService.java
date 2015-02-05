@@ -304,6 +304,7 @@ public class AccountService extends BaseService<Account, Long> {
         People people = new People();
         people.setAccount(account);
         people.setNickName(nickName);
+        people.setEmail(email);
         people.setSelf(true);
         account.getPeople().add(people);
         

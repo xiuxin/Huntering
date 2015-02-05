@@ -1,11 +1,14 @@
 package com.huntering.beans.activity.web.controller;
 
-import java.util.Date;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.mail.MailSender;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -52,6 +55,12 @@ public class ActivityController {
 	private JobService jobService;
 	@Autowired
 	private MessageService messageService;
+	@Autowired
+	private MailSender mailSender;
+    @Autowired
+	private SimpleMailMessage message;
+    @Autowired
+    private MessageSource messageSource;
 	
 	@RequestMapping("/list")
 	public String listActivities(@CurrentAccount Account loginUser, Model model) {
@@ -65,11 +74,14 @@ public class ActivityController {
 		/*activityService.addActivity(loginUser.getId(), activity));*/
 		People people = peopleService.findOne(personId);
 		saveActivityAndSendMsg(activityForm, loginUser, people);
+		
 		return "front/activities";
 	}
 	
 	private Activity saveActivityAndSendMsg(ActivityForm form, Account account, People people) {
 
+		List<String> emails = new ArrayList<String>();
+		
 		Company company = new Company();	
 		company.setName(form.getCompanyName());
 		company.setLocation(form.getAddress());
@@ -127,11 +139,21 @@ public class ActivityController {
 			conn.setPeople(participant);
 			conn.setPeopleRole(PeopleRole.PARTICIPANT);
 			round.getPeople().add(conn);
+			if (StringUtils.isNotEmpty(participant.getEmail())) {
+				emails.add(participant.getEmail());
+			}
 		}
 		
 		activityService.saveAndFlush(activity);
 
 		messageService.sendInterviewMessage(account, activity, null);
+
+		SimpleMailMessage msg = new SimpleMailMessage(message);
+		if (StringUtils.isNotEmpty(interviewer.getEmail())) {
+			emails.add(interviewer.getEmail());
+		}
+		
+		sendEmail(emails, form, people);
 		
 		return activity;
 	}
@@ -158,6 +180,26 @@ public class ActivityController {
 		return "front/activities";
 	}
 	
+	private void sendEmail(List<String> managerMail, ActivityForm form, People people) {
+		SimpleMailMessage candidateMsg = new SimpleMailMessage(message);
+		SimpleMailMessage managerMsg = new SimpleMailMessage(message);
+		
+		candidateMsg.setSubject(messageSource.getMessage("activity.subject", new Object[]{}, null));
+		managerMsg.setSubject(messageSource.getMessage("activity.subject", new Object[]{}, null));
+		
+		candidateMsg.setTo(people.getEmail());
+		candidateMsg.setText("fuck");
+//		(messageSource.getMessage("activity.candidate.content", 
+//				new Object[]{people.getNickName(), form.getStartTime(), form.getAddress(), form.getCompanyName()}, null));
+		
+		managerMsg.setTo(managerMail.toArray(new String[]{}));
+		managerMsg.setText("fuck2");
+//		managerMsg.setSubject(messageSource.getMessage("activity.candidate.content", 
+//				new Object[]{people.getNickName(), form.getStartTime(), form.getAddress(), form.getCompanyName()}, null));
+		
+		mailSender.send(new SimpleMailMessage[] {candidateMsg, managerMsg});
+//		mailSender.send(candidateMsg);
+	}
 		
 	private People savePeople(Account account, String nickName, String mdn, String email) {
 		People interviewer = new People();
