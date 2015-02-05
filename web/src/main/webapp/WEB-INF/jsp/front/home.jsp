@@ -252,7 +252,7 @@
 						<span data-roundid="${act_round.id}" class="start_interview">添加反馈</span>
 						<span class="remark_span">备注</span>
 						<span>通过</span>
-	                   <span class="start_interview" onclick="">安排面试<span>
+	                   	<span class="start_interview">安排面试</span>
 					</div>                      
 	            	</c:forEach>
 				</div>
@@ -316,7 +316,7 @@
                         <span class="start_interview">添加反馈</span>
                         <span class="remark_span">备注</span>
                         <span>通过</span>
-                        <span class="start_interview" onclick="">安排面试<span>
+                        <span class="start_interview" onclick="">安排面试</span>
                      </div>                      
                  </form>
                  <form>
@@ -325,7 +325,7 @@
                         <span class="start_interview">添加反馈</span>
                         <span class="remark_span">备注</span>
                         <span>通过</span>
-                        <span class="start_interview" onclick="">安排面试<span>
+                        <span class="start_interview" onclick="">安排面试</span>
                      </div>                      
                  </form>
                  <form>
@@ -334,7 +334,7 @@
                         <span class="start_interview">添加反馈</span>
                         <span class="remark_span">备注</span>
                         <span>通过</span>
-                        <span class="start_interview" onclick="" display='disabled'>安排面试<span>
+                        <span class="start_interview" onclick="">安排面试</span>
                      </div>                      
                  </form>
                </div>
