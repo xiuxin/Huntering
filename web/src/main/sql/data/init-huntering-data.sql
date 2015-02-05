@@ -91,3 +91,8 @@ insert into `activity_people_conn`
   values
   (1, 1, 1, 1);;
   
+delete from `feedback` where id>=1 and id<=1000;;
+insert into `feedback`
+(`id`, `activity_round_id`, `detail`, `communicate`, `english`, `base_knowledge`, `skill`, `desb`, `result`)
+  values
+  (1, 1, 'Feed back detail is ok', 1, 1, 1, 1, '可以录用', 'Pass');;

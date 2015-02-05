@@ -20,6 +20,7 @@ drop table if exists `activity_people_conn`;;
 drop table if exists `question_group`;;
 drop table if exists `question`;;
 drop table if exists `message`;;
+drop table if exists `feedback`;;
 
 ##message
 create table `message`(
@@ -280,3 +281,17 @@ create table `question_to_label`(
   constraint `pk_question_to_label` primary key(`id`)
 ) charset=utf8 ENGINE=InnoDB;;
 alter table `question_to_label` auto_increment=1000;;
+
+create table `feedback`(
+  `id`         bigint not null auto_increment,
+  `activity_round_id`  bigint,
+  `detail`  varchar(255),
+  `communicate`   	bool,
+  `english`   	bool,
+  `base_knowledge`   	bool,
+  `skill`   	bool,
+  `desb`  varchar(255),
+  `result`	varchar(30),
+  constraint `pk_feedback` primary key(`id`)
+) charset=utf8 ENGINE=InnoDB;;
+alter table `feedback` auto_increment=1000;;

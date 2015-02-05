@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -58,6 +59,9 @@ public class ActivityRound extends BaseTimeEntity<Long> {
 	
 	@OneToMany(targetEntity=ActivityPeopleConn.class, orphanRemoval=true, cascade={CascadeType.ALL}, mappedBy="activityRound")
 	private List<ActivityPeopleConn> people;
+	
+	@OneToOne(mappedby="activityRound")
+	private FeedBack feedBack;
 	
 	public ActivityRound() {}
 
@@ -115,6 +119,14 @@ public class ActivityRound extends BaseTimeEntity<Long> {
 
 	public void setActivityType(ActivityType activityType) {
 		this.activityType = activityType;
+	}
+
+	public FeedBack getFeedBack() {
+		return feedBack;
+	}
+
+	public void setFeedBack(FeedBack feedBack) {
+		this.feedBack = feedBack;
 	}
 	
 }
