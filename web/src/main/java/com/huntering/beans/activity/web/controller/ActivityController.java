@@ -1,8 +1,10 @@
 package com.huntering.beans.activity.web.controller;
 
 import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -66,29 +68,35 @@ public class ActivityController {
 		return "front/activities";
 	}
 	
-	private Activity saveActivityAndSendMsg(ActivityForm activityForm, Account account, People people) {
+	private Activity saveActivityAndSendMsg(ActivityForm form, Account account, People people) {
 
 		Company company = new Company();	
-		company.setName(activityForm.getCompanyName());
+		company.setName(form.getCompanyName());
+		company.setLocation(form.getAddress());
+		company.setTemp(true);
 		companyService.saveAndFlush(company);
 
 		Job job = new Job();
 		job.setCompany(company);
-		job.setTitle("job title");
+		job.setTitle(form.getJobTitle());
 		jobService.saveAndFlush(job);
 		
-		People interviewer = new People();
-		interviewer.setAccount(account);
-		interviewer.setMdn("18717776754");
-		interviewer.setFullName("Vincent Yao");
-		interviewer.setEmail("qiuchen_yao@126.com");
-		interviewer.setSelf(false);
-		peopleService.saveAndFlush(interviewer);
+		People interviewer = savePeople(account, form.getInterviewerName(),
+				form.getInterviewerMdn(), form.getInterviewerEmail());
+		List<People> participants = new ArrayList<People>();
+		if (StringUtils.isNotEmpty(form.getParticipantName1())) {
+			participants.add(
+					savePeople(account, form.getParticipantName1(),form.getParticipantMdn1(), form.getParticipantEmail1()));
+		}
+		if (StringUtils.isNotEmpty(form.getParticipantName2())) {
+			participants.add(
+					savePeople(account, form.getParticipantName2(),form.getParticipantMdn2(), form.getParticipantEmail2()));
+		}
 		
 		ActivityRound round = new ActivityRound();
-		round.setAddress("jinke road");
-		round.setStartDate(new Date());
-		round.setEndDate(new Date());
+		round.setAddress(form.getAddress());
+		round.setStartDate(form.getStartTime());
+		round.setEndDate(form.getEndTime());
 		round.setRound(1);
 
 		//Interviewee
@@ -106,14 +114,24 @@ public class ActivityController {
 		Activity activity = new Activity();
 		activity.setAccount(account);
 		activity.setPeople(people);
+		activity.setJob(job);
 		activity.getActivityRounds().add(round);
+		activity.setDescription(form.getComment());
 		round.getPeople().add(peopleConn);
 		round.getPeople().add(interviewerConn);
 		round.setActivity(activity);
 		
+		for (People participant : participants) {
+			ActivityPeopleConn conn = new ActivityPeopleConn();
+			conn.setActivityRound(round);
+			conn.setPeople(participant);
+			conn.setPeopleRole(PeopleRole.PARTICIPANT);
+			round.getPeople().add(conn);
+		}
+		
 		activityService.saveAndFlush(activity);
 
-		messageService.sendInterviewMessage(account, activity, people);
+		messageService.sendInterviewMessage(account, activity, null);
 		
 		return activity;
 	}
@@ -140,4 +158,14 @@ public class ActivityController {
 		return "front/activities";
 	}
 	
+		
+	private People savePeople(Account account, String nickName, String mdn, String email) {
+		People interviewer = new People();
+		interviewer.setAccount(account);
+		interviewer.setMdn(mdn);
+		interviewer.setFullName(nickName);
+		interviewer.setEmail(email);
+		interviewer.setSelf(false);
+		return peopleService.saveAndFlush(interviewer);
+	}
 }

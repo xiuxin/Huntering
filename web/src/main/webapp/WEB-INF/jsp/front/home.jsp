@@ -142,7 +142,7 @@
       		</div>
       		<c:if test="${not empty message.people.fullName}">
       			<div class="interview_dialog" id="interview_dialog_${message.people.id}">
-                  <form class="cmxform" id="interviewForm" method="get" action="">
+                  <form class="cmxform" id="interviewForm" method="post" action="${ctx}/activity/add/${message.people.id}">
                   <fieldset>
                     <div class="input_line">
                       <label for="startTime"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />开始时间</label>
@@ -157,12 +157,12 @@
                       <input name="companyName" type="text" class="right_input" placeholder="公司名称">
                     </div>
                     <div class="input_line">
-                      <label for="job"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />岗位</label>
-                      <input name="job" type="text" class="right_input" placeholder="岗位名称">
+                      <label for="jobTitle"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />岗位</label>
+                      <input name="jobTitle" type="text" class="right_input" placeholder="岗位名称">
                     </div>
                     <div class="input_line">
-                      <label for="position"><span class="not_must">地点</span></label>
-                      <input name="position" type="text" class="right_input" placeholder="面试地点">
+                      <label for="address"><span class="not_must">地点</span></label>
+                      <input name="address" type="text" class="right_input" placeholder="面试地点">
                     </div>
                     <div class="input_line">
                       <label for="candidate"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />候选人</label>
@@ -173,24 +173,24 @@
                     <div class="input_line">
                       <label for="candidate"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />面试官</label>
                       <input name="interviewerName" type="text" class="right_input1" placeholder="姓名">
-                      <input name="interviewerPhone" type="text" class="right_input2" placeholder="手机号">
+                      <input name="interviewerMdn" type="text" class="right_input2" placeholder="手机号">
                       <input name="interviewerEmail" type="text" class="right_input3" placeholder="邮箱">
                     </div>
                     <div class="input_line">
                       <label for="candidate"><span class="not_must">参与人</span></label>
-                      <input name="candidateName1" type="text" class="right_input1" placeholder="姓名">
-                      <input name="candidatePhone1" type="text" class="right_input2" placeholder="手机号">
+                      <input name="participantName1" type="text" class="right_input1" placeholder="姓名">
+                      <input name="participantMdn1" type="text" class="right_input2" placeholder="手机号">
                       <input name="candidateEmail1" type="text" class="right_input3" placeholder="邮箱">
                     </div>
                     <div class="input_line">
                       <label for="candidate"><span class="not_must">参与人</span></label>
-                      <input name="candidateName2" type="text" class="right_input1" placeholder="姓名">
-                      <input name="candidatePhone2" type="text" class="right_input2" placeholder="手机号">
-                      <input name="candidateEmail2" type="text" class="right_input3" placeholder="邮箱">
+                      <input name="participantName2" type="text" class="right_input1" placeholder="姓名">
+                      <input name="participantMdn2" type="text" class="right_input2" placeholder="手机号">
+                      <input name="participantEmail2" type="text" class="right_input3" placeholder="邮箱">
                     </div>
                     <div class="input_line">
-                      <label for="feedback"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />反馈表</label>
-                      <select class="right_selecter" name="feedback">
+                      <label for="feedbackType"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />反馈表</label>
+                      <select class="right_selecter" name="feedbackType">
                         <option value ="volvo">IT基本知识</option>
                         <option value ="saab">.NET开发</option>
                         <option value="opel">Java</option>
@@ -198,8 +198,8 @@
                       </select>
                     </div>
                     <div class="input_line">
-                      <label for="feedback"><span class="not_must">备注</span></label>
-                      <textarea class="backup_textarea">
+                      <label for="comment"><span class="not_must">备注</span></label>
+                      <textarea class="comment">
                       </textarea>
                     </div>
                     <div class="submit_area">
@@ -216,8 +216,8 @@
                   <form class="cmxform" id="remarkForm" method="get" action="">
                   <fieldset>
                     <div class="input_line">
-                      <label for="feedback"><span class="not_must">备注</span></label>
-                      <textarea class="backup_textarea">
+                      <label for="comment"><span class="not_must">备注</span></label>
+                      <textarea class="comment">
                       </textarea>
                     </div>
                     <div class="remark_submit_area">
@@ -282,12 +282,12 @@
                       <input name="companyName" type="text" class="right_input" placeholder="公司名称">
                     </div>
                     <div class="input_line">
-                      <label for="job"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />岗位</label>
-                      <input name="job" type="text" class="right_input" placeholder="岗位名称">
+                      <label for="jobTitle"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />岗位</label>
+                      <input name="jobTitle" type="text" class="right_input" placeholder="岗位名称">
                     </div>
                     <div class="input_line">
-                      <label for="position"><span class="not_must">地点</span></label>
-                      <input name="position" type="text" class="right_input" placeholder="面试地点">
+                      <label for="address"><span class="not_must">地点</span></label>
+                      <input name="address" type="text" class="right_input" placeholder="面试地点">
                     </div>
                     <div class="input_line">
                       <label for="candidate"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />候选人</label>
@@ -298,24 +298,24 @@
                     <div class="input_line">
                       <label for="candidate"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />面试官</label>
                       <input name="interviewerName" type="text" class="right_input1" placeholder="姓名">
-                      <input name="interviewerPhone" type="text" class="right_input2" placeholder="手机号">
+                      <input name="interviewerMdn" type="text" class="right_input2" placeholder="手机号">
                       <input name="interviewerEmail" type="text" class="right_input3" placeholder="邮箱">
                     </div>
                     <div class="input_line">
                       <label for="candidate"><span class="not_must">参与人</span></label>
-                      <input name="candidateName1" type="text" class="right_input1" placeholder="姓名">
-                      <input name="candidatePhone1" type="text" class="right_input2" placeholder="手机号">
+                      <input name="participantName1" type="text" class="right_input1" placeholder="姓名">
+                      <input name="participantMdn1" type="text" class="right_input2" placeholder="手机号">
                       <input name="candidateEmail1" type="text" class="right_input3" placeholder="邮箱">
                     </div>
                     <div class="input_line">
                       <label for="candidate"><span class="not_must">参与人</span></label>
-                      <input name="candidateName2" type="text" class="right_input1" placeholder="姓名">
-                      <input name="candidatePhone2" type="text" class="right_input2" placeholder="手机号">
-                      <input name="candidateEmail2" type="text" class="right_input3" placeholder="邮箱">
+                      <input name="participantName2" type="text" class="right_input1" placeholder="姓名">
+                      <input name="participantMdn2" type="text" class="right_input2" placeholder="手机号">
+                      <input name="participantEmail2" type="text" class="right_input3" placeholder="邮箱">
                     </div>
                     <div class="input_line">
-                      <label for="feedback"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />反馈表</label>
-                      <select class="right_selecter" name="feedback">
+                      <label for="feedbackType"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />反馈表</label>
+                      <select class="right_selecter" name="feedbackType">
                         <option value ="volvo">IT基本知识</option>
                         <option value ="saab">.NET开发</option>
                         <option value="opel">Java</option>
@@ -323,8 +323,8 @@
                       </select>
                     </div>
                     <div class="input_line">
-                      <label for="feedback"><span class="not_must">备注</span></label>
-                      <textarea class="backup_textarea">
+                      <label for="comment"><span class="not_must">备注</span></label>
+                      <textarea class="comment">
                       </textarea>
                     </div>
                     <div class="submit_area">
@@ -341,8 +341,8 @@
                   <form class="cmxform" id="remarkForm" method="get" action="">
                   <fieldset>
                     <div class="input_line">
-                      <label for="feedback"><span class="not_must">备注</span></label>
-                      <textarea class="backup_textarea">
+                      <label for="comment"><span class="not_must">备注</span></label>
+                      <textarea class="comment">
                       </textarea>
                     </div>
                     <div class="remark_submit_area">
@@ -464,7 +464,7 @@
   //start validate user's input
 $.validator.setDefaults({
 	    submitHandler: function() {
-	      alert("submitted!");
+	      return true;
 	    }
 	  });
 
@@ -476,7 +476,7 @@ $.validator.setDefaults({
 	        startTime: "required",
 	        endTime: "required",
 	        companyName: "required",
-	        job: "required",
+	        jobTitle: "required",
 	        candidateEmail: "required",
 	        interviewerEmail: "required"
 	      },
@@ -484,7 +484,7 @@ $.validator.setDefaults({
 	        startTime: "请输入开始时间",
 	        endTime: "请输入结束时间",
 	        companyName: "请输入公司名称",
-	        job: "请输入岗位名称",
+	        jobTitle: "请输入岗位名称",
 	        feedback: "请选择反馈表",
 	        candidateEmail: "请完善候选人信息",
 	        interviewerEmail: "请完善面试官信息",

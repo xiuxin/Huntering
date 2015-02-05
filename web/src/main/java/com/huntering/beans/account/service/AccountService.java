@@ -171,7 +171,7 @@ public class AccountService extends BaseService<Account, Long> {
         return account;
     }
 
-    public Account register(String email, String password, String fullName, String inviCode) {
+    public Account register(String email, String password, String nickName, String inviCode) {
 
         if (StringUtils.isEmpty(email) || StringUtils.isEmpty(password) || StringUtils.isEmpty(inviCode)) {
             UserLogUtils.log(
@@ -198,7 +198,7 @@ public class AccountService extends BaseService<Account, Long> {
             throw new InvitationCodeException("invicode.empty", null);
         }
         
-        Account account = createAccount(email, password, fullName, inviCode);
+        Account account = createAccount(email, password, nickName, inviCode);
         return account;
     }
     
@@ -274,7 +274,7 @@ public class AccountService extends BaseService<Account, Long> {
     	return account;
     }
     
-    private Account createAccount(String email, String password, String fullName, String invCode) {
+    private Account createAccount(String email, String password, String nickName, String invCode) {
         
         if (emailService.isEmailUsed(email)) {
             UserLogUtils.log(
@@ -303,7 +303,7 @@ public class AccountService extends BaseService<Account, Long> {
         
         People people = new People();
         people.setAccount(account);
-        people.setFullName(fullName);
+        people.setNickName(nickName);
         people.setSelf(true);
         account.getPeople().add(people);
         

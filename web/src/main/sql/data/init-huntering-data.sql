@@ -89,7 +89,7 @@ delete from `activity_people_conn` where id>=1 and id<=1000;;
 insert into `activity_people_conn`
 (`id`, `activity_round_id`, `people_id`, `people_role_id`)
   values
-  (1, 1, 1, 1);;
+  (1, 1, 1, 'INTERVIEE');;
   
 delete from `feedback` where id>=1 and id<=1000;;
 insert into `feedback`

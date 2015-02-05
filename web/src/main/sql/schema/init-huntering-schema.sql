@@ -241,7 +241,7 @@ create table `activity_people_conn`(
   `id`         bigint not null auto_increment,
   `activity_round_id`  bigint,
   `people_id`  bigint,
-  `people_role_id`  bigint,
+  `people_role_id`  varchar(100),
   constraint `pk_activity_people_conn` primary key(`id`)
 ) charset=utf8 ENGINE=InnoDB;;
 alter table `activity_people_conn` auto_increment=1000;;

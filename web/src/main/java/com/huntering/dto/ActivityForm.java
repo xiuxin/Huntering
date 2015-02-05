@@ -7,28 +7,28 @@ public class ActivityForm implements Serializable {
 
 	private static final long serialVersionUID = -2444110744857662312L;
 	
-	private Date stratTime;
-	
+	private Date startTime;
+
 	private Date endTime;
 	
 	private String companyName;
 	
 	private String jobTitle;
-	
+
 	private String address;
-	
-	private String candidateName;
-	
-	private String candidateMdn;
-	
-	private String candidateEmail;
-	
+
+//	private String candidateName;
+//	
+//	private String candidateMdn;
+//	
+//	private String candidateEmail;
+//	
 	private String interviewerName;
 	
 	private String interviewerMdn;
 	
 	private String interviewerEmail;
-	
+
 	private String participantName1;
 	
 	private String participantMdn1;
@@ -40,19 +40,20 @@ public class ActivityForm implements Serializable {
 	private String participantMdn2;
 	
 	private String participantEmail2;
-	
-	private String interviewType;
-	
+//	
+//	private String interviewType;
+//	
 	private String feedbackType;
-	
+
 	private String comment;
 
-	public Date getStratTime() {
-		return stratTime;
+	
+	public Date getStartTime() {
+		return startTime;
 	}
 
-	public void setStratTime(Date stratTime) {
-		this.stratTime = stratTime;
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
 	}
 
 	public Date getEndTime() {
@@ -87,30 +88,6 @@ public class ActivityForm implements Serializable {
 		this.address = address;
 	}
 
-	public String getCandidateName() {
-		return candidateName;
-	}
-
-	public void setCandidateName(String candidateName) {
-		this.candidateName = candidateName;
-	}
-
-	public String getCandidateMdn() {
-		return candidateMdn;
-	}
-
-	public void setCandidateMdn(String candidateMdn) {
-		this.candidateMdn = candidateMdn;
-	}
-
-	public String getCandidateEmail() {
-		return candidateEmail;
-	}
-
-	public void setCandidateEmail(String candidateEmail) {
-		this.candidateEmail = candidateEmail;
-	}
-
 	public String getInterviewerName() {
 		return interviewerName;
 	}
@@ -135,6 +112,22 @@ public class ActivityForm implements Serializable {
 		this.interviewerEmail = interviewerEmail;
 	}
 
+	public String getFeedbackType() {
+		return feedbackType;
+	}
+
+	public void setFeedbackType(String feedbackType) {
+		this.feedbackType = feedbackType;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+	
 	public String getParticipantName1() {
 		return participantName1;
 	}
@@ -183,28 +176,7 @@ public class ActivityForm implements Serializable {
 		this.participantEmail2 = participantEmail2;
 	}
 
-	public String getInterviewType() {
-		return interviewType;
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
-
-	public void setInterviewType(String interviewType) {
-		this.interviewType = interviewType;
-	}
-
-	public String getFeedbackType() {
-		return feedbackType;
-	}
-
-	public void setFeedbackType(String feedbackType) {
-		this.feedbackType = feedbackType;
-	}
-
-	public String getComment() {
-		return comment;
-	}
-
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
-	
 }
