@@ -40,6 +40,10 @@ insert into `company`
 (`id`, `name`, `typo`, `location`, `deleted`)
   values
   (1, 'HP', 1, '中国芯科技园', 0);;
+insert into `company`
+(`id`, `name`, `typo`, `location`, `deleted`)
+  values
+  (2, 'SAP', 1, '晨晖路100号', 0);;
   
 delete from `people_company` where id>=1 and id<=1000;;
 insert into `people_company`
@@ -79,11 +83,11 @@ delete from `activity_round` where id>=1 and id<=1000;;
 insert into `activity_round`
 (`id`, `start_date`, `end_date`, `address`, `round`, `pass`, `activity_id`, `activity_type_id`)
   values
-  (1, '2015-10-01 13:00:00', '2015-10-01 16:00:00', '上海市金科路000号 ABC公司', 0, 0, 1, 1);;
+  (1, '2015-10-01 13:00:00', '2015-10-01 16:00:00', '上海市金科路000号 ABC公司', 1, 0, 1, 1);;
 insert into `activity_round`
 (`id`, `start_date`, `end_date`, `address`, `round`, `pass`, `activity_id`, `activity_type_id`)
   values
-  (2, '2015-10-05 13:00:00', '2015-10-05 16:00:00', '上海市金科路000号 ABC公司', 1, 0, 1, 1);;
+  (2, '2015-10-05 13:00:00', '2015-10-05 16:00:00', '上海市金科路000号 ABC公司', 2, 0, 1, 1);;
   
 delete from `activity_people_conn` where id>=1 and id<=1000;;
 insert into `activity_people_conn`

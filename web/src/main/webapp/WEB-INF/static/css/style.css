@@ -956,3 +956,8 @@ input.hidefocus::-moz-focus-inner { border:none; }
 .ui-timepicker-rtl dl { text-align: right; padding: 0 5px 0 0; }
 .ui-timepicker-rtl dl dt{ float: right; clear: right; }
 .ui-timepicker-rtl dl dd { margin: 0 45% 10px 10px; }
+
+.activity_round {
+	height: 26px !important;
+	margin: 5px 0 5px 0;
+}
