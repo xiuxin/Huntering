@@ -118,15 +118,15 @@
 	            </div>
 	            <div class="mes_line_three">
 	                  <div class="start_interview_div">
-	                      <div class="start_interview" onclick="statInterview(this)">安排面试</div>
+	                      <div class="start_interview" data-personid="${message.people.id}" onclick="statInterview1(this)">安排面试</div>
 	                      <div class="interview_white_trangle">
-	                          <img src="${ctx}/static/images/white_trangle.png" class="interview_white_trangle_img"/>
+	                          <img src="${ctx}/static/images/white_trangle.png" id="interview_white_trangle_img_${message.people.id}" class="interview_white_trangle_img"/>
 	                     </div>
 	                  </div>
 	                  <div class="remark_div">
-	                      <div class="start_remark" onclick="statRemark(this)">备注</div>
+	                      <div class="start_remark" data-personid="${message.people.id}" onclick="statRemark1(this)">备注</div>
 	                      <div class="remark_white_trangle">
-	                          <img src="${ctx}/static/images/white_trangle.png" class="remark_white_trangle_img"/>
+	                          <img src="${ctx}/static/images/white_trangle.png" id="remark_white_trangle_img_${message.people.id}" class="remark_white_trangle_img"/>
 	                     </div>
 	                  </div>
 	                  
@@ -140,6 +140,95 @@
 				</c:otherwise>
 			</c:choose>
       		</div>
+      		<c:if test="${not empty message.people.fullName}">
+      			<div class="interview_dialog" id="interview_dialog_${message.people.id}">
+                  <form class="cmxform" id="interviewForm" method="get" action="">
+                  <fieldset>
+                    <div class="input_line">
+                      <label for="startTime"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />开始时间</label>
+                      <input name="startTime" type="text" class="right_input" placeholder="2015/01/21 22:05">
+                    </div>
+                    <div class="input_line">
+                      <label for="endTime"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />结束时间</label>
+                      <input name="endTime" type="text" class="right_input" placeholder="2015/01/21 22:05">
+                    </div>
+                    <div class="input_line">
+                      <label for="companyName"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />公司</label>
+                      <input name="companyName" type="text" class="right_input" placeholder="公司名称">
+                    </div>
+                    <div class="input_line">
+                      <label for="job"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />岗位</label>
+                      <input name="job" type="text" class="right_input" placeholder="岗位名称">
+                    </div>
+                    <div class="input_line">
+                      <label for="position"><span class="not_must">地点</span></label>
+                      <input name="position" type="text" class="right_input" placeholder="面试地点">
+                    </div>
+                    <div class="input_line">
+                      <label for="candidate"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />候选人</label>
+                      <input name="candidateName" type="text" class="right_input1" placeholder="姓名">
+                      <input name="candidatePhone" type="text" class="right_input2" placeholder="手机号">
+                      <input name="candidateEmail" type="text" class="right_input3" placeholder="邮箱">
+                    </div>
+                    <div class="input_line">
+                      <label for="candidate"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />面试官</label>
+                      <input name="interviewerName" type="text" class="right_input1" placeholder="姓名">
+                      <input name="interviewerPhone" type="text" class="right_input2" placeholder="手机号">
+                      <input name="interviewerEmail" type="text" class="right_input3" placeholder="邮箱">
+                    </div>
+                    <div class="input_line">
+                      <label for="candidate"><span class="not_must">参与人</span></label>
+                      <input name="candidateName1" type="text" class="right_input1" placeholder="姓名">
+                      <input name="candidatePhone1" type="text" class="right_input2" placeholder="手机号">
+                      <input name="candidateEmail1" type="text" class="right_input3" placeholder="邮箱">
+                    </div>
+                    <div class="input_line">
+                      <label for="candidate"><span class="not_must">参与人</span></label>
+                      <input name="candidateName2" type="text" class="right_input1" placeholder="姓名">
+                      <input name="candidatePhone2" type="text" class="right_input2" placeholder="手机号">
+                      <input name="candidateEmail2" type="text" class="right_input3" placeholder="邮箱">
+                    </div>
+                    <div class="input_line">
+                      <label for="feedback"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />反馈表</label>
+                      <select class="right_selecter" name="feedback">
+                        <option value ="volvo">IT基本知识</option>
+                        <option value ="saab">.NET开发</option>
+                        <option value="opel">Java</option>
+                        <option value="audi">JS</option>
+                      </select>
+                    </div>
+                    <div class="input_line">
+                      <label for="feedback"><span class="not_must">备注</span></label>
+                      <textarea class="backup_textarea">
+                      </textarea>
+                    </div>
+                    <div class="submit_area">
+                          <div class="mes_btn" onclick="submitInterview()">
+                            <input class="submit mes_btn_submit" type="submit">
+                          </div>
+                          <div class="cancel_btn" onclick="cancelInterview()"></div>
+                    </div>
+                  </fieldset>
+                </form>
+            </div>
+
+            <div class="remark_dialog" id="remark_dialog_${message.people.id}">
+                  <form class="cmxform" id="remarkForm" method="get" action="">
+                  <fieldset>
+                    <div class="input_line">
+                      <label for="feedback"><span class="not_must">备注</span></label>
+                      <textarea class="backup_textarea">
+                      </textarea>
+                    </div>
+                    <div class="remark_submit_area">
+                          <div class="mes_btn"></div>
+                          <div class="cancel_btn" onclick="cancelRemark()"></div>
+                    </div>
+                  </fieldset>
+                </form>
+            </div>
+      		
+      		</c:if>
 		</c:when>
 		<c:otherwise></c:otherwise>
 	</c:choose>

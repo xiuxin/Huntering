@@ -314,6 +314,7 @@ $(".icons_div").hover( function(event){
 //show more icons end
 
 function statInterview(e){
+	var resumeElement = e.parentElement.parentElement.parentElement;
 	if( $(".interview_dialog").is(":hidden") ){
 		$(".interview_white_trangle_img").show();
 		$(".remark_white_trangle_img").hide();
@@ -337,6 +338,41 @@ function statRemark(e){
 		$(".remark_dialog").show();
 	}else{
 		$(".remark_dialog").hide();
+	}
+	
+}
+
+function statInterview1(e){
+	var personid = e.dataset.personid; 
+	
+	if( $("#interview_dialog_"+personid).is(":hidden") ){
+		$("#interview_white_trangle_img_"+personid).show();
+		$("#remark_white_trangle_img_"+personid).hide();
+		$(".start_interview").css("font-weight", "normal");
+		$(".start_remark").css("font-weight", "normal");
+		$(e).css("font-weight", "bold");
+		//$(e).parent().parent().find(".start_remark").css("font-weight", "normal");
+		$(".interview_dialog").hide();
+		$(".remark_dialog").hide();
+		$("#interview_dialog_"+personid).show();
+	}else{
+		$("#interview_dialog_"+personid).hide();
+	}
+}
+
+function statRemark1(e){
+	var personid = e.dataset.personid; 
+	if( $("#remark_dialog_"+personid).is(":hidden") ){
+		$("#interview_white_trangle_img_"+personid).hide();
+		$("#remark_white_trangle_img_"+personid).show();
+		$(".start_interview").css("font-weight", "normal");
+		$(".start_remark").css("font-weight", "normal");
+		$(e).css("font-weight", "bold");
+		$(".interview_dialog").hide();
+		$(".remark_dialog").hide();
+		$("#remark_dialog_"+personid).show();
+	}else{
+		$("#remark_dialog_"+personid).hide();
 	}
 	
 }
