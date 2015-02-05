@@ -96,3 +96,13 @@ insert into `feedback`
 (`id`, `activity_round_id`, `detail`, `communicate`, `english`, `base_knowledge`, `skill`, `desb`, `result`)
   values
   (1, 1, 'Feed back detail is ok', 1, 1, 1, 1, '可以录用', 'Pass');;
+  
+delete from `message` where id>=1 and id<=1000;;
+insert into `message`
+(`id`, `account_id`, `people_id`, `activity_id`, `message_type`)
+  values
+  (1, 1, 1, null, 'RESUME');;
+insert into `message`
+(`id`, `account_id`, `people_id`, `activity_id`, `message_type`)
+  values
+  (2, 1, null, 1, 'ACTIVITY');;
