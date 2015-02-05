@@ -14,6 +14,7 @@ import com.huntering.beans.account.entity.Account;
 import com.huntering.beans.activity.entity.Activity;
 import com.huntering.beans.activity.entity.ActivityPeopleConn;
 import com.huntering.beans.activity.entity.ActivityRound;
+import com.huntering.beans.activity.entity.FeedBack;
 import com.huntering.beans.activity.entity.Job;
 import com.huntering.beans.activity.service.ActivityService;
 import com.huntering.beans.activity.service.JobService;
@@ -25,6 +26,7 @@ import com.huntering.beans.profile.service.PeopleCompanyService;
 import com.huntering.beans.profile.service.PeopleService;
 import com.huntering.common.plugin.entity.Stateable.PeopleRole;
 import com.huntering.dto.ActivityForm;
+import com.huntering.dto.FeedBackForm;
 import com.huntering.security.CurrentAccount;
 
 /**
@@ -111,8 +113,31 @@ public class ActivityController {
 		
 		activityService.saveAndFlush(activity);
 
-		messageService.sendInterviewMessage(account, activity, null);
+		messageService.sendInterviewMessage(account, activity, people);
 		
 		return activity;
 	}
+	
+	@RequestMapping(value = "/{activityid}/activityround/create", method = RequestMethod.POST)
+    public String addActivityRound(@CurrentAccount Account loginUser, @PathVariable("activityid") long activityId, ActivityForm activityForm) {
+		Activity activity = activityService.addActivityRound(activityId, activityForm, loginUser);
+		if(activity == null) {
+			// TODO add error message for font end display
+		} else {
+			// TODO update timestamp message of the activity
+		}
+		return "front/activities";
+	}
+	
+	@RequestMapping(value = "/activityround/{activityroundid}/updatefeedback", method = RequestMethod.POST)
+    public String updateFeedBack(@CurrentAccount Account loginUser, @PathVariable("activityroundid") long activityRoundId, FeedBackForm feedBackForm) {
+		FeedBack feedBack = activityService.updateFeedBack(activityRoundId, feedBackForm, loginUser);
+		if(feedBack == null) {
+			// TODO add error message for font end display
+		} else {
+			// TODO update timestamp message of the activity
+		}
+		return "front/activities";
+	}
+	
 }
