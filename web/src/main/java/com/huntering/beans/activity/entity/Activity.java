@@ -46,7 +46,7 @@ public class Activity extends BaseTimeEntity<Long> implements Stateable<AuditSta
 			joinColumns=@JoinColumn(name="activity_id"),
 			inverseJoinColumns=@JoinColumn(name="account_id"))
 	private Account account;
-	
+
 	@ManyToOne(optional = true, fetch = FetchType.EAGER)
 	@Fetch(FetchMode.JOIN)
 	@JoinColumn(name="job_id")
@@ -133,5 +133,12 @@ public class Activity extends BaseTimeEntity<Long> implements Stateable<AuditSta
 
 	public void setActivityRounds(List<ActivityRound> activityRounds) {
 		this.activityRounds = activityRounds;
+	}
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 }

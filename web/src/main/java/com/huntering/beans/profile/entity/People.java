@@ -43,7 +43,9 @@ public class People extends BaseTimeEntity<Long> implements LogicDeleteable {
     @Fetch(FetchMode.SELECT)
     private Account account;
 	
-    private String nickName;
+	private String email;
+
+	private String nickName;
     
     private String fullName;
     
@@ -119,6 +121,14 @@ public class People extends BaseTimeEntity<Long> implements LogicDeleteable {
 		this.mdn = mdn;
 	}
 
+    public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
 	public String getCountry() {
 		return country;
 	}
