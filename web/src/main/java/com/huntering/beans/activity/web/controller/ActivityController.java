@@ -1,7 +1,6 @@
 package com.huntering.beans.activity.web.controller;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
@@ -43,6 +42,8 @@ import com.huntering.security.CurrentAccount;
 @RequestMapping("/activity") 
 public class ActivityController {
 	
+	private final String ACTIVITY_VIEW = "redirect:/home";
+	
 	@Autowired
 	private ActivityService activityService;
 	@Autowired
@@ -75,7 +76,7 @@ public class ActivityController {
 		People people = peopleService.findOne(personId);
 		saveActivityAndSendMsg(activityForm, loginUser, people);
 		
-		return "front/activities";
+		return ACTIVITY_VIEW;
 	}
 	
 	private Activity saveActivityAndSendMsg(ActivityForm form, Account account, People people) {
@@ -166,7 +167,7 @@ public class ActivityController {
 		} else {
 			// TODO update timestamp message of the activity
 		}
-		return "front/activities";
+		return ACTIVITY_VIEW;
 	}
 	
 	@RequestMapping(value = "/activityround/{activityroundid}/updatefeedback", method = RequestMethod.POST)
@@ -177,7 +178,7 @@ public class ActivityController {
 		} else {
 			// TODO update timestamp message of the activity
 		}
-		return "front/activities";
+		return ACTIVITY_VIEW;
 	}
 	
 	private void sendEmail(List<String> managerMail, ActivityForm form, People people) {

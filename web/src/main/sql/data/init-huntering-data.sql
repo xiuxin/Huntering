@@ -29,6 +29,9 @@ values (1, 1, '张三', 1, 0, 'qiuchen_yao@126.com');;
 insert into `people`
 (`id`, `account_id`, `fullName`, `self`,`deleted`,`email`)
 values (2, 1, '李四', 0, 0, 'bell_qiu@outlook.com');;
+insert into `people`
+(`id`, `account_id`, `fullName`, `self`,`deleted`,`email`)
+values (3, 1, null, 0, 0, 'bell_qiu@outlook.com');;
   
 delete from `people_education` where id>=1 and id<=1000;;
 insert into `people_education`
@@ -159,4 +162,8 @@ insert into `message`
 (`id`, `account_id`, `people_id`, `activity_id`, `message_type`)
   values
   (3, 1, null, 2, 'ACTIVITY');;
+insert into `message`
+(`id`, `account_id`, `people_id`, `activity_id`, `message_type`)
+  values
+  (4, 1, 3, null, 'RESUME');;
 
