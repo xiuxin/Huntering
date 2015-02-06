@@ -303,7 +303,7 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 				<option value="4">4.优秀水平</option>
 				<option value="3">3.平均水平</option>
 				<option value="2">2.低于平均</option>
-				<option value="1">1.能力减弱</option>
+				<option value="1">1.能力稍弱</option>
 				<option value="0">0.无此能力</option>
 			</select>
 	    </div>
@@ -314,7 +314,7 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 				<option value="4">4.优秀水平</option>
 				<option value="3">3.平均水平</option>
 				<option value="2">2.低于平均</option>
-				<option value="1">1.能力减弱</option>
+				<option value="1">1.能力稍弱</option>
 				<option value="0">0.无此能力</option>
 			</select>
 	    </div>
@@ -325,7 +325,7 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 				<option value="4">4.优秀水平</option>
 				<option value="3">3.平均水平</option>
 				<option value="2">2.低于平均</option>
-				<option value="1">1.能力减弱</option>
+				<option value="1">1.能力稍弱</option>
 				<option value="0">0.无此能力</option>
 			</select>
 	    </div>
@@ -336,7 +336,7 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 				<option value="4">4.优秀水平</option>
 				<option value="3">3.平均水平</option>
 				<option value="2">2.低于平均</option>
-				<option value="1">1.能力减弱</option>
+				<option value="1">1.能力稍弱</option>
 				<option value="0">0.无此能力</option>
 			</select>
 	    </div>
@@ -347,7 +347,7 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 				<option value="4">4.优秀水平</option>
 				<option value="3">3.平均水平</option>
 				<option value="2">2.低于平均</option>
-				<option value="1">1.能力减弱</option>
+				<option value="1">1.能力稍弱</option>
 				<option value="0">0.无此能力</option>
 			</select>
 	    </div>
@@ -358,7 +358,7 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 				<option value="4">4.优秀水平</option>
 				<option value="3">3.平均水平</option>
 				<option value="2">2.低于平均</option>
-				<option value="1">1.能力减弱</option>
+				<option value="1">1.能力稍弱</option>
 				<option value="0">0.无此能力</option>
 			</select>
 	    </div>
@@ -369,7 +369,7 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 				<option value="4">4.优秀水平</option>
 				<option value="3">3.平均水平</option>
 				<option value="2">2.低于平均</option>
-				<option value="1">1.能力减弱</option>
+				<option value="1">1.能力稍弱</option>
 				<option value="0">0.无此能力</option>
 			</select>
 	    </div>
@@ -380,7 +380,7 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 				<option value="4">4.优秀水平</option>
 				<option value="3">3.平均水平</option>
 				<option value="2">2.低于平均</option>
-				<option value="1">1.能力减弱</option>
+				<option value="1">1.能力稍弱</option>
 				<option value="0">0.无此能力</option>
 			</select>
 	    </div>
@@ -407,260 +407,6 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 	</div><!-- /.modal -->
 </c:if>
 
-
-
-      <div class="single_resume">
-            <div class="mes_line_one">
-                  <img src="${ctx}/static/images/system_img.png" class="user_img"/>
-                  <span class="mes_line_one_account">系统账号</span>
-                  <img src="${ctx}/static/images/user_line.png" class="user_line"/>
-                  <span class="mes_line_one_type">简历追踪</span>
-                  <img src="${ctx}/static/images/user_line.png" class="user_line"/>
-                  <span class="mes_line_one_serial">Test</span>
-                  <span class="mes_date">2014.10.12 12.12</span>
-            </div>
-            <div class="clear"></div>
-            <div class="mes_line_two">
-                  <p>您已成功通过邮件导入了一份简历，系统正在自动识别并会在第一时间通知到您。</p>
-            </div>
-            <div class="mes_line_three">
-                  <div class="start_interview_div">
-                      <div class="start_interview" onclick="statInterview(this)">安排面试</div>
-                      <div class="interview_white_trangle">
-                          <img src="${ctx}/static/images/white_trangle.png" class="interview_white_trangle_img"/>
-                     </div>
-                  </div>
-                  <div class="remark_div">
-                      <div class="start_remark" onclick="statRemark(this)">备注</div>
-                      <div class="remark_white_trangle">
-                          <img src="${ctx}/static/images/white_trangle.png" class="remark_white_trangle_img"/>
-                     </div>
-                  </div>
-                  
-            </div>
-            
-      </div>
-      
-	<div class="single_resume">
-            <div class="mes_line_one">
-                  <img src="${ctx}/static/images/system_img.png" class="user_img"/>
-                  <span class="mes_line_one_account">系统账号</span>
-                  <img src="${ctx}/static/images/user_line.png" class="user_line"/>
-                  <span class="mes_line_one_type">简历追踪</span>
-                  <img src="${ctx}/static/images/user_line.png" class="user_line"/>
-                  <span class="mes_line_one_serial">Test</span>
-                  <span class="mes_date">2014.10.12 12.12</span>
-            </div>
-            <div class="clear"></div>
-            <div class="mes_line_two">
-                  <p>Microsoft&nbsp;|&nbsp;.NET Engineer&nbsp;|&nbsp;李四&nbsp;</p>
-            </div>
-            <div class="mes_line_center">
-               
-               <div>
-                 <form>
-                      <div class="mes_line_three">
-                        <span>第一轮</span>
-                        <span class="start_interview">添加反馈</span>
-                        <span class="remark_span">备注</span>
-                        <span>通过</span>
-                        <span class="start_interview" onclick="">安排面试</span>
-                     </div>                      
-                 </form>
-                 <form>
-                      <div class="mes_line_three">
-                        <span>第二轮</span>
-                        <span class="start_interview">添加反馈</span>
-                        <span class="remark_span">备注</span>
-                        <span>通过</span>
-                        <span class="start_interview" onclick="">安排面试</span>
-                     </div>                      
-                 </form>
-                 <form>
-                      <div class="mes_line_three">
-                        <span>第三轮</span>
-                        <span class="start_interview">添加反馈</span>
-                        <span class="remark_span">备注</span>
-                        <span>通过</span>
-                        <span class="start_interview" onclick="">安排面试</span>
-                     </div>                      
-                 </form>
-               </div>
-            
-               
-            </div>
-            <!--<div class="mes_line_three">
-                  <span class="start_interview">添加反馈</span>
-                  <span class="remark_span">备注</span>
-                  <span class="cancel_interview">取消面试</span>
-            </div>-->
-      </div>      
-      
-      <div class="interview_dialog">
-                  <form class="cmxform" id="interviewForm" method="get" action="">
-                  <fieldset>
-                    <div class="input_line">
-                      <label for="startTime"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />开始时间</label>
-                      <input name="startTime" type="text" class="right_input" placeholder="2015/01/21 22:05">
-                    </div>
-                    <div class="input_line">
-                      <label for="endTime"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />结束时间</label>
-                      <input name="endTime" type="text" class="right_input" placeholder="2015/01/21 22:05">
-                    </div>
-                    <div class="input_line">
-                      <label for="companyName"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />公司</label>
-                      <input name="companyName" type="text" class="right_input" placeholder="公司名称">
-                    </div>
-                    <div class="input_line">
-                      <label for="jobTitle"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />岗位</label>
-                      <input name="jobTitle" type="text" class="right_input" placeholder="岗位名称">
-                    </div>
-                    <div class="input_line">
-                      <label for="address"><span class="not_must">地点</span></label>
-                      <input name="address" type="text" class="right_input" placeholder="面试地点">
-                    </div>
-                    <div class="input_line">
-                      <label for="candidate"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />候选人</label>
-                      <input name="candidateName" type="text" class="right_input1" placeholder="姓名">
-                      <input name="candidatePhone" type="text" class="right_input2" placeholder="手机号">
-                      <input name="candidateEmail" type="text" class="right_input3" placeholder="邮箱">
-                    </div>
-                    <div class="input_line">
-                      <label for="candidate"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />面试官</label>
-                      <input name="interviewerName" type="text" class="right_input1" placeholder="姓名">
-                      <input name="interviewerMdn" type="text" class="right_input2" placeholder="手机号">
-                      <input name="interviewerEmail" type="text" class="right_input3" placeholder="邮箱">
-                    </div>
-                    <div class="input_line">
-                      <label for="candidate"><span class="not_must">参与人</span></label>
-                      <input name="participantName1" type="text" class="right_input1" placeholder="姓名">
-                      <input name="participantMdn1" type="text" class="right_input2" placeholder="手机号">
-                      <input name="candidateEmail1" type="text" class="right_input3" placeholder="邮箱">
-                    </div>
-                    <div class="input_line">
-                      <label for="candidate"><span class="not_must">参与人</span></label>
-                      <input name="participantName2" type="text" class="right_input1" placeholder="姓名">
-                      <input name="participantMdn2" type="text" class="right_input2" placeholder="手机号">
-                      <input name="participantEmail2" type="text" class="right_input3" placeholder="邮箱">
-                    </div>
-                    <div class="input_line">
-                      <label for="feedbackType"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />反馈表</label>
-                      <select class="right_selecter" name="feedbackType">
-                        <option value ="volvo">IT基本知识</option>
-                        <option value ="saab">.NET开发</option>
-                        <option value="opel">Java</option>
-                        <option value="audi">JS</option>
-                      </select>
-                    </div>
-                    <div class="input_line">
-                      <label for="comment"><span class="not_must">备注</span></label>
-                      <textarea class="comment">
-                      </textarea>
-                    </div>
-                    <div class="submit_area">
-                          <div class="mes_btn" onclick="submitInterview(this)">
-                            <input class="submit mes_btn_submit" type="submit">
-                          </div>
-                          <div class="cancel_btn" onclick="cancelInterview()"></div>
-                    </div>
-                  </fieldset>
-                </form>
-            </div>
-
-            <div class="remark_dialog">
-                  <form class="cmxform" id="remarkForm" method="get" action="">
-                  <fieldset>
-                    <div class="input_line">
-                      <label for="comment"><span class="not_must">备注</span></label>
-                      <textarea class="comment">
-                      </textarea>
-                    </div>
-                    <div class="remark_submit_area">
-                          <div class="mes_btn"></div>
-                          <div class="cancel_btn" onclick="cancelRemark()"></div>
-                    </div>
-                  </fieldset>
-                </form>
-            </div>
-
-      <div class="single_resume">
-            <div class="mes_line_one">
-                  <img src="${ctx}/static/images/system_img.png" class="user_img"/>
-                  <span class="mes_line_one_account">系统账号</span>
-                  <img src="${ctx}/static/images/user_line.png" class="user_line"/>
-                  <span class="mes_line_one_type">档案更新</span>
-                  <span class="mes_date">2014.10.12 12.12</span>
-            </div>
-            <div class="clear"></div>
-            <div class="mes_line_two" style="margin-bottom:0px;">
-                  <p>公司信息“XXXXXX”录入完毕。</p>
-            </div>
-      </div>
-
-      <div class="single_resume">
-            <div class="mes_line_one">
-                  <img src="${ctx}/static/images/system_img.png" class="user_img"/>
-                  <span class="mes_line_one_account">系统账号</span>
-                  <img src="${ctx}/static/images/user_line.png" class="user_line"/>
-                  <span class="mes_line_one_type">面试追踪</span>
-                  <img src="${ctx}/static/images/user_line.png" class="user_line"/>
-                  <span class="mes_line_one_serial">IG20150128(2)</span>
-                  <span class="mes_date">2014.10.12 12.12</span>
-            </div>
-            <div class="clear"></div>
-            <div class="mes_line_two">
-                  <p>Microsoft&nbsp;|&nbsp;.NET Engineer&nbsp;|&nbsp;张三/CCD&nbsp;|&nbsp;李四/HM&nbsp;|赵武/HM&nbsp;|&nbsp;2015/1/19 14:00（还有1小时）</p>
-            </div>
-            <div class="mes_line_three">
-                  <span class="start_interview">添加反馈</span>
-                  <span class="remark_span">备注</span>
-                  <span class="cancel_interview">取消面试</span>
-            </div>
-      </div>
-
-      <div class="single_resume">
-            <div class="mes_line_one">
-                  <img src="${ctx}/static/images/system_img.png" class="user_img"/>
-                  <span class="mes_line_one_account">系统账号</span>
-                  <img src="${ctx}/static/images/user_line.png" class="user_line"/>
-                  <span class="mes_line_one_type">面试追踪</span>
-                  <img src="${ctx}/static/images/user_line.png" class="user_line"/>
-                  <span class="mes_line_one_serial">IG20150128(2)</span>
-                  <span class="mes_date">2014.10.12 12.12</span>
-            </div>
-            <div class="clear"></div>
-            <div class="mes_line_two">
-                  <p>Microsoft&nbsp;|&nbsp;.NET Engineer&nbsp;|&nbsp;张三/CCD&nbsp;|&nbsp;李四/HM&nbsp;|赵武/HM&nbsp;|&nbsp;设计经验比较多，代码风骚，不出bug，工作太度认真，能加班加点，愿意出差，精通各种php、Object C，服从公司安排，设计体验设计体验看见阿里斯顿会计法离开家阿拉斯加地方，阿斯顿发徕卡就是到付款链接就阿里斯柯达解放路看见爱死了都快放假垃圾死地方离开家。&nbsp;|&nbsp;2015/1/19 14:00（还有1小时）</p>
-            </div>
-            <div class="mes_line_three">
-                  <span class="start_interview">添加反馈</span>
-                  <span class="remark_span">备注</span>
-                  <span class="cancel_interview">取消面试</span>
-            </div>
-      </div>
-
-      <div class="single_resume">
-            <div class="mes_line_one">
-                  <img src="${ctx}/static/images/system_img.png" class="user_img"/>
-                  <span class="mes_line_one_account">系统账号</span>
-                  <img src="${ctx}/static/images/user_line.png" class="user_line"/>
-                  <span class="mes_line_one_type">面试追踪</span>
-                  <img src="${ctx}/static/images/user_line.png" class="user_line"/>
-                  <span class="mes_line_one_serial">IG20150128(2)</span>
-                  <span class="mes_date">2014.10.12 12.12</span>
-            </div>
-            <div class="clear"></div>
-            <div class="mes_line_two">
-                  <p>Microsoft&nbsp;|&nbsp;.NET Engineer&nbsp;|&nbsp;张三/CCD&nbsp;|&nbsp;李四/HM&nbsp;|赵武/HM&nbsp;|&nbsp;设计经验比较多，代码风骚，不出bug，工作太度认真，能加班加点，愿意出差，精通各种php、Object C，服从公司安排，设计体验设计体验看见阿里斯顿会计法离开家阿拉斯加地方，阿斯顿发徕卡就是到付款链接就阿里斯柯达解放路看见爱死了都快放假垃圾死地方离开家。&nbsp;|&nbsp;2015/1/19 14:00（还有1小时）</p>
-            </div>
-            <div class="mes_line_three">
-                  <span class="start_interview">添加反馈</span>
-                  <span class="remark_span">备注</span>
-                  <span class="cancel_interview">取消面试</span>
-            </div>
-      </div>
-    
-      
 </div>
 </div>
 <!--login middle end-->
