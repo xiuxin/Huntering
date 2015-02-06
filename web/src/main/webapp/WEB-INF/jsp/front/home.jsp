@@ -249,7 +249,33 @@
 	            	<c:forEach var="act_round" items="${message.activity.activityRounds}">
 	               	<div class="activity_round">
 						<span>第<c:out value="${act_round.round}"/>轮</span>
-						<span data-roundid="${act_round.id}" class="start_interview">添加反馈</span>
+						<c:choose>
+							<c:when test="${not empty act_round.feedBack}">
+								<span data-roundid="${act_round.id}" data-ctx="${ctx}"
+data-behavihor=${act_round.feedBack.behavihor}
+data-profession=${act_round.feedBack.profession}
+data-language=${act_round.feedBack.language}
+data-innovation=${act_round.feedBack.innovation}
+data-communication=${act_round.feedBack.communication}
+data-execution=${act_round.feedBack.execution}
+data-teamwork=${act_round.feedBack.teamwork}
+data-management=${act_round.feedBack.management}
+data-result=${act_round.feedBack.result} data-toggle="modal" data-target="#feedBackModal" class="start_feedback">添加反馈</span>
+							</c:when>
+							<c:otherwise>
+								<span data-roundid="${act_round.id}" data-ctx="${ctx}"
+data-behavihor=0
+data-profession=0
+data-language=0
+data-innovation=0
+data-communication=0
+data-execution=0
+data-teamwork=0
+data-management=0
+data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feedback">添加反馈</span>
+							</c:otherwise>
+						</c:choose>
+						<%-- <span data-roundid="${act_round.id}" data-toggle="modal" data-target="#feedBackModal" class="start_feedback">添加反馈</span> --%>
 						<span class="remark_span">备注</span>
 						<span>通过</span>
 	                   	<span class="start_interview">安排面试</span>
@@ -260,7 +286,129 @@
 		</c:otherwise>
 	</c:choose>
 </c:forEach>
+	<div class="modal fade" id="feedBackModal" tabindex="-1" role="dialog" aria-labelledby="feedBackModalLabel" aria-hidden="true" data-backdrop="static">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+   					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+   					<h4 class="modal-title" id="feedBackModalLabel">添加面试反馈</h4>
+ 				</div>
+ 				<div class="modal-body" id="fogot-modal-body">
+ 					<div class="feedback_div">
+	<form class="cmxform" id="feedBackForm" method="post">
+		<div class="input_line">
+			<label>言行举止</label>
+			<select id="behavihor" name="behavihor">
+				<option value="5">5.杰出水平</option>
+				<option value="4">4.优秀水平</option>
+				<option value="3">3.平均水平</option>
+				<option value="2">2.低于平均</option>
+				<option value="1">1.能力减弱</option>
+				<option value="0">0.无此能力</option>
+			</select>
+	    </div>
+	    <div class="input_line">
+			<label>专业能力</label>
+			<select id="profession" name="profession">
+				<option value="5">5.杰出水平</option>
+				<option value="4">4.优秀水平</option>
+				<option value="3">3.平均水平</option>
+				<option value="2">2.低于平均</option>
+				<option value="1">1.能力减弱</option>
+				<option value="0">0.无此能力</option>
+			</select>
+	    </div>
+	    <div class="input_line">
+			<label>语言能力</label>
+			<select id="language" name="language">
+				<option value="5">5.杰出水平</option>
+				<option value="4">4.优秀水平</option>
+				<option value="3">3.平均水平</option>
+				<option value="2">2.低于平均</option>
+				<option value="1">1.能力减弱</option>
+				<option value="0">0.无此能力</option>
+			</select>
+	    </div>
+	    <div class="input_line">
+			<label>创新精神</label>
+			<select id="innovation" name="innovation">
+				<option value="5">5.杰出水平</option>
+				<option value="4">4.优秀水平</option>
+				<option value="3">3.平均水平</option>
+				<option value="2">2.低于平均</option>
+				<option value="1">1.能力减弱</option>
+				<option value="0">0.无此能力</option>
+			</select>
+	    </div>
+	    <div class="input_line">
+			<label>沟通技巧</label>
+			<select id="communication" name="communication">
+				<option value="5">5.杰出水平</option>
+				<option value="4">4.优秀水平</option>
+				<option value="3">3.平均水平</option>
+				<option value="2">2.低于平均</option>
+				<option value="1">1.能力减弱</option>
+				<option value="0">0.无此能力</option>
+			</select>
+	    </div>
+	    <div class="input_line">
+			<label>执行能力</label>
+			<select id="execution" name="execution">
+				<option value="5">5.杰出水平</option>
+				<option value="4">4.优秀水平</option>
+				<option value="3">3.平均水平</option>
+				<option value="2">2.低于平均</option>
+				<option value="1">1.能力减弱</option>
+				<option value="0">0.无此能力</option>
+			</select>
+	    </div>
+	    <div class="input_line">
+			<label>团队合作</label>
+			<select id="teamwork" name="teamwork">
+				<option value="5">5.杰出水平</option>
+				<option value="4">4.优秀水平</option>
+				<option value="3">3.平均水平</option>
+				<option value="2">2.低于平均</option>
+				<option value="1">1.能力减弱</option>
+				<option value="0">0.无此能力</option>
+			</select>
+	    </div>
+	    <div class="input_line">
+			<label>管理能力</label>
+			<select id="management" name="management">
+				<option value="5">5.杰出水平</option>
+				<option value="4">4.优秀水平</option>
+				<option value="3">3.平均水平</option>
+				<option value="2">2.低于平均</option>
+				<option value="1">1.能力减弱</option>
+				<option value="0">0.无此能力</option>
+			</select>
+	    </div>
+	    <div class="clear"></div>
+	    <div class="feedback_result">
+			<label>本轮面试结果</label>
+			<select id="result" name="result">
+				<option value="2">通过</option>
+				<option value="1">失败</option>
+				<option value="0">待定</option>
+			</select>
+	    </div>
+	</form>
+		</div>
+ 				</div>
+				<div class="modal-footer">
+					<div class="form-group">
+  						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+  						<button type="button" id="saveBackFeed" data-loading-text="Processing.." class="btn btn-primary">保存</button>
+  					</div>
+ 				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 </c:if>
+
+
+
       <div class="single_resume">
             <div class="mes_line_one">
                   <img src="${ctx}/static/images/system_img.png" class="user_img"/>

@@ -786,7 +786,6 @@ input.hidefocus::-moz-focus-inner { border:none; }
 	height: 19px;
 }
 
-
 #interviewForm {
 	width: 100%;
 }
@@ -795,6 +794,41 @@ input.hidefocus::-moz-focus-inner { border:none; }
 	float:left;
 	color:#333333;
 	font-weight: bold;
+	cursor: pointer;
+}
+
+#feedBackModal {
+	height: 550px;
+	top: 15%;
+}
+
+.start_feedback{
+	color:#0073c6;
+	cursor:pointer;
+}
+
+#feedBackForm label {
+	width: 150px;
+	float:left;
+	color:#333333;
+	font-weight: bold;
+	cursor: auto;
+	font-family: Arial;
+	font-size: 20px;
+}
+
+.feedback_div {
+	margin: 20px 0 0 80px;	
+}
+
+#feedBackModalLabel {
+	text-align: center;
+}
+
+.feedback_result{
+	width: 100%;
+	height: 47px;
+	margin: 20px 0 0 0;
 }
 
 #remarkForm {

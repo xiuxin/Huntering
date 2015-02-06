@@ -407,7 +407,25 @@ $(document).ready(function(){
 		$(".signup_main").show();
 	});
 	
-	$(".date_time").each(function() {
-		$(this).datetimepicker();
+	$(".date_time").each(function(index, el) {
+		$(el).datetimepicker();
+	});
+	
+	$(".start_feedback").each(function(index, el){
+		$(el).click(function(){
+			$("#behavihor option[value='"+el.dataset.behavihor+"']").attr("selected", true);
+			$("#profession option[value='"+el.dataset.profession+"']").attr("selected", true);
+			$("#innovation option[value='"+el.dataset.innovation+"']").attr("selected", true);
+			$("#communication option[value='"+el.dataset.communication+"']").attr("selected", true);
+			$("#execution option[value='"+el.dataset.execution+"']").attr("selected", true);
+			$("#teamwork option[value='"+el.dataset.teamwork+"']").attr("selected", true);
+			$("#management option[value='"+el.dataset.management+"']").attr("selected", true);
+			$("#result option[value='"+el.dataset.result+"']").attr("selected", true);
+			$("#feedBackForm").attr("action", el.dataset.ctx+"/activity/activityround/"+el.dataset.roundid+"/updatefeedback");
+		});
+	});
+	
+	$("#saveBackFeed").click(function(){
+		$("#feedBackForm").submit();
 	});
 });
