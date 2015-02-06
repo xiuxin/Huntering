@@ -44,15 +44,17 @@ public class IndexController {
         return "admin/index/welcome";
     }
     
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/home")
     public String home(@CurrentAccount Account loginUser, Model model) {
 
+    	List<Message> messages = messageService.findByAccountId(loginUser.getId());
         model.addAttribute("user", loginUser);
+        model.addAttribute("messages", messages);
 
-        return "admin/index/welcome";
+        return "front/home";
     }
     
-    @RequestMapping(value = "/home")
+    @RequestMapping(value = "/")
     public String homeIndex(@CurrentAccount Account loginUser, Model model) {
 
     	List<Message> messages = messageService.findByAccountId(loginUser.getId());
