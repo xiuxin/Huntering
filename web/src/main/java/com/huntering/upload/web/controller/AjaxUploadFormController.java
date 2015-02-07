@@ -85,7 +85,7 @@ public class AjaxUploadFormController {
         	People people = peopleService.createPeople(account.getId(), new People());
         	request.getSession().setAttribute("acctId", account.getId()+"_"+String.valueOf(people.getId()));
             FileUploadUtils.upload(request, file, result);
-            messageService.sendInterviewMessage(account, null, people);
+            messageService.addResumeMessage(account, people);
             redirectAttributes.addFlashAttribute("uploadFileMessage", "成功上传文件");
         } else {
         	redirectAttributes.addFlashAttribute("uploadFileMessage", "上传文件失败");

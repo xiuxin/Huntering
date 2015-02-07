@@ -147,7 +147,7 @@ public class ActivityController {
 		
 		activityService.saveAndFlush(activity);
 
-		messageService.sendInterviewMessage(account, activity, null);
+		messageService.addInterviewMessage(account, activity);
 
 		SimpleMailMessage msg = new SimpleMailMessage(message);
 		if (StringUtils.isNotEmpty(interviewer.getEmail())) {
