@@ -433,4 +433,18 @@ $(document).ready(function(){
 		window.location.href="";
 	});
 	
+	$(".add_activity_round").each(function(index, el){
+		$(el).click(function(){
+			var activityId = el.dataset.activityid;
+			/*$.ajax({
+				dataType : "json",
+				type: "POST",
+				url : "/ac/changePwd/json/change?time=" + new Date().getTime(),
+				data : {oldPassword: oldPassword, newPassword: newPassword},
+				success : callBack
+			});*/
+			$("#interviewRoundForm").attr("action", el.dataset.ctx+"/activity/"+el.dataset.roundid+"/activityround/create/");
+		});
+	});
+	
 });

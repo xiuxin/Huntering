@@ -845,7 +845,7 @@ input.hidefocus::-moz-focus-inner { border:none; }
 	float: left;
 	width: 498px !important;
 	position:relative;
-	top: -7px;
+	top: -2px;
 	height: 23px !important;
 	padding-left: 10px !important;
 }
@@ -1012,4 +1012,39 @@ input.hidefocus::-moz-focus-inner { border:none; }
 
 .text_center {
 	text-align: center;
+}
+
+.interview_dialog_div {
+	margin: 20px 0 0 30px;	
+}
+
+.interview_dialog_div .right_input {
+	width: 398px !important;
+}
+#addActivityRoundModal {
+	height: 700px;
+	width: 700px;
+	top: 2%;
+}
+
+#addActivityRoundModal .modal-body {
+	max-height: 790px;
+}
+
+#interviewRoundForm {
+	width: 100%;
+}
+#interviewRoundForm label {
+	width: 85px;
+	float:left;
+	color:#333333;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#interviewRoundForm label.error, #interviewRoundForm input.submit {
+	margin-left: 15px;
+	color:red;
+	width: 165px;
+	font-weight: normal !important;
 }

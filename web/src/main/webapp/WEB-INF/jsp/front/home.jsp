@@ -278,7 +278,8 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 						<%-- <span data-roundid="${act_round.id}" data-toggle="modal" data-target="#feedBackModal" class="start_feedback">添加反馈</span> --%>
 						<span class="remark_span">备注</span>
 						<span>通过</span>
-	                   	<span class="start_interview">安排面试</span>
+	                   	<!-- <span class="start_interview">安排面试</span> -->
+	                   	<span data-activityid="${message.activity.id}" data-ctx="${ctx}" data-toggle="modal" data-target="#addActivityRoundModal" class="start_interview add_activity_round">安排面试</span>
 					</div>                      
 	            	</c:forEach>
 				</div>
@@ -428,6 +429,95 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
+	
+	<div class="modal fade" id="addActivityRoundModal" tabindex="-1" role="dialog" aria-labelledby="addActivityRoundModalLabel" aria-hidden="true" data-backdrop="static" style="display: none;">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+   					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+   					<h4 class="modal-title text_center" id="addActivityRoundModalLabel">添加面试</h4>
+ 				</div>
+ 				<div class="modal-body" id="fogot-modal-body">
+ 					<div class="interview_dialog_div" id="interview_dialog_div">
+                  <form class="cmxform" id="interviewRoundForm" method="post" action="${ctx}/activity/{activityid}/activityround/create">
+                  <fieldset>
+                    <div class="input_line">
+                      <label for="startTime"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />开始时间</label>
+                      <input name="startTime" type="text" id="date_time_${message.people.id}_1" class="right_input date_time" placeholder="01/21/2015 22:05">
+                    </div>
+                    <div class="input_line">
+                      <label for="endTime"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />结束时间</label>
+                      <input name="endTime" type="text" id="date_time_${message.people.id}_2" class="right_input date_time" placeholder="01/21/2015 22:05">
+                    </div>
+                    <div class="input_line">
+                      <label for="companyName"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />公司</label>
+                      <input name="companyName" type="text" class="right_input" placeholder="公司名称">
+                    </div>
+                    <div class="input_line">
+                      <label for="jobTitle"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />岗位</label>
+                      <input name="jobTitle" type="text" class="right_input" placeholder="岗位名称">
+                    </div>
+                    <div class="input_line">
+                      <label for="address"><span class="not_must">地点</span></label>
+                      <input name="address" type="text" class="right_input" placeholder="面试地点">
+                    </div>
+                    <div class="input_line">
+                      <label for="candidate"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />候选人</label>
+                      <input name="candidateName" type="text" class="right_input1" placeholder="姓名">
+                      <input name="candidatePhone" type="text" class="right_input2" placeholder="手机号">
+                      <input name="candidateEmail" type="text" class="right_input3" placeholder="邮箱">
+                    </div>
+                    <div class="input_line">
+                      <label for="candidate"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />面试官</label>
+                      <input name="interviewerName" type="text" class="right_input1" placeholder="姓名">
+                      <input name="interviewerMdn" type="text" class="right_input2" placeholder="手机号">
+                      <input name="interviewerEmail" type="text" class="right_input3" placeholder="邮箱">
+                    </div>
+                    <div class="input_line">
+                      <label for="candidate"><span class="not_must">参与人</span></label>
+                      <input name="participantName1" type="text" class="right_input1" placeholder="姓名">
+                      <input name="participantMdn1" type="text" class="right_input2" placeholder="手机号">
+                      <input name="candidateEmail1" type="text" class="right_input3" placeholder="邮箱">
+                    </div>
+                    <div class="input_line">
+                      <label for="candidate"><span class="not_must">参与人</span></label>
+                      <input name="participantName2" type="text" class="right_input1" placeholder="姓名">
+                      <input name="participantMdn2" type="text" class="right_input2" placeholder="手机号">
+                      <input name="participantEmail2" type="text" class="right_input3" placeholder="邮箱">
+                    </div>
+                    <div class="input_line">
+                      <label for="feedbackType"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />反馈表</label>
+                      <select class="right_selecter" name="feedbackType">
+                        <option value ="volvo">IT基本知识</option>
+                        <option value ="saab">.NET开发</option>
+                        <option value="opel">Java</option>
+                        <option value="audi">JS</option>
+                      </select>
+                    </div>
+                    <div class="input_line">
+                      <label for="comment"><span class="not_must">备注</span></label>
+                      <textarea class="comment">
+                      </textarea>
+                    </div>
+                    <div class="submit_area">
+                          <div class="mes_btn" id="submit_activity_round">
+                            <input class="submit mes_btn_submit" type="submit">
+                          </div>
+                          <div class="cancel_btn" onclick="cancelInterview()"></div>
+                    </div>
+                  </fieldset>
+                </form>
+            </div>
+ 				</div>
+				<!-- <div class="modal-footer">
+					<div class="form-group">
+  						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+  						<button type="button" id="refreshPage" data-loading-text="Processing.." class="btn btn-primary">保存</button>
+  					</div>
+ 				</div> -->
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 </div>
 </div>
 <!--login middle end-->
@@ -489,6 +579,29 @@ $.validator.setDefaults({
 	        interviewerEmail: "请完善面试官信息",
 	      }
 	    });
+	    
+	    $("#submit_activity_round").click(function(){
+	    	$("#interviewRoundForm").validate({
+	  	      rules: {
+	  	        startTime: "required",
+	  	        endTime: "required",
+	  	        companyName: "required",
+	  	        jobTitle: "required",
+	  	        candidateEmail: "required",
+	  	        interviewerEmail: "required"
+	  	      },
+	  	      messages: {
+	  	        startTime: "请输入开始时间",
+	  	        endTime: "请输入结束时间",
+	  	        companyName: "请输入公司名称",
+	  	        jobTitle: "请输入岗位名称",
+	  	        feedback: "请选择反馈表",
+	  	        candidateEmail: "请完善候选人信息",
+	  	        interviewerEmail: "请完善面试官信息",
+	  	      }
+	  	    });
+	    });
+	    
 	}
 	 
 </script>
