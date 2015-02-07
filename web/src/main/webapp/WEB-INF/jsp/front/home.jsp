@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="${ctx}/static/css/bootstrap.css"/>
 <link rel="stylesheet" type="text/css" href="${ctx}/static/css/common.css"/>
 <link rel="stylesheet" type="text/css" href="${ctx}/static/css/style.css"/>
-<link rel="stylesheet" type="text/css" href="${ctx}/static/css/jquery-ui.min.css"/>
+<link rel="stylesheet" type="text/css" href="${ctx}/static/css/ui/jquery-ui.min.css"/>
 <%@include file="/WEB-INF/jsp/common/import-upload-css.jspf"%>
 
 <body>
@@ -148,11 +148,11 @@
                   <fieldset>
                     <div class="input_line">
                       <label for="startTime"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />开始时间</label>
-                      <input name="startTime" type="text" id="date_time" class="right_input date_time" placeholder="2015/01/21 22:05">
+                      <input name="startTime" type="text" id="date_time_${message.people.id}_1" class="right_input date_time" placeholder="01/21/2015 22:05">
                     </div>
                     <div class="input_line">
                       <label for="endTime"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />结束时间</label>
-                      <input name="endTime" type="text" id="date_time" class="right_input date_time" placeholder="2015/01/21 22:05">
+                      <input name="endTime" type="text" id="date_time_${message.people.id}_2" class="right_input date_time" placeholder="01/21/2015 22:05">
                     </div>
                     <div class="input_line">
                       <label for="companyName"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />公司</label>
@@ -286,7 +286,7 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 		</c:otherwise>
 	</c:choose>
 </c:forEach>
-	<div class="modal fade" id="feedBackModal" tabindex="-1" role="dialog" aria-labelledby="feedBackModalLabel" aria-hidden="true" data-backdrop="static">
+	<div class="modal fade" id="feedBackModal" tabindex="-1" role="dialog" aria-labelledby="feedBackModalLabel" aria-hidden="true" data-backdrop="static" style="display: none;">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -407,7 +407,7 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 	</div><!-- /.modal -->
 </c:if>
 
-<div class="modal fade" id="resumeUploadModal" tabindex="-1" role="dialog" aria-labelledby="resumeUploadModalLabel" aria-hidden="true" data-backdrop="static">
+<div class="modal fade" id="resumeUploadModal" tabindex="-1" role="dialog" aria-labelledby="resumeUploadModalLabel" aria-hidden="true" data-backdrop="static" style="display: none;">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -454,8 +454,8 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 <script type="text/javascript" src="${ctx}/static/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="${ctx}/static/js/unit.js"></script>
 <script type="text/javascript" src="${ctx}/static/js/jquery.validate.js"></script>
-<script type="text/javascript" src="${ctx}/static/js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="${ctx}/static/js/jquery-ui-timepicker-addon.js"></script>
+<script type="text/javascript" src="${ctx}/static/js/ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="${ctx}/static/js/ui/jquery-ui-timepicker-addon.js"></script>
 
 <%@include file="/WEB-INF/jsp/common/import-upload-simple-js.jspf"%>
 

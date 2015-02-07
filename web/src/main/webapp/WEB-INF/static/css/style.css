@@ -1004,3 +1004,8 @@ input.hidefocus::-moz-focus-inner { border:none; }
 .upload_message_div {
 	margin: 20px 50 0 50px;	
 }
+
+.comment {
+	width: 50%;
+	height: 70px;
+}
