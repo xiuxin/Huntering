@@ -200,7 +200,7 @@ public class ActivityController {
 		managerMsg.setSubject(messageSource.getMessage("activity.subject", new Object[]{}, null));
 		
 		candidateMsg.setTo(people.getEmail());
-		candidateMsg.setText(people.getNickName() + "面试安排如下："
+		candidateMsg.setText(people.getFullName() + "面试安排如下："
 				+ "面试时间" + form.getStartTime() 
 				+ "面试地址" + form.getAddress()
 				+ "面试公司" + form.getCompanyName());
@@ -208,7 +208,7 @@ public class ActivityController {
 //				new Object[]{people.getNickName(), form.getStartTime(), form.getAddress(), form.getCompanyName()}, null));
 		
 		managerMsg.setTo(managerMail.toArray(new String[]{}));
-		managerMsg.setText(people.getNickName() + "面试安排如下："
+		managerMsg.setText(people.getFullName() + "面试安排如下："
 				+ "面试时间" + form.getStartTime() 
 				+ "面试地址" + form.getAddress()
 				+ "面试公司" + form.getCompanyName());

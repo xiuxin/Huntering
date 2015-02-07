@@ -92,7 +92,7 @@ public class Message extends BaseTimeEntity<Long> implements Comparable<Message>
 			return 0;
 		}
 		if(this.getUpdateDate() != null && o.getUpdateDate() != null) {
-			return this.getUpdateDate().compareTo(o.getUpdateDate());
+			return o.getUpdateDate().compareTo(this.getUpdateDate());
 		} 
 		if(this.getUpdateDate() != null) {
 			return -1;
