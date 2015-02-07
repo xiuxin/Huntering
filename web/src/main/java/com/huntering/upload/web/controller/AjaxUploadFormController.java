@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -26,6 +26,7 @@ import com.huntering.beans.profile.entity.People;
 import com.huntering.beans.profile.service.PeopleService;
 import com.huntering.common.Constants;
 import com.huntering.common.web.upload.FileUploadUtils;
+import com.huntering.dto.ResponseResult;
 import com.huntering.security.CurrentAccount;
 import com.huntering.upload.entity.Upload;
 import com.huntering.upload.service.UploadService;
@@ -72,7 +73,8 @@ public class AjaxUploadFormController {
     }
     
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public String uploadFile(
+    @ResponseBody
+    public ResponseResult<String> uploadFile(
             Model model,
             HttpServletRequest request, 
             @RequestParam(value = "file", required = false) MultipartFile file,
@@ -80,17 +82,21 @@ public class AjaxUploadFormController {
             BindingResult result,
             @CurrentAccount Account account,
             RedirectAttributes redirectAttributes) {
-
+    	ResponseResult<String> responseResult = new ResponseResult<String>();
         if (!file.isEmpty()) {
         	People people = peopleService.createPeople(account.getId(), new People());
         	request.getSession().setAttribute("acctId", account.getId()+"_"+String.valueOf(people.getId()));
             FileUploadUtils.upload(request, file, result);
             messageService.addResumeMessage(account, people);
-            redirectAttributes.addFlashAttribute("uploadFileMessage", "成功上传文件");
+            //redirectAttributes.addFlashAttribute("uploadFileMessage", "成功上传文件");
+            responseResult.setSuccess(true);
+            responseResult.setResult("成功上传文件");
         } else {
-        	redirectAttributes.addFlashAttribute("uploadFileMessage", "上传文件失败");
+        	//redirectAttributes.addFlashAttribute("uploadFileMessage", "上传文件失败");
+        	responseResult.setSuccess(false);
+            responseResult.setResult("上传文件失败");
         }
-        return "redirect:/";
+        return responseResult;
     }
 
 }

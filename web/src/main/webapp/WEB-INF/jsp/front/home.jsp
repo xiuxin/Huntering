@@ -407,6 +407,27 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 	</div><!-- /.modal -->
 </c:if>
 
+<div class="modal fade" id="resumeUploadModal" tabindex="-1" role="dialog" aria-labelledby="resumeUploadModalLabel" aria-hidden="true" data-backdrop="static">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+   					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+   					<h4 class="modal-title" id="resumeUploadModalLabel">上传简历</h4>
+ 				</div>
+ 				<div class="modal-body" id="fogot-modal-body">
+ 					<div class="upload_message_div">
+ 						<div class="ajax-upload-view"></div>
+					</div>
+ 				</div>
+				<div class="modal-footer">
+					<div class="form-group">
+  						<!-- <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> -->
+  						<button type="button" id="refreshPage" data-loading-text="Processing.." class="btn btn-primary">刷新页面</button>
+  					</div>
+ 				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 </div>
 </div>
 <!--login middle end-->
@@ -495,31 +516,18 @@ $.validator.setDefaults({
                 /* $(".ajax-upload-view").html("");
                 var submitBtn = $(this).closest("form").find(":submit");
                 submitBtn.data("value", submitBtn.val()).val("上传文件中...").prop("disabled", true); */
+            	$('#resumeUploadModal').modal('show') 
             },
             //上传完成
             done: function (e, data) {
-                $.each(data.result.files, function (index, file) {
-                    if (file.error) {
-                        $(".ajax-upload-view").html("<div class='alert alert-error'>" + file.error + "</div>");
-                    } else {
-                        $("[name=src]").val(file.url);
-                        var msg = "<div class='alert alert-success'><strong>上传成功！</strong><br/>{preview}</div>";
-                        var preview = "";
-                        var url = ctx + "/" + file.url;
-                        var thumbnail_url = ctx + "/" + file.thumbnail_url;
-                        if($.app.isImage(file.name)) {
-                            preview = "<a href='{url}' target='_blank'><img src='{thumbnail_url}' title='{name}' height='120px'/></a>"
-                        } else {
-                            preview = "<a href='{url}' target='_blank'>{name}</a>"
-                        }
-                        preview = preview.replace("{url}", url).replace("{thumbnail_url}", thumbnail_url).replace("{name}", file.name);
-                        msg = msg.replace("{preview}", preview);
-                        $(".ajax-upload-view").html(msg);
-
-                    }
-                });
-                var submitBtn = $(this).closest("form").find(":submit");
-                submitBtn.val(submitBtn.data("value")).prop("disabled", false);
+            	console.log(e);
+            	console.log(data);
+            	if (data.result.success) {
+                    var msg = "<div class='alert alert-success'><strong>"+data.result.result+"</strong></div>";
+                    $(".ajax-upload-view").html(msg);
+                } else {
+                    $(".ajax-upload-view").html("<div class='alert alert-error'>" + data.result.result + "</div>");
+                }
             }
         });
     });

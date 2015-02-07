@@ -995,3 +995,12 @@ input.hidefocus::-moz-focus-inner { border:none; }
 	height: 26px !important;
 	margin: 5px 0 5px 0;
 }
+
+#resumeUploadModal {
+	height: 400px;
+	top: 10%;
+}
+
+.upload_message_div {
+	margin: 20px 50 0 50px;	
+}
