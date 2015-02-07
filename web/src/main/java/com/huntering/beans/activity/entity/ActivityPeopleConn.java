@@ -43,7 +43,7 @@ public class ActivityPeopleConn extends BaseEntity<Long> {
 
 	@Enumerated(EnumType.STRING)
 	@Column(name="people_role_id")
-	private PeopleRole peopleRole;
+	private PeopleRole peopleRole = PeopleRole.INTERVIEWER;
 	
 	public ActivityPeopleConn() {}
 

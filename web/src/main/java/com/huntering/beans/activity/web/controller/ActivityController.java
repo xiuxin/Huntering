@@ -116,7 +116,7 @@ public class ActivityController {
 		ActivityPeopleConn peopleConn = new ActivityPeopleConn();
 		peopleConn.setActivityRound(round);
 		peopleConn.setPeople(people);
-		peopleConn.setPeopleRole(PeopleRole.INTERVIEE);
+		peopleConn.setPeopleRole(PeopleRole.INTERVIEWEE);
 
 		//Interviewer
 		ActivityPeopleConn interviewerConn = new ActivityPeopleConn();

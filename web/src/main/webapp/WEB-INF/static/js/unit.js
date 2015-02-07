@@ -428,4 +428,21 @@ $(document).ready(function(){
 	$("#saveBackFeed").click(function(){
 		$("#feedBackForm").submit();
 	});
+	
+	/*$('#uploadResume').fileupload({
+		autoUpload: true,
+        url: '/upload/ajax',
+        maxFileSize: 20000000, //20MB
+        // Enable image resizing, except for Android and Opera,
+        // which actually support image resizing, but fail to
+        // send Blob objects via XHR requests:
+        disableImageResize: /Android(?!.*Chrome)|Opera/.test(window.navigator && navigator.userAgent),
+        acceptFileTypes: /(\.|\/)(bmp|gif|jpe?g|png|pdf|docx?|xlsx?|pptx|zip|rar)$/i,
+        add: function (e, data) {
+            //data.context = $('<p/>').text('Uploading...').appendTo(document.body);
+            //data.submit();
+        	console.log("OK");
+        }
+    });*/
+	
 });

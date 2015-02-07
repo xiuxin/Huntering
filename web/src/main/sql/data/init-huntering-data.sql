@@ -116,19 +116,19 @@ delete from `activity_people_conn` where id>=1 and id<=1000;;
 insert into `activity_people_conn`
 (`id`, `activity_round_id`, `people_id`, `people_role_id`)
   values
-  (1, 1, 1, 'INTERVIEE');;
+  (1, 1, 1, 'INTERVIEWEE');;
 insert into `activity_people_conn`
 (`id`, `activity_round_id`, `people_id`, `people_role_id`)
   values
-  (2, 2, 2, 'INTERVIER');;
+  (2, 2, 2, 'INTERVIEWER');;
 insert into `activity_people_conn`
 (`id`, `activity_round_id`, `people_id`, `people_role_id`)
   values
-  (3, 3, 2, 'INTERVIEE');;
+  (3, 3, 2, 'INTERVIEWEE');;
 insert into `activity_people_conn`
 (`id`, `activity_round_id`, `people_id`, `people_role_id`)
   values
-  (4, 4, 1, 'INTERVIER');;
+  (4, 4, 1, 'INTERVIEWER');;
   
 delete from `feedback` where id>=1 and id<=1000;;
 insert into `feedback`

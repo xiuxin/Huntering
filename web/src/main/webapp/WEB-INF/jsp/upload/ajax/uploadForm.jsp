@@ -29,7 +29,7 @@
                 <label for="files" class="btn btn-success fileinput-button">
                     <i class="icon-plus icon-white"></i>
                     <span>添加文件...</span>
-                    <input type="file" id="files" name="files[]" multiple>
+                    <input type="file" id="files" name="file[]" multiple>
                 </label>
 
                 <button type="submit" class="btn btn-primary start">
@@ -165,7 +165,7 @@
     {% } %}
 </script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     $(function () {
 
         'use strict';
@@ -205,4 +205,4 @@
             alert(urls.join("\r\n"));
         });
     });
-</script>
+</script> -->

@@ -18,8 +18,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.huntering.beans.account.entity.Account;
 import com.huntering.common.web.controller.BaseCRUDController;
 import com.huntering.common.web.upload.FileUploadUtils;
+import com.huntering.security.CurrentAccount;
 import com.huntering.upload.entity.Upload;
 
 /**
@@ -76,6 +78,5 @@ public class UploadController extends BaseCRUDController<Upload, Long> {
         }
         return super.update(model, upload, result, backURL, redirectAttributes);
     }
-
 
 }

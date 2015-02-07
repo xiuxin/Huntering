@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="${ctx}/static/css/common.css"/>
 <link rel="stylesheet" type="text/css" href="${ctx}/static/css/style.css"/>
 <link rel="stylesheet" type="text/css" href="${ctx}/static/css/jquery-ui.min.css"/>
+<%@include file="/WEB-INF/jsp/common/import-upload-css.jspf"%>
 
 <body>
 <!--top bar start-->
@@ -86,14 +87,15 @@
       </div>
 
       <div class="icons_div">
+      	<form id="uploadResumeForm" method="post" action="${ctx}/upload/ajax">
           <div style="height: 76px;" class="icon_first icon_all" style="cursor: pointer;">
               <img src="${ctx}/static/images/add_assume.png" />
-              <input type="file" name="file" class="upload_file">
+              <!-- <input type="file" id="uploadResume" name="file" class="upload_file"> -->
+              <input type="file" class="upload_file" id="uploadResume" data-url="${ctx}/upload/ajax/" name="file" multiple>
           </div>
-           <div class="icon_one icon_all">
-          </div>
-           <div class="icon_two icon_all">
-          </div>
+      	</form>
+          <div class="icon_one icon_all"></div>
+          <div class="icon_two icon_all"></div>
       </div>
 
 <c:if test="${not empty messages}">
@@ -251,16 +253,14 @@
 						<span>第<c:out value="${act_round.round}"/>轮</span>
 						<c:choose>
 							<c:when test="${not empty act_round.feedBack}">
-								<span data-roundid="${act_round.id}" data-ctx="${ctx}"
-data-behavihor=${act_round.feedBack.behavihor}
-data-profession=${act_round.feedBack.profession}
-data-language=${act_round.feedBack.language}
-data-innovation=${act_round.feedBack.innovation}
-data-communication=${act_round.feedBack.communication}
-data-execution=${act_round.feedBack.execution}
-data-teamwork=${act_round.feedBack.teamwork}
-data-management=${act_round.feedBack.management}
-data-result=${act_round.feedBack.result} data-toggle="modal" data-target="#feedBackModal" class="start_feedback">添加反馈</span>
+								<span data-roundid="${act_round.id}" data-ctx="${ctx}" data-behavihor="${act_round.feedBack.behavihor}" data-profession="${act_round.feedBack.profession}"
+data-language="${act_round.feedBack.language}"
+data-innovation="${act_round.feedBack.innovation}"
+data-communication="${act_round.feedBack.communication}"
+data-execution="${act_round.feedBack.execution}"
+data-teamwork="${act_round.feedBack.teamwork}"
+data-management="${act_round.feedBack.management}"
+data-result="${act_round.feedBack.result}" data-toggle="modal" data-target="#feedBackModal" class="start_feedback">添加反馈</span>
 							</c:when>
 							<c:otherwise>
 								<span data-roundid="${act_round.id}" data-ctx="${ctx}"
@@ -436,6 +436,8 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 <script type="text/javascript" src="${ctx}/static/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="${ctx}/static/js/jquery-ui-timepicker-addon.js"></script>
 
+<%@include file="/WEB-INF/jsp/common/import-upload-simple-js.jspf"%>
+
 <script type="text/javascript">
   //start validate user's input
 $.validator.setDefaults({
@@ -467,6 +469,59 @@ $.validator.setDefaults({
 	      }
 	    });
 	}
+	 
+</script>
+<script type="text/javascript">
+    $(function () {
+        $('#uploadResume').fileupload({
+            dataType : "json"
+        });
+        $('#uploadResume').fileupload("option", {
+            progressall: function (e, data) {
+                var view = $(".ajax-upload-view");
+                view.parent().parent().show();
+                var progressBar = view.find(".progress");
+                if(progressBar.size() == 0) {
+                    var progressBarTemplate =
+                            '<div class="progress progress-striped">' +
+                                    '<div class="bar"></div>' +
+                                    '</div>';
+                    progressBar = view.append(progressBarTemplate);
+                }
+                var progress = parseInt(data.loaded / data.total * 100, 10);
+                progressBar.find(".bar").css("width", progress + "%");
+            },
+            start : function(e) {
+                /* $(".ajax-upload-view").html("");
+                var submitBtn = $(this).closest("form").find(":submit");
+                submitBtn.data("value", submitBtn.val()).val("上传文件中...").prop("disabled", true); */
+            },
+            //上传完成
+            done: function (e, data) {
+                $.each(data.result.files, function (index, file) {
+                    if (file.error) {
+                        $(".ajax-upload-view").html("<div class='alert alert-error'>" + file.error + "</div>");
+                    } else {
+                        $("[name=src]").val(file.url);
+                        var msg = "<div class='alert alert-success'><strong>上传成功！</strong><br/>{preview}</div>";
+                        var preview = "";
+                        var url = ctx + "/" + file.url;
+                        var thumbnail_url = ctx + "/" + file.thumbnail_url;
+                        if($.app.isImage(file.name)) {
+                            preview = "<a href='{url}' target='_blank'><img src='{thumbnail_url}' title='{name}' height='120px'/></a>"
+                        } else {
+                            preview = "<a href='{url}' target='_blank'>{name}</a>"
+                        }
+                        preview = preview.replace("{url}", url).replace("{thumbnail_url}", thumbnail_url).replace("{name}", file.name);
+                        msg = msg.replace("{preview}", preview);
+                        $(".ajax-upload-view").html(msg);
 
+                    }
+                });
+                var submitBtn = $(this).closest("form").find(":submit");
+                submitBtn.val(submitBtn.data("value")).prop("disabled", false);
+            }
+        });
+    });
 </script>
 </body>
