@@ -200,12 +200,18 @@ public class ActivityController {
 		managerMsg.setSubject(messageSource.getMessage("activity.subject", new Object[]{}, null));
 		
 		candidateMsg.setTo(people.getEmail());
-		candidateMsg.setText("fuck");
+		candidateMsg.setText(people.getNickName() + "面试安排如下："
+				+ "面试时间" + form.getStartTime() 
+				+ "面试地址" + form.getAddress()
+				+ "面试公司" + form.getCompanyName());
 //		(messageSource.getMessage("activity.candidate.content", 
 //				new Object[]{people.getNickName(), form.getStartTime(), form.getAddress(), form.getCompanyName()}, null));
 		
 		managerMsg.setTo(managerMail.toArray(new String[]{}));
-		managerMsg.setText("fuck2");
+		managerMsg.setText(people.getNickName() + "面试安排如下："
+				+ "面试时间" + form.getStartTime() 
+				+ "面试地址" + form.getAddress()
+				+ "面试公司" + form.getCompanyName());
 //		managerMsg.setSubject(messageSource.getMessage("activity.candidate.content", 
 //				new Object[]{people.getNickName(), form.getStartTime(), form.getAddress(), form.getCompanyName()}, null));
 		
