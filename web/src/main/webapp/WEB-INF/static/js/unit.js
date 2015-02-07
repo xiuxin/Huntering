@@ -419,6 +419,7 @@ $(document).ready(function(){
 			$("#communication option[value='"+el.dataset.communication+"']").attr("selected", true);
 			$("#execution option[value='"+el.dataset.execution+"']").attr("selected", true);
 			$("#teamwork option[value='"+el.dataset.teamwork+"']").attr("selected", true);
+			$("#language option[value='"+el.dataset.language+"']").attr("selected", true);
 			$("#management option[value='"+el.dataset.management+"']").attr("selected", true);
 			$("#result option[value='"+el.dataset.result+"']").attr("selected", true);
 			$("#feedBackForm").attr("action", el.dataset.ctx+"/activity/activityround/"+el.dataset.roundid+"/updatefeedback");
@@ -443,7 +444,12 @@ $(document).ready(function(){
 				data : {oldPassword: oldPassword, newPassword: newPassword},
 				success : callBack
 			});*/
-			$("#interviewRoundForm").attr("action", el.dataset.ctx+"/activity/"+el.dataset.roundid+"/activityround/create/");
+			$("#interviewRoundForm input[name=companyName]").val(el.parentElement.dataset.companyname);
+			$("#interviewRoundForm input[name=jobTitle]").val(el.parentElement.dataset.jobtitle);
+			$("#interviewRoundForm input[name=candidateName]").val(el.parentElement.dataset.candidatename);
+			$("#interviewRoundForm input[name=candidatePhone]").val(el.parentElement.dataset.candidatephone);
+			$("#interviewRoundForm input[name=candidateEmail]").val(el.parentElement.dataset.candidateemail);
+			$("#interviewRoundForm").attr("action", el.dataset.ctx+"/activity/"+activityId+"/activityround/create/");
 		});
 	});
 	

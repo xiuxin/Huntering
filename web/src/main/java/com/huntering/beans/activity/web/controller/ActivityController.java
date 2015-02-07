@@ -181,6 +181,17 @@ public class ActivityController {
 		return ACTIVITY_VIEW;
 	}
 	
+	@RequestMapping(value = "/get", method = RequestMethod.POST)
+    public String getActivityRound(@CurrentAccount Account loginUser, @PathVariable("activityid") long activityId, ActivityForm activityForm) {
+		Activity activity = activityService.addActivityRound(activityId, activityForm, loginUser);
+		if(activity == null) {
+			// TODO add error message for font end display
+		} else {
+			// TODO update timestamp message of the activity
+		}
+		return ACTIVITY_VIEW;
+	}
+	
 	private void sendEmail(List<String> managerMail, ActivityForm form, People people) {
 		SimpleMailMessage candidateMsg = new SimpleMailMessage(message);
 		SimpleMailMessage managerMsg = new SimpleMailMessage(message);

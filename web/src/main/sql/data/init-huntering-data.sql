@@ -24,14 +24,14 @@ insert into `apply_invitation_code` (`id`, `email`) values (1, 'testtest@126.com
 delete from `people` where id>=1 and id<=1000;;
 /*默认admin/123456*/
 insert into `people`
-(`id`, `account_id`, `fullName`, `self`,`deleted`,`email`)
-values (1, 1, '张三', 1, 0, 'qiuchen_yao@126.com');;
+(`id`, `account_id`, `fullName`, `mdn`, `self`,`deleted`,`email`)
+values (1, 1, '张三', '111111111', 1, 0, 'qiuchen_yao@126.com');;
 insert into `people`
-(`id`, `account_id`, `fullName`, `self`,`deleted`,`email`)
-values (2, 1, '李四', 0, 0, 'bell_qiu@outlook.com');;
+(`id`, `account_id`, `fullName`, `mdn`, `self`,`deleted`,`email`)
+values (2, 1, '李四', '222222222', 0, 0, 'bell_qiu@outlook.com');;
 insert into `people`
-(`id`, `account_id`, `fullName`, `self`,`deleted`,`email`)
-values (3, 1, null, 0, 0, 'bell_qiu@outlook.com');;
+(`id`, `account_id`, `fullName`, `mdn`, `self`,`deleted`,`email`)
+values (3, 1, null, '333333333', 0, 0, 'bell_qiu@outlook.com');;
   
 delete from `people_education` where id>=1 and id<=1000;;
 insert into `people_education`

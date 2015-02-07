@@ -168,9 +168,9 @@
                     </div>
                     <div class="input_line">
                       <label for="candidate"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />候选人</label>
-                      <input name="candidateName" type="text" class="right_input1" placeholder="姓名">
-                      <input name="candidatePhone" type="text" class="right_input2" placeholder="手机号">
-                      <input name="candidateEmail" type="text" class="right_input3" placeholder="邮箱">
+                      <input name="candidateName" type="text" class="right_input1" value="${message.people.fullName}" placeholder="姓名" disabled>
+                      <input name="candidatePhone" type="text" class="right_input2" value="${message.people.mdn}" placeholder="手机号" disabled>
+                      <input name="candidateEmail" type="text" class="right_input3" value="${message.people.email}" placeholder="邮箱" disabled>
                     </div>
                     <div class="input_line">
                       <label for="candidate"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />面试官</label>
@@ -249,7 +249,13 @@
 	            </div>
 	            <div class="mes_line_center">
 	            	<c:forEach var="act_round" items="${message.activity.activityRounds}">
-	               	<div class="activity_round">
+	               	<div class="activity_round" 
+data-companyName="${message.activity.job.company.name}" 
+data-jobTitle="${message.activity.job.title}"
+data-candidateName="${message.activity.people.fullName}"
+data-candidatePhone="${message.activity.people.mdn}"
+data-candidateEmail="${message.activity.people.email}"
+>
 						<span>第<c:out value="${act_round.round}"/>轮</span>
 						<c:choose>
 							<c:when test="${not empty act_round.feedBack}">
@@ -451,11 +457,11 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
                     </div>
                     <div class="input_line">
                       <label for="companyName"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />公司</label>
-                      <input name="companyName" type="text" class="right_input" placeholder="公司名称">
+                      <input name="companyName" type="text" class="right_input" placeholder="公司名称" disabled>
                     </div>
                     <div class="input_line">
                       <label for="jobTitle"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />岗位</label>
-                      <input name="jobTitle" type="text" class="right_input" placeholder="岗位名称">
+                      <input name="jobTitle" type="text" class="right_input" placeholder="岗位名称" disabled>
                     </div>
                     <div class="input_line">
                       <label for="address"><span class="not_must">地点</span></label>
@@ -463,9 +469,9 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
                     </div>
                     <div class="input_line">
                       <label for="candidate"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />候选人</label>
-                      <input name="candidateName" type="text" class="right_input1" placeholder="姓名">
-                      <input name="candidatePhone" type="text" class="right_input2" placeholder="手机号">
-                      <input name="candidateEmail" type="text" class="right_input3" placeholder="邮箱">
+                      <input name="candidateName" type="text" class="right_input1" placeholder="姓名" disabled>
+                      <input name="candidatePhone" type="text" class="right_input2" placeholder="手机号" disabled>
+                      <input name="candidateEmail" type="text" class="right_input3" placeholder="邮箱" disabled>
                     </div>
                     <div class="input_line">
                       <label for="candidate"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />面试官</label>
