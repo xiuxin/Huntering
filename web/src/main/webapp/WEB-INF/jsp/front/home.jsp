@@ -412,7 +412,7 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 			<div class="modal-content">
 				<div class="modal-header">
    					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-   					<h4 class="modal-title" id="resumeUploadModalLabel">上传简历</h4>
+   					<h4 class="modal-title text_center" id="resumeUploadModalLabel">上传简历</h4>
  				</div>
  				<div class="modal-body" id="fogot-modal-body">
  					<div class="upload_message_div">

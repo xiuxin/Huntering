@@ -1009,3 +1009,7 @@ input.hidefocus::-moz-focus-inner { border:none; }
 	width: 50%;
 	height: 70px;
 }
+
+.text_center {
+	text-align: center;
+}
