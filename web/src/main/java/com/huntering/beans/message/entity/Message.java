@@ -32,7 +32,7 @@ import com.huntering.common.repository.support.annotation.EnableQueryCache;
 @Table(name = "message")
 @EnableQueryCache
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class Message extends BaseTimeEntity<Long> {
+public class Message extends BaseTimeEntity<Long> implements Comparable<Message> {
 
 	@ManyToOne(optional = false, fetch = FetchType.LAZY)
     @Basic(optional = false, fetch = FetchType.LAZY)
@@ -81,6 +81,24 @@ public class Message extends BaseTimeEntity<Long> {
 
 	public void setPeople(People people) {
 		this.people = people;
+	}
+
+	@Override
+	public int compareTo(Message o) {
+		if(o == null) {
+			return -1;
+		}
+		if(o == this) {
+			return 0;
+		}
+		if(this.getUpdateDate() != null && o.getUpdateDate() != null) {
+			return this.getUpdateDate().compareTo(o.getUpdateDate());
+		} 
+		if(this.getUpdateDate() != null) {
+			return -1;
+		} else {
+			return o.getUpdateDate() == null ? 0 : 1;
+		}
 	}
 	
 }

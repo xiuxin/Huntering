@@ -5,6 +5,7 @@
  */
 package com.huntering.index.web.controller;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +49,7 @@ public class IndexController {
     public String home(@CurrentAccount Account loginUser, Model model) {
 
     	List<Message> messages = messageService.findByAccountId(loginUser.getId());
+    	Collections.sort(messages);
         model.addAttribute("user", loginUser);
         model.addAttribute("messages", messages);
 
@@ -58,6 +60,7 @@ public class IndexController {
     public String homeIndex(@CurrentAccount Account loginUser, Model model) {
 
     	List<Message> messages = messageService.findByAccountId(loginUser.getId());
+    	Collections.sort(messages);
         model.addAttribute("user", loginUser);
         model.addAttribute("messages", messages);
 
