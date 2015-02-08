@@ -101,15 +101,17 @@ public class AccountService extends BaseService<Account, Long> {
             return null;
         }
         Account account = getAccountRepository().findByEmail(email);
-        List<People> people = account.getPeople();
-        if(CollectionUtils.isNotEmpty(people)) {
-        	for(People p : people) {
-				if(p.isSelf()) {
-					Hibernate.initialize(p.getPeopleCompany());
-					//account.setCompanyName(p.getPeopleCompany().get(0).getCompany() != null ? p.getPeopleCompany().get(0).getCompany().getName() : null);
-					break;
+        if(account != null) {
+        	List<People> people = account.getPeople();
+	        if(CollectionUtils.isNotEmpty(people)) {
+	        	for(People p : people) {
+					if(p.isSelf()) {
+						Hibernate.initialize(p.getPeopleCompany());
+						//account.setCompanyName(p.getPeopleCompany().get(0).getCompany() != null ? p.getPeopleCompany().get(0).getCompany().getName() : null);
+						break;
+					}
 				}
-			}
+	        }
         }
         return account;
     }
