@@ -87,6 +87,8 @@
       </div>
 
       <div class="icons_div">
+          <div class="icon_one icon_all"></div>
+          <div class="icon_two icon_all"></div>
       	<form id="uploadResumeForm" method="post" action="${ctx}/upload/ajax">
           <div style="height: 76px;" class="icon_first icon_all" style="cursor: pointer;">
               <img src="${ctx}/static/images/add_assume.png" />
@@ -94,8 +96,6 @@
               <input type="file" class="upload_file" id="uploadResume" data-url="${ctx}/upload/ajax/" name="file" multiple>
           </div>
       	</form>
-          <div class="icon_one icon_all"></div>
-          <div class="icon_two icon_all"></div>
       </div>
 
 <c:if test="${not empty messages}">
