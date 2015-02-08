@@ -263,6 +263,23 @@ function isEmail(str){
 } 
 
 function loginHeader(){
+	if( $("#emailHeader").val() == ""){
+		alert("请输入您的邮箱!");
+	}
+
+	if( $("#pwdHeader").val() == ""){
+		alert("请输入您的密码!");
+	}
+	
+	if( isEmail($("#emailHeader").val()) == false ){
+		alert("请输入正确的邮箱!");
+	}else{
+		$("#loginForm").submit();
+	}
+
+}
+
+function searchMessage() {
 	alert("查找功能正在完善，敬请期待！");
 }
 

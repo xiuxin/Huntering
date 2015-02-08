@@ -24,7 +24,7 @@
                <div class="search_input_div">
                  <input type="email" class="search_input" placeholder="请在此输入搜索内容" id="emailHeader" onBlur="emailHeaderBlur()" />
                </div>
-               <div class="search_btn_div" onclick="loginHeader()">
+               <div class="search_btn_div" onclick="searchMessage()">
                </div>
                <div class="user_info_div">
                   <img src="${ctx}/static/images/user_icon.png" class="user_icon"/>
