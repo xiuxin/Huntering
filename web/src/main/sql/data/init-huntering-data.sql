@@ -31,7 +31,7 @@ insert into `people`
 values (2, 1, '李四', '222222222', 0, 0, 'bell_qiu@outlook.com');;
 insert into `people`
 (`id`, `account_id`, `fullName`, `mdn`, `self`,`deleted`,`email`)
-values (3, 1, null, '333333333', 0, 0, 'bell_qiu@outlook.com');;
+values (3, 1, null, 0, 0, 'bell_qiu@outlook.com');;
   
 delete from `people_education` where id>=1 and id<=1000;;
 insert into `people_education`

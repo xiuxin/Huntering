@@ -283,7 +283,16 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 						</c:choose>
 						<%-- <span data-roundid="${act_round.id}" data-toggle="modal" data-target="#feedBackModal" class="start_feedback">添加反馈</span> --%>
 						<span class="remark_span">备注</span>
-						<span>通过</span>
+						<span>
+						<c:choose>
+							<c:when test="${empty act_round.feedBack or act_round.feedBack.result == 0}">
+								待定
+							</c:when>
+							<c:when test="${act_round.feedBack.result == 1}">失败</c:when>
+							<c:otherwise>通过</c:otherwise>
+						</c:choose>
+						</span>
+						<!-- <span>通过</span> -->
 	                   	<!-- <span class="start_interview">安排面试</span> -->
 	                   	<span data-activityid="${message.activity.id}" data-ctx="${ctx}" data-toggle="modal" data-target="#addActivityRoundModal" class="start_interview add_activity_round">安排面试</span>
 					</div>                      
