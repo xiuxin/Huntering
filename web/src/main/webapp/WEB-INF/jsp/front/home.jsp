@@ -564,14 +564,14 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 <%@include file="/WEB-INF/jsp/common/import-upload-simple-js.jspf"%>
 
 <script type="text/javascript">
-  //start validate user's input
-$.validator.setDefaults({
+	//start validate user's input
+	$.validator.setDefaults({
 	    submitHandler: function() {
 	      return true;
 	    }
-	  });
+	});
 
-	  function submitInterview(e){
+	function submitInterview(e){
 	    // validate signup form on keyup and submit
 		  console.log(e);
 	    $("#interviewForm").validate({
@@ -593,8 +593,9 @@ $.validator.setDefaults({
 	        interviewerEmail: "请完善面试官信息",
 	      }
 	    });
-	    
-	    $("#submit_activity_round").click(function(){
+	};
+		
+	$("#submit_activity_round").click(function(){
 	    	$("#interviewRoundForm").validate({
 	  	      rules: {
 	  	        startTime: "required",
@@ -614,9 +615,7 @@ $.validator.setDefaults({
 	  	        interviewerEmail: "请完善面试官信息",
 	  	      }
 	  	    });
-	    });
-	    
-	}
+	});
 	 
 </script>
 <script type="text/javascript">

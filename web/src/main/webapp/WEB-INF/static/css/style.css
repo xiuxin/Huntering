@@ -1015,7 +1015,7 @@ input.hidefocus::-moz-focus-inner { border:none; }
 }
 
 .interview_dialog_div {
-	margin: 20px 0 0 30px;	
+	margin: 20px 0 0 20px;	
 }
 
 .interview_dialog_div .right_input {
@@ -1023,7 +1023,7 @@ input.hidefocus::-moz-focus-inner { border:none; }
 }
 #addActivityRoundModal {
 	height: 700px;
-	width: 700px;
+	width: 750px;
 	top: 2%;
 }
 
