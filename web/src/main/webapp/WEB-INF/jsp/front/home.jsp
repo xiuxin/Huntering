@@ -248,7 +248,7 @@
 	                  <p>${message.activity.job.company.name}&nbsp;|&nbsp;${message.activity.job.title}&nbsp;|&nbsp;${message.activity.people.fullName}&nbsp;</p>
 	            </div>
 	            <div class="mes_line_center">
-	            	<c:forEach var="act_round" items="${message.activity.activityRounds}">
+	            	<c:forEach var="act_round" items="${message.activity.activityRounds}" varStatus="status">
 	               	<div class="activity_round" 
 data-companyName="${message.activity.job.company.name}" 
 data-jobTitle="${message.activity.job.title}"
@@ -294,7 +294,9 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 						</span>
 						<!-- <span>通过</span> -->
 	                   	<!-- <span class="start_interview">安排面试</span> -->
-	                   	<span data-activityid="${message.activity.id}" data-ctx="${ctx}" data-toggle="modal" data-target="#addActivityRoundModal" class="start_interview add_activity_round">安排面试</span>
+	                   	<c:if test="${status.last}">
+	                   		<span data-activityid="${message.activity.id}" data-ctx="${ctx}" data-toggle="modal" data-target="#addActivityRoundModal" class="start_interview add_activity_round">安排面试</span>
+	                   	</c:if>
 					</div>                      
 	            	</c:forEach>
 				</div>
