@@ -112,39 +112,37 @@
                   <span class="mes_line_one_serial">Test</span> --%>
                   <span class="mes_date">${message.updateDate}</span>
             </div>
+	        <div class="clear"></div>
 			<c:choose>
 				<c:when test="${not empty message.people.fullName}">
-	            <div class="clear"></div>
 	            <div class="mes_line_two">
 	                  <p>您导入了<c:out value="${message.people.fullName}"></c:out>的简历，您可以为他创建面试。</p>
 	            </div>
-	            <div class="mes_line_three">
-	                  <div class="start_interview_div">
-	                      <div class="start_interview" data-personid="${message.people.id}" onclick="statInterview1(this)">安排面试</div>
-	                      <div class="interview_white_trangle">
-	                          <img src="${ctx}/static/images/white_trangle.png" id="interview_white_trangle_img_${message.people.id}" class="interview_white_trangle_img"/>
-	                     </div>
-	                  </div>
-	                  <div class="remark_div">
-	                      <div class="start_remark" data-personid="${message.people.id}" onclick="statRemark1(this)">备注</div>
-	                      <div class="remark_white_trangle">
-	                          <img src="${ctx}/static/images/white_trangle.png" id="remark_white_trangle_img_${message.people.id}" class="remark_white_trangle_img"/>
-	                     </div>
-	                  </div>
-	                  
-	            </div>
 				</c:when>
 				<c:otherwise>
-					<div class="clear"></div>
 		            <div class="mes_line_two">
 		                  <p>您已成功导入了一份简历，系统正在自动识别并会在第一时间通知到您。</p>
 		            </div>
 				</c:otherwise>
 			</c:choose>
+            <div class="mes_line_three">
+                  <div class="start_interview_div">
+                      <div class="start_interview" data-personid="${message.people.id}" onclick="statInterview1(this)">安排面试</div>
+                      <div class="interview_white_trangle">
+                          <img src="${ctx}/static/images/white_trangle.png" id="interview_white_trangle_img_${message.people.id}" class="interview_white_trangle_img"/>
+                     </div>
+                  </div>
+                  <div class="remark_div">
+                      <div class="start_remark" data-personid="${message.people.id}" onclick="statRemark1(this)">备注</div>
+                      <div class="remark_white_trangle">
+                          <img src="${ctx}/static/images/white_trangle.png" id="remark_white_trangle_img_${message.people.id}" class="remark_white_trangle_img"/>
+                     </div>
+                  </div>
+                  
+            </div>
       		</div>
-      		<c:if test="${not empty message.people.fullName}">
-      			<div class="interview_dialog" id="interview_dialog_${message.people.id}">
-                  <form class="cmxform" id="interviewForm" method="post" action="${ctx}/activity/add/${message.people.id}">
+			<div class="interview_dialog" id="interview_dialog_${message.people.id}">
+            	<form class="cmxform" id="interviewForm" method="post" action="${ctx}/activity/add/${message.people.id}">
                   <fieldset>
                     <div class="input_line">
                       <label for="startTime"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />开始时间</label>
@@ -168,9 +166,9 @@
                     </div>
                     <div class="input_line">
                       <label for="candidate"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />候选人</label>
-                      <input name="candidateName" type="text" class="right_input1" value="${message.people.fullName}" placeholder="姓名" disabled>
-                      <input name="candidatePhone" type="text" class="right_input2" value="${message.people.mdn}" placeholder="手机号" disabled>
-                      <input name="candidateEmail" type="text" class="right_input3" value="${message.people.email}" placeholder="邮箱" disabled>
+                      <input name="candidateName" type="text" class="right_input1" value="${message.people.fullName}" placeholder="姓名">
+                      <input name="candidatePhone" type="text" class="right_input2" value="${message.people.mdn}" placeholder="手机号">
+                      <input name="candidateEmail" type="text" class="right_input3" value="${message.people.email}" placeholder="邮箱">
                     </div>
                     <div class="input_line">
                       <label for="candidate"><img src="${ctx}/static/images/must_icon.png" class="must_blue" />面试官</label>
@@ -230,7 +228,6 @@
                 </form>
             </div>
       		
-      		</c:if>
 		</c:when>
 		<c:otherwise>
 			<div class="single_resume">

@@ -16,13 +16,13 @@ public class ActivityForm implements Serializable {
 	private String jobTitle;
 
 	private String address;
-
-//	private String candidateName;
-//	
-//	private String candidateMdn;
-//	
-//	private String candidateEmail;
-//	
+	
+	private String candidateName;
+	
+	private String candidatePhone;
+	
+	private String candidateEmail;
+	
 	private String interviewerName;
 	
 	private String interviewerMdn;
@@ -86,6 +86,30 @@ public class ActivityForm implements Serializable {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	public String getCandidateName() {
+		return candidateName;
+	}
+
+	public void setCandidateName(String candidateName) {
+		this.candidateName = candidateName;
+	}
+
+	public String getCandidatePhone() {
+		return candidatePhone;
+	}
+
+	public void setCandidatePhone(String candidatePhone) {
+		this.candidatePhone = candidatePhone;
+	}
+
+	public String getCandidateEmail() {
+		return candidateEmail;
+	}
+
+	public void setCandidateEmail(String candidateEmail) {
+		this.candidateEmail = candidateEmail;
 	}
 
 	public String getInterviewerName() {

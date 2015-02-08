@@ -26,6 +26,7 @@ import com.huntering.beans.profile.service.PeopleCompanyService;
 import com.huntering.beans.profile.service.PeopleService;
 import com.huntering.common.plugin.entity.Stateable.PeopleRole;
 import com.huntering.common.service.BaseService;
+import com.huntering.common.utils.ValidateUtils;
 import com.huntering.dto.ActivityForm;
 import com.huntering.dto.FeedBackForm;
 
@@ -66,18 +67,22 @@ public class ActivityService extends BaseService<Activity, Long> {
     	return getActivityRepository().findByAccountId(accountId);
     }
     
-    public Activity addActivity(Activity activity) {
-    	// TODO add activity
-    	return null;
-    }
-    
-    public ActivityRound addActivityRound(long activityId, ActivityRound activityRound) {
-    	// TODO add activityRound
-    	return null;
-    }
-    
     public Activity addActivity(ActivityForm form, Account account, long personId) {
+    	// TODO check the people is under current login user
     	People people = peopleService.findOne(personId);
+    	if(StringUtils.isNotEmpty(form.getCandidateName())) {
+			people.setFullName(form.getCandidateName());
+		}
+		if(StringUtils.isNotEmpty(form.getCandidatePhone())) {
+			people.setMdn(form.getCandidatePhone());
+		}
+		if(ValidateUtils.validateEmail(form.getCandidateEmail())) {
+			people.setEmail(form.getCandidateEmail());
+		} else {
+			//redirectAttributes.addFlashAttribute("activity_error", "Candidate Email is not valid");
+			// throw exception
+		}
+		people = peopleService.saveAndFlush(people);
 		List<String> emails = new ArrayList<String>();
 		
 		Company company = new Company();	
@@ -144,14 +149,13 @@ public class ActivityService extends BaseService<Activity, Long> {
 		
 		activity = saveAndFlush(activity);
 
-		/*messageService.addInterviewMessage(account, activity);
+		messageService.addInterviewMessage(account, activity);
 
-		SimpleMailMessage msg = new SimpleMailMessage(message);
 		if (StringUtils.isNotEmpty(interviewer.getEmail())) {
 			emails.add(interviewer.getEmail());
 		}
 		
-		sendEmail(emails, form, people);*/
+		sendEmail(emails, form, people);
 		
 		return activity;
 	}
@@ -226,6 +230,7 @@ public class ActivityService extends BaseService<Activity, Long> {
 
 	public FeedBack updateFeedBack(long activityRoundId,
 			FeedBackForm feedBackForm, Account loginUser) {
+		// TODO check the ativity round is under current login user
 		ActivityRound activityRound = activityRoundReposity.findOne(activityRoundId);
 		if(activityRound != null) {
 			FeedBack feedBack = activityRound.getFeedBack();

@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.huntering.beans.account.entity.Account;
 import com.huntering.beans.activity.entity.Activity;
@@ -29,6 +30,7 @@ import com.huntering.beans.profile.service.CompanyService;
 import com.huntering.beans.profile.service.PeopleCompanyService;
 import com.huntering.beans.profile.service.PeopleService;
 import com.huntering.common.plugin.entity.Stateable.PeopleRole;
+import com.huntering.common.utils.ValidateUtils;
 import com.huntering.dto.ActivityForm;
 import com.huntering.dto.FeedBackForm;
 import com.huntering.security.CurrentAccount;
@@ -71,10 +73,11 @@ public class ActivityController {
 	}
 	
 	@RequestMapping(value = "/add/{personId}", method = RequestMethod.POST)
-    public String addActivity(@CurrentAccount Account loginUser, @PathVariable("personId") long personId, ActivityForm activityForm) {
+    public String addActivity(@CurrentAccount Account loginUser, @PathVariable("personId") long personId, ActivityForm activityForm,
+    		RedirectAttributes redirectAttributes) {
 		/*activityService.addActivity(loginUser.getId(), activity));*/
-		People people = peopleService.findOne(personId);
-		saveActivityAndSendMsg(activityForm, loginUser, people);
+		
+		activityService.addActivity(activityForm, loginUser, personId);
 		
 		return ACTIVITY_VIEW;
 	}
@@ -149,7 +152,6 @@ public class ActivityController {
 
 		messageService.addInterviewMessage(account, activity);
 
-		SimpleMailMessage msg = new SimpleMailMessage(message);
 		if (StringUtils.isNotEmpty(interviewer.getEmail())) {
 			emails.add(interviewer.getEmail());
 		}
