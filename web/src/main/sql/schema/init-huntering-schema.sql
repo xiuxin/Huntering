@@ -297,6 +297,7 @@ create table `feedback`(
   `management`   	smallint,
   `desb`  varchar(255),
   `result`	smallint,
+  `feedbackCode`	varchar(50),
   `create_date` timestamp DEFAULT CURRENT_TIMESTAMP,
   `update_date` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   constraint `pk_feedback` primary key(`id`)

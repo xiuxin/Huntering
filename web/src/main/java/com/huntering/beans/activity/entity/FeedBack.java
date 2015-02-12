@@ -47,6 +47,8 @@ public class FeedBack extends BaseTimeEntity<Long> {
 	
 	private int result;
 	
+	private String feedbackCode;
+	
 	public FeedBack() {}
 	
 	public ActivityRound getActivityRound() {
@@ -138,5 +140,13 @@ public class FeedBack extends BaseTimeEntity<Long> {
 	public void setResult(int result) {
 		this.result = result;
 	}
-	
+
+	public String getFeedbackCode() {
+		return feedbackCode;
+	}
+
+	public void setFeedbackCode(String feedbackCode) {
+		this.feedbackCode = feedbackCode;
+	}
+
 }

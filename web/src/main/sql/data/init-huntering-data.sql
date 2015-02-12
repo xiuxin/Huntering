@@ -130,25 +130,25 @@ insert into `activity_people_conn` (`id`, `activity_round_id`, `people_id`, `peo
 
 delete from `feedback` where id>=1 and id<=1000;;
 insert into `feedback`
-(`id`, `activity_round_id`, `detail`, `behavihor`, `profession`, `language`, `innovation`, `communication`, `execution`, `teamwork`, `management`, `desb`, `result`)
+(`id`, `activity_round_id`, `detail`, `behavihor`, `profession`, `language`, `innovation`, `communication`, `execution`, `teamwork`, `management`, `desb`, `result`, `feedbackCode`)
   values
-  (1, 1, 'Feed back detail is ok', 1, 2, 3, 4, 5, 4, 3, 2, '可以录用', 1);;
+  (1, 1, 'Feed back detail is ok', 1, 2, 3, 4, 5, 4, 3, 2, '可以录用', 1, null);;
 insert into `feedback`
-(`id`, `activity_round_id`, `detail`, `behavihor`, `profession`, `language`, `innovation`, `communication`, `execution`, `teamwork`, `management`, `desb`, `result`)
+(`id`, `activity_round_id`, `detail`, `behavihor`, `profession`, `language`, `innovation`, `communication`, `execution`, `teamwork`, `management`, `desb`, `result`, `feedbackCode`)
   values
-  (2, 2, 'Feed back detail is ok', 4, 2, 3, 4, 5, 4, 3, 2, '可以录用', 2);;
+  (2, 2, 'Feed back detail is ok', 4, 2, 3, 4, 5, 4, 3, 2, '可以录用', 2, '284422f6-2484-4e1c-ae5f-2ff3eb871d09');;
 insert into `feedback`
-(`id`, `activity_round_id`, `detail`, `behavihor`, `profession`, `language`, `innovation`, `communication`, `execution`, `teamwork`, `management`, `desb`, `result`)
+(`id`, `activity_round_id`, `detail`, `behavihor`, `profession`, `language`, `innovation`, `communication`, `execution`, `teamwork`, `management`, `desb`, `result`, `feedbackCode`)
   values
-  (3, 3, 'Feed back detail is ok', 0, 2, 3, 4, 5, 4, 3, 2, '可以录用', 0);;
+  (3, 3, 'Feed back detail is ok', 0, 2, 3, 4, 5, 4, 3, 2, '可以录用', 0, 'cacf3870-0239-4db4-b658-eaa4002268bf');;
 insert into `feedback`
-(`id`, `activity_round_id`, `detail`, `behavihor`, `profession`, `language`, `innovation`, `communication`, `execution`, `teamwork`, `management`, `desb`, `result`)
+(`id`, `activity_round_id`, `detail`, `behavihor`, `profession`, `language`, `innovation`, `communication`, `execution`, `teamwork`, `management`, `desb`, `result`, `feedbackCode`)
   values
-  (4, 4, 'Feed back detail is ok', 2, 2, 3, 4, 5, 4, 3, 2, '可以录用', 1);;
+  (4, 4, 'Feed back detail is ok', 2, 2, 3, 4, 5, 4, 3, 2, '可以录用', 1, '7f3a6423-19a6-424b-9de6-86c3a3b3a9bf');;
 insert into `feedback`
-(`id`, `activity_round_id`, `detail`, `behavihor`, `profession`, `language`, `innovation`, `communication`, `execution`, `teamwork`, `management`, `desb`, `result`)
+(`id`, `activity_round_id`, `detail`, `behavihor`, `profession`, `language`, `innovation`, `communication`, `execution`, `teamwork`, `management`, `desb`, `result`, `feedbackCode`)
   values
-  (5, 5, 'Feed back detail is ok', 5, 2, 3, 4, 5, 4, 3, 2, '可以录用', 2);;
+  (5, 5, 'Feed back detail is ok', 5, 2, 3, 4, 5, 4, 3, 2, '可以录用', 2, '28051697-27bc-4ee0-926e-9cfa74e888b2');;
 
 
 delete from `message` where id>=1 and id<=1000;;
