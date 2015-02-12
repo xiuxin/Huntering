@@ -257,6 +257,17 @@ public class ActivityService extends BaseService<Activity, Long> {
 		return null;
 	}
 	
+	public FeedBack getFeedBackByUuid(String uuid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public FeedBack updateFeedBackWithUuid(String uuid,
+			FeedBackForm feedBackForm) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	private void sendEmail(List<String> managerMail, ActivityForm form, People people) {
 		SimpleMailMessage candidateMsg = new SimpleMailMessage(message);
 		SimpleMailMessage managerMsg = new SimpleMailMessage(message);
@@ -293,5 +304,5 @@ public class ActivityService extends BaseService<Activity, Long> {
 		interviewer.setSelf(false);
 		return peopleService.saveAndFlush(interviewer);
 	}
-	
+
 }

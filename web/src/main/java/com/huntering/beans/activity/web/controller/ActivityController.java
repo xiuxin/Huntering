@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.huntering.beans.account.entity.Account;
@@ -63,6 +64,29 @@ public class ActivityController {
 	@RequestMapping(value = "/activityround/{activityroundid}/updatefeedback", method = RequestMethod.POST)
     public String updateFeedBack(@CurrentAccount Account loginUser, @PathVariable("activityroundid") long activityRoundId, FeedBackForm feedBackForm) {
 		FeedBack feedBack = activityService.updateFeedBack(activityRoundId, feedBackForm, loginUser);
+		if(feedBack == null) {
+			// TODO add error message for font end display
+		} else {
+			// TODO update timestamp message of the activity
+		}
+		return ACTIVITY_VIEW;
+	}
+	
+	@RequestMapping(value = "/updatefeedback", method = RequestMethod.GET)
+    public String getFeedBackByUuid(@RequestParam("uuid") String uuid, Model model) {
+		FeedBack feedBack = activityService.getFeedBackByUuid(uuid);
+		// TODO get resume and activity summary
+		if(feedBack == null) {
+			model.addAttribute("message", "Fied back not found");
+		} else {
+			model.addAttribute("feedBack", feedBack);
+		}
+		return "front/feedbackuuid";
+	}
+	
+	@RequestMapping(value = "/updatefeedback", method = RequestMethod.POST)
+    public String updateFeedBackByUuid(@RequestParam("uuid") String uuid, FeedBackForm feedBackForm, Model model) {
+		FeedBack feedBack = activityService.updateFeedBackWithUuid(uuid, feedBackForm);
 		if(feedBack == null) {
 			// TODO add error message for font end display
 		} else {
