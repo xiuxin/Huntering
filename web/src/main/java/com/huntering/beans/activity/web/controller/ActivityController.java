@@ -77,9 +77,10 @@ public class ActivityController {
 		FeedBack feedBack = activityService.getFeedBackByUuid(uuid);
 		// TODO get resume and activity summary
 		if(feedBack == null) {
-			model.addAttribute("message", "Fied back not found");
+			model.addAttribute("message", "Feedback is not found");
 		} else {
 			model.addAttribute("feedBack", feedBack);
+			model.addAttribute("uuid", uuid);
 		}
 		return "front/feedbackuuid";
 	}

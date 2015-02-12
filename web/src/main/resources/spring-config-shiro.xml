@@ -158,6 +158,7 @@
                 /jcaptcha* = anon
                 /public/** = anon
                 /register = anon
+                /activity/updatefeedback* = anon
                 /logout = logout
                 /login = authc
                 /** = sysUser,onlineSession,user

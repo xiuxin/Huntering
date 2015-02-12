@@ -27,9 +27,13 @@
 
 <div class="outer_login_middle">
 <div class="container main_middle">
-
+<c:choose>
+<c:when test="${not empty message}">
+	<div style="color:red;padding: 40px 0 140px 20px;font-size: 30;"><c:out value="${message}"></c:out></div>
+</c:when>
+<c:otherwise>
 <div class="feedback_div">
-	<form class="cmxform" id="feedBackForm" method="post">
+	<form class="cmxform" id="feedBackForm" method="post" action="${ctx}/activity/updatefeedback?uuid=${uuid}">
 		<div class="input_line">
 			<label>言行举止</label>
 			<select id="behavihor" name="behavihor">
@@ -132,7 +136,26 @@
   						<button type="button" id="saveBackFeed" data-loading-text="Processing.." class="btn btn-primary">保存</button>
   		</div>
 	</form>
-		</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#saveBackFeed").click(function(){
+		$("#feedBackForm").submit();
+	});	
+	
+	$("#behavihor option[value='${feedBack.behavihor}']").attr("selected", true);
+	$("#profession option[value='${feedBack.profession}']").attr("selected", true);
+	$("#innovation option[value='${feedBack.innovation}']").attr("selected", true);
+	$("#communication option[value='${feedBack.communication}']").attr("selected", true);
+	$("#execution option[value='${feedBack.execution}']").attr("selected", true);
+	$("#teamwork option[value='${feedBack.teamwork}']").attr("selected", true);
+	$("#language option[value='${feedBack.language}']").attr("selected", true);
+	$("#management option[value='${feedBack.management}']").attr("selected", true);
+	$("#result option[value='${feedBack.result}']").attr("selected", true);
+});
+</script>
+</c:otherwise>
+</c:choose>
 
 </div>
 </div>
@@ -162,12 +185,6 @@
 <script type="text/javascript" src="${ctx}/static/js/ui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="${ctx}/static/js/ui/jquery-ui-timepicker-addon.js"></script>
 
-<script type="text/javascript">
-$(document).ready(function(){
-	$("#saveBackFeed").click(function(){
-		$("#feedBackForm").submit();
-	});	
-});
-</script>
+
 
 </body>
