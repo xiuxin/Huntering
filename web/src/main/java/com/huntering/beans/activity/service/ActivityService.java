@@ -2,9 +2,11 @@ package com.huntering.beans.activity.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.MessageSource;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
@@ -18,6 +20,7 @@ import com.huntering.beans.activity.entity.FeedBack;
 import com.huntering.beans.activity.entity.Job;
 import com.huntering.beans.activity.repository.ActivityRepository;
 import com.huntering.beans.activity.repository.ActivityRoundRepository;
+import com.huntering.beans.activity.repository.FeedBackRepository;
 import com.huntering.beans.message.service.MessageService;
 import com.huntering.beans.profile.entity.Company;
 import com.huntering.beans.profile.entity.People;
@@ -41,6 +44,9 @@ public class ActivityService extends BaseService<Activity, Long> {
 	@Autowired
 	ActivityRoundRepository activityRoundReposity;
 	
+	@Autowired 
+	FeedBackRepository feedBackRepository;
+	
 	@Autowired
 	private PeopleService peopleService;
 	@Autowired
@@ -57,6 +63,9 @@ public class ActivityService extends BaseService<Activity, Long> {
 	private SimpleMailMessage message;
 	@Autowired
     private MessageSource messageSource;
+	
+	@Value("${feedback.time.limit}")
+	private int feedBackTimelimit;
 
     @Autowired
     private ActivityRepository getActivityRepository() {
@@ -221,6 +230,13 @@ public class ActivityService extends BaseService<Activity, Long> {
 				}
 			}
 			
+			// add activity round feedback
+			FeedBack feedBack = new FeedBack();
+			feedBack.setFeedbackCode(getRandomUuidStrig());
+			feedBack = feedBackRepository.saveAndFlush(feedBack);
+			feedBack.setActivityRound(round);
+			round.setFeedBack(feedBack);
+			
 			activity = saveAndFlush(activity);
 			sendEmail(emails, activityForm, interviewee);
 		} 
@@ -236,6 +252,7 @@ public class ActivityService extends BaseService<Activity, Long> {
 			FeedBack feedBack = activityRound.getFeedBack();
 			if(feedBack == null) {
 				feedBack = new FeedBack();
+				feedBack.setFeedbackCode(getRandomUuidStrig());
 				feedBack.setActivityRound(activityRound);
 			}
 			if(StringUtils.isNotEmpty(feedBackForm.getDetail())) {
@@ -258,13 +275,41 @@ public class ActivityService extends BaseService<Activity, Long> {
 	}
 	
 	public FeedBack getFeedBackByUuid(String uuid) {
-		// TODO Auto-generated method stub
+		if(StringUtils.isEmpty(uuid)) {
+		} else {
+			FeedBack feedBack = feedBackRepository.findFeedBackByFeedbackCode(uuid);
+			if(feedBack != null) {
+				ActivityRound activityRound = feedBack.getActivityRound();
+				if((activityRound.getStartDate().getTime() + feedBackTimelimit) >= System.currentTimeMillis()) {
+					return feedBack;
+				} else {
+					// TODO the feedback uuid is time out.
+				}
+			}
+		}
 		return null;
 	}
 	
 	public FeedBack updateFeedBackWithUuid(String uuid,
 			FeedBackForm feedBackForm) {
-		// TODO Auto-generated method stub
+		FeedBack feedBack = getFeedBackByUuid(uuid);
+		if(feedBack != null) {
+			if(StringUtils.isNotEmpty(feedBackForm.getDetail())) {
+				feedBack.setDetail(feedBackForm.getDetail());
+			}
+			feedBack.setBehavihor(feedBackForm.getBehavihor());
+			feedBack.setCommunication(feedBack.getCommunication());
+			feedBack.setExecution(feedBackForm.getExecution());
+			feedBack.setInnovation(feedBackForm.getInnovation());
+			feedBack.setLanguage(feedBackForm.getLanguage());
+			feedBack.setManagement(feedBackForm.getManagement());
+			feedBack.setProfession(feedBackForm.getProfession());
+			feedBack.setTeamwork(feedBackForm.getTeamwork());
+			feedBack.setResult(feedBackForm.getResult());
+			
+			feedBack = feedBackRepository.saveAndFlush(feedBack);
+			return feedBack;
+		}
 		return null;
 	}
 	
@@ -305,4 +350,7 @@ public class ActivityService extends BaseService<Activity, Long> {
 		return peopleService.saveAndFlush(interviewer);
 	}
 
+	public static String getRandomUuidStrig() {
+		return UUID.randomUUID().toString();
+	}
 }
