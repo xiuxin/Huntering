@@ -1,5 +1,6 @@
 package com.huntering.beans.profile.service;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,8 @@ import org.springframework.stereotype.Service;
 import com.huntering.beans.account.entity.Account;
 import com.huntering.beans.account.service.AccountService;
 import com.huntering.beans.profile.entity.People;
+import com.huntering.beans.profile.entity.PeopleCompany;
+import com.huntering.beans.profile.entity.PeopleEducation;
 import com.huntering.beans.profile.repository.PeopleRepository;
 import com.huntering.common.service.BaseService;
 
@@ -51,6 +54,23 @@ public class PeopleService extends BaseService<People, Long> {
 //    	account.addPeople(people);
 //    	accountService.update(account);
 //    	return people;
+    }
+    
+    public People getPeopleProfile(Long peopleId) {
+    	
+    	People people = findOne(peopleId);
+    	people.getAccount().setPeople(Collections.<People> emptyList());
+    	
+    	for (PeopleEducation pEducation : people.getPeopleEducation()) {
+    		pEducation.setPeople(null);
+    	}
+
+    	for (PeopleCompany pCompany : people.getPeopleCompany()) {
+    		pCompany.getCompany().setPeopleCompany(Collections.<PeopleCompany> emptyList());
+    		pCompany.setPeople(null);
+    	}
+    	
+    	return people;
     }
     
 }

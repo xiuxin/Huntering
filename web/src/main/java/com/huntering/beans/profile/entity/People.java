@@ -70,17 +70,17 @@ public class People extends BaseTimeEntity<Long> implements LogicDeleteable {
     
     private String summary;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = PeopleEducation.class, mappedBy = "people", orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = PeopleEducation.class, mappedBy = "people", orphanRemoval = true)
     @Fetch(FetchMode.SELECT)
-    @Basic(optional = true, fetch = FetchType.LAZY)
+    @Basic(optional = true, fetch = FetchType.EAGER)
     @Cascade(value = org.hibernate.annotations.CascadeType.ALL)
     @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)//集合缓存
     @OrderBy()
     private List<PeopleEducation> peopleEducation;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = PeopleCompany.class, mappedBy = "people", orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = PeopleCompany.class, mappedBy = "people", orphanRemoval = true)
     @Fetch(FetchMode.SELECT)
-    @Basic(optional = true, fetch = FetchType.LAZY)
+    @Basic(optional = true, fetch = FetchType.EAGER)
     @Cascade(value = org.hibernate.annotations.CascadeType.ALL)
     @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)//集合缓存
     @OrderBy()
