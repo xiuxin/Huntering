@@ -37,6 +37,9 @@ public class LoginController {
 
     @Value(value = "${shiro.login.url}")
     private String loginUrl;
+    
+    @Value(value = "${domain}")
+    private String domain;
 
     @Autowired
     private AccountService accountService;
@@ -97,7 +100,8 @@ public class LoginController {
     		Account account = accountService.register(email, password, name, invitationCode);
         	
         	if (account != null) {
-        		String url = request.getScheme() + "://" + request.getLocalAddr() + ":" +request.getLocalPort();
+        		//String url = request.getScheme() + "://" + request.getLocalAddr() + ":" +request.getLocalPort();
+        		String url = request.getScheme() + "://" + domain + "/" + request.getContextPath();
         		accountService.sendVerificationEmail(email, account.getSalt(), url);
         		redirectAttributes.addFlashAttribute("registerSuccess", messageSource.getMessage("register.success", new Object[]{}, null));
         		return "redirect:/login";

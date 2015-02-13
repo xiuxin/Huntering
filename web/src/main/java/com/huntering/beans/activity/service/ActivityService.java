@@ -66,6 +66,9 @@ public class ActivityService extends BaseService<Activity, Long> {
 	
 	@Value("${feedback.time.limit}")
 	private int feedBackTimelimit;
+	
+	@Value(value = "${domain}")
+    private String domain;
 
     @Autowired
     private ActivityRepository getActivityRepository() {
@@ -145,6 +148,13 @@ public class ActivityService extends BaseService<Activity, Long> {
 		round.getPeople().add(interviewerConn);
 		round.setActivity(activity);
 		
+		// add activity round feedback
+		FeedBack feedBack = new FeedBack();
+		feedBack.setFeedbackCode(getRandomUuidStrig());
+		feedBack = feedBackRepository.saveAndFlush(feedBack);
+		feedBack.setActivityRound(round);
+		round.setFeedBack(feedBack);
+		
 		for (People participant : participants) {
 			ActivityPeopleConn conn = new ActivityPeopleConn();
 			conn.setActivityRound(round);
@@ -164,7 +174,7 @@ public class ActivityService extends BaseService<Activity, Long> {
 			emails.add(interviewer.getEmail());
 		}
 		
-		sendEmail(emails, form, people);
+		sendEmail(emails, form, people, feedBack.getFeedbackCode());
 		
 		return activity;
 	}
@@ -238,7 +248,7 @@ public class ActivityService extends BaseService<Activity, Long> {
 			round.setFeedBack(feedBack);
 			
 			activity = saveAndFlush(activity);
-			sendEmail(emails, activityForm, interviewee);
+			sendEmail(emails, activityForm, interviewee, feedBack.getFeedbackCode());
 		} 
 		return activity;
 		
@@ -297,7 +307,7 @@ public class ActivityService extends BaseService<Activity, Long> {
 		return null;
 	}
 	
-	private void sendEmail(List<String> managerMail, ActivityForm form, People people) {
+	private void sendEmail(List<String> managerMail, ActivityForm form, People people, String feedbackCode) {
 		SimpleMailMessage candidateMsg = new SimpleMailMessage(message);
 		SimpleMailMessage managerMsg = new SimpleMailMessage(message);
 		
@@ -315,8 +325,9 @@ public class ActivityService extends BaseService<Activity, Long> {
 		managerMsg.setTo(managerMail.toArray(new String[]{}));
 		managerMsg.setText(people.getFullName() + "面试安排如下："
 				+ "面试时间" + form.getStartTime() 
-				+ "面试地址" + form.getAddress()
-				+ "面试公司" + form.getCompanyName());
+				+ ", 面试地址" + form.getAddress()
+				+ ", 面试公司" + form.getCompanyName()
+				+ ", 面试后3天内可以在: http://" + domain + "/activity/updatefeedback?uuid=" + feedbackCode + " 上填写反馈");
 //		managerMsg.setSubject(messageSource.getMessage("activity.candidate.content", 
 //				new Object[]{people.getNickName(), form.getStartTime(), form.getAddress(), form.getCompanyName()}, null));
 		
