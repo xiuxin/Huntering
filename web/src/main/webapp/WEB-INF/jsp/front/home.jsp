@@ -256,25 +256,13 @@ data-candidateEmail="${message.activity.people.email}"
 						<span>第<c:out value="${act_round.round}"/>轮</span>
 						<c:choose>
 							<c:when test="${not empty act_round.feedBack}">
-								<span data-roundid="${act_round.id}" data-ctx="${ctx}" data-behavihor="${act_round.feedBack.behavihor}" data-profession="${act_round.feedBack.profession}"
-data-language="${act_round.feedBack.language}"
-data-innovation="${act_round.feedBack.innovation}"
-data-communication="${act_round.feedBack.communication}"
-data-execution="${act_round.feedBack.execution}"
-data-teamwork="${act_round.feedBack.teamwork}"
-data-management="${act_round.feedBack.management}"
+								<span data-roundid="${act_round.id}" data-ctx="${ctx}" 
+data-detail="${act_round.feedBack.detail}"
 data-result="${act_round.feedBack.result}" data-toggle="modal" data-target="#feedBackModal" class="start_feedback">添加反馈</span>
 							</c:when>
 							<c:otherwise>
 								<span data-roundid="${act_round.id}" data-ctx="${ctx}"
-data-behavihor=0
-data-profession=0
-data-language=0
-data-innovation=0
-data-communication=0
-data-execution=0
-data-teamwork=0
-data-management=0
+data-detail=""
 data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feedback">添加反馈</span>
 							</c:otherwise>
 						</c:choose>
@@ -311,94 +299,9 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
  				<div class="modal-body" id="fogot-modal-body">
  					<div class="feedback_div">
 	<form class="cmxform" id="feedBackForm" method="post">
-		<div class="input_line">
-			<label>言行举止</label>
-			<select id="behavihor" name="behavihor">
-				<option value="5">5.杰出水平</option>
-				<option value="4">4.优秀水平</option>
-				<option value="3">3.平均水平</option>
-				<option value="2">2.低于平均</option>
-				<option value="1">1.能力稍弱</option>
-				<option value="0">0.无此能力</option>
-			</select>
-	    </div>
-	    <div class="input_line">
-			<label>专业能力</label>
-			<select id="profession" name="profession">
-				<option value="5">5.杰出水平</option>
-				<option value="4">4.优秀水平</option>
-				<option value="3">3.平均水平</option>
-				<option value="2">2.低于平均</option>
-				<option value="1">1.能力稍弱</option>
-				<option value="0">0.无此能力</option>
-			</select>
-	    </div>
-	    <div class="input_line">
-			<label>语言能力</label>
-			<select id="language" name="language">
-				<option value="5">5.杰出水平</option>
-				<option value="4">4.优秀水平</option>
-				<option value="3">3.平均水平</option>
-				<option value="2">2.低于平均</option>
-				<option value="1">1.能力稍弱</option>
-				<option value="0">0.无此能力</option>
-			</select>
-	    </div>
-	    <div class="input_line">
-			<label>创新精神</label>
-			<select id="innovation" name="innovation">
-				<option value="5">5.杰出水平</option>
-				<option value="4">4.优秀水平</option>
-				<option value="3">3.平均水平</option>
-				<option value="2">2.低于平均</option>
-				<option value="1">1.能力稍弱</option>
-				<option value="0">0.无此能力</option>
-			</select>
-	    </div>
-	    <div class="input_line">
-			<label>沟通技巧</label>
-			<select id="communication" name="communication">
-				<option value="5">5.杰出水平</option>
-				<option value="4">4.优秀水平</option>
-				<option value="3">3.平均水平</option>
-				<option value="2">2.低于平均</option>
-				<option value="1">1.能力稍弱</option>
-				<option value="0">0.无此能力</option>
-			</select>
-	    </div>
-	    <div class="input_line">
-			<label>执行能力</label>
-			<select id="execution" name="execution">
-				<option value="5">5.杰出水平</option>
-				<option value="4">4.优秀水平</option>
-				<option value="3">3.平均水平</option>
-				<option value="2">2.低于平均</option>
-				<option value="1">1.能力稍弱</option>
-				<option value="0">0.无此能力</option>
-			</select>
-	    </div>
-	    <div class="input_line">
-			<label>团队合作</label>
-			<select id="teamwork" name="teamwork">
-				<option value="5">5.杰出水平</option>
-				<option value="4">4.优秀水平</option>
-				<option value="3">3.平均水平</option>
-				<option value="2">2.低于平均</option>
-				<option value="1">1.能力稍弱</option>
-				<option value="0">0.无此能力</option>
-			</select>
-	    </div>
-	    <div class="input_line">
-			<label>管理能力</label>
-			<select id="management" name="management">
-				<option value="5">5.杰出水平</option>
-				<option value="4">4.优秀水平</option>
-				<option value="3">3.平均水平</option>
-				<option value="2">2.低于平均</option>
-				<option value="1">1.能力稍弱</option>
-				<option value="0">0.无此能力</option>
-			</select>
-	    </div>
+		<div>
+			<textarea id="feedback_detail" name="detail" rows="5" cols="15"></textarea>
+		</div>
 	    <div class="clear"></div>
 	    <div class="feedback_result">
 			<label>本轮面试结果</label>

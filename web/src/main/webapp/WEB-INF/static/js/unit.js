@@ -417,14 +417,16 @@ $(document).ready(function(){
 	
 	$(".start_feedback").each(function(index, el){
 		$(el).click(function(){
-			$("#behavihor option[value='"+el.dataset.behavihor+"']").attr("selected", true);
+			console.log(el.dataset.detail);
+			$("#feedback_detail").val(el.dataset.detail);
+			/*$("#behavihor option[value='"+el.dataset.behavihor+"']").attr("selected", true);
 			$("#profession option[value='"+el.dataset.profession+"']").attr("selected", true);
 			$("#innovation option[value='"+el.dataset.innovation+"']").attr("selected", true);
 			$("#communication option[value='"+el.dataset.communication+"']").attr("selected", true);
 			$("#execution option[value='"+el.dataset.execution+"']").attr("selected", true);
 			$("#teamwork option[value='"+el.dataset.teamwork+"']").attr("selected", true);
 			$("#language option[value='"+el.dataset.language+"']").attr("selected", true);
-			$("#management option[value='"+el.dataset.management+"']").attr("selected", true);
+			$("#management option[value='"+el.dataset.management+"']").attr("selected", true);*/
 			$("#result option[value='"+el.dataset.result+"']").attr("selected", true);
 			$("#feedBackForm").attr("action", el.dataset.ctx+"/activity/activityround/"+el.dataset.roundid+"/updatefeedback");
 		});

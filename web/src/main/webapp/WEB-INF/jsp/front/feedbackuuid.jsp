@@ -34,94 +34,9 @@
 <c:otherwise>
 <div class="feedback_div">
 	<form class="cmxform" id="feedBackForm" method="post" action="${ctx}/activity/updatefeedback?uuid=${uuid}">
-		<div class="input_line">
-			<label>言行举止</label>
-			<select id="behavihor" name="behavihor">
-				<option value="5">5.杰出水平</option>
-				<option value="4">4.优秀水平</option>
-				<option value="3">3.平均水平</option>
-				<option value="2">2.低于平均</option>
-				<option value="1">1.能力稍弱</option>
-				<option value="0">0.无此能力</option>
-			</select>
-	    </div>
-	    <div class="input_line">
-			<label>专业能力</label>
-			<select id="profession" name="profession">
-				<option value="5">5.杰出水平</option>
-				<option value="4">4.优秀水平</option>
-				<option value="3">3.平均水平</option>
-				<option value="2">2.低于平均</option>
-				<option value="1">1.能力稍弱</option>
-				<option value="0">0.无此能力</option>
-			</select>
-	    </div>
-	    <div class="input_line">
-			<label>语言能力</label>
-			<select id="language" name="language">
-				<option value="5">5.杰出水平</option>
-				<option value="4">4.优秀水平</option>
-				<option value="3">3.平均水平</option>
-				<option value="2">2.低于平均</option>
-				<option value="1">1.能力稍弱</option>
-				<option value="0">0.无此能力</option>
-			</select>
-	    </div>
-	    <div class="input_line">
-			<label>创新精神</label>
-			<select id="innovation" name="innovation">
-				<option value="5">5.杰出水平</option>
-				<option value="4">4.优秀水平</option>
-				<option value="3">3.平均水平</option>
-				<option value="2">2.低于平均</option>
-				<option value="1">1.能力稍弱</option>
-				<option value="0">0.无此能力</option>
-			</select>
-	    </div>
-	    <div class="input_line">
-			<label>沟通技巧</label>
-			<select id="communication" name="communication">
-				<option value="5">5.杰出水平</option>
-				<option value="4">4.优秀水平</option>
-				<option value="3">3.平均水平</option>
-				<option value="2">2.低于平均</option>
-				<option value="1">1.能力稍弱</option>
-				<option value="0">0.无此能力</option>
-			</select>
-	    </div>
-	    <div class="input_line">
-			<label>执行能力</label>
-			<select id="execution" name="execution">
-				<option value="5">5.杰出水平</option>
-				<option value="4">4.优秀水平</option>
-				<option value="3">3.平均水平</option>
-				<option value="2">2.低于平均</option>
-				<option value="1">1.能力稍弱</option>
-				<option value="0">0.无此能力</option>
-			</select>
-	    </div>
-	    <div class="input_line">
-			<label>团队合作</label>
-			<select id="teamwork" name="teamwork">
-				<option value="5">5.杰出水平</option>
-				<option value="4">4.优秀水平</option>
-				<option value="3">3.平均水平</option>
-				<option value="2">2.低于平均</option>
-				<option value="1">1.能力稍弱</option>
-				<option value="0">0.无此能力</option>
-			</select>
-	    </div>
-	    <div class="input_line">
-			<label>管理能力</label>
-			<select id="management" name="management">
-				<option value="5">5.杰出水平</option>
-				<option value="4">4.优秀水平</option>
-				<option value="3">3.平均水平</option>
-				<option value="2">2.低于平均</option>
-				<option value="1">1.能力稍弱</option>
-				<option value="0">0.无此能力</option>
-			</select>
-	    </div>
+		<div>
+			<textarea id="feedback_detail" name="detail" rows="5" cols="15" value="${feedBack.detail}"></textarea>
+		</div>
 	    <div class="clear"></div>
 	    <div class="feedback_result">
 			<label>本轮面试结果</label>
@@ -137,23 +52,7 @@
   		</div>
 	</form>
 </div>
-<script type="text/javascript">
-$(document).ready(function(){
-	$("#saveBackFeed").click(function(){
-		$("#feedBackForm").submit();
-	});	
-	
-	$("#behavihor option[value='${feedBack.behavihor}']").attr("selected", true);
-	$("#profession option[value='${feedBack.profession}']").attr("selected", true);
-	$("#innovation option[value='${feedBack.innovation}']").attr("selected", true);
-	$("#communication option[value='${feedBack.communication}']").attr("selected", true);
-	$("#execution option[value='${feedBack.execution}']").attr("selected", true);
-	$("#teamwork option[value='${feedBack.teamwork}']").attr("selected", true);
-	$("#language option[value='${feedBack.language}']").attr("selected", true);
-	$("#management option[value='${feedBack.management}']").attr("selected", true);
-	$("#result option[value='${feedBack.result}']").attr("selected", true);
-});
-</script>
+
 </c:otherwise>
 </c:choose>
 
@@ -184,7 +83,5 @@ $(document).ready(function(){
 <script type="text/javascript" src="${ctx}/static/js/jquery.validate.js"></script>
 <script type="text/javascript" src="${ctx}/static/js/ui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="${ctx}/static/js/ui/jquery-ui-timepicker-addon.js"></script>
-
-
 
 </body>
