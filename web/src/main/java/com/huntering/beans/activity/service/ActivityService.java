@@ -258,14 +258,6 @@ public class ActivityService extends BaseService<Activity, Long> {
 			if(StringUtils.isNotEmpty(feedBackForm.getDetail())) {
 				feedBack.setDetail(feedBackForm.getDetail());
 			}
-			feedBack.setBehavihor(feedBackForm.getBehavihor());
-			feedBack.setCommunication(feedBack.getCommunication());
-			feedBack.setExecution(feedBackForm.getExecution());
-			feedBack.setInnovation(feedBackForm.getInnovation());
-			feedBack.setLanguage(feedBackForm.getLanguage());
-			feedBack.setManagement(feedBackForm.getManagement());
-			feedBack.setProfession(feedBackForm.getProfession());
-			feedBack.setTeamwork(feedBackForm.getTeamwork());
 			feedBack.setResult(feedBackForm.getResult());
 			
 			activityRoundReposity.saveAndFlush(activityRound);
@@ -297,14 +289,6 @@ public class ActivityService extends BaseService<Activity, Long> {
 			if(StringUtils.isNotEmpty(feedBackForm.getDetail())) {
 				feedBack.setDetail(feedBackForm.getDetail());
 			}
-			feedBack.setBehavihor(feedBackForm.getBehavihor());
-			feedBack.setCommunication(feedBack.getCommunication());
-			feedBack.setExecution(feedBackForm.getExecution());
-			feedBack.setInnovation(feedBackForm.getInnovation());
-			feedBack.setLanguage(feedBackForm.getLanguage());
-			feedBack.setManagement(feedBackForm.getManagement());
-			feedBack.setProfession(feedBackForm.getProfession());
-			feedBack.setTeamwork(feedBackForm.getTeamwork());
 			feedBack.setResult(feedBackForm.getResult());
 			
 			feedBack = feedBackRepository.saveAndFlush(feedBack);
