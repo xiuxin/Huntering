@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,6 +22,8 @@ import com.huntering.beans.account.entity.Email;
 import com.huntering.beans.account.service.AccountService;
 import com.huntering.beans.account.service.ApplyInvitationCodeService;
 import com.huntering.beans.account.service.EmailService;
+import com.huntering.beans.profile.entity.People;
+import com.huntering.beans.profile.service.PeopleService;
 import com.huntering.common.exception.BaseException;
 import com.huntering.dto.ResponseResult;
 /**
@@ -40,6 +43,8 @@ public class LoginController {
 
     @Autowired
     private EmailService emailService;
+    @Autowired
+    private PeopleService peopleService;
     
     @Autowired
     private MessageSource messageSource;
@@ -104,7 +109,17 @@ public class LoginController {
     	
     	return "redirect:/register";
     }
-
+			
+    @RequestMapping("/public/profile/{peopleId}")
+    public String getPeopleProfile(
+    		HttpServletRequest request,
+    		@PathVariable("peopleId") Long peopleId) {
+    	People people = peopleService.getPeopleProfile(peopleId);
+    	request.setAttribute("profile", people);
+    	
+    	return "front/profile";
+    }
+    
     @RequestMapping("/public/verify")
     public String verify(
     		HttpServletRequest request,
