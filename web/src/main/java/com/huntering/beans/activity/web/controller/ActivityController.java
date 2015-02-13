@@ -3,6 +3,7 @@ package com.huntering.beans.activity.web.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,6 +33,9 @@ public class ActivityController {
 	
 	@Autowired
 	private ActivityService activityService;
+	
+	@Autowired
+    private MessageSource messageSource;
 	
 	@RequestMapping("/list")
 	public String listActivities(@CurrentAccount Account loginUser, Model model) {
@@ -77,7 +81,7 @@ public class ActivityController {
 		FeedBack feedBack = activityService.getFeedBackByUuid(uuid);
 		// TODO get resume and activity summary
 		if(feedBack == null) {
-			model.addAttribute("message", "Feedback is not found");
+			model.addAttribute("message", messageSource.getMessage("feedback.notfound", null, null));
 		} else {
 			model.addAttribute("feedBack", feedBack);
 			model.addAttribute("uuid", uuid);
@@ -89,11 +93,11 @@ public class ActivityController {
     public String updateFeedBackByUuid(@RequestParam("uuid") String uuid, FeedBackForm feedBackForm, Model model) {
 		FeedBack feedBack = activityService.updateFeedBackWithUuid(uuid, feedBackForm);
 		if(feedBack == null) {
-			// TODO add error message for font end display
+			model.addAttribute("message", messageSource.getMessage("feedback.update.fail", null, null));
 		} else {
-			// TODO update timestamp message of the activity
+			model.addAttribute("message", messageSource.getMessage("feedback.update.success", null, null));
 		}
-		return ACTIVITY_VIEW;
+		return "front/feedbackSuccess";
 	}
 	
 	@RequestMapping(value = "/get", method = RequestMethod.POST)

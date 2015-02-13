@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -9,7 +10,11 @@
 <link rel="stylesheet" type="text/css" href="${ctx}/static/css/common.css"/>
 <link rel="stylesheet" type="text/css" href="${ctx}/static/css/style.css"/>
 <link rel="stylesheet" type="text/css" href="${ctx}/static/css/ui/jquery-ui.min.css"/>
-
+<style>
+.input_radio{
+margin: -2px 0 0 20px !important;
+}
+</style>
 <body>
 <!--top bar start-->
 <div class="top_bar">
@@ -32,23 +37,48 @@
 	<div style="color:red;padding: 40px 0 140px 20px;font-size: 30;"><c:out value="${message}"></c:out></div>
 </c:when>
 <c:otherwise>
-<div class="feedback_div">
+<div class="container feedback_div">
 	<form class="cmxform" id="feedBackForm" method="post" action="${ctx}/activity/updatefeedback?uuid=${uuid}">
-		<div>
-			<textarea id="feedback_detail" name="detail" rows="5" cols="15" value="${feedBack.detail}"></textarea>
-		</div>
+	<div class="clear"></div>
+	<div>
+		<span class="mes_line_one_account"><c:out value="${feedBack.activityRound.activity.job.title}"></c:out></span>
+        <img src="${ctx}/static/images/user_line.png" class="user_line"/>
+        <span class="mes_line_one_account"><c:out value="${feedBack.activityRound.activity.people.fullName}"></c:out></span>
+        <img src="${ctx}/static/images/user_line.png" class="user_line"/>
+        <span class="mes_line_one_account"><c:out value="${feedBack.activityRound.startDate}"></c:out></span>
+	</div>
 	    <div class="clear"></div>
-	    <div class="feedback_result">
-			<label>本轮面试结果</label>
-			<select id="result" name="result">
-				<option value="2">通过</option>
-				<option value="1">失败</option>
-				<option value="0">待定</option>
-			</select>
+	    <div>
+	   	<c:choose>
+	   		<c:when test="${feedBack.result == 2}">
+	   			<input type="radio" name="result" value="2" checked/>通过
+	    		<input type="radio" name="result" value="1" class="input_radio"/>待定
+	    		<input type="radio" name="result" value="0" class="input_radio"/>失败
+	   		</c:when>
+	   		<c:when test="${feedBack.result == 0}">
+	   			<input type="radio" name="result" value="2"/>通过
+	    		<input type="radio" name="result" value="1" class="input_radio"/>待定
+	    		<input type="radio" name="result" value="0" class="input_radio" checked/>失败
+	   		</c:when>
+	   		<c:otherwise>
+	   			<input type="radio" name="result" value="2"/>通过
+	    		<input type="radio" name="result" value="1" class="input_radio" checked/>待定
+	    		<input type="radio" name="result" value="0" class="input_radio"/>失败
+	   		</c:otherwise>
+	   	</c:choose>
 	    </div>
+	    <div class="clear"></div>
+		<div class="col-xs-3">
+			<textarea id="feedback_detail" name="detail" rows="5" cols="15">${feedBack.detail}</textarea>
+	   	</div>
+		<div>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">英语好的</span>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">英语差的</span>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">沟通好的</span>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">沟通差的</span>
+		</div>
 	    <div class="form-group">
-  						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-  						<button type="button" id="saveBackFeed" data-loading-text="Processing.." class="btn btn-primary">保存</button>
+  			<button type="button" id="saveBackFeed" data-loading-text="Processing.." class="btn btn-primary" onclick="submit()">保存</button>
   		</div>
 	</form>
 </div>
@@ -82,6 +112,10 @@
 <script type="text/javascript" src="${ctx}/static/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="${ctx}/static/js/jquery.validate.js"></script>
 <script type="text/javascript" src="${ctx}/static/js/ui/jquery-ui.min.js"></script>
-<script type="text/javascript" src="${ctx}/static/js/ui/jquery-ui-timepicker-addon.js"></script>
+<script type="text/javascript" src="${ctx}/static/js/feedback.js"></script>
 
+<script type="text/javascript">
+	function submit() {
+	}
+</script>
 </body>
