@@ -263,6 +263,7 @@ public class ActivityService extends BaseService<Activity, Long> {
 			if(feedBack == null) {
 				feedBack = new FeedBack();
 				feedBack.setFeedbackCode(getRandomUuidStrig());
+				feedBack = feedBackRepository.saveAndFlush(feedBack);
 				feedBack.setActivityRound(activityRound);
 			}
 			if(StringUtils.isNotEmpty(feedBackForm.getDetail())) {

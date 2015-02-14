@@ -29,7 +29,10 @@ public class FeedBack extends BaseTimeEntity<Long> {
 	
 	private String detail;
 	
-	private int result;
+	// 2: Success
+	// 1: Pending
+	// 0: Fail
+	private int result = 1;
 	
 	private String feedbackCode;
 	
