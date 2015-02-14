@@ -328,7 +328,7 @@ public class ActivityService extends BaseService<Activity, Long> {
 				+ ", 面试地址" + form.getAddress()
 				+ ", 面试公司" + form.getCompanyName()
 				+ ", 面试后3天内可以在: http://" + domain + "/activity/updatefeedback?uuid=" + feedbackCode + ""
-						+ "&peopleId=" + people.getId() + " 上填写反馈");
+						+ " 上填写反馈");
 //		managerMsg.setSubject(messageSource.getMessage("activity.candidate.content", 
 //				new Object[]{people.getNickName(), form.getStartTime(), form.getAddress(), form.getCompanyName()}, null));
 		
