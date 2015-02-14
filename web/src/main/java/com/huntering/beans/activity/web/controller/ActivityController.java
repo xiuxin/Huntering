@@ -82,7 +82,7 @@ public class ActivityController {
 	
 	@RequestMapping(value = "/updatefeedback", method = RequestMethod.GET)
     public String getFeedBackByUuid(@RequestParam("uuid") String uuid,
-    		@RequestParam("peopleId") Long peopleId, Model model) {
+    		Model model) {
 		FeedBack feedBack = activityService.getFeedBackByUuid(uuid);
 		// TODO get resume and activity summary
 		if(feedBack == null) {
@@ -90,7 +90,8 @@ public class ActivityController {
 		} else {
 			model.addAttribute("feedBack", feedBack);
 			model.addAttribute("uuid", uuid);
-	    	People people = peopleService.getPeopleProfile(peopleId);
+	    	Long peopleId = feedBack.getActivityRound().getActivity().getPeople().getId();
+			People people = peopleService.getPeopleProfile(peopleId);
 	    	model.addAttribute("profile", people);
 		}
 		return "front/feedbackuuid";
