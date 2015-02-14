@@ -14,6 +14,21 @@
 .input_radio{
 margin: -2px 0 0 20px !important;
 }
+
+label {
+	display: initial;
+	font-weight: bold;
+	font-size: 20;
+}
+
+.feedback_desb_left {
+	float: left;
+	width: 150px;
+}
+
+.feedback_desb_div {
+	margin: 10px 0 10px 0;
+}
 </style>
 <body>
 <!--top bar start-->
@@ -93,11 +108,8 @@ margin: -2px 0 0 20px !important;
 
 
 
-
-
-
 <div class="container feedback_div">
-	<form class="cmxform" id="feedBackForm" method="post" action="${ctx}/activity/updatefeedback?uuid=${uuid}">
+	<form class="cmxform" id="feedBackForm1" method="post" action="${ctx}/activity/updatefeedback?uuid=${uuid}">
 	<div class="clear"></div>
 	<div>
 		<span class="mes_line_one_account"><c:out value="${feedBack.activityRound.activity.job.title}"></c:out></span>
@@ -128,15 +140,93 @@ margin: -2px 0 0 20px !important;
 	    </div>
 	    <div class="clear"></div>
 		<div class="col-xs-3">
-			<textarea id="feedback_detail" name="detail" rows="5" cols="15">${feedBack.detail}</textarea>
+			<textarea id="feedback_detail" name="detail" rows="7" cols="45" style="width: 400px;">${feedBack.detail}</textarea>
 	   	</div>
-		<div>
+		<!-- <div>
 			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">英语好的</span>
 			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">英语差的</span>
 			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">沟通好的</span>
 			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">沟通差的</span>
-		</div>
-	    <div class="form-group">
+		</div> -->
+  		<div class="feedback_desb_div">
+  		<div class="feedback_desb_left">
+			<label>言行举止</label><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">杰出水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">优秀水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">平均水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">低于平均</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">能力稍弱</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">无此能力</span><br/>
+	    </div>
+	    <div class="feedback_desb_left">
+			<label>专业能力</label><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">杰出水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">优秀水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">平均水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">低于平均</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">能力稍弱</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">无此能力</span><br/>
+	    </div>
+	    <div class="feedback_desb_left">
+			<label>语言能力</label><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">杰出水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">优秀水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">平均水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">低于平均</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">能力稍弱</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">无此能力</span><br/>
+	    </div>
+	    <div class="feedback_desb_right">
+			<label>创新精神</label><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">杰出水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">优秀水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">平均水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">低于平均</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">能力稍弱</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">无此能力</span><br/>
+	    </div>
+	    </div>
+	    
+	    <div class="feedback_desb_div">
+	    <div class="feedback_desb_left">
+			<label>沟通技巧</label><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">杰出水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">优秀水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">平均水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">低于平均</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">能力稍弱</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">无此能力</span><br/>
+	    </div>
+	    <div class="feedback_desb_left">
+			<label>执行能力</label><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">杰出水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">优秀水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">平均水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">低于平均</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">能力稍弱</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">无此能力</span><br/>
+	    </div>
+	    <div class="feedback_desb_left">
+			<label>团队合作</label><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">杰出水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">优秀水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">平均水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">低于平均</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">能力稍弱</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">无此能力</span><br/>
+	    </div>
+	    <div class="feedback_desb_right">
+			<label>管理能力</label><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">杰出水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">优秀水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">平均水平</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">低于平均</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">能力稍弱</span><br/>
+			<span class="feedback_desb" style="margin: 0 10px 5px 0;cursor: pointer;">无此能力</span><br/>
+	    </div>
+	    </div>
+	    
+  		<div class="form-group">
   			<button type="button" id="saveBackFeed" data-loading-text="Processing.." class="btn btn-primary" onclick="submit()">保存</button>
   		</div>
 	</form>
