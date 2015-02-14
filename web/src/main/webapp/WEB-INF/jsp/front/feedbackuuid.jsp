@@ -54,11 +54,12 @@ margin: -2px 0 0 20px !important;
 	</tr>
 	<c:if test="${not empty profile.peopleEducation}">
 		<c:forEach var="education" items="${profile.peopleEducation}">
+		<tr>
 			<td colspan="2"><c:out value="${education.degree}"/></td>
 			<td colspan="2"><c:out value="${education.college}"/></td>
 			<td colspan="2"><c:out value="${education.startDate}"/></td>
 			<td colspan="2"><c:out value="${education.endDate}"/></td>
-			
+		</tr>
 		</c:forEach>
 	</c:if>
 </table>
@@ -75,12 +76,13 @@ margin: -2px 0 0 20px !important;
 	</tr>
 	<c:if test="${not empty profile.peopleCompany}">
 		<c:forEach var="company" items="${profile.peopleCompany}">
+		<tr>
 			<td colspan="2"><c:out value="${company.company.name}"/></td>
 			<td colspan="2"><c:out value="${company.title}"/></td>
 			<td colspan="2"><c:out value="${company.detail}"/></td>
 			<td colspan="2"><c:out value="${company.startDate}"/></td>
 			<td colspan="2"><c:out value="${company.endDate}"/></td>
-			
+		</tr>	
 		</c:forEach>
 	</c:if>
 </table>

@@ -35,13 +35,13 @@ values (3, 1, null, '333333333', 0, 0, 'bell_qiu@outlook.com');;
   
 delete from `people_education` where id>=1 and id<=1000;;
 insert into `people_education`
-(`id`, `people_id`, `degree`, `desb`, `deleted`)
+(`id`, `people_id`, `degree`, `desb`, `college`, `startdate`, `enddate`, `deleted`)
   values
-  (1, 1, 1, '账户人', 0);;
+  (1, 1, 1, '账户人', 'ABC大学', '2006-09-01', '2010-09-01', 0);;
 insert into `people_education`
-(`id`, `people_id`, `degree`, `desb`, `deleted`)
+(`id`, `people_id`, `degree`, `desb`, `college`, `startdate`, `enddate`, `deleted`)
   values
-  (2, 2, 1, 'Candidate', 0);;
+  (2, 2, 1, 'Candidate', 'ABC大学', '2006-09-01', '2010-09-01', 0);;
   
   
 delete from `company` where id>=1 and id<=1000;;
@@ -58,11 +58,19 @@ delete from `people_company` where id>=1 and id<=1000;;
 insert into `people_company`
 (`id`, `people_id`, `company_id`, `startdate`, `enddate`, `title`, `deleted`)
   values
-  (1, 1, 1, '2011-12-28', '2014-06-30', '扫地神僧', 0);;
+  (1, 1, 1, '2011-12-28', '2014-06-30', 'Java开发工程师', 0);;
 insert into `people_company`
 (`id`, `people_id`, `company_id`, `startdate`, `enddate`, `title`, `deleted`)
   values
-  (2, 2, 2, '2011-12-28', '2014-06-30', '扫地神僧', 0);;
+  (2, 1, 2, '2014-06-30', '2015-06-30', '资深Java开发工程师', 0);;
+insert into `people_company`
+(`id`, `people_id`, `company_id`, `startdate`, `enddate`, `title`, `deleted`)
+  values
+  (3, 2, 1, '2011-12-28', '2014-06-30', 'Java开发工程师', 0);;
+insert into `people_company`
+(`id`, `people_id`, `company_id`, `startdate`, `enddate`, `title`, `deleted`)
+  values
+  (4, 2, 2, '2011-12-28', '2014-06-30', 'C语言工程师', 0);;
   
 delete from `job` where id>=1 and id<=1000;;
 insert into `job`
