@@ -432,6 +432,14 @@ $(document).ready(function(){
 		});
 	});
 	
+	$(".view_feedback").each(function(index, el){
+		$(el).click(function(){
+			console.log(el.dataset.detail);
+			$("#view_feedback_detail").val(el.dataset.detail);
+			$("#result option[value='"+el.dataset.result+"']").attr("selected", true);
+		});
+	});
+	
 	$("#saveBackFeed").click(function(){
 		$("#feedBackForm").submit();
 	});	

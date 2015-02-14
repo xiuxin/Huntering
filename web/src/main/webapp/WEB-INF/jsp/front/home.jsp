@@ -235,7 +235,7 @@
 	                  <img src="${ctx}/static/images/system_img.png" class="user_img"/>
 	                  <span class="mes_line_one_account">系统账号</span>
 	                  <img src="${ctx}/static/images/user_line.png" class="user_line"/>
-	                  <span class="mes_line_one_type">简历追踪</span>
+	                  <span class="mes_line_one_type">面试追踪</span>
 	                  <img src="${ctx}/static/images/user_line.png" class="user_line"/>
 	                  <span class="mes_line_one_serial">Test</span>
 	                  <span class="mes_date">${message.updateDate}</span>
@@ -259,11 +259,17 @@ data-candidateEmail="${message.activity.people.email}"
 								<span data-roundid="${act_round.id}" data-ctx="${ctx}" 
 data-detail="${act_round.feedBack.detail}"
 data-result="${act_round.feedBack.result}" data-toggle="modal" data-target="#feedBackModal" class="start_feedback">添加反馈</span>
+<span data-roundid="${act_round.id}" data-ctx="${ctx}" 
+data-detail="${act_round.feedBack.detail}"
+data-result="${act_round.feedBack.result}" data-toggle="modal" data-target="#viewFeedBackModal" class="view_feedback">浏览反馈</span>
 							</c:when>
 							<c:otherwise>
 								<span data-roundid="${act_round.id}" data-ctx="${ctx}"
 data-detail=""
 data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feedback">添加反馈</span>
+<span data-roundid="${act_round.id}" data-ctx="${ctx}"
+data-detail=""
+data-result=0 data-toggle="modal" data-target="#viewFeedBackModal" class="view_feedback">浏览反馈</span>
 							</c:otherwise>
 						</c:choose>
 						<%-- <span data-roundid="${act_round.id}" data-toggle="modal" data-target="#feedBackModal" class="start_feedback">添加反馈</span> --%>
@@ -307,8 +313,8 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 			<label>本轮面试结果</label>
 			<select id="result" name="result">
 				<option value="2">通过</option>
-				<option value="1">失败</option>
-				<option value="0">待定</option>
+				<option value="1">待定</option>
+				<option value="0">失败</option>
 			</select>
 	    </div>
 	</form>
@@ -318,6 +324,38 @@ data-result=0 data-toggle="modal" data-target="#feedBackModal" class="start_feed
 					<div class="form-group">
   						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
   						<button type="button" id="saveBackFeed" data-loading-text="Processing.." class="btn btn-primary">保存</button>
+  					</div>
+ 				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	
+	<div class="modal fade" id="viewFeedBackModal" tabindex="-1" role="dialog" aria-labelledby="viewFeedBackModalLabel" aria-hidden="true" data-backdrop="static" style="display: none;">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+   					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+   					<h4 class="modal-title text_center" id="viewFeedBackModalLabel">面试反馈</h4>
+ 				</div>
+ 				<div class="modal-body" id="fogot-modal-body">
+ 					<div style="margin: 20px 0 100px 80px;">
+		<div>
+			<textarea id="view_feedback_detail" name="detail" rows="5" cols="15" disabled></textarea>
+		</div>
+	    <div class="clear"></div>
+	    <div class="feedback_result">
+			<label>本轮面试结果</label>
+			<select id="view_result" name="result" disabled>
+				<option value="2">通过</option>
+				<option value="1">待定</option>
+				<option value="0">失败</option>
+			</select>
+	    </div>
+		</div>
+ 				</div>
+				<div class="modal-footer">
+					<div class="form-group">
+  						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
   					</div>
  				</div>
 			</div><!-- /.modal-content -->
