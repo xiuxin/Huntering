@@ -16,6 +16,8 @@ import com.huntering.beans.account.entity.Account;
 import com.huntering.beans.activity.entity.Activity;
 import com.huntering.beans.activity.entity.FeedBack;
 import com.huntering.beans.activity.service.ActivityService;
+import com.huntering.beans.profile.entity.People;
+import com.huntering.beans.profile.service.PeopleService;
 import com.huntering.dto.ActivityForm;
 import com.huntering.dto.FeedBackForm;
 import com.huntering.security.CurrentAccount;
@@ -33,6 +35,8 @@ public class ActivityController {
 	
 	@Autowired
 	private ActivityService activityService;
+    @Autowired
+    private PeopleService peopleService;
 	
 	@Autowired
     private MessageSource messageSource;
@@ -77,7 +81,8 @@ public class ActivityController {
 	}
 	
 	@RequestMapping(value = "/updatefeedback", method = RequestMethod.GET)
-    public String getFeedBackByUuid(@RequestParam("uuid") String uuid, Model model) {
+    public String getFeedBackByUuid(@RequestParam("uuid") String uuid,
+    		@RequestParam("peopleId") Long peopleId, Model model) {
 		FeedBack feedBack = activityService.getFeedBackByUuid(uuid);
 		// TODO get resume and activity summary
 		if(feedBack == null) {
@@ -85,6 +90,8 @@ public class ActivityController {
 		} else {
 			model.addAttribute("feedBack", feedBack);
 			model.addAttribute("uuid", uuid);
+	    	People people = peopleService.getPeopleProfile(peopleId);
+	    	model.addAttribute("profile", people);
 		}
 		return "front/feedbackuuid";
 	}
