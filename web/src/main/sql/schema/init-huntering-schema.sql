@@ -21,6 +21,7 @@ drop table if exists `question_group`;;
 drop table if exists `question`;;
 drop table if exists `message`;;
 drop table if exists `feedback`;;
+drop table if exists `activity_message`;;
 
 ##message
 create table `message`(
@@ -294,3 +295,16 @@ create table `feedback`(
   constraint `pk_feedback` primary key(`id`)
 ) charset=utf8 ENGINE=InnoDB;;
 alter table `feedback` auto_increment=1000;;
+
+create table `activity_message`(
+  `id`         bigint not null auto_increment,
+  `message_id`	bigint,
+  `activity_message_type`	varchar(30),
+  `activity_id`  bigint,
+  `actvitiy_round_id`  bigint,
+  `create_date` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `update_date` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  constraint `pk_feedback` primary key(`id`)
+) charset=utf8 ENGINE=InnoDB;;
+alter table `activity_message` auto_increment=1000;;
+

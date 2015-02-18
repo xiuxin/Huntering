@@ -177,3 +177,25 @@ insert into `message`
   values
   (4, 1, 3, null, 'RESUME');;
 
+insert into `activity_message`
+(`id`, `message_id`, `activity_message_type`, `activity_id`, `actvitiy_round_id`)
+values (1, 2, 'CREATE_ACTIVITY_ROUND', null, 1);;
+insert into `activity_message`
+(`id`, `message_id`, `activity_message_type`, `activity_id`, `actvitiy_round_id`)
+values (2, 2, 'CREATE_ACTIVITY_ROUND', null, 2);;
+insert into `activity_message`
+(`id`, `message_id`, `activity_message_type`, `activity_id`, `actvitiy_round_id`)
+values (3, 3, 'CREATE_ACTIVITY_ROUND', null, 3);;
+insert into `activity_message`
+(`id`, `message_id`, `activity_message_type`, `activity_id`, `actvitiy_round_id`)
+values (4, 3, 'CREATE_ACTIVITY_ROUND', null, 4);;
+insert into `activity_message`
+(`id`, `message_id`, `activity_message_type`, `activity_id`, `actvitiy_round_id`)
+values (5, 3, 'CREATE_ACTIVITY_ROUND', null, 5);;
+insert into `activity_message`
+(`id`, `message_id`, `activity_message_type`, `activity_id`, `actvitiy_round_id`)
+values (6, 2, 'UPDATE_FEEDBACK_BY_UUID', null, 2);;
+insert into `activity_message`
+(`id`, `message_id`, `activity_message_type`, `activity_id`, `actvitiy_round_id`)
+values (7, 2, 'UPDATE_FEEDBACK_BY_ACCOUNT', null, 5);;
+

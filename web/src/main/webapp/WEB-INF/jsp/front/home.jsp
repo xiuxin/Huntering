@@ -233,11 +233,8 @@
 			<div class="single_resume">
 	            <div class="mes_line_one">
 	                  <img src="${ctx}/static/images/system_img.png" class="user_img"/>
-	                  <span class="mes_line_one_account">系统账号</span>
-	                  <img src="${ctx}/static/images/user_line.png" class="user_line"/>
-	                  <span class="mes_line_one_type">面试追踪</span>
-	                  <img src="${ctx}/static/images/user_line.png" class="user_line"/>
-	                  <span class="mes_line_one_serial">Test</span>
+	                  <span class="mes_line_one_type">
+<c:out value="${message.activity.people.fullName}"/>面试<c:out value="${message.activity.job.company.name}"/>的<c:out value="${message.activity.job.title}"/></span>
 	                  <span class="mes_date">${message.updateDate}</span>
 	            </div>
 	            <div class="clear"></div>

@@ -1,7 +1,11 @@
 package com.huntering.beans.message.entity;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,7 +13,9 @@ import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -34,6 +40,8 @@ import com.huntering.common.repository.support.annotation.EnableQueryCache;
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Message extends BaseTimeEntity<Long> implements Comparable<Message> {
 
+	private static final long serialVersionUID = 3682274210307580330L;
+
 	@ManyToOne(optional = false, fetch = FetchType.LAZY)
     @Basic(optional = false, fetch = FetchType.LAZY)
     @Fetch(FetchMode.JOIN)
@@ -50,6 +58,11 @@ public class Message extends BaseTimeEntity<Long> implements Comparable<Message>
 	@OneToOne()
     @JoinColumn(name = "people_id", unique = false, nullable = true, updatable = true)
 	private People people;
+	
+	@OneToMany(targetEntity=ActivityMessage.class, orphanRemoval=true, cascade={CascadeType.ALL}, mappedBy="message")
+	@Fetch(FetchMode.SUBSELECT)
+	@OrderBy("updateDate DESC")
+	private List<ActivityMessage> activityMessages = new ArrayList<ActivityMessage>();
 
 	public Account getAccount() {
 		return account;
@@ -81,6 +94,14 @@ public class Message extends BaseTimeEntity<Long> implements Comparable<Message>
 
 	public void setPeople(People people) {
 		this.people = people;
+	}
+
+	public List<ActivityMessage> getActivityMessages() {
+		return activityMessages;
+	}
+
+	public void setActivityMessages(List<ActivityMessage> activityMessages) {
+		this.activityMessages = activityMessages;
 	}
 
 	@Override
