@@ -9,8 +9,6 @@ import org.hibernate.Hibernate;
 import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
-import org.springframework.mail.MailSender;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -28,6 +26,7 @@ import com.huntering.beans.account.repository.AccountRepository;
 import com.huntering.beans.profile.entity.People;
 import com.huntering.beans.profile.service.PeopleService;
 import com.huntering.common.service.BaseService;
+import com.huntering.service.MailSenderService;
 import com.huntering.sys.user.entity.User;
 import com.huntering.sys.user.utils.UserLogUtils;
 
@@ -44,10 +43,8 @@ public class AccountService extends BaseService<Account, Long> {
         return (AccountRepository) baseRepository;
     }
 
-	@Autowired
-	private MailSender mailSender;
     @Autowired
-	private SimpleMailMessage message;
+    private MailSenderService mailSenderService;
 	
     @Autowired
     private AccountPasswordService passwordService;
@@ -211,12 +208,9 @@ public class AccountService extends BaseService<Account, Long> {
      * @param salt
      */
     public void sendVerificationEmail(String email, String salt, String URL) {
-		SimpleMailMessage msg = new SimpleMailMessage(message);
 		String verificationCode = passwordService.encryptPassword(email, salt);
-		msg.setTo(email);
 		String link = URL + "/public/verify?code=" + verificationCode + "&email=" + email;
-		msg.setText("Click below link to enable your email: " + link);
-		mailSender.send(msg);
+		mailSenderService.sendSignupVerifyMail(email, link);
     }
     
     public String recoverPassword(String email) {
@@ -231,11 +225,7 @@ public class AccountService extends BaseService<Account, Long> {
         	Account account = findValidAccountByEmail(email);
         	if(account != null) {
         		String newPassword = passwordService.recoverPassword(account);
-        		SimpleMailMessage msg = new SimpleMailMessage(message);
-        		msg.setTo(email);
-        		msg.setSubject(messageSource.getMessage("recover.password.subject", new Object[]{}, null));
-        		msg.setText(messageSource.getMessage("recover.password.context", new Object[]{newPassword}, null));
-        		mailSender.send(msg);
+        		mailSenderService.sendRecoverPasswordMail(email, newPassword);
         	} else {
         		messageKey = "account.invalid";
         	}
@@ -329,14 +319,6 @@ public class AccountService extends BaseService<Account, Long> {
         this.emailService = emailService;
     }
 
-    public void setMailSender(MailSender mailSender) {
-		this.mailSender = mailSender;
-	}
-
-	public void setMessage(SimpleMailMessage message) {
-		this.message = message;
-	}
-	
 	public void setPeopleService(PeopleService peopleService) {
 		this.peopleService = peopleService;
 	}
